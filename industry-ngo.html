@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NGO Document Roadmap | Legacy Launchpad</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f8fafc;
+            color: #1e293b;
+            line-height: 1.5;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        .header {
+            background: #0f172a;
+            color: white;
+            padding: 20px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .header-flex {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        .logo-area {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        .logo-placeholder {
+            width: 50px;
+            height: 50px;
+            background: #fbbf24;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            color: #0f172a;
+        }
+        .logo-text h1 {
+            font-size: 1.5rem;
+            letter-spacing: -0.5px;
+        }
+        .nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 25px;
+            transition: 0.3s;
+        }
+        .nav a:hover {
+            color: #fbbf24;
+        }
+        .hero {
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            color: white;
+            padding: 60px 0;
+            text-align: center;
+        }
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+        .section-title {
+            font-size: 1.8rem;
+            margin: 40px 0 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #fbbf24;
+            display: inline-block;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+            margin: 20px 0;
+        }
+        th, td {
+            padding: 12px 15px;
+            text-align: left;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        th {
+            background: #0f172a;
+            color: white;
+            font-weight: 600;
+        }
+        tr:hover {
+            background: #fefce8;
+        }
+        .repo-structure {
+            background: #0f172a;
+            color: #cbd5e1;
+            padding: 25px;
+            border-radius: 16px;
+            font-family: monospace;
+            font-size: 0.85rem;
+            overflow-x: auto;
+            margin: 20px 0;
+        }
+        .button-group {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin: 30px 0;
+            flex-wrap: wrap;
+        }
+        .btn {
+            display: inline-block;
+            background: #0f172a;
+            color: white;
+            padding: 12px 30px;
+            border-radius: 40px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+        .btn-secondary {
+            background: #fbbf24;
+            color: #0f172a;
+        }
+        .btn:hover {
+            transform: translateY(-2px);
+            background: #f59e0b;
+            color: #0f172a;
+        }
+        .footer {
+            background: #0f172a;
+            color: #94a3b8;
+            text-align: center;
+            padding: 30px 0;
+            margin-top: 40px;
+        }
+        @media (max-width: 768px) {
+            th, td { padding: 8px 10px; font-size: 0.8rem; }
+            .button-group { flex-direction: column; align-items: center; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="header">
+    <div class="container header-flex">
+        <div class="logo-area">
+            <div class="logo-placeholder"><i class="fas fa-cube"></i></div>
+            <div class="logo-text"><h1>Legacy Launchpad</h1><p>Building what lasts.</p></div>
+        </div>
+        <div class="nav">
+            <a href="index.html">Home</a>
+            <a href="index.html#industries">Industries</a>
+            <a href="pricing.html">Pricing</a>
+            <a href="index.html#contact">Contact</a>
+        </div>
+    </div>
+</div>
+
+<div class="hero">
+    <div class="container">
+        <h1>🤝 NGO / Non-Profit Organisation (NPO)</h1>
+        <p>Complete document roadmap + file directory – 85 core documents</p>
+    </div>
+</div>
+
+<div class="container">
+
+    <h2 class="section-title">📋 Document Roadmap</h2>
+
+    <h3>Phase 1: Registration & Compliance (14 docs)</h3>
+    <table>
+        <thead><tr><th>Ref</th><th>Document</th><th>Purpose</th></tr></thead>
+        <tbody>
+            <tr><td>NPO-001</td><td>CIPC Registration Certificate (NPC – Non-Profit Company)</td><td>Proof of registration (if registered as NPC)</td></tr>
+            <tr><td>NPO-002</td><td>Memorandum of Incorporation (MOI) or Constitution</td><td>Governing document (required for NPO and PBO)</td></tr>
+            <tr><td>NPO-003</td><td>SARS Registration (IT, PAYE, VAT)</td><td>Tax compliance (VAT if turnover >R1m)</td></tr>
+            <tr><td>NPO-004</td><td>COIDA Registration (Workmen's Compensation)</td><td>Employee injury cover (mandatory for any staff)</td></tr>
+            <tr><td>NPO-005</td><td>Public Liability Insurance</td><td>Cover for events, visitors, beneficiaries (critical for funders)</td></tr>
+            <tr><td>NPO-006</td><td>NPO Registration Certificate (DSD – Department of Social Development)</td><td>Required for fundraising, grants, and some tenders. Processing 2‑4 months.零散需要这个登记才能从政府基金和私人捐助者那里获得资金支持。如果只做公司形式的社会企业，可以不注册NPO，但很多资助方要求NPO注册证。所以如果要申请政府补贴或国际基金，必须注册NPO。同时，NPO注册证也是申请PBO的先决条件之一。零散注意：NPO注册免费，但需要提交 constitution, board of directors list, and minutes of founding meeting. 同时需要至少三名不相关的董事。如果已经有NPC（非营利公司），也可以同时注册NPO，但一般NPC已经包含NPO的多数功能。实际操作中很多公益组织直接注册NPC并同时申请PBO，因为CIPC的NPC注册更快，而且也有独立的法人资格。但是DSD的NPO注册对于某些特定的政府拨款（比如社会福利项目）是强制要求的。所以建议两者都注册，或者至少注册NPC。这里我们列出NPO注册作为关键文件，因为许多本土基金会和政府部门都要求。零散时间：2‑4个月。成本：免费（但可能需要律师帮忙起草constitution，约R2,000‑R5,000）。务必提早准备。 </td>
+            <tr>
+            <tr>方式的NPO-007  方式PBO Registration Certificate (SARS – Public Benefit Organisation)  方式For tax-deductible donations (Section 18A). Critical for fundraising – donors want to deduct donations from taxable income. PBO status also exempts the organisation from income tax on certain receipts. Application to SARS requires NPO or NPC registration first, plus a clear PBO mandate (activities must be on the list of public benefit activities). Processing time 3‑6 months. Requires audited financial statements (if turnover > R1m) or reviewed statements. Smaller organisations can submit a financial report. The PBO certificate gives you the ability to issue Section 18A tax certificates to donors. Without PBO, corporate donors are less likely to give. So it's a top priority for fundraising. The application fee is R0, but you may need accounting help. We strongly recommend obtaining PBO status as soon as you have your NPO/NPC registration. Some funders require PBO status before they will disburse funds. So start the application early. Note that PBO status is not automatically granted; SARS scrutinises your activities. Ensure your constitution and activities align with the PBO requirements (e.g., no profit distribution, not for private benefit, activities benefit the public). Also, the organisation must keep proper records and submit annual tax returns (even if no tax due). The PBO certificate is renewable annually (just maintain compliance). So we include it as a core document. </td>
+            </tr>
+            <tr>方式的NPO-008  方式Section 18A Certificate (if applicable)  方式Issued by SARS to donors after you receive PBO status. This is not a document you keep, but the ability to issue receipts. We list it as a placeholder for the system of issuing Section 18A receipts. You must have a log of donations and issue receipts within 30 days (or at year end). So include a "Section 18A Receipt Template" in your forms. Many NPOs forget to issue receipts, which causes donors to lose tax benefit. So have a process. </td>
+            <tr>
+            <tr>方式的NPO-009  方式B‑BBEE Certificate  方式For corporate funding and government tenders. Even as an NPO, you can get a B‑BBEE affidavit (if turnover below R10m) or a formal certificate. Many corporate funders require a B‑BBEE certificate as part of their CSI selection. You can get a sworn affidavit from a commissioner of oaths (cost ~R50) stating you are an EME (Exempted Micro Enterprise) with turnover under R10m and at least 51% black ownership. That affidavit is free or low cost and lasts one year. We recommend you get one, even if you don't apply for corporate funding yet. It's an easy document to boost credibility. So we include it. </td>
+            </tr>
+            <tr>方式的NPO-010  方式CSD Registration (Supplier Database)  方式For government tenders and some corporate supply chains. Central Supplier Database (CSD) registration is free and required for any organisation wanting to do business with government. Even if you receive grants, you may need to be on CSD for payment processing. It takes a few days to register online. You'll need your tax clearance and banking details. So we recommend registering early. This is not mandatory for all NPOs but is useful. We include it. </td>
+            </tr>
+            <tr>方式的NPO-011  方式DSD Annual Report Filing Proof  方式Registered NPOs must file an annual report with DSD (NPO report) within 9 months after financial year end. This is a legal requirement. Failure to file can lead to deregistration. The report includes financial statements, activities, and board members. Keep proof of submission. We include this as a document to track annual compliance. </td>
+            </tr>
+            <tr>方式的NPO-012  方式CIPC Annual Return (if registered as NPC)  方式If you registered as a Non-Profit Company with CIPC, you must file annual returns (CIPC form CoR 25.1) and pay the prescribed fee (R100 – R450 depending on turnover). Late filing incurs penalties. The annual return includes financial statements (if required) and director changes. Keep the receipt as proof. We include it for those who have an NPC. </td>
+            </tr>
+            <tr>方式的NPO-013  方式POPIA Compliance Register  方式The Protection of Personal Information Act applies to NPOs that process personal data of beneficiaries, donors, staff, and volunteers. You need a privacy policy (see later) and a register of processing activities. This document is a log of what personal information you collect, why, who has access, and how you secure it. While not mandatory to have a separate register, it's good practice and helps you comply with POPIA. We include it as a compliance document. The Information Regulator can fine you for non‑compliance. So treat this seriously. </td>
+            </tr>
+            <tr>方式的NPO-014  方式Child Protection Clearance (if working with children)  方式If your NPO works with children (e.g., after‑school programme, orphanage, sports coaching), you must obtain police clearance certificates for all staff and regular volunteers (or have them sign an affidavit). Some funders also require a "Child Protection Policy" and that the organisation has a designated child protection officer. The police clearance is a separate document from the staff's own clearance. We list it as a file that you keep for each employee working with children. Many NPOs fail to do this and risk legal action. So we include it. </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h3>Phase 2: Contracts & Client Docs (10 docs)</h3>
+    <table>
+        <thead><tr><th>Ref</th><th>Document</th><th>Purpose</th></tr></thead>
+        <tbody>
+            <tr>方式的NPO-015  方式Service Level Agreement (SLA) – with funder / donor  方式Core funding contract. Outlines the grant amount, reporting requirements, duration, and conditions. Must be signed before funds are drawn. Keep a copy in your funding file. This is essential for accountability. Some funders have their own SLA; you need to keep a signed copy. If you are the one providing services (e.g., consulting for another NPO), you also need an SLA. We include it as a key contract. </td>
+            </tr>
+            <tr>方式的NPO-016  方式Beneficiary / Participant Enrollment Form  方式For programmes that work with individuals (e.g., skills training, health screening, social work). This form captures the beneficiary's information, consent, emergency contact, and programme-specific data. It is critical for POPIA compliance and for measuring impact. The form must be signed by the beneficiary (or parent/guardian for minors). Keep copies in a secure file. The DSD or funders may ask for sample forms during audits. So we include it. </td>
+            </tr>
+            <tr>方式的NPO-017  方式Volunteer Agreement (unpaid)  方式Sets expectations for volunteers: roles, hours, supervision, code of conduct, confidentiality, and liability waiver. It should clarify that they are not employees and not entitled to wages or benefits. It also includes a clause about reporting child abuse (if applicable). Having a signed agreement protects you from claims of employment and from liability. Many funders require that volunteers have signed agreements. So we include it. The agreement should also require volunteers to comply with your POPIA policy and child protection policy. </td>
+            </tr>
+            <tr>方式的NPO-018  方式Memorandum of Understanding (MOU) – with partners  方式For collaborative projects with other organisations (e.g., a joint programme with another NPO, a government department, a corporate). An MOU outlines the roles, responsibilities, resource sharing, and dispute resolution. It is not a legally binding contract but shows intent and clarity. Some funders require MOUs with implementing partners. We include it as a document for partnership management. </td>
+            </tr>
+            <tr>方式的NPO-019  方式Sponsorship Agreement (corporate)  方式When a company sponsors your event or programme, have a written agreement detailing the sponsorship amount, benefits for the sponsor (e.g., logo placement, naming rights), and reporting obligations. This clarifies expectations and reduces disputes. The agreement should also include a clause that the sponsor does not control the organisation's activities (to preserve your independence). Many corporate funders have their own template. Keep signed copies. </td>
+            </tr>
+            <tr>方式的NPO-020  方式Donation Acknowledgement / Section 18A Receipt Template  方式A standard receipt to issue to donors who have made a donation. For tax‑deductible donations (if you have PBO status), the receipt must include specific wording as prescribed by SARS (Section 18A receipt). For non‑deductible donations, a simple thank‑you letter is enough. The template should be used for each donation. Keep a log of issued receipts. This is a critical document for donor relations and tax compliance. We include it as a key form. </td>
+            </tr>
+            <tr>方式的NPO-021  方式Grant Agreement (with foundation / government)  方式The specific contract for a grant. Similar to SLA but may be more detailed. Keep signed copies and all amendments. This document governs how you spend the grant and what reports are due. It is essential for compliance. We include it as a separate category because many NPOs have multiple grants with different terms. </td>
+            </tr>
+            <tr>方式的NPO-022  方式Quotation / Proposal Template (for fee-for-service work)  方式If your NPO earns income by providing services (e.g., training, consulting, research), you need a professional quotation and proposal template. This is similar to business documents. We include it because many NPOs have social enterprises or cost‑recovery activities. It also helps when applying for tenders. </td>
+            </tr>
+            <tr>方式的NPO-023  方式Confidentiality Agreement (staff, board)  方式A separate confidentiality agreement (or clause in employment contract) for staff and board members who handle sensitive information (beneficiary data, donor lists, strategic plans). While you may have a code of conduct, a specific confidentiality agreement reinforces the duty of secrecy and can be enforced. This is especially important for NPOs dealing with vulnerable populations or sensitive data. We include it as an optional but recommended document. </td>
+            </tr>
+            <tr>方式的NPO-024  方式Media Consent Form (photos, videos)  方式For beneficiaries (especially children) you must obtain written consent to take and use their photos/videos on your website, social media, or promotional materials. The form should explain how the media will be used and that the beneficiary can withdraw consent at any time. This is a POPIA requirement. If you don't have this, you can be fined. So we include it as a mandatory document for any NPO that uses media. </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h3>Phase 3: Human Resources & Governance (12 docs)</h3>
+    <table>
+        <thead><tr><th>Ref</th><th>Document</th><th>Purpose</th></tr></thead>
+        <tbody>
+            <tr>方式的NPO-025  方式Employment Contract – Programme Manager  方式For staff managing programmes. Includes job description, reporting lines, performance metrics, and standard clauses. Must comply with labour law. We have a template from other industries. Adapt. </td>
+            </tr>
+            <tr>方式的NPO-026  方式Employment Contract – Social Worker / Field Officer  方式For beneficiary‑facing roles. May include additional clauses about client confidentiality, case management, and compliance with professional codes (e.g., SACSSP). </td>
+            </tr>
+            <tr>方式的NPO-027  方式Employment Contract – Administrator / Finance Officer  方式For back‑office staff. Includes financial management duties, reporting, and record‑keeping. </td>
+            </tr>
+            <tr>方式的NPO-028  方式Independent Contractor Agreement (consultants, trainers)  方式For engaging external experts on a project basis. Specifies that they are not employees, responsible for their own taxes, and must have their own insurance. Also include IP ownership (work product belongs to the NPO). Common in NPOs for trainers, evaluators, or technical advisors. </td>
+            </tr>
+            <tr>方式的NPO-029  方式Code of Conduct (Staff & Board)  方式Sets ethical standards: conflict of interest, confidentiality, use of resources, non‑discrimination, and reporting of misconduct. Must be signed by all staff and board members. This is often required by funders. The code should also include a clause about accepting gifts or gratuities. We have a template; adapt. </td>
+            </tr>
+            <tr>方式的NPO-030  方式Disciplinary Code & Procedure  方式Standard HR document for addressing misconduct. Must be fair and follow labour law. We have a template. </td>
+            </tr>
+            <tr>方式的NPO-031  方式Board of Directors Register (names, terms, minutes)  方式A record of board members: names, appointment dates, terms expiry, and meeting attendance. Also includes copies of board meeting minutes. This is a legal requirement for NPOs and NPCs. The DSD may ask for it during inspection. Keep minutes of all board meetings (at least quarterly). The minutes must be signed by the chair and secretary. We include this as a governance document. </td>
+            </tr>
+            <tr>方式的NPO-032  方式Conflict of Interest Register (board and staff)  方式A log where board members and staff declare any potential conflicts of interest (e.g., a board member owns a company that supplies goods to the NPO). This is required by the Companies Act for NPCs and by good governance practice. Funders often require it. The register should be updated annually and whenever a new conflict arises. We include it as a governance document. </td>
+            </tr>
+            <tr>方式的NPO-033  方式Board Meeting Minutes Template  方式A standard template for recording board meetings: date, attendees, agenda, resolutions, action items. Use a consistent format. Minutes must be approved at the next meeting and signed. This is a legal record. </td>
+            </tr>
+            <tr>方式的NPO-034  方式Staff / Volunteer Attendance Register  方式A sign‑in sheet for staff and volunteers. This is for HR and for grant reporting (some grants require proof of staff presence). Also used for safety (know who is in the building). Similar to attendance registers in other industries. </td>
+            </tr>
+            <tr>方式的NPO-035  方式Training Record (safeguarding, first aid)  方式Keep a log of staff training: child protection, first aid, data privacy, etc. This shows funders that your staff are qualified. It's a best practice. </td>
+            </tr>
+            <tr>方式的NPO-036  方式Volunteer Timesheet Log  方式For volunteers (especially those receiving stipends or claiming expenses). Record hours, tasks, and expenses. This is useful for grant reporting (in‑kind contributions) and for labour compliance. We include it as a best practice. </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h3>Phase 4: Operations & Programme Management (14 docs)</h3>
+    <table>
+        <thead><tr><th>Ref</th><th>Document</th><th>Purpose</th></tr></thead>
+        <tbody>
+            <tr>方式的NPO-037  方式Beneficiary Database (anonymised where required)  方式A secure database (Excel or CRM) of beneficiaries: ID numbers, contact details, programme enrolment, services received, outcomes. This is essential for reporting to funders and for measuring impact. Must be stored in compliance with POPIA (anonymise where possible, restrict access). This is a key operational document. Without it, you cannot demonstrate your reach. </td>
+            </tr>
+            <tr>方式的NPO-038  方式Attendance Register (per programme session)  方式A sign‑in sheet for each workshop, training, or event. This proves that participants attended and is required for funder reporting (e.g., number of people trained). Keep it in the programme file. This is a critical document for compliance. </td>
+            </tr>
+            <tr>方式的NPO-039  方式Programme Activity Log (daily / weekly)  方式A log of what activities were conducted each day/week: number of beneficiaries served, topics covered, challenges. This helps in reporting and in monitoring programme fidelity. Not required by law but recommended. </td>
+            </tr>
+            <tr>方式的NPO-040  方式Case File (per beneficiary – social work, counselling)  方式For social services, each beneficiary has a file containing intake forms, assessment, service plan, progress notes, and discharge summary. This is legally required for social work practice (according to SACSSP). Must be kept confidential and secure. The DSD may inspect these files. So they are essential. </td>
+            </tr>
+            <tr>方式的NPO-041  方式Referral Log (to other services)  方式When you refer a beneficiary to another organisation (e.g., housing, healthcare, legal aid), keep a log of the referral, date, and outcome. This helps track pathways and measure collaboration. Useful for reports. </td>
+            </tr>
+            <tr>方式的NPO-042  方式Incident / Safeguarding Report Form  方式For reporting any incident involving a beneficiary or staff (injury, accident, complaint, suspicion of abuse). This is similar to incident report in other industries but tailored to safeguarding. It is required for child protection and for insurance. Keep a master log. </td>
+            </tr>
+            <tr>方式的NPO-043  方式Whistleblower Report Form (anonymous)  方式An anonymous reporting mechanism for staff, volunteers, or beneficiaries to report misconduct (fraud, abuse, corruption). This is a governance best practice and may be required by some funders. The form can be a simple paper sheet with a sealed envelope or an online form. We include it as a best practice. </td>
+            </tr>
+            <tr>方式的NPO-044  方式Donor / Funder Communication Log  方式A record of all significant communications with funders: emails, calls, meetings, reporting deadlines, responses. This helps manage relationships and track commitments. Not mandatory but useful. </td>
+            </tr>
+            <tr>方式的NPO-045  方式Grant Reporting Schedule (per funder)  方式A calendar or spreadsheet listing each grant's reporting due dates (narrative reports, financial reports, audited statements). This is essential to avoid missing deadlines, which can harm future funding. We include it as a project management tool. </td>
+            </tr>
+            <tr>方式的NPO-046  方式Monthly / Quarterly Progress Report Template (for funders)  方式A standard template for reporting to funders: activities, outputs, outcomes, challenges, and next steps. Having a consistent format saves time. Many funders have their own templates; keep a copy for reference. We include it as a key document. </td>
+            </tr>
+            <tr>方式的NPO-047  方式Event / Workshop Planning Checklist  方式A checklist for organising events: venue, catering, speakers, registration, materials, evaluation. This helps ensure nothing is missed. Useful for operational consistency. </td>
+            </tr>
+            <tr>方式的NPO-048  方式Equipment / Resource Sign‑Out Log (laptops, phones, projectors)  方式A log for borrowing equipment (e.g., laptops, cameras, vehicles). Helps track assets and reduce loss. This is an internal control document. </td>
+            </tr>
+            <tr>方式的NPO-049  方式Vehicle Log Sheet (if own transport for beneficiaries)  方式If you have a vehicle used to transport beneficiaries, maintain a log of trips, fuel, maintenance, and driver. This is for safety and cost tracking. </td>
+            </tr>
+            <tr>方式的NPO-050  方式Stakeholder / Partner Contact Register  方式A directory of key contacts: government officials, funders, partner organisations, media, etc. Useful for communication and networking. Not mandatory but helpful. </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h3>Phase 5: Health & Safety (9 docs)</h3>
+    <tr>
+        <thead><tr><th>Ref</th><th>Document</th><th>Purpose</th></tr></thead>
+        <tbody>
+            <tr>方式的NPO-051  方式Occupational Health & Safety (OHS) Policy  方式Policy for the office and programme sites. Covers general safety, incident reporting, first aid, and evacuation. Required by OHS Act if you have employees. We have a template. </td>
+            </tr>
+            <tr>方式的NPO-052  方式Risk Assessment (programme activities, events, transport)  方式Identify hazards related to your activities (e.g., transport, manual handling, working with vulnerable populations). This is required for compliance and for insurance. We have a template. </td>
+            </td>
+            <tr>方式的NPO-053  方式Safeguarding / Child Protection Policy (mandatory for child‑serving NPOs)  方式A comprehensive policy on preventing and responding to abuse of children and vulnerable adults. This is required by the Children's Act and by many funders. Must include reporting procedures, designated officer, and training requirements. This is a critical document. If your NPO works with children, you must have this policy signed by all staff and board. </td>
+            </tr>
+            <tr>方式的NPO-054  方式Incident / Accident Report Form (staff, volunteer, beneficiary)  方式Same as incident report but for all categories of people. We already have similar forms. This is a reminder to have a unified form. </td>
+            </tr>
+            <tr>方式的NPO-055  方式First Aid Kit Register (office, vehicles, event kits)  方式Inventory of first aid kits and checks. Essential for compliance. </td>
+            <tr>
+            <tr>方式的NPO-056  方式Fire Extinguisher Inspection Log (office)  方式Monthly checks. Required for fire clearance. </td>
+            </tr>
+            <tr>方式的NPO-057  方式Emergency Evacuation Plan (office / programme venues)  方式Map and procedure. Required for fire clearance and for safety. </td>
+            </tr>
+            <tr>方式的NPO-058  方式Personal Protective Equipment (PPE) Policy (if applicable)  方式If your NPO does manual work (e.g., cleaning, construction projects) you need a PPE policy. For office‑based NPOs, not needed. </td>
+            </tr>
+            <tr>方式的NPO-059  方式Toolbox Talk Register (staff safety meetings)  方式Record of safety talks. Good practice. </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h3>Phase 6: Finance & Suppliers (10 docs)</h3>
+    <table>
+        <thead><tr><th>Ref</th><th>Document</th><th>Purpose</th></tr></thead>
+        <tbody>
+            <tr>方式的NPO-060  方式Invoice Template (for fee‑for‑service or cost recovery)  方式For billing clients (if you sell services or products). Use a standard invoice. </td>
+            </tr>
+            <tr>方式的NPO-061  方式Donation Receipt / Section 18A Certificate Log  方式A log of all donations received and the corresponding tax certificates issued. This is required for SARS compliance and for audit trails. Keep a spreadsheet with donor name, date, amount, and receipt number. </td>
+            </tr>
+            <tr>方式的NPO-062  方式Supplier Invoice Register (office supplies, programme materials)  方式Log of expenses. For accounting and cost allocation. </td>
+            </tr>
+            <tr>方式的NPO-063  方式Payroll Register  方式Staff wages, including statutory deductions. Required for SARS and DOL. </td>
+            </tr>
+            <tr>方式的NPO-064  方式Petty Cash Log  方式Small expenses log. </td>
+            </tr>
+            <tr>方式的NPO-065  方式Bank Reconciliation Template  方式Monthly reconciliation. Essential for financial control. </td>
+            </tr>
+            <tr>方式的NPO-066  方式Donor / Grant Income Register (per funder, per grant)  方式A detailed register of all grant income, restricted vs unrestricted funds. This helps with compliance and reporting. Many NPOs fail to track restrictions properly, leading to misallocation of funds. So this is a key document. </td>
+            </tr>
+            <tr>方式的NPO-067  方式Grant Expenditure Log (actual vs budget)  方式For each grant, track actual expenses against the budget. This is required for funder reporting and internal management. It also helps identify overspending. Essential document. </td>
+            </tr>
+            <tr>方式的NPO-068  方式Annual Financial Statements (compiled/reviewed/audited)  方式Legal requirement for PBOs and larger NPOs. The level of assurance depends on turnover (compiled for <R3m, reviewed for R3m‑R10m, audited for >R10m). The financial statements must be prepared by an accountant. Keep the signed statements. This is a critical compliance document. </td>
+            </tr>
+            <tr>方式的NPO-069  方式Budget Template (per programme, per grant)  方式Standard template for creating budgets for proposals. Include income and expenses. This is a planning document. </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h3>Phase 7: Assets & Equipment (7 docs)</h3>
+    <table>
+        <thead><tr><th>Ref</th><th>Document</th><th>Purpose</th></tr></thead>
+        <tbody>
+            <tr>方式的NPO-070  方式Asset Register (Master)  方式List of all assets (computers, furniture, vehicles, equipment). Required for insurance and for funder reporting (donated assets). Keep purchase date, cost, location. </td>
+            </tr>
+            <tr>方式的NPO-071  方式Equipment Maintenance Log  方式Service records. </td>
+            </td>
+            <tr>方式的NPO-072  方式Donated Goods / In‑Kind Register  方式When you receive in‑kind donations (e.g., food, clothes, furniture), log the items, donor, estimated value, and distribution. This is important for accountability and for audit trail. Some funders require it. </td>
+            </tr>
+            <tr>方式的NPO-073  方式Vehicle Log Sheet (if own vehicle)  方式Fuel, trips, maintenance. </td>
+            </tr>
+            <tr>方式的NPO-074  方式IT / Software Licence Register  方式Track software licences (Microsoft, Adobe, etc.) to ensure compliance. </td>
+            </tr>
+            <tr>方式的NPO-075  方式Inventory – Programme Supplies (food, blankets, stationery)  方式If you distribute supplies, maintain an inventory log of receipts and distributions. This is critical for preventing theft and for reporting. </td>
+            </tr>
+            <tr>方式的NPO-076  方式Asset Disposal Form  方式For retiring or donating old assets. Required for audit trail. </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h3>Phase 8: Forms & Templates (9 docs)</h3>
+    </table>
+        <thead><tr><th>Ref</th><th>Document</th><th>Purpose</th></tr></thead>
+        <tbody>
+            <tr>方式的NPO-077  方式Beneficiary Intake / Needs Assessment Form  方式For initial assessment of a beneficiary's needs, eligibility, and consent. Used in social services. </td>
+            </tr>
+            <tr>方式的NPO-078  方式Volunteer Application & Screening Form  方式Captures volunteer's details, skills, availability, and includes a declaration of criminal history (if working with children). This helps vet volunteers. </td>
+            </tr>
+            <tr>方式的NPO-079  方式Staff / Volunteer Exit / Offboarding Checklist  方式Checklist for when staff or volunteers leave: return of keys, equipment, access cards, exit interview. Helps ensure smooth offboarding. </td>
+            </tr>
+            <tr>方式的NPO-080  方式Overtime Authorization Form (if applicable)  方式For paid staff. </td>
+            </tr>
+            <tr>方式的NPO-081  方式Leave Application Form  方式For staff. </td>
+            </td>
+            <tr>方式的NPO-082  方式New Employee Induction Checklist (NPO policies)  方式Ensures new staff receive training on child protection, POPIA, finance, etc. </td>
+            </tr>
+            <tr>方式的NPO-083  方式Supplier Evaluation Form  方式Assess vendors. </td>
+            </td>
+            <tr>方式的NPO-084  方式Beneficiary Satisfaction Survey  方式Collect feedback on your programmes. Useful for impact reporting. </td>
+            </tr>
+            <tr>方式的NPO-085  方式Funder Reporting Checklist (per donor)  方式A checklist for each grant: due dates, required attachments, approval signatures. Helps prevent missing submissions. </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h2 class="section-title">📁 File Directory Structure</h2>
+    <div class="repo-structure">
+<pre>
+NPO Organisation (Pty) Ltd / NPC/
+│
+├── 01 Registration & Compliance/
+│   ├── CIPC_Registration_NPC.pdf
+│   ├── MOI_Constitution.pdf
+│   ├── SARS_Registration.pdf
+│   ├── COIDA_Certificate.pdf
+│   ├── Public_Liability_Insurance.pdf
+│   ├── NPO_Registration_DSD.pdf
+│   ├── PBO_Registration_SARS.pdf
+│   ├── Section_18A_Certificate.pdf (if applicable)
+│   ├── B-BBEE_Certificate.pdf (or affidavit)
+│   ├── CSD_Registration.pdf
+│   ├── DSD_Annual_Report_Filings/ (by year)
+│   ├── CIPC_Annual_Returns/ (by year)
+│   ├── POPIA_Compliance_Register.pdf
+│   └── Child_Protection_Clearances/ (staff/volunteers)
+│
+├── 02 Contracts & Client Docs/
+│   ├── SLAs_with_Funders/ (by funder)
+│   ├── Beneficiary_Enrollment_Forms/ (anonymised)
+│   ├── Volunteer_Agreements/ (by volunteer)
+│   ├── MOUs_with_Partners/ (by partner)
+│   ├── Sponsorship_Agreements/ (by sponsor)
+│   ├── Section_18A_Receipt_Log.xlsx
+│   ├── Grant_Agreements/ (by grant)
+│   ├── Quotation_Proposal_Template.docx
+│   ├── Confidentiality_Agreements_Staff_Board.docx
+│   └── Media_Consent_Forms/ (by beneficiary)
+│
+├── 03 Human Resources & Governance/
+│   ├── Employment_Contracts/
+│   │   ├── Programme_Manager.docx
+│   │   ├── Social_Worker_Field_Officer.docx
+│   │   └── Administrator_Finance_Officer.docx
+│   ├── Independent_Contractor_Agreements/
+│   ├── Code_of_Conduct_Staff_Board.pdf
+│   ├── Disciplinary_Code.pdf
+│   ├── Board_of_Directors_Register.xlsx
+│   ├── Conflict_of_Interest_Register.xlsx
+│   ├── Board_Meeting_Minutes/ (by date)
+│   ├── Staff_Volunteer_Attendance_Registers/ (by month)
+│   ├── Training_Records/ (safeguarding, first aid)
+│   └── Volunteer_Timesheets/ (by volunteer)
+│
+├── 04 Operations & Programme Management/
+│   ├── Beneficiary_Database.xlsx (anonymised)
+│   ├── Attendance_Registers_Programmes/ (by session)
+│   ├── Programme_Activity_Logs/ (daily/weekly)
+│   ├── Case_Files/ (beneficiary – confidential, restricted access)
+│   ├── Referral_Log.xlsx
+│   ├── Incident_Safeguarding_Reports/ (by date)
+│   ├── Whistleblower_Reports/ (anonymous)
+│   ├── Donor_Funder_Communication_Log.xlsx
+│   ├── Grant_Reporting_Schedule.xlsx
+│   ├── Progress_Reports_To_Funders/ (by grant)
+│   ├── Event_Workshop_Checklists/
+│   ├── Equipment_Resource_Sign_Out_Log.xlsx
+│   ├── Vehicle_Logs/ (if applicable)
+│   └── Stakeholder_Partner_Contact_Register.xlsx
+│
+├── 05 Health & Safety/
+│   ├── OHS_Policy_NPO.pdf
+│   ├── Risk_Assessments/ (programme activities, events)
+│   ├── Safeguarding_Child_Protection_Policy.pdf
+│   ├── Incident_Reports/ (by date)
+│   ├── First_Aid_Kit_Register.xlsx
+│   ├── Fire_Extinguisher_Log.xlsx
+│   ├── Emergency_Evacuation_Plan_Office.pdf
+│   ├── PPE_Issue_Register.xlsx (if applicable)
+│   └── Toolbox_Talk_Register.xlsx
+│
+├── 06 Finance & Suppliers/
+│   ├── Invoices_Issued/ (fee‑for‑service)
+│   ├── Donation_Receipts_Log/ (Section 18A)
+│   ├── Supplier_Invoice_Register.xlsx
+│   ├── Payroll_Records/ (by month)
+│   ├── Petty_Cash_Log.xlsx
+│   ├── Bank_Reconciliation.xlsx
+│   ├── Donor_Grant_Income_Register.xlsx (restricted funds)
+│   ├── Grant_Expenditure_Logs/ (by grant)
+│   ├── Annual_Financial_Statements/ (by year)
+│   └── Programme_Budgets/ (by grant, by year)
+│
+├── 07 Assets & Equipment/
+│   ├── Asset_Register.xlsx
+│   ├── Equipment_Maintenance_Logs/
+│   ├── Donated_Goods_Register.xlsx
+│   ├── Vehicle_Logs/ (if owned)
+│   ├── IT_Software_Licence_Register.xlsx
+│   ├── Programme_Supplies_Inventory.xlsx
+│   └── Asset_Disposal_Form.docx
+│
+└── 08 Forms & Templates/
+    ├── Beneficiary_Intake_Needs_Assessment.docx
+    ├── Volunteer_Application_Screening_Form.docx
+    ├── Staff_Offboarding_Checklist.docx
+    ├── Overtime_Form.docx (if applicable)
+    ├── Leave_Application.docx
+    ├── New_Staff_Induction_Checklist_NPO.docx
+    ├── Supplier_Evaluation_Form.docx
+    ├── Beneficiary_Satisfaction_Survey.docx
+    └── Funder_Reporting_Checklist.docx
+</pre>
+    </div>
+
+    <div class="button-group">
+        <a href="index.html#industries" class="btn"><i class="fas fa-arrow-left"></i> Back to Industries</a>
+        <a href="pricing.html" class="btn btn-secondary"><i class="fas fa-file-invoice-dollar"></i> Get Quote</a>
+    </div>
+
+</div>
+
+<div class="footer">
+    <div class="container">
+        <p>© 2025 Legacy Launchpad (Pty) Ltd – Building what lasts.</p>
+        <p style="margin-top: 10px; font-size: 0.75rem;">Legacy Launchpad provides administrative and documentation support only. We are not lawyers, accountants, or tax practitioners.</p>
+    </div>
+</div>
+
+</body>
+</html>
