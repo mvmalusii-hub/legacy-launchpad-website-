@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Automotive Repair & Sales Document Roadmap | Legacy Launchpad</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f8fafc;
+            color: #1e293b;
+            line-height: 1.5;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        .header {
+            background: #0f172a;
+            color: white;
+            padding: 20px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .header-flex {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        .logo-area {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        .logo-placeholder {
+            width: 50px;
+            height: 50px;
+            background: #fbbf24;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            color: #0f172a;
+        }
+        .logo-text h1 {
+            font-size: 1.5rem;
+            letter-spacing: -0.5px;
+        }
+        .nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 25px;
+            transition: 0.3s;
+        }
+        .nav a:hover {
+            color: #fbbf24;
+        }
+        .hero {
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            color: white;
+            padding: 60px 0;
+            text-align: center;
+        }
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+        .section-title {
+            font-size: 1.8rem;
+            margin: 40px 0 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #fbbf24;
+            display: inline-block;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+            margin: 20px 0;
+        }
+        th, td {
+            padding: 12px 15px;
+            text-align: left;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        th {
+            background: #0f172a;
+            color: white;
+            font-weight: 600;
+        }
+        tr:hover {
+            background: #fefce8;
+        }
+        .repo-structure {
+            background: #0f172a;
+            color: #cbd5e1;
+            padding: 25px;
+            border-radius: 16px;
+            font-family: monospace;
+            font-size: 0.85rem;
+            overflow-x: auto;
+            margin: 20px 0;
+        }
+        .button-group {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin: 30px 0;
+            flex-wrap: wrap;
+        }
+        .btn {
+            display: inline-block;
+            background: #0f172a;
+            color: white;
+            padding: 12px 30px;
+            border-radius: 40px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+        .btn-secondary {
+            background: #fbbf24;
+            color: #0f172a;
+        }
+        .btn:hover {
+            transform: translateY(-2px);
+            background: #f59e0b;
+            color: #0f172a;
+        }
+        .footer {
+            background: #0f172a;
+            color: #94a3b8;
+            text-align: center;
+            padding: 30px 0;
+            margin-top: 40px;
+        }
+        @media (max-width: 768px) {
+            th, td { padding: 8px 10px; font-size: 0.8rem; }
+            .button-group { flex-direction: column; align-items: center; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="header">
+    <div class="container header-flex">
+        <div class="logo-area">
+            <div class="logo-placeholder"><i class="fas fa-cube"></i></div>
+            <div class="logo-text"><h1>Legacy Launchpad</h1><p>Building what lasts.</p></div>
+        </div>
+        <div class="nav">
+            <a href="index.html">Home</a>
+            <a href="index.html#industries">Industries</a>
+            <a href="pricing.html">Pricing</a>
+            <a href="index.html#contact">Contact</a>
+        </div>
+    </div>
+</div>
+
+<div class="hero">
+    <div class="container">
+        <h1>🔧 Automotive Repair & Sales</h1>
+        <p>Complete document roadmap + file directory – 82 core documents</p>
+    </div>
+</div>
+
+<div class="container">
+
+    <h2 class="section-title">📋 Document Roadmap</h2>
+
+    <h3>Phase 1: Registration & Compliance (11 docs)</h3>
+    <table>
+        <thead><tr><th>Ref</th><th>Document</th><th>Purpose</th></tr></thead>
+        <tbody>
+            <tr><td>AUTO-001</td><td>CIPC Registration Certificate</td><td>Proof of company registration</td></tr>
+            <tr><td>AUTO-002</td><td>Memorandum of Incorporation (MOI)</td><td>Company constitution</td></tr>
+            <tr><td>AUTO-003</td><td>SARS Registration (IT, PAYE, VAT)</td><td>Tax compliance (VAT mandatory if turnover >R1m)</td></tr>
+            <tr><td>AUTO-004</td><td>COIDA Registration</td><td>Employee injury cover</td></tr>
+            <tr><td>AUTO-005</td><td>Public Liability Insurance</td><td>Cover for customer vehicles and injuries</td></tr>
+            <tr><td>AUTO-006</td><td>Motor Dealer Licence (if selling vehicles)</td><td>Required by Consumer Protection Act</td></tr>
+            <tr><td>AUTO-007</td><td>Workshop / Repair Centre Licence</td><td>For operating a mechanical repair shop</td></tr>
+            <tr><td>AUTO-008</td><td>Zoning Certificate</td><td>Industrial / Business zoning</td></tr>
+            <tr><td>AUTO-009</td><td>Fire Clearance Certificate</td><td>For workshop premises</td></tr>
+            <tr><td>AUTO-010</td><td>Waste Carrier Licence</td><td>For used oil, tyres, batteries</td></tr>
+            <tr><td>AUTO-011</td><td>B‑BBEE Certificate</td><td>For corporate fleet tenders</td></tr>
+        </tbody>
+    </table>
+
+    <h3>Phase 2: Contracts & Client Docs (12 docs)</h3>
+    <table>
+        <thead><tr><th>Ref</th><th>Document</th><th>Purpose</th></tr></thead>
+        <tbody>
+            <tr><td>AUTO-012</td><td>Repair Order / Job Card (per vehicle)</td><td>Scope of work, estimate, authorisation</td></tr>
+            <tr><td>AUTO-013</td><td>Quotation / Estimate Template</td><td>Pre‑repair cost breakdown</td></tr>
+            <tr><td>AUTO-014</td><td>Final Invoice (repairs completed)</td><td>Billing</td></tr>
+            <tr><td>AUTO-015</td><td>Vehicle Sale Agreement (if selling cars)</td><td>Buyer‑seller contract</td></tr>
+            <tr><td>AUTO-016</td><td>Warranty Policy (repairs)</td><td>Labour and parts guarantee period</td></tr>
+            <tr><td>AUTO-017</td><td>Non‑Disclosure Agreement (NDA)</td><td>For fleet client pricing</td></tr>
+            <tr><td>AUTO-018</td><td>Parts Supply Agreement</td><td>Trade account terms with spares shops</td></tr>
+            <tr><td>AUTO-019</td><td>Trade‑in / Part Exchange Agreement</td><td>Valuation and acceptance</td></tr>
+            <tr><td>AUTO-020</td><td>Vehicle Collection / Delivery Log</td><td>Proof of handover</td></tr>
+            <tr><td>AUTO-021</td><td>Damage / Pre‑repair Inspection Form</td><td>Condition before work (with photos)</td></tr>
+            <tr><td>AUTO-022</td><td>Courtesy Car Agreement (if loaning)</td><td>Liability and insurance terms</td></tr>
+            <tr><td>AUTO-023</td><td>Indemnity Form (customer test drives)</td><td>For used car sales</td></tr>
+        </tbody>
+    </table>
+
+    <h3>Phase 3: Human Resources (10 docs)</h3>
+    <table>
+        <thead><tr><th>Ref</th><th>Document</th><th>Purpose</th></tr></thead>
+        <tbody>
+            <tr><td>AUTO-024</td><td>Employment Contract – Mechanic (Qualified)</td><td>Technician</td></tr>
+            <tr><td>AUTO-025</td><td>Employment Contract – Apprentice Mechanic</td><td>Trainee</td></tr>
+            <tr><td>AUTO-026</td><td>Employment Contract – Panel Beater / Spray Painter</td><td>Specialist (if body shop)</td></tr>
+            <tr><td>AUTO-027</td><td>Employment Contract – Service Advisor</td><td>Front desk / customer interface</td></tr>
+            <tr><td>AUTO-028</td><td>Employment Contract – Workshop Manager</td><td>Senior staff</td></tr>
+            <tr><td>AUTO-029</td><td>Independent Contractor Agreement</td><td>Towing, detailing, subcontractors</td></tr>
+            <tr><td>AUTO-030</td><td>Code of Conduct (Employees)</td><td>Professionalism, safety, honesty</td></tr>
+            <tr><td>AUTO-031</td><td>Disciplinary Code & Procedure</td><td>HR compliance</td></tr>
+            <tr><td>AUTO-032</td><td>Shift / Appointment Roster</td><td>Daily schedule</td></tr>
+            <tr><td>AUTO-033</td><td>Attendance Register (Daily)</td><td>Sign‑in / sign‑out</td></tr>
+        </tbody>
+    </table>
+
+    <h3>Phase 4: Operations & Workshop Management (14 docs)</h3>
+    <table>
+        <thead><tr><th>Ref</th><th>Document</th><th>Purpose</th></tr></thead>
+        <tbody>
+            <tr><td>AUTO-034</td><td>Daily Job Card Log (all vehicles in workshop)</td><td>Workflow tracking</td></tr>
+            <tr><td>AUTO-035</td><td>Repair Time Tracking (hours per job)</td><td>Productivity</td></tr>
+            <tr><td>AUTO-036</td><td>Parts Used Register (per job card)</td><td>Costing and inventory</td></tr>
+            <tr><td>AUTO-037</td><td>Supplier Delivery Note Log (spares received)</td><td>Stock control</td></tr>
+            <tr><td>AUTO-038</td><td>Parts Inventory / Stock Take Sheet</td><td>Monthly count</td></tr>
+            <tr><td>AUTO-039</td><td>Customer Vehicle Key Register</td><td>Secure key handling</td></tr>
+            <tr><td>AUTO-040</td><td>Waiting Area Customer Sign‑In Sheet</td><td>For service queue</td></tr>
+            <tr><td>AUTO-041</td><td>Vehicle Lot / Yard Register (cars for sale or awaiting repair)</td><td>Location tracking</td></tr>
+            <tr><td>AUTO-042</td><td>Tool & Equipment Sign‑Out Register</td><td>Theft prevention</td></tr>
+            <tr><td>AUTO-043</td><td>Diagnostic Scan Log (per vehicle)</td><td>Proof of testing</td></tr>
+            <tr><td>AUTO-044</td><td>Test Drive Register (per vehicle)</td><td>Mileage recording</td></tr>
+            <tr><td>AUTO-045</td><td>Waste Disposal Log (used oil, batteries, tyres)</td><td>Environmental compliance</td></tr>
+            <tr><td>AUTO-046</td><td>Customer Complaint / Dispute Log</td><td>CPA compliance</td></tr>
+            <tr><td>AUTO-047</td><td>Vehicle Completion Checklist (pre‑delivery)</td><td>Quality control</td></tr>
+        </tbody>
+    </table>
+
+    <h3>Phase 5: Health & Safety (10 docs)</h3>
+    <table>
+        <thead><tr><th>Ref</th><th>Document</th><th>Purpose</th></tr></thead>
+        <tbody>
+            <tr><td>AUTO-048</td><td>Occupational Health & Safety (OHS) Policy</td><td>Company H&S</td></tr>
+            <tr><td>AUTO-049</td><td>Workshop‑Specific Risk Assessment</td><td>Lifts, chemicals, moving vehicles</td></tr>
+            <tr><td>AUTO-050</td><td>Safe Work Method Statement (SWMS) per task</td><td>Brake work, welding, lifting</td></tr>
+            <tr><td>AUTO-051</td><td>Incident / Accident Report Form</td><td>Injury, vehicle damage</td></tr>
+            <tr><td>AUTO-052</td><td>First Aid Kit Register (workshop and office)</td><td>Inventory</td></tr>
+            <tr><td>AUTO-053</td><td>Fire Extinguisher Inspection Log (including lifts)</td><td>Monthly check</td></tr>
+            <tr><td>AUTO-054</td><td>Emergency Evacuation Plan (workshop)</td><td>Map and procedure</td></tr>
+            <tr><td>AUTO-055</td><td>Personal Protective Equipment (PPE) Register</td><td>Gloves, glasses, steel‑toe boots</td></tr>
+            <tr><td>AUTO-056</td><td>Chemical / Solvent Register (thinners, oil, brake cleaner)</td><td>MSDS on file</td></tr>
+            <tr><td>AUTO-057</td><td>Toolbox Talk Register (weekly safety)</td><td>Staff engagement</td></tr>
+        </tbody>
+    </table>
+
+    <h3>Phase 6: Finance & Suppliers (8 docs)</h3>
+    <table>
+        <thead><tr><th>Ref</th><th>Document</th><th>Purpose</th></tr></thead>
+        <tbody>
+            <tr><td>AUTO-058</td><td>Invoice Template (repairs / sales)</td><td>Billing</td></tr>
+            <tr><td>AUTO-059</td><td>Supplier Invoice Register (spares, consumables)</td><td>Expense tracking</td></tr>
+            <tr><td>AUTO-060</td><td>Payroll Register</td><td>Staff wages</td></tr>
+            <tr><td>AUTO-061</td><td>Petty Cash Log</td><td>Small purchases (workshop supplies)</td></tr>
+            <tr><td>AUTO-062</td><td>Customer Payment Log (cash, card, EFT)</td><td>Reconciliation</td></tr>
+            <tr><td>AUTO-063</td><td>Fleet Customer Credit Application</td><td>For corporate accounts</td></tr>
+            <tr><td>AUTO-064</td><td>Supplier Payment Schedule</td><td>Creditors aging</td></tr>
+            <tr><td>AUTO-065</td><td>Bank Reconciliation Template</td><td>Monthly finance</td></tr>
+        </tbody>
+    </table>
+
+    <h3>Phase 7: Equipment & Assets (9 docs)</h3>
+    </table>
+        <thead><tr><th>Ref</th><th>Document</th><th>Purpose</th></tr></thead>
+        <tbody>
+            <tr><td>AUTO-066</td><td>Asset Register (Master)</td><td>Lifts, diagnostic machines, alignment equipment, tools</td></tr>
+            <tr><td>AUTO-067</td><td>Equipment Maintenance Log (lifts, compressors, balancers)</td><td>Service records</td></tr>
+            <tr><td>AUTO-068</td><td>Calibration Log (diagnostic scanners, torque wrenches)</td><td>Accuracy</td></tr>
+            <tr><td>AUTO-069</td><td>Tool Inventory (hand tools per mechanic)</td><td>Theft tracking</td></tr>
+            <tr><td>AUTO-070</td><td>Vehicle Lift Inspection Log (certification)</td><td>Safety compliance (annual)</td></tr>
+            <tr><td>AUTO-071</td><td>Compressor / Air System Log</td><td>Drain, oil, belt checks</td></tr>
+            <tr><td>AUTO-072</td><td>Recovery / Tow Vehicle Log (if towing service)</td><td>Fuel, trips, maintenance</td></tr>
+            <tr><td>AUTO-073</td><td>Customer Courtesy Car Log (maintenance, mileage)</td><td>Asset tracking</td></tr>
+            <tr><td>AUTO-074</td><td>Asset Disposal Form</td><td>Selling old equipment or vehicles</td></tr>
+        </tbody>
+    </table>
+
+    <h3>Phase 8: Forms & Templates (8 docs)</h3>
+    <tr>
+        <thead><tr><th>Ref</th><th>Document</th><th>Purpose</th></tr></thead>
+        <tbody>
+            <tr><td>AUTO-075</td><td>Vehicle Condition Report (pre‑repair / pre‑sale)</td><td>With photos</td></tr>
+            <tr><td>AUTO-076</td><td>Road Test Report (post‑repair)</td><td>Verification</td></tr>
+            <tr><td>AUTO-077</td><td>Overtime Authorization Form</td><td>Staff approval</td></tr>
+            <tr><td>AUTO-078</td><td>Leave Application Form</td><td>Staff requests</td></tr>
+            <tr><td>AUTO-079</td><td>New Mechanic Induction Checklist (workshop safety)</td><td>Onboarding</td></tr>
+            <tr><td>AUTO-080</td><td>Supplier Evaluation Form</td><td>Spare parts vendor performance</td></tr>
+            <tr><td>AUTO-081</td><td>Customer Satisfaction Survey</td><td>After repair follow‑up</td></tr>
+            <tr><td>AUTO-082</td><td>Termination Checklist</td><td>Offboarding</td></tr>
+        </tbody>
+    </table>
+
+    <h2 class="section-title">📁 File Directory Structure</h2>
+    <div class="repo-structure">
+<pre>
+Automotive Repair & Sales (Pty) Ltd/
+│
+├── 01 Registration & Compliance/
+│   ├── CIPC_Registration.pdf
+│   ├── MOI.pdf
+│   ├── SARS_Registration.pdf
+│   ├── COIDA_Certificate.pdf
+│   ├── Public_Liability_Insurance.pdf
+│   ├── Motor_Dealer_Licence.pdf (if selling)
+│   ├── Workshop_Licence.pdf
+│   ├── Zoning_Certificate.pdf
+│   ├── Fire_Clearance.pdf
+│   ├── Waste_Carrier_Licence.pdf
+│   └── B-BBEE_Certificate.pdf
+│
+├── 02 Contracts & Client Docs/
+│   ├── Repair_Order_Job_Cards/ (by vehicle)
+│   ├── Quotation_Template.docx
+│   ├── Invoice_Template.docx
+│   ├── Vehicle_Sale_Agreement.docx
+│   ├── Warranty_Policy_Repairs.pdf
+│   ├── Parts_Supply_Agreements/ (with spares shops)
+│   ├── Trade_In_Agreement.docx
+│   ├── Vehicle_Collection_Delivery_Log.xlsx
+│   ├── Damage_Inspection_Forms/ (by vehicle)
+│   ├── Courtesy_Car_Agreement.docx
+│   └── Test_Drive_Indemnity.docx
+│
+├── 03 Human Resources/
+│   ├── Employment_Contracts/
+│   │   ├── Mechanic_Qualified.docx
+│   │   ├── Apprentice_Mechanic.docx
+│   │   ├── Panel_Beater.docx (if applicable)
+│   │   ├── Service_Advisor.docx
+│   │   └── Workshop_Manager.docx
+│   ├── Independent_Contractor_Agreement.docx
+│   ├── Code_of_Conduct.pdf
+│   ├── Disciplinary_Code.pdf
+│   ├── Appointment_Rosters/ (by day)
+│   └── Attendance_Registers/ (by month)
+│
+├── 04 Operations & Workshop Management/
+│   ├── Job_Card_Log.xlsx (daily tracking)
+│   ├── Repair_Time_Tracking.xlsx
+│   ├── Parts_Used_Register.xlsx (per job)
+│   ├── Supplier_Delivery_Notes/ (by date)
+│   ├── Parts_Inventory_Stock_Take.xlsx
+│   ├── Vehicle_Key_Register.xlsx
+│   ├── Customer_Waiting_Area_Sign_In.xlsx
+│   ├── Vehicle_Lot_Register.xlsx
+│   ├── Tool_Equipment_Sign_Out.xlsx
+│   ├── Diagnostic_Scan_Logs/ (by vehicle)
+│   ├── Test_Drive_Register.xlsx
+│   ├── Waste_Disposal_Log.xlsx
+│   ├── Customer_Complaint_Log.xlsx
+│   └── Vehicle_Completion_Checklists/ (pre‑delivery)
+│
+├── 05 Health & Safety/
+│   ├── OHS_Policy.pdf
+│   ├── Risk_Assessment_Workshop.pdf
+│   ├── Safe_Work_Method_Statements/
+│   ├── Incident_Reports/ (by date)
+│   ├── First_Aid_Kit_Register.xlsx
+│   ├── Fire_Extinguisher_Log.xlsx
+│   ├── Emergency_Evacuation_Plan.pdf
+│   ├── PPE_Issue_Register.xlsx
+│   ├── Chemical_Solvent_Register.xlsx
+│   └── Toolbox_Talk_Register.xlsx
+│
+├── 06 Finance & Suppliers/
+│   ├── Invoices_Issued/ (repairs / sales)
+│   ├── Supplier_Invoice_Register.xlsx
+│   ├── Payroll_Records/ (by month)
+│   ├── Petty_Cash_Log.xlsx
+│   ├── Customer_Payment_Log.xlsx
+│   ├── Fleet_Customer_Credit_Applications/
+│   ├── Supplier_Payment_Schedule.xlsx
+│   └── Bank_Reconciliation.xlsx
+│
+├── 07 Equipment & Assets/
+│   ├── Asset_Register.xlsx
+│   ├── Equipment_Maintenance_Logs/ (lifts, balancers)
+│   ├── Calibration_Log.xlsx (diagnostic tools, torque wrenches)
+│   ├── Tool_Inventory_Hand_Tools.xlsx (per mechanic bay)
+│   ├── Vehicle_Lift_Inspection_Log.xlsx
+│   ├── Compressor_Log.xlsx
+│   ├── Tow_Vehicle_Log.xlsx (if towing)
+│   ├── Courtesy_Car_Log.xlsx
+│   └── Asset_Disposal_Form.docx
+│
+└── 08 Forms & Templates/
+    ├── Vehicle_Condition_Report.docx
+    ├── Road_Test_Report.docx
+    ├── Overtime_Form.docx
+    ├── Leave_Application.docx
+    ├── Mechanic_Induction_Checklist.docx
+    ├── Supplier_Evaluation_Form.docx
+    ├── Customer_Satisfaction_Survey.docx
+    └── Termination_Checklist.docx
+</pre>
+    </div>
+
+    <div class="button-group">
+        <a href="index.html#industries" class="btn"><i class="fas fa-arrow-left"></i> Back to Industries</a>
+        <a href="pricing.html" class="btn btn-secondary"><i class="fas fa-file-invoice-dollar"></i> Get Quote</a>
+    </div>
+
+</div>
+
+<div class="footer">
+    <div class="container">
+        <p>© 2025 Legacy Launchpad (Pty) Ltd – Building what lasts.</p>
+        <p style="margin-top: 10px; font-size: 0.75rem;">Legacy Launchpad provides administrative and documentation support only. We are not lawyers, accountants, or tax practitioners.</p>
+    </div>
+</div>
+
+</body>
+</html>
