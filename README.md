@@ -1,4 +1,3 @@
-# legacy-launchpad-website-
 # Legacy Launchpad – Website Repository
 
 **Live URL:** (to be added after GitHub Pages is enabled)  
