@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Farming & Agriculture Document Roadmap | Legacy Launchpad</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f8fafc;
+            color: #1e293b;
+            line-height: 1.5;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        .header {
+            background: #0f172a;
+            color: white;
+            padding: 20px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .header-flex {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        .logo-area {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        .logo-placeholder {
+            width: 50px;
+            height: 50px;
+            background: #fbbf24;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            color: #0f172a;
+        }
+        .logo-text h1 {
+            font-size: 1.5rem;
+            letter-spacing: -0.5px;
+        }
+        .nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 25px;
+            transition: 0.3s;
+        }
+        .nav a:hover {
+            color: #fbbf24;
+        }
+        .hero {
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            color: white;
+            padding: 60px 0;
+            text-align: center;
+        }
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+        .section-title {
+            font-size: 1.8rem;
+            margin: 40px 0 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #fbbf24;
+            display: inline-block;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+            margin: 20px 0;
+        }
+        th, td {
+            padding: 12px 15px;
+            text-align: left;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        th {
+            background: #0f172a;
+            color: white;
+            font-weight: 600;
+        }
+        tr:hover {
+            background: #fefce8;
+        }
+        .repo-structure {
+            background: #0f172a;
+            color: #cbd5e1;
+            padding: 25px;
+            border-radius: 16px;
+            font-family: monospace;
+            font-size: 0.85rem;
+            overflow-x: auto;
+            margin: 20px 0;
+        }
+        .button-group {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin: 30px 0;
+            flex-wrap: wrap;
+        }
+        .btn {
+            display: inline-block;
+            background: #0f172a;
+            color: white;
+            padding: 12px 30px;
+            border-radius: 40px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+        .btn-secondary {
+            background: #fbbf24;
+            color: #0f172a;
+        }
+        .btn:hover {
+            transform: translateY(-2px);
+            background: #f59e0b;
+            color: #0f172a;
+        }
+        .footer {
+            background: #0f172a;
+            color: #94a3b8;
+            text-align: center;
+            padding: 30px 0;
+            margin-top: 40px;
+        }
+        @media (max-width: 768px) {
+            th, td { padding: 8px 10px; font-size: 0.8rem; }
+            .button-group { flex-direction: column; align-items: center; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="header">
+    <div class="container header-flex">
+        <div class="logo-area">
+            <div class="logo-placeholder"><i class="fas fa-cube"></i></div>
+            <div class="logo-text"><h1>Legacy Launchpad</h1><p>Building what lasts.</p></div>
+        </div>
+        <div class="nav">
+            <a href="index.html">Home</a>
+            <a href="index.html#industries">Industries</a>
+            <a href="pricing.html">Pricing</a>
+            <a href="index.html#contact">Contact</a>
+        </div>
+    </div>
+</div>
+
+<div class="hero">
+    <div class="container">
+        <h1>🚜 Farming & Agriculture</h1>
+        <p>Complete document roadmap + file directory – 80 core documents</p>
+    </div>
+</div>
+
+<div class="container">
+
+    <h2 class="section-title">📋 Document Roadmap</h2>
+
+    <h3>Phase 1: Registration & Compliance (12 docs)</h3>
+    <table>
+        <thead><tr><th>Ref</th><th>Document</th><th>Purpose</th></tr></thead>
+        <tbody>
+            <tr><td>FRM-001</td><td>CIPC Registration Certificate</td><td>Proof of company registration</td></tr>
+            <tr><td>FRM-002</td><td>Memorandum of Incorporation (MOI)</td><td>Company constitution</td></tr>
+            <tr><td>FRM-003</td><td>SARS Registration (IT, PAYE, VAT)</td><td>Tax compliance (VAT if turnover >R1m)</td></tr>
+            <tr><td>FRM-004</td><td>COIDA Registration</td><td>Employee injury cover (farm workers)</td></tr>
+            <tr><td>FRM-005</td><td>Public Liability Insurance</td><td>Third parties, visitors, delivery drivers</td></tr>
+            <tr><td>FRM-006</td><td>Agricultural Business Licence (if processing)</td><td>For value‑added products (juice, dried goods)</td></tr>
+            <tr><td>FRM-007</td><td>Zoning Certificate (Agricultural)</td><td>Municipality confirmation</td></tr>
+            <tr><td>FRM-008</td><td>Water Use Licence</td><td>From Department of Water – for irrigation</td></tr>
+            <tr><td>FRM-009</td><td>Fencing / Game Permit (if game farming)</td><td>Provincial conservation</td></tr>
+            <tr><td>FRM-010</td><td>Pest Control Operator Licence (if applying chemicals)</td><td>For pesticide use</td></tr>
+            <tr><td>FRM-011</td><td>B‑BBEE Certificate</td><td>For corporate and export tenders</td></tr>
+            <tr><td>FRM-012</td><td>Export Registration (if exporting produce)</td><td>DAFF / PPECB certification</td></tr>
+        </tbody>
+    </table>
+
+    <h3>Phase 2: Contracts & Client Docs (10 docs)</h3>
+    <table>
+        <thead><tr><th>Ref</th><th>Document</th><th>Purpose</th></tr></thead>
+        <tbody>
+            <tr><td>FRM-013</td><td>Produce Supply Agreement (to buyers)</td><td>With wholesalers, retailers, processors</td></tr>
+            <tr><td>FRM-014</td><td>Land Lease / Sharecropping Agreement</td><td>If renting land</td></tr>
+            <tr><td>FRM-015</td><td>Equipment Hire Agreement (tractors, harvesters)</td><td>For seasonal hire</td></tr>
+            <tr><td>FRM-016</td><td>Transportation / Logistics Agreement (produce delivery)</td><td>With couriers</td></tr>
+            <tr><td>FRM-017</td><td>Quotation / Price List Template (per kg, per unit)</td><td>For direct sales</td></tr>
+            <tr><td>FRM-018</td><td>Non‑Disclosure Agreement (NDA)</td><td>For breeding methods, supplier pricing</td></tr>
+            <tr><td>FRM-019</td><td>Co‑operative Membership Agreement (if applicable)</td><td>For collective marketing</td></tr>
+            <tr><td>FRM-020</td><td>Input Supply Agreement (seed, fertiliser, chemicals)</td><td>With agricultural suppliers</td></tr>
+            <tr><td>FRM-021</td><td>Storage / Silo Rental Agreement</td><td>For grain storage</td></tr>
+            <tr><td>FRM-022</td><td>Indemnity Form (for farm visitors, pick‑your‑own)</td><td>Liability waiver</td></tr>
+        </tbody>
+    </table>
+
+    <h3>Phase 3: Human Resources (10 docs)</h3>
+    <table>
+        <thead><tr><th>Ref</th><th>Document</th><th>Purpose</th></tr></thead>
+        <tbody>
+            <tr><td>FRM-023</td><td>Employment Contract – General Farm Worker (permanent)</td><td>Seasonal or permanent</td></tr>
+            <tr><td>FRM-024</td><td>Employment Contract – Tractor Driver / Machine Operator</td><td>Skilled</td></tr>
+            <tr><td>FRM-025</td><td>Employment Contract – Picker / Harvester (seasonal)</td><td>Casual agreement</td></tr>
+            <tr><td>FRM-026</td><td>Employment Contract – Farm Manager</td><td>Senior staff</td></tr>
+            <tr><td>FRM-027</td><td>Independent Contractor Agreement (contract harvester, aerial spraying)</td><td>Subcontractors</td></tr>
+            <tr><td>FRM-028</td><td>Code of Conduct (Farm Workers)</td><td>Safety, absenteeism, respect</td></tr>
+            <tr><td>FRM-029</td><td>Disciplinary Code & Procedure (Sectoral Determination)</td><td>Agricultural labour law</td></tr>
+            <tr><td>FRM-030</td><td>Shift / Seasonal Roster</td><td>Daily schedule</td></tr>
+            </tr><td>FRM-031</td><td>Attendance Register (Daily)</td><td>Sign‑in / sign‑out</td></tr>
+            <tr><td>FRM-032</td><td>Training Record – Chemical Handling / Spraying</td><td>Safety compliance</td></tr>
+        </tbody>
+    </table>
+
+    <h3>Phase 4: Operations & Farm Management (14 docs)</h3>
+    <table>
+        <thead><tr><th>Ref</th><th>Document</th><th>Purpose</th></tr></thead>
+        <tbody>
+            <tr><td>FRM-033</td><td>Daily Farm Operations Log (weather, activities, incidents)</td><td>Management record</td></tr>
+            <tr><td>FRM-034</td><td>Crop Planting / Seeding Record (per field)</td><td>Variety, date, inputs</td></tr>
+            <tr><td>FRM-035</td><td>Irrigation Log (per field, per day)</td><td>Water usage tracking</td></tr>
+            <tr><td>FRM-036</td><td>Fertiliser / Chemical Application Log (per field)</td><td>Type, rate, date</td></tr>
+            <tr><td>FRM-037</td><td>Pest / Disease Monitoring Log</td><td>Scouting records</td></tr>
+            <tr><td>FRM-038</td><td>Harvest Record (per field, per day)</td><td>Yield, quality</td></tr>
+            <tr><td>FRM-039</td><td>Livestock Inventory Register (if animals)</td><td>Breeding, deaths, sales</td></tr>
+            <tr><td>FRM-040</td><td>Veterinary Treatment Log (animals)</td><td>Medicines, vaccinations</td></tr>
+            <tr><td>FRM-041</td><td>Feed Consumption Log (per animal group)</td><td>Cost control</td></tr>
+            <tr><td>FRM-042</td><td>Equipment Maintenance Log (tractors, implements)</td><td>Service records</td></tr>
+            <tr><td>FRM-043</td><td>Fuel Usage Log (per vehicle / machine)</td><td>Expense tracking</td></tr>
+            <tr><td>FRM-044</td><td>Stock Take – Seed, Fertiliser, Chemical Inventory</td><td>Monthly count</td></tr>
+            <tr><td>FRM-045</td><td>Produce Grading / Quality Control Log</td><td>For buyers</td></tr>
+            <tr><td>FRM-046</td><td>Cold Storage Temperature Log (if applicable)</td><td>Food safety</td></tr>
+        </tbody>
+    </table>
+
+    <h3>Phase 5: Health & Safety (10 docs)</h3>
+    <table>
+        <thead><tr><th>Ref</th><th>Document</th><th>Purpose</th></tr></thead>
+        <tbody>
+            <tr><td>FRM-047</td><td>Occupational Health & Safety (OHS) Policy</td><td>Farm‑specific H&S</td></tr>
+            <tr><td>FRM-048</td><td>Farm‑Specific Risk Assessment</td><td>Tractors, chemicals, animals, heat stress</td></tr>
+            <tr><td>FRM-049</td><td>Safe Work Method Statement (SWMS) per task</td><td>Spraying, operating PTOs, handling livestock</td></tr>
+            <tr><td>FRM-050</td><td>Incident / Accident Report Form</td><td>Worker injury, animal incident</td></tr>
+            <tr><td>FRM-051</td><td>First Aid Kit Register (per tractor, per shed)</td><td>Inventory</td></tr>
+            <tr><td>FRM-052</td><td>Fire Extinguisher Inspection Log (machinery, buildings)</td><td>Monthly check</td></tr>
+            <tr><td>FRM-053</td><td>Emergency Evacuation Plan (farm layout)</td><td>Map and procedure</td></tr>
+            <tr><td>FRM-054</td><td>Personal Protective Equipment (PPE) Register</td><td>Gloves, goggles, respirators, boots</td></tr>
+            <tr><td>FRM-055</td><td>Chemical / Pesticide Safety Data Sheet Register</td><td>MSDS on file</td></tr>
+            <tr><td>FRM-056</td><td>Toolbox Talk Register (weekly safety talks)</td><td>Staff engagement</td></tr>
+        </tbody>
+    </table>
+
+    <h3>Phase 6: Finance & Suppliers (8 docs)</h3>
+    <table>
+        <thead><tr><th>Ref</th><th>Document</th><th>Purpose</th></tr></thead>
+        <tbody>
+            <tr><td>FRM-057</td><td>Invoice Template (to buyers)</td><td>Per delivery</td></tr>
+            <tr><td>FRM-058</td><td>Supplier Invoice Register (seed, chemicals, fuel)</td><td>Expense tracking</td></tr>
+            <tr><td>FRM-059</td><td>Payroll Register (farm workers)</td><td>Wages (comply with Sectoral Determination)</td></tr>
+            <tr><td>FRM-060</td><td>Petty Cash Log</td><td>Small farm purchases</td></tr>
+            <tr><td>FRM-061</td><td>Client Payment History (buyers)</td><td>Accounts receivable</td></tr>
+            <tr><td>FRM-062</td><td>Supplier Payment Schedule</td><td>Creditors aging</td></tr>
+            <tr><td>FRM-063</td><td>Crop / Enterprise Budget Template</td><td>Profitability per crop</td></tr>
+            </tr><td>FRM-064</td><td>Bank Reconciliation Template</td><td>Monthly finance</td></tr>
+        </tbody>
+    </table>
+
+    <h3>Phase 7: Equipment & Assets (9 docs)</h3>
+    <table>
+        <thead><tr><th>Ref</th><th>Document</th><th>Purpose</th></tr></thead>
+        <tbody>
+            <tr><td>FRM-065</td><td>Asset Register (Master)</td><td>Tractors, implements, vehicles, irrigation, buildings</td></tr>
+            <tr><td>FRM-066</td><td>Vehicle / Tractor Log Sheet (per machine)</td><td>Hours, fuel, maintenance</td></tr>
+            <tr><td>FRM-067</td><td>Equipment Maintenance Schedule</td><td>Preventative</td></tr>
+            <tr><td>FRM-068</td><td>Tyre / Implement Wear Log</td><td>Replacement tracking</td></tr>
+            <tr><td>FRM-069</td><td>Irrigation System Inspection Log</td><td>Pumps, pipes, filters</td></tr>
+            <tr><td>FRM-070</td><td>Fencing / Infrastructure Maintenance Log</td><td>Repairs</td></tr>
+            <tr><td>FRM-071</td><td>Grain Silo / Cold Storage Inspection Log</td><td>Safety, cleaning</td></tr>
+            <tr><td>FRM-072</td><td>Generator / Pump Log (if off‑grid)</td><td>Runtime, fuel</td></tr>
+            <tr><td>FRM-073</td><td>Asset Disposal Form</td><td>Selling old equipment</td></tr>
+        </tbody>
+    </table>
+
+    <h3>Phase 8: Forms & Templates (7 docs)</h3>
+    <table>
+        <thead><tr><th>Ref</th><th>Document</th><th>Purpose</th></tr></thead>
+        <tbody>
+            <tr><td>FRM-074</td><td>Daily Worker Task Assignment Sheet</td><td>Labour productivity</td></tr>
+            <tr><td>FRM-075</td><td>Overtime Authorization Form (workers)</td><td>Seasonal overtime</td></tr>
+            <tr><td>FRM-076</td><td>Leave Application Form (permanent staff)</td><td>HR</td></tr>
+            <tr><td>FRM-077</td><td>New Worker Induction Checklist (farm safety)</td><td>Onboarding</td></tr>
+            <tr><td>FRM-078</td><td>Supplier Evaluation Form (seed, chemical vendors)</td><td>Performance</td></tr>
+            <tr><td>FRM-079</td><td>Buyer Feedback Form (produce quality)</td><td>Improvement</td></tr>
+            <tr><td>FRM-080</td><td>Termination Checklist (worker offboarding)</td><td>Return of tools, housing</td></tr>
+        </tbody>
+    </table>
+
+    <h2 class="section-title">📁 File Directory Structure</h2>
+    <div class="repo-structure">
+<pre>
+Farming Operation (Pty) Ltd/
+│
+├── 01 Registration & Compliance/
+│   ├── CIPC_Registration.pdf
+│   ├── MOI.pdf
+│   ├── SARS_Registration.pdf
+│   ├── COIDA_Certificate.pdf
+│   ├── Public_Liability_Insurance.pdf
+│   ├── Agricultural_Business_Licence.pdf
+│   ├── Zoning_Certificate.pdf
+│   ├── Water_Use_Licence.pdf
+│   ├── Pest_Control_Operator_Licence.pdf
+│   ├── B-BBEE_Certificate.pdf
+│   └── Export_Registration.pdf (if applicable)
+│
+├── 02 Contracts & Client Docs/
+│   ├── Produce_Supply_Agreements/ (by buyer)
+│   ├── Land_Lease_Sharecropping.pdf
+│   ├── Equipment_Hire_Agreements/
+│   ├── Transport_Logistics_Agreements/
+│   ├── Quotation_Price_List_Template.xlsx
+│   ├── Co_op_Membership_Agreement.pdf
+│   ├── Input_Supply_Agreements/ (seed, chemical)
+│   ├── Storage_Silo_Rental_Agreements/
+│   └── Indemnity_Form_Visitors.docx
+│
+├── 03 Human Resources/
+│   ├── Employment_Contracts/
+│   │   ├── General_Farm_Worker.docx
+│   │   ├── Tractor_Driver.docx
+│   │   ├── Picker_Seasonal_Casual.docx
+│   │   └── Farm_Manager.docx
+│   ├── Independent_Contractor_Agreements/
+│   ├── Code_of_Conduct.pdf
+│   ├── Disciplinary_Code_Sectoral_Determination.pdf
+│   ├── Seasonal_Rosters/ (by season)
+│   ├── Attendance_Registers/ (by month)
+│   └── Training_Records/ (chemical handling)
+│
+├── 04 Operations & Farm Management/
+│   ├── Daily_Farm_Operations_Logs/ (by month)
+│   ├── Crop_Planting_Records/ (by field)
+│   ├── Irrigation_Logs/ (by field, by day)
+│   ├── Chemical_Fertiliser_Application_Logs/ (by field)
+│   ├── Pest_Monitoring_Logs/
+│   ├── Harvest_Records/ (by field, by date)
+│   ├── Livestock_Inventory_Register.xlsx (if applicable)
+│   ├── Veterinary_Treatment_Log.xlsx
+│   ├── Feed_Consumption_Log.xlsx
+│   ├── Equipment_Maintenance_Logs/
+│   ├── Fuel_Usage_Logs.xlsx
+│   ├── Input_Inventory_Stock_Take.xlsx
+│   ├── Produce_Grading_Quality_Logs.xlsx
+│   └── Cold_Storage_Temperature_Logs.xlsx (if applicable)
+│
+├── 05 Health & Safety/
+│   ├── OHS_Policy_Farm.pdf
+│   ├── Risk_Assessments/ (tractors, chemicals, animals)
+│   ├── Safe_Work_Method_Statements/
+│   ├── Incident_Reports/ (by date)
+│   ├── First_Aid_Kit_Register.xlsx
+│   ├── Fire_Extinguisher_Log.xlsx
+│   ├── Emergency_Evacuation_Plan_Farm.pdf
+│   ├── PPE_Issue_Register.xlsx
+│   ├── Chemical_MSDS_Register/ (by product)
+│   └── Toolbox_Talk_Register.xlsx
+│
+├── 06 Finance & Suppliers/
+│   ├── Invoices_Issued/ (to buyers)
+│   ├── Supplier_Invoice_Register.xlsx
+│   ├── Payroll_Records/ (by month)
+│   ├── Petty_Cash_Log.xlsx
+│   ├── Client_Payment_History.xlsx
+│   ├── Supplier_Payment_Schedule.xlsx
+│   ├── Crop_Budget_Templates.xlsx
+│   └── Bank_Reconciliation.xlsx
+│
+├── 07 Equipment & Assets/
+│   ├── Asset_Register.xlsx
+│   ├── Tractor_Logs/ (by machine)
+│   ├── Equipment_Maintenance_Schedule.xlsx
+│   ├── Tyre_Implement_Wear_Log.xlsx
+│   ├── Irrigation_Inspection_Log.xlsx
+│   ├── Fencing_Maintenance_Log.xlsx
+│   ├── Silo_Cold_Storage_Inspection_Log.xlsx
+│   ├── Generator_Pump_Log.xlsx
+│   └── Asset_Disposal_Form.docx
+│
+└── 08 Forms & Templates/
+    ├── Daily_Worker_Task_Sheet.docx
+    ├── Overtime_Form.docx
+    ├── Leave_Application.docx
+    ├── Worker_Induction_Checklist_Farm.docx
+    ├── Supplier_Evaluation_Form.docx
+    ├── Buyer_Feedback_Form.docx
+    └── Termination_Checklist.docx
+</pre>
+    </div>
+
+    <div class="button-group">
+        <a href="index.html#industries" class="btn"><i class="fas fa-arrow-left"></i> Back to Industries</a>
+        <a href="pricing.html" class="btn btn-secondary"><i class="fas fa-file-invoice-dollar"></i> Get Quote</a>
+    </div>
+
+</div>
+
+<div class="footer">
+    <div class="container">
+        <p>© 2025 Legacy Launchpad (Pty) Ltd – Building what lasts.</p>
+        <p style="margin-top: 10px; font-size: 0.75rem;">Legacy Launchpad provides administrative and documentation support only. We are not lawyers, accountants, or tax practitioners.</p>
+    </div>
+</div>
+
+</body>
+</html>
