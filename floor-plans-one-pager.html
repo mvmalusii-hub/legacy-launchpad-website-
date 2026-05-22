@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D Floor Plans – One‑Pager | Legacy Launchpad</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #e2e8f0;
+            color: #0f172a;
+            line-height: 1.4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+        /* One‑page flyer – fits A4 / Letter when printed */
+        .flyer {
+            max-width: 900px;
+            width: 100%;
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 20px 35px -10px rgba(0,0,0,0.2);
+            overflow: hidden;
+            padding: 0;
+        }
+        /* Header */
+        .hero {
+            background: #0f172a;
+            color: white;
+            text-align: center;
+            padding: 30px 20px;
+        }
+        .hero h1 {
+            font-size: 2.2rem;
+            margin-bottom: 8px;
+            letter-spacing: -0.5px;
+        }
+        .hero p {
+            font-size: 1rem;
+            opacity: 0.9;
+        }
+        .hero .tag {
+            background: #fbbf24;
+            color: #0f172a;
+            display: inline-block;
+            padding: 4px 16px;
+            border-radius: 40px;
+            font-weight: bold;
+            margin-top: 15px;
+            font-size: 0.8rem;
+        }
+        /* Main content */
+        .content {
+            padding: 30px 35px;
+        }
+        .two-columns {
+            display: flex;
+            gap: 30px;
+            margin: 20px 0 30px;
+            flex-wrap: wrap;
+        }
+        .col {
+            flex: 1;
+            min-width: 200px;
+        }
+        .section-title {
+            font-size: 1.2rem;
+            font-weight: 700;
+            border-left: 5px solid #fbbf24;
+            padding-left: 12px;
+            margin-bottom: 15px;
+        }
+        .feature-list {
+            list-style: none;
+            padding: 0;
+        }
+        .feature-list li {
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .feature-list i {
+            color: #fbbf24;
+            width: 20px;
+            font-size: 1rem;
+        }
+        .price-table {
+            width: 100%;
+            border-collapse: collapse;
+            background: #f8fafc;
+            border-radius: 12px;
+            overflow: hidden;
+            margin: 15px 0;
+        }
+        .price-table th, .price-table td {
+            padding: 10px 12px;
+            text-align: left;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        .price-table th {
+            background: #0f172a;
+            color: white;
+            font-weight: 600;
+            font-size: 0.85rem;
+        }
+        .price {
+            font-weight: bold;
+            color: #0f172a;
+        }
+        .btn {
+            display: inline-block;
+            background: #fbbf24;
+            color: #0f172a;
+            text-decoration: none;
+            padding: 12px 28px;
+            border-radius: 40px;
+            font-weight: bold;
+            margin: 10px 0;
+            transition: 0.2s;
+        }
+        .btn:hover {
+            background: #f59e0b;
+            transform: scale(1.02);
+        }
+        .contact-bar {
+            background: #f1f5f9;
+            text-align: center;
+            padding: 20px;
+            margin-top: 20px;
+            border-radius: 12px;
+        }
+        .contact-bar p {
+            margin: 5px 0;
+        }
+        .small-note {
+            font-size: 0.7rem;
+            color: #475569;
+            text-align: center;
+            margin-top: 20px;
+            border-top: 1px solid #e2e8f0;
+            padding-top: 15px;
+        }
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+            }
+            .flyer {
+                max-width: 100%;
+                box-shadow: none;
+                border-radius: 0;
+            }
+            .btn {
+                background: #0f172a;
+                color: white;
+                border: 1px solid #ccc;
+            }
+        }
+        @media (max-width: 700px) {
+            .content { padding: 20px; }
+            .two-columns { flex-direction: column; }
+        }
+    </style>
+</head>
+<body>
+<div class="flyer">
+    <div class="hero">
+        <h1>🏠 3D Floor Plans</h1>
+        <p>From a sketch to a stunning virtual walkthrough – fast, affordable, fixed price.</p>
+        <div class="tag">✨ No architectural degree required</div>
+    </div>
+    <div class="content">
+        <div class="two-columns">
+            <div class="col">
+                <div class="section-title">📌 What you get</div>
+                <ul class="feature-list">
+                    <li><i class="fas fa-check-circle"></i> High‑resolution 3D renders</li>
+                    <li><i class="fas fa-check-circle"></i> Video walkthrough (Standard+)</li>
+                    <li><i class="fas fa-check-circle"></i> Interactive 360° tour (optional)</li>
+                    <li><i class="fas fa-check-circle"></i> Revisions included (2 rounds)</li>
+                    <li><i class="fas fa-check-circle"></i> Delivered in 3–10 days</li>
+                </ul>
+            </div>
+            <div class="col">
+                <div class="section-title">🎯 Perfect for</div>
+                <ul class="feature-list">
+                    <li><i class="fas fa-building"></i> Property developers</li>
+                    <li><i class="fas fa-home"></i> Homeowners renovating</li>
+                    <li><i class="fas fa-store"></i> Retail & office planners</li>
+                    <li><i class="fas fa-chalkboard-user"></i> Real estate agents</li>
+                    <li><i class="fas fa-drafting-compass"></i> Architects needing quick visuals</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="section-title">💰 Fixed pricing (no surprises)</div>
+        <table class="price-table">
+            <thead><tr><th>Service</th><th>Price (R)</th><th>Turnaround</th></tr></thead>
+            <tbody>
+                <tr><td>Basic – single room / small space</td><td class="price">R 800 – 1,200</td><td>3‑5 days</td></tr>
+                <tr><td>Standard – house up to 150m²</td><td class="price">R 1,800 – 2,800</td><td>5‑7 days</td></tr>
+                <tr><td>Complex – large / multi‑storey</td><td class="price">R 3,500 – 5,500</td><td>7‑10 days</td></tr>
+                <tr><td>360° interactive virtual tour</td><td class="price">R 4,000 – 7,000</td><td>10‑14 days</td></tr>
+            </tbody>
+        </table>
+        <p style="font-size:0.75rem; margin: 5px 0 15px;">* Prices exclude VAT. Government or scanning fees not included.</p>
+
+        <div class="contact-bar">
+            <p><strong>📧 mv.malusi@legacylaunchpad.co.za</strong> &nbsp; | &nbsp; <strong>📞 076 876 6612</strong></p>
+            <p>👇 Send your sketch or blueprint – we’ll quote you within 24 hours</p>
+            <a href="https://wa.me/27631425175" class="btn" target="_blank">📱 WhatsApp us now</a>
+        </div>
+
+        <div class="small-note">
+            ⚠️ These are visualisation aids, not stamped architectural drawings. For legal construction plans, consult a registered professional. Legacy Launchpad (Pty) Ltd – Building what lasts.
+        </div>
+    </div>
+</div>
+</body>
+</html>
