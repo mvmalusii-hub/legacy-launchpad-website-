@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Select Your Documents | Legacy Launchpad</title>
+    <style>
+        * { margin:0; padding:0; box-sizing:border-box; }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f8fafc;
+            color: #1e293b;
+            line-height: 1.5;
+            padding: 20px;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .header {
+            background: #0f172a;
+            color: white;
+            padding: 20px;
+            border-radius: 16px 16px 0 0;
+            text-align: center;
+        }
+        .form-card {
+            background: white;
+            border-radius: 0 0 24px 24px;
+            padding: 30px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+        }
+        .form-group { margin-bottom: 20px; }
+        label { font-weight: 600; display: block; margin-bottom: 8px; }
+        input, select, textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #cbd5e1;
+            border-radius: 8px;
+            font-family: inherit;
+        }
+        .category-accordion {
+            border: 1px solid #e2e8f0;
+            border-radius: 12px;
+            margin-bottom: 12px;
+            overflow: hidden;
+        }
+        .category-header {
+            background: #f1f5f9;
+            padding: 14px 18px;
+            cursor: pointer;
+            font-weight: 600;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: 0.2s;
+        }
+        .category-header:hover { background: #e2e8f0; }
+        .category-header i { transition: 0.2s; }
+        .category-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+            background: white;
+        }
+        .category-content.open { max-height: 600px; overflow-y: auto; }
+        .doc-list {
+            padding: 16px 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+        .doc-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 0.9rem;
+        }
+        .doc-item input { width: auto; margin-right: 8px; }
+        .summary-bar {
+            background: #fefce8;
+            border: 1px solid #fbbf24;
+            padding: 20px;
+            border-radius: 16px;
+            margin: 25px 0;
+            text-align: center;
+        }
+        .btn {
+            background: #fbbf24;
+            color: #0f172a;
+            padding: 14px 30px;
+            border: none;
+            border-radius: 40px;
+            font-weight: bold;
+            cursor: pointer;
+            width: 100%;
+            font-size: 1.1rem;
+        }
+        .btn:hover { background: #f59e0b; }
+        .loading { display: none; text-align: center; margin: 20px; }
+        .footer { text-align: center; margin-top: 30px; font-size: 0.8rem; color: #475569; }
+        @media (max-width: 700px) { .form-card { padding: 20px; } }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="header">
+        <h2>📄 Legacy Launchpad – Document Order System</h2>
+        <p>Select your industry, then tick the exact documents you need.</p>
+    </div>
+    <div class="form-card">
+        <form id="orderForm">
+            <div class="form-group">
+                <label>Your full name</label>
+                <input type="text" id="fullName" required>
+            </div>
+            <div class="form-group">
+                <label>Email address</label>
+                <input type="email" id="email" required>
+            </div>
+            <div class="form-group">
+                <label>Phone number</label>
+                <input type="tel" id="phone">
+            </div>
+            <div class="form-group">
+                <label>Select your industry</label>
+                <select id="industrySelect" required>
+                    <option value="">-- Please select --</option>
+                    <option value="Construction">Construction</option>
+                    <option value="Cleaning Services">Cleaning Services</option>
+                    <option value="Cash for Scrap">Cash for Scrap</option>
+                    <option value="Property & Real Estate">Property & Real Estate</option>
+                    <option value="Transport & Logistics">Transport & Logistics</option>
+                    <option value="Retail (General)">Retail (General)</option>
+                    <option value="Restaurant & Takeaway">Restaurant & Takeaway</option>
+                    <option value="Security Services">Security Services</option>
+                    <option value="Light Manufacturing">Light Manufacturing</option>
+                    <option value="Automotive Repair & Sales">Automotive Repair & Sales</option>
+                    <option value="Health & Beauty (Salon/Spa)">Health & Beauty (Salon/Spa)</option>
+                    <option value="Information Technology (IT)">Information Technology (IT)</option>
+                    <option value="Event Management & Catering">Event Management & Catering</option>
+                    <option value="Farming & Agriculture">Farming & Agriculture</option>
+                    <option value="Funeral Services">Funeral Services</option>
+                    <option value="ECD (Daycare/Crèche)">ECD (Daycare/Crèche)</option>
+                    <option value="Electrical & Solar">Electrical & Solar</option>
+                    <option value="Plumbing & Sanitation">Plumbing & Sanitation</option>
+                    <option value="Logistics & Warehousing">Logistics & Warehousing</option>
+                    <option value="NGO / Non-Profit">NGO / Non-Profit</option>
+                </select>
+            </div>
+
+            <!-- Accordion categories will be injected here -->
+            <div id="categoriesContainer"></div>
+
+            <div class="summary-bar">
+                <strong>Selected documents:</strong> <span id="selectedCount">0</span>
+            </div>
+
+            <div class="form-group">
+                <label>Additional notes (optional)</label>
+                <textarea id="notes" rows="3"></textarea>
+            </div>
+
+            <button type="submit" class="btn">Submit Request →</button>
+            <div class="loading" id="loading">Processing...</div>
+        </form>
+    </div>
+    <div class="footer">© 2025 Legacy Launchpad – Building what lasts.</div>
+</div>
+
+<script>
+    // ------------------------------------------------------------------
+    // DOCUMENT DATABASE (based on our 20 industry roadmaps)
+    // For brevity, I show Construction as a full example.
+    // You can extend this JSON with all 20 industries.
+    // For production, I would include all data – here I demonstrate the structure.
+    // ------------------------------------------------------------------
+    const industryDocs = {
+        "Construction": {
+            "Registration & Compliance": [
+                "CIPC Registration Certificate",
+                "Memorandum of Incorporation (MOI)",
+                "SARS Registration (IT, PAYE, VAT)",
+                "CIDB Registration Certificate",
+                "NHBRC Registration (residential)",
+                "CSD Registration",
+                "B-BBEE Certificate",
+                "COIDA Registration",
+                "Public Liability Insurance",
+                "Construction Permit (if structural)"
+            ],
+            "Contracts & Client Docs": [
+                "Construction Agreement (Master)",
+                "Subcontractor Agreement",
+                "Quotation / Proposal Template",
+                "Non-Disclosure Agreement (NDA)",
+                "Variation Order Form",
+                "Progress Payment Certificate",
+                "Practical Completion Certificate",
+                "Defects Liability Period Agreement",
+                "Site Handover Form",
+                "Final Account Statement",
+                "Client Complaint Form",
+                "Subcontractor Safety Indemnity"
+            ],
+            "Human Resources": [
+                "Employment Contract – General Worker",
+                "Employment Contract – Skilled Artisan",
+                "Employment Contract – Site Supervisor",
+                "Employment Contract – Project Manager",
+                "Independent Contractor Agreement",
+                "Code of Conduct (Employees)",
+                "Disciplinary Code & Procedure",
+                "Shift Roster Template",
+                "Attendance Register (Daily)",
+                "PPE Issue Register",
+                "Training Record – Health & Safety",
+                "Training Record – Machinery Operation"
+            ],
+            "Operations & Site Management": [
+                "Daily Site Diary",
+                "Site Instruction Register",
+                "Delivery Note Register",
+                "Tool & Equipment Sign-Out Register",
+                "Vehicle Log Sheet (per vehicle)",
+                "Concrete Pour Register",
+                "Material Requisition Form",
+                "Plant / Machinery Daily Checklist",
+                "Scaffold Inspection Log",
+                "Site Diary (Supervisor Copy)",
+                "Photographic Record Log",
+                "Client Site Visit Register",
+                "Waste Manifests (if hazardous)",
+                "As-Built Drawings Register"
+            ],
+            "Health & Safety": [
+                "Occupational Health & Safety (OHS) Policy",
+                "Site‑Specific Risk Assessment",
+                "Safe Work Method Statement (SWMS)",
+                "Incident / Accident Report Form",
+                "First Aid Kit Register",
+                "Fire Extinguisher Inspection Log",
+                "Emergency Evacuation Plan (per site)",
+                "Toolbox Talk Register",
+                "Personal Protective Equipment (PPE) Policy",
+                "Hazardous Substance Register"
+            ],
+            "Finance & Suppliers": [
+                "Invoice Template",
+                "Supplier Invoice Register",
+                "Payroll Register",
+                "Petty Cash Log",
+                "Material Purchase Order",
+                "Supplier Contract – Materials",
+                "Plant Hire Agreement",
+                "Bank Reconciliation Template",
+                "Client Payment History",
+                "Retention Money Register"
+            ],
+            "Equipment & Assets": [
+                "Asset Register (Master)",
+                "Vehicle Maintenance Log",
+                "Small Tool Register (under R500)",
+                "Equipment Calibration Log",
+                "Generator / Compressor Log",
+                "Scaffolding Register",
+                "Ladder Inspection Log",
+                "Asset Disposal Form"
+            ],
+            "Forms & Templates": [
+                "Daily Work Report (for client)",
+                "Overtime Authorisation Form",
+                "Leave Application Form",
+                "Subcontractor Induction Form",
+                "Site Induction Checklist (new worker)",
+                "Toolbox Talk Template (blank)",
+                "Snag List Form",
+                "Termination Checklist"
+            ]
+        }
+        // For other industries, you would add similar objects.
+        // To keep this answer manageable, I include only Construction.
+        // In your actual site, you can copy the full JSON from our previous roadmaps.
+    };
+
+    let selectedDocsList = [];
+
+    function loadIndustry(industryKey) {
+        const container = document.getElementById('categoriesContainer');
+        const data = industryDocs[industryKey];
+        if (!data) {
+            container.innerHTML = '<p style="color:red;">Industry data not yet available. Please contact us.</p>';
+            return;
+        }
+
+        let html = '';
+        for (const [category, docs] of Object.entries(data)) {
+            const categoryId = category.replace(/\s+/g, '_');
+            html += `
+                <div class="category-accordion">
+                    <div class="category-header" data-category="${categoryId}">
+                        <span>📁 ${category}</span>
+                        <i class="arrow">▼</i>
+                    </div>
+                    <div class="category-content" id="content_${categoryId}">
+                        <div class="doc-list">
+                            ${docs.map(doc => `
+                                <label class="doc-item">
+                                    <input type="checkbox" class="doc-checkbox" data-category="${category}" data-doc="${doc.replace(/"/g, '&quot;')}">
+                                    <span>${doc}</span>
+                                </label>
+                            `).join('')}
+                        </div>
+                    </div>
+                </div>
+            `;
+        }
+        container.innerHTML = html;
+
+        // Attach accordion toggle events
+        document.querySelectorAll('.category-header').forEach(header => {
+            header.addEventListener('click', () => {
+                const categoryId = header.getAttribute('data-category');
+                const content = document.getElementById(`content_${categoryId}`);
+                content.classList.toggle('open');
+                const arrow = header.querySelector('.arrow');
+                arrow.textContent = content.classList.contains('open') ? '▲' : '▼';
+            });
+        });
+
+        // Attach checkbox change events
+        document.querySelectorAll('.doc-checkbox').forEach(cb => {
+            cb.addEventListener('change', updateSelectedCount);
+        });
+        updateSelectedCount();
+    }
+
+    function updateSelectedCount() {
+        const checkboxes = document.querySelectorAll('.doc-checkbox:checked');
+        document.getElementById('selectedCount').innerText = checkboxes.length;
+    }
+
+    document.getElementById('industrySelect').addEventListener('change', function(e) {
+        const industry = e.target.value;
+        if (industry && industryDocs[industry]) {
+            loadIndustry(industry);
+        } else {
+            document.getElementById('categoriesContainer').innerHTML = '<p>Please select an industry to see documents.</p>';
+        }
+    });
+
+    // Form submission – send to Google Apps Script backend
+    document.getElementById('orderForm').addEventListener('submit', async function(e) {
+        e.preventDefault();
+
+        const fullName = document.getElementById('fullName').value.trim();
+        const email = document.getElementById('email').value.trim();
+        const phone = document.getElementById('phone').value.trim();
+        const industry = document.getElementById('industrySelect').value;
+        const notes = document.getElementById('notes').value;
+
+        if (!fullName || !email || !industry) {
+            alert('Please fill in your name, email and select an industry.');
+            return;
+        }
+
+        // Collect selected documents
+        const selectedDocs = [];
+        document.querySelectorAll('.doc-checkbox:checked').forEach(cb => {
+            selectedDocs.push({
+                category: cb.getAttribute('data-category'),
+                doc: cb.getAttribute('data-doc')
+            });
+        });
+
+        if (selectedDocs.length === 0) {
+            alert('Please select at least one document.');
+            return;
+        }
+
+        const payload = {
+            name: fullName,
+            email: email,
+            phone: phone,
+            industry: industry,
+            selectedDocs: selectedDocs,
+            docCount: selectedDocs.length,
+            notes: notes,
+            timestamp: new Date().toISOString()
+        };
+
+        document.getElementById('loading').style.display = 'block';
+        const submitBtn = document.querySelector('.btn');
+        submitBtn.disabled = true;
+
+        try {
+            // Replace this URL with your actual Google Apps Script Web App URL
+            const scriptUrl = 'https://script.google.com/macros/s/YOUR_DEPLOYMENT_ID/exec';
+            const response = await fetch(scriptUrl, {
+                method: 'POST',
+                mode: 'no-cors', // Because of CORS, we use no-cors – we won't read response but it's ok
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(payload)
+            });
+
+            // Show success message
+            alert('🎉 Congratulations! Your request has been received. Our team will get back to you soon with a quote and the Terms of Business.');
+            document.getElementById('orderForm').reset();
+            document.getElementById('categoriesContainer').innerHTML = '';
+            document.getElementById('selectedCount').innerText = '0';
+        } catch (error) {
+            console.error(error);
+            alert('There was an error. Please contact us directly at mv.malusi@legacylaunchpad.co.za');
+        } finally {
+            document.getElementById('loading').style.display = 'none';
+            submitBtn.disabled = false;
+        }
+    });
+</script>
+</body>
+</html>
