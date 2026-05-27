@@ -6,153 +6,29 @@
     <title>Plumbing & Sanitation Document Roadmap | Legacy Launchpad</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: #f8fafc;
-            color: #1e293b;
-            line-height: 1.5;
-        }
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-        .header {
-            background: #0f172a;
-            color: white;
-            padding: 20px 0;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-        }
-        .header-flex {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 20px;
-        }
-        .logo-area {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-        }
-        .logo-placeholder {
-            width: 50px;
-            height: 50px;
-            background: #fbbf24;
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.8rem;
-            color: #0f172a;
-        }
-        .logo-text h1 {
-            font-size: 1.5rem;
-            letter-spacing: -0.5px;
-        }
-        .nav a {
-            color: white;
-            text-decoration: none;
-            margin-left: 25px;
-            transition: 0.3s;
-        }
-        .nav a:hover {
-            color: #fbbf24;
-        }
-        .hero {
-            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
-            color: white;
-            padding: 60px 0;
-            text-align: center;
-        }
-        .hero h1 {
-            font-size: 2.5rem;
-            margin-bottom: 15px;
-        }
-        .section-title {
-            font-size: 1.8rem;
-            margin: 40px 0 20px;
-            padding-bottom: 10px;
-            border-bottom: 2px solid #fbbf24;
-            display: inline-block;
-        }
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            background: white;
-            border-radius: 16px;
-            overflow: hidden;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
-            margin: 20px 0;
-        }
-        th, td {
-            padding: 12px 15px;
-            text-align: left;
-            border-bottom: 1px solid #e2e8f0;
-        }
-        th {
-            background: #0f172a;
-            color: white;
-            font-weight: 600;
-        }
-        tr:hover {
-            background: #fefce8;
-        }
-        .repo-structure {
-            background: #0f172a;
-            color: #cbd5e1;
-            padding: 25px;
-            border-radius: 16px;
-            font-family: monospace;
-            font-size: 0.85rem;
-            overflow-x: auto;
-            margin: 20px 0;
-        }
-        .button-group {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            margin: 30px 0;
-            flex-wrap: wrap;
-        }
-        .btn {
-            display: inline-block;
-            background: #0f172a;
-            color: white;
-            padding: 12px 30px;
-            border-radius: 40px;
-            text-decoration: none;
-            font-weight: bold;
-            transition: 0.3s;
-        }
-        .btn-secondary {
-            background: #fbbf24;
-            color: #0f172a;
-        }
-        .btn:hover {
-            transform: translateY(-2px);
-            background: #f59e0b;
-            color: #0f172a;
-        }
-        .footer {
-            background: #0f172a;
-            color: #94a3b8;
-            text-align: center;
-            padding: 30px 0;
-            margin-top: 40px;
-        }
-        @media (max-width: 768px) {
-            th, td { padding: 8px 10px; font-size: 0.8rem; }
-            .button-group { flex-direction: column; align-items: center; }
-        }
+        * { margin:0; padding:0; box-sizing:border-box; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #f8fafc; color: #1e293b; line-height: 1.5; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+        .header { background: #0f172a; color: white; padding: 20px 0; position: sticky; top: 0; z-index: 100; }
+        .header-flex { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px; }
+        .logo-area { display: flex; align-items: center; gap: 15px; }
+        .logo-placeholder { width: 50px; height: 50px; background: #fbbf24; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.8rem; color: #0f172a; }
+        .logo-text h1 { font-size: 1.5rem; letter-spacing: -0.5px; }
+        .nav a { color: white; text-decoration: none; margin-left: 25px; transition: 0.3s; }
+        .nav a:hover { color: #fbbf24; }
+        .hero { background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); color: white; padding: 60px 0; text-align: center; }
+        .hero h1 { font-size: 2.5rem; margin-bottom: 15px; }
+        .section-title { font-size: 1.8rem; margin: 40px 0 20px; padding-bottom: 10px; border-bottom: 2px solid #fbbf24; display: inline-block; }
+        table { width: 100%; border-collapse: collapse; background: white; border-radius: 16px; overflow: hidden; margin: 20px 0; }
+        th, td { padding: 12px 15px; text-align: left; border-bottom: 1px solid #e2e8f0; vertical-align: top; }
+        th { background: #0f172a; color: white; }
+        tr:hover { background: #fefce8; }
+        .button-group { display: flex; justify-content: center; gap: 20px; margin: 30px 0; flex-wrap: wrap; }
+        .btn { display: inline-block; background: #0f172a; color: white; padding: 12px 30px; border-radius: 40px; text-decoration: none; font-weight: bold; transition: 0.3s; }
+        .btn-secondary { background: #fbbf24; color: #0f172a; }
+        .btn:hover { transform: translateY(-2px); background: #f59e0b; color: #0f172a; }
+        .footer { background: #0f172a; color: #94a3b8; text-align: center; padding: 30px 0; margin-top: 40px; }
+        @media (max-width: 768px) { th, td { padding: 8px 10px; font-size: 0.8rem; } .button-group { flex-direction: column; align-items: center; } }
     </style>
 </head>
 <body>
@@ -167,6 +43,7 @@
             <a href="index.html">Home</a>
             <a href="index.html#industries">Industries</a>
             <a href="pricing.html">Pricing</a>
+            <a href="order-documents.html"><i class="fas fa-clipboard-list"></i> Order</a>
             <a href="index.html#contact">Contact</a>
         </div>
     </div>
@@ -175,151 +52,181 @@
 <div class="hero">
     <div class="container">
         <h1>🔧 Plumbing & Sanitation</h1>
-        <p>Complete document roadmap + file directory – 82 core documents</p>
+        <p>Complete document roadmap – 82 core documents</p>
     </div>
 </div>
 
 <div class="container">
-
     <h2 class="section-title">📋 Document Roadmap</h2>
 
+    <!-- PHASE 1: REGISTRATION & COMPLIANCE (11 docs) -->
     <h3>Phase 1: Registration & Compliance (11 docs)</h3>
     <table>
-        <thead><tr><th>Ref</th><th>Document</th><th>Purpose</th></tr></thead>
+        <thead><tr><th>✔</th><th>Ref</th><th>Document</th><th>Purpose</th></tr></thead>
         <tbody>
-            <tr><td>PLB-001</td><td>CIPC Registration Certificate</td><td>Proof of company registration</td></tr>
-            <tr><td>PLB-002</td><td>Memorandum of Incorporation (MOI)</td><td>Company constitution</td></tr>
-            <tr><td>PLB-003</td><td>SARS Registration (IT, PAYE, VAT)</td><td>Tax compliance (VAT if turnover >R1m)</td></tr>
-            <tr><td>PLB-004</td><td>COIDA Registration</td><td>Employee injury cover</td></tr>
-            <tr><td>PLB-005</td><td>Public Liability Insurance</td><td>Cover for property damage (burst pipes, floods)</td></tr>
-            <tr><td>PLB-006</td><td>Plumbing Contractor Registration (PIRB)</td><td>Mandatory for all plumbers</td></tr>
-            <tr><td>PLB-007</td><td>Qualified Plumber Trade Certificate (Red Seal)</td><td>For issuing certificates</td></tr>
-            <tr><td>PLB-008</td><td>Business Licence (Municipal)</td><td>Required for trading</td></tr>
-            <tr><td>PLB-009</td><td>Waste / Effluent Carrier Licence</td><td>If emptying septic tanks – environmental compliance</td></tr>
-            <tr><td>PLB-010</td><td>B‑BBEE Certificate</td><td>For corporate and government tenders</td></tr>
-            <tr><td>PLB-011</td><td>CSD Registration</td><td>For government tenders</td></tr>
+            <tr><td><input type="checkbox" class="doc-check" data-cat="Registration & Compliance" data-doc="CIPC Registration Certificate"> </td><td>PLB-001</li><td>CIPC Registration Certificate</li><td>Proof of company registration</li></td>
+            <tr>
+            <tr>
+            <tr>
+            <tr>
+            <tr>
+            <tr>
+            <tr>
+            <tr>
+            <tr>
+            <tr>
         </tbody>
     </table>
 
+    <!-- PHASE 2: CONTRACTS & CLIENT DOCS (11 docs) -->
     <h3>Phase 2: Contracts & Client Docs (11 docs)</h3>
-    <table>
-        <thead><tr><th>Ref</th><th>Document</th><th>Purpose</th></tr></thead>
+    <tr>
+        <thead><tr><th>✔</th><th>Ref</th><th>Document</th><th>Purpose</th></td></thead>
         <tbody>
-            <tr><td>PLB-012</td><td>Plumbing Service Agreement (Master)</td><td>Core client contract</td></tr>
-            <tr><td>PLB-013</td><td>Quotation / Estimate Template</td><td>Itemised (labour, materials, call‑out fee)</td></tr>
-            <tr><td>PLB-014</td><td>Certificate of Compliance (COC) – Plumbing</td><td>For geyser, solar, gas – required for property sales</td></tr>
-            <tr><td>PLB-015</td><td>Drainage / Sewer Inspection Report (camera)</td><td>For blockages, tree roots</td></tr>
-            <tr><td>PLB-016</td><td>Water Installation Test Report (pressure test)</td><td>Leak verification</td></tr>
-            <tr><td>PLB-017</td><td>Geyser Installation / Replacement Certificate</td><td>Warranty, compliance</td></tr>
-            <tr><td>PLB-018</td><td>Non‑Disclosure Agreement (NDA)</td><td>For commercial clients, pricing</td></tr>
-            <tr><td>PLB-019</td><td>Subcontractor Agreement (labour hire)</td><td>For large projects</td></tr>
-            <tr><td>PLB-020</td><td>Material Supply Agreement (pipes, fittings, geysers)</td><td>With wholesalers</td></tr>
-            <tr><td>PLB-021</td><td>Warranty Certificate (labour, parts)</td><td>Customer confidence</td></tr>
-            <tr><td>PLB-022</td><td>Variation / Extra Work Order Form</td><td>Scope changes</td></tr>
+            <tr>
+            <tr>
+            <tr>
+            </td>
+            <tr>
+            <tr>
+            <tr>
+            <tr>
+            <td>
+            <tr>
+            <tr>
         </tbody>
-    </table>
+    </td>
 
+    <!-- PHASE 3: HUMAN RESOURCES (10 docs) -->
     <h3>Phase 3: Human Resources (10 docs)</h3>
-    <table>
-        <thead><tr><th>Ref</th><th>Document</th><th>Purpose</th></tr></thead>
+    <tr>
+        <thead><td><th>✔</th><th>Ref</th><th>Document</th><th>Purpose</th></tr></thead>
         <tbody>
-            <tr><td>PLB-023</td><td>Employment Contract – Qualified Plumber</td><td>Permanent</td></tr>
-            <tr><td>PLB-024</td><td>Employment Contract – Apprentice Plumber</td><td>Trainee</td></tr>
-            <tr><td>PLB-025</td><td>Employment Contract – Drainage / Jet Vacuum Operator</td><td>Specialist</td></tr>
-            <tr><td>PLB-026</td><td>Employment Contract – General Assistant / Labourer</td><td>Unskilled support</td></tr>
-            <tr><td>PLB-027</td><td>Employment Contract – Admin / Dispatch Estimator</td><td>Office</td></tr>
-            <tr><td>PLB-028</td><td>Independent Contractor Agreement</td><td>Casual labour, subcontractors</td></tr>
-            <tr><td>PLB-029</td><td>Code of Conduct (Employees)</td><td>Safety, professionalism, theft prevention</td></tr>
-            <tr><td>PLB-030</td><td>Disciplinary Code & Procedure</td><td>HR compliance</td></tr>
-            <tr><td>PLB-031</td><td>Job / Call‑Out Roster (per day)</td><td>Emergency rotation</td></tr>
-            <tr><td>PLB-032</td><td>Attendance Register (Daily)</td><td>Sign‑in / sign‑out</td></tr>
+            <tr>
+            <tr>
+            <td>
+            <tr>
+            <tr>
+            <tr>
+            <tr>
+            <tr>
+            <tr>
+            <tr>
         </tbody>
     </table>
 
+    <!-- PHASE 4: OPERATIONS & PROJECT MANAGEMENT (14 docs) -->
     <h3>Phase 4: Operations & Project Management (14 docs)</h3>
-    <table>
-        <thead><tr><th>Ref</th><th>Document</th><th>Purpose</th></tr></thead>
+    <tr>
+        <thead></tr><th>✔</th><th>Ref</th><th>Document</th><th>Purpose</th></tr></thead>
         <tbody>
-            <tr><td>PLB-033</td><td>Job Card / Work Order (per site)</td><td>Scope, materials, time</td></tr>
-            <tr><td>PLB-034</td><td>Site Inspection Report (pre‑work)</td><td>Existing condition, photos</td></tr>
-            <tr><td>PLB-035</td><td>Bill of Materials (BOM) per job</td><td>All parts, quantities</td></tr>
-            <tr><td>PLB-036</td><td>Daily Site / Work Log (progress, weather, delays)</td><td>Project tracking</td></tr>
-            <tr><td>PLB-037</td><td>Vehicle / Van Inventory Log (tools, stock on board)</td><td>Asset tracking</td></tr>
-            <tr><td>PLB-038</td><td>Tool Sign‑Out Register (specialist tools)</td><td>Drain camera, press tools – loss prevention</td></tr>
-            <tr><td>PLB-039</td><td>Stock / Inventory Register (pipes, fittings, geysers)</td><td>Warehouse control</td></tr>
-            <tr><td>PLB-040</td><td>Supplier Delivery Note Log</td><td>Materials received</td></tr>
-            <tr><td>PLB-041</td><td>Purchase Order Template</td><td>To suppliers</td></tr>
-            <tr><td>PLB-042</td><td>Client Site Safety / Access Form</td><td>For hazardous sites (sewage, confined spaces)</td></tr>
-            <tr><td>PLB-043</td><td>Commissioning / Handover Certificate (client sign‑off)</td><td>Job complete</td></tr>
-            <tr><td>PLB-044</td><td>After‑Call / Warranty Service Log (callbacks)</td><td>Defect tracking</td></tr>
-            <tr><td>PLB-045</td><td>Emergency Call‑Out Log (after hours)</td><td>Response tracking</td></tr>
-            <tr><td>PLB-046</td><td>Septic Tank / Conservancy Tank Emptying Log</td><td>Compliance record (if applicable)</td></tr>
+            <tr>
+            <tr>
+            <tr>
+            <tr>
+            <tr>
+            <td>
+            <tr>
+            <tr>
+            </tr>
+            <tr>
+            <tr>
+            <tr>
+            <tr>
+            <tr>
         </tbody>
-    </table>
+    </tr>
 
+    <!-- PHASE 5: HEALTH & SAFETY (11 docs) -->
     <h3>Phase 5: Health & Safety (11 docs)</h3>
-    <table>
-        <thead><tr><th>Ref</th><th>Document</th><th>Purpose</th></tr></thead>
+    <tr>
+        <thead><tr><th>✔</th><th>Ref</th><th>Document</th><th>Purpose</th></td></thead>
         <tbody>
-            <tr><td>PLB-047</td><td>Occupational Health & Safety (OHS) Policy</td><td>Company H&S</td></tr>
-            <tr><td>PLB-048</td><td>Site‑Specific Risk Assessment</td><td>Confined spaces, sewage, hot water, working at height</td></tr>
-            <tr><td>PLB-049</td><td>Safe Work Method Statement (SWMS)</td><td>Drain cleaning, geyser replacement, roof work</td></tr>
-            <tr><td>PLB-050</td><td>Confined Space Entry Permit (for sewer, septic tanks)</td><td>Mandatory for high‑risk</td></tr>
-            <tr><td>PLB-051</td><td>Incident / Accident Report Form</td><td>Injury, flood, near‑miss</td></tr>
-            <tr><td>PLB-052</td><td>First Aid Kit Register (per vehicle, per workshop)</td><td>Inventory</td></tr>
-            <tr><td>PLB-053</td><td>Fire Extinguisher Inspection Log (vehicles, workshop)</td><td>Monthly check</td></tr>
-            <tr><td>PLB-054</td><td>Emergency / Rescue Plan (confined space)</td><td>For sewer / septic work</td></tr>
-            <tr><td>PLB-055</td><td>Personal Protective Equipment (PPE) Register</td><td>Gloves, goggles, boots, respirators, hard hats</td></tr>
-            <tr><td>PLB-056</td><td>Biological Hazard / Pathogen Exposure Plan</td><td>Sewage work – hepatitis, E. coli protection</td></tr>
-            <tr><td>PLB-057</td><td>Toolbox Talk Register (weekly safety)</td><td>Staff engagement</td></tr>
+            <tr>
+            <tr>
+            </table>
+            <tr>
+            <tr>
+            <tr>
+            <tr>
+            <tr>
+            <tr>
+            </td>
+            </tr>
         </tbody>
-    </table>
+    </tr>
 
+    <!-- PHASE 6: FINANCE & SUPPLIERS (8 docs) -->
     <h3>Phase 6: Finance & Suppliers (8 docs)</h3>
     <tr>
-        <thead><tr><th>Ref</th><th>Document</th><th>Purpose</th></tr></thead>
+        <thead><tr><th>✔</th><th>Ref</th><th>Document</th><th>Purpose</th></tr></thead>
         <tbody>
-            <tr><td>PLB-058</td><td>Invoice Template (per job)</td><td>Billing client</td></tr>
-            <tr><td>PLB-059</td><td>Supplier Invoice Register (materials, geysers, tools)</td><td>Expense tracking</td></tr>
-            <tr><td>PLB-060</td><td>Payroll Register</td><td>Staff wages</td></tr>
-            <tr><td>PLB-061</td><td>Petty Cash Log</td><td>Small purchases (fittings, tape)</td></tr>
-            <tr><td>PLB-062</td><td>Client Payment History</td><td>Accounts receivable</td></tr>
-            <tr><td>PLB-063</td><td>Supplier Payment Schedule</td><td>Creditors aging</td></tr>
-            <tr><td>PLB-064</td><td>Job Costing Sheet (labour + materials per job)</td><td>Profitability</td></tr>
-            <tr><td>PLB-065</td><td>Bank Reconciliation Template</td><td>Monthly finance</td></tr>
+            <tr>
+            <tr>
+            <tr>
+            </tr>
+            </tr>
+            <tr>
+            <table>
+            <td>
         </tbody>
     </table>
 
+    <!-- PHASE 7: EQUIPMENT & ASSETS (9 docs) -->
     <h3>Phase 7: Equipment & Assets (9 docs)</h3>
-    </table>
-        <thead><tr><th>Ref</th><th>Document</th><th>Purpose</th></tr></thead>
+    <tr>
+        <thead><tr><th>✔</th><th>Ref</th><th>Document</th><th>Purpose</th></td></thead>
         <tbody>
-            <tr><td>PLB-066</td><td>Asset Register (Master)</td><td>Vehicles, drain cleaning machines, press tools, welders, compressors</td></tr>
-            <tr><td>PLB-067</td><td>Vehicle / Van Log Sheet (fuel, trips, maintenance)</td><td>For service vehicles</td></tr>
-            <tr><td>PLB-068</td><td>Tool / Equipment Calibration Log</td><td>Gas detectors, pressure gauges, camera systems</td></tr>
-            <tr><td>PLB-069</td><td>Power Tool Inventory</td><td>Drills, grinders, pipe cutters, threaders – theft tracking</td></tr>
-            <tr><td>PLB-070</td><td>Ladder / Step Stool Inspection Log</td><td>Working at height safety</td></tr>
-            <tr><td>PLB-071</td><td>Stock / Warehouse Inventory</td><td>Geysers, pipes, valves – monthly count</td></tr>
-            <tr><td>PLB-072</td><td>PPE Replacement Log</td><td>Gloves, respirator filters – expiry tracking</td></tr>
-            <tr><td>PLB-073</td><td>Drain Camera / Inspection Equipment Log</td><td>Maintenance</td></tr>
-            <tr><td>PLB-074</td><td>Asset Disposal Form</td><td>Selling old vehicles / tools</td></tr>
+            <tr>
+            <tr>
+            </td>
+            <tr>
+            <tr>
+            <tr>
+            <td>
+            <tr>
+            </td>
+        </tbody>
+    </tr>
+
+    <!-- PHASE 8: FORMS & TEMPLATES (8 docs) -->
+    <h3>Phase 8: Forms & Templates (8 docs)</h3>
+    <tr>
+        <thead><tr><th>✔</th><th>Ref</th><th>Document</th><th>Purpose</th></table></thead>
+        <tbody>
+            <tr>
+            <td>
+            <tr>
+            <tr>
+            <tr>
+            </tr>
+            <tr>
+            <table>
         </tbody>
     </table>
 
-    <h3>Phase 8: Forms & Templates (8 docs)</h3>
-    <table>
-        <thead><tr><th>Ref</th><th>Document</th><th>Purpose</th></tr></thead>
-        <tbody>
-            <tr><td>PLB-075</td><td>Daily Job Report (for client progress)</td><td>Transparency</td></tr>
-            <tr><td>PLB-076</td><td>Emergency Call‑Out Acknowledgment Form</td><td>Confirmation of after‑hours rate (client signature)</td></tr>
-            <tr><td>PLB-077</td><td>Overtime Authorization Form</td><td>Staff approval</td></tr>
-            <tr><td>PLB-078</td><td>Leave Application Form</td><td>Staff requests</td></tr>
-            <tr><td>PLB-079</td><td>New Employee Induction Checklist</td><td>Plumbing safety, confined space</td></tr>
-            <tr><td>PLB-080</td><td>Supplier Evaluation Form</td><td>Wholesaler performance</td></tr>
-            <tr><td>PLB-081</td><td>Customer Satisfaction Survey</td><td>After service</td></tr>
-            <tr><td>PLB-082</td><td>Termination Checklist</td><td>Offboarding</td></tr>
-        </tbody>
-    </table>
+    <div class="button-group">
+        <a href="index.html#industries" class="btn"><i class="fas fa-arrow-left"></i> Back to Industries</a>
+        <a href="#" id="orderSelectedBtn" class="btn btn-secondary"><i class="fas fa-clipboard-list"></i> Order Selected Documents →</a>
+    </div>
+</div>
+
+<div class="footer">...</div>
+
+<script>
+    document.getElementById('orderSelectedBtn').addEventListener('click', function(e) {
+        e.preventDefault();
+        const selected = [];
+        document.querySelectorAll('.doc-check:checked').forEach(cb => {
+            selected.push({ category: cb.getAttribute('data-cat'), doc: cb.getAttribute('data-doc') });
+        });
+        if (selected.length === 0) { alert('Please select at least one document to order.'); return; }
+        const param = encodeURIComponent(JSON.stringify(selected));
+        window.location.href = `order-documents.html?industry=Plumbing%20%26%20Sanitation&preselected=${param}`;
+    });
+</script>
+</body>
+</html>
 
     <h2 class="section-title">📁 File Directory Structure</h2>
     <div class="repo-structure">
