@@ -6,153 +6,29 @@
     <title>Health & Beauty Document Roadmap | Legacy Launchpad</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: #f8fafc;
-            color: #1e293b;
-            line-height: 1.5;
-        }
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-        .header {
-            background: #0f172a;
-            color: white;
-            padding: 20px 0;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-        }
-        .header-flex {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 20px;
-        }
-        .logo-area {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-        }
-        .logo-placeholder {
-            width: 50px;
-            height: 50px;
-            background: #fbbf24;
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.8rem;
-            color: #0f172a;
-        }
-        .logo-text h1 {
-            font-size: 1.5rem;
-            letter-spacing: -0.5px;
-        }
-        .nav a {
-            color: white;
-            text-decoration: none;
-            margin-left: 25px;
-            transition: 0.3s;
-        }
-        .nav a:hover {
-            color: #fbbf24;
-        }
-        .hero {
-            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
-            color: white;
-            padding: 60px 0;
-            text-align: center;
-        }
-        .hero h1 {
-            font-size: 2.5rem;
-            margin-bottom: 15px;
-        }
-        .section-title {
-            font-size: 1.8rem;
-            margin: 40px 0 20px;
-            padding-bottom: 10px;
-            border-bottom: 2px solid #fbbf24;
-            display: inline-block;
-        }
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            background: white;
-            border-radius: 16px;
-            overflow: hidden;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
-            margin: 20px 0;
-        }
-        th, td {
-            padding: 12px 15px;
-            text-align: left;
-            border-bottom: 1px solid #e2e8f0;
-        }
-        th {
-            background: #0f172a;
-            color: white;
-            font-weight: 600;
-        }
-        tr:hover {
-            background: #fefce8;
-        }
-        .repo-structure {
-            background: #0f172a;
-            color: #cbd5e1;
-            padding: 25px;
-            border-radius: 16px;
-            font-family: monospace;
-            font-size: 0.85rem;
-            overflow-x: auto;
-            margin: 20px 0;
-        }
-        .button-group {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            margin: 30px 0;
-            flex-wrap: wrap;
-        }
-        .btn {
-            display: inline-block;
-            background: #0f172a;
-            color: white;
-            padding: 12px 30px;
-            border-radius: 40px;
-            text-decoration: none;
-            font-weight: bold;
-            transition: 0.3s;
-        }
-        .btn-secondary {
-            background: #fbbf24;
-            color: #0f172a;
-        }
-        .btn:hover {
-            transform: translateY(-2px);
-            background: #f59e0b;
-            color: #0f172a;
-        }
-        .footer {
-            background: #0f172a;
-            color: #94a3b8;
-            text-align: center;
-            padding: 30px 0;
-            margin-top: 40px;
-        }
-        @media (max-width: 768px) {
-            th, td { padding: 8px 10px; font-size: 0.8rem; }
-            .button-group { flex-direction: column; align-items: center; }
-        }
+        * { margin:0; padding:0; box-sizing:border-box; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #f8fafc; color: #1e293b; line-height: 1.5; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+        .header { background: #0f172a; color: white; padding: 20px 0; position: sticky; top: 0; z-index: 100; }
+        .header-flex { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px; }
+        .logo-area { display: flex; align-items: center; gap: 15px; }
+        .logo-placeholder { width: 50px; height: 50px; background: #fbbf24; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.8rem; color: #0f172a; }
+        .logo-text h1 { font-size: 1.5rem; letter-spacing: -0.5px; }
+        .nav a { color: white; text-decoration: none; margin-left: 25px; transition: 0.3s; }
+        .nav a:hover { color: #fbbf24; }
+        .hero { background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); color: white; padding: 60px 0; text-align: center; }
+        .hero h1 { font-size: 2.5rem; margin-bottom: 15px; }
+        .section-title { font-size: 1.8rem; margin: 40px 0 20px; padding-bottom: 10px; border-bottom: 2px solid #fbbf24; display: inline-block; }
+        table { width: 100%; border-collapse: collapse; background: white; border-radius: 16px; overflow: hidden; margin: 20px 0; }
+        th, td { padding: 12px 15px; text-align: left; border-bottom: 1px solid #e2e8f0; vertical-align: top; }
+        th { background: #0f172a; color: white; }
+        tr:hover { background: #fefce8; }
+        .button-group { display: flex; justify-content: center; gap: 20px; margin: 30px 0; flex-wrap: wrap; }
+        .btn { display: inline-block; background: #0f172a; color: white; padding: 12px 30px; border-radius: 40px; text-decoration: none; font-weight: bold; transition: 0.3s; }
+        .btn-secondary { background: #fbbf24; color: #0f172a; }
+        .btn:hover { transform: translateY(-2px); background: #f59e0b; color: #0f172a; }
+        .footer { background: #0f172a; color: #94a3b8; text-align: center; padding: 30px 0; margin-top: 40px; }
+        @media (max-width: 768px) { th, td { padding: 8px 10px; font-size: 0.8rem; } .button-group { flex-direction: column; align-items: center; } }
     </style>
 </head>
 <body>
@@ -167,6 +43,7 @@
             <a href="index.html">Home</a>
             <a href="index.html#industries">Industries</a>
             <a href="pricing.html">Pricing</a>
+            <a href="order-documents.html"><i class="fas fa-clipboard-list"></i> Order</a>
             <a href="index.html#contact">Contact</a>
         </div>
     </div>
@@ -174,145 +51,175 @@
 
 <div class="hero">
     <div class="container">
-        <h1>💇‍♀️ Health & Beauty (Salon / Spa / Barbershop)</h1>
-        <p>Complete document roadmap + file directory – 75 core documents</p>
+        <h1>💅 Health & Beauty (Salon / Spa / Barbershop)</h1>
+        <p>Complete document roadmap – 75 core documents</p>
     </div>
 </div>
 
 <div class="container">
-
     <h2 class="section-title">📋 Document Roadmap</h2>
 
+    <!-- PHASE 1: REGISTRATION & COMPLIANCE (11 docs) -->
     <h3>Phase 1: Registration & Compliance (11 docs)</h3>
     <table>
-        <thead><tr><th>Ref</th><th>Document</th><th>Purpose</th></tr></thead>
+        <thead><tr><th>✔</th><th>Ref</th><th>Document</th><th>Purpose</th></tr></thead>
         <tbody>
-            <tr><td>BEA-001</td><td>CIPC Registration Certificate</td><td>Proof of company registration</td></tr>
-            <tr><td>BEA-002</td><td>Memorandum of Incorporation (MOI)</td><td>Company constitution</td></tr>
-            <tr><td>BEA-003</td><td>SARS Registration (IT, PAYE, VAT)</td><td>Tax compliance (VAT if turnover >R1m)</td></tr>
-            <tr><td>BEA-004</td><td>COIDA Registration</td><td>Employee injury cover</td></tr>
-            <tr><td>BEA-005</td><td>Public Liability Insurance</td><td>Customer injuries (chemicals, burns, slips)</td></tr>
-            <tr><td>BEA-006</td><td>Business Licence (Municipal)</td><td>Required to trade</td></tr>
-            <tr><td>BEA-007</td><td>Health Certificate (Municipality)</td><td>Premises inspection – mandatory</td></tr>
-            <tr><td>BEA-008</td><td>Fire Clearance Certificate</td><td>For salon/spa premises</td></tr>
-            <tr><td>BEA-009</td><td>Zoning Certificate (Commercial)</td><td>Municipality confirmation</td></tr>
-            <tr><td>BEA-010</td><td>Professional Indemnity Insurance</td><td>For waxing, laser, injectables</td></tr>
-            <tr><td>BEA-011</td><td>B‑BBEE Certificate</td><td>For corporate tenders (staff wellness)</td></tr>
+            <tr><td><input type="checkbox" class="doc-check" data-cat="Registration & Compliance" data-doc="CIPC Registration Certificate"> </td><td>BEA-001</li><td>CIPC Registration Certificate</li><td>Proof of company registration</li></td>
+            <tr>
+            </tr>
+            <tr>
+            <tr>
+            <tr>
+            </tr>
+            <tr>
+            <tr>
+            <tr>
+            <tr>
         </tbody>
     </table>
 
+    <!-- PHASE 2: CONTRACTS & CLIENT DOCS (10 docs) -->
     <h3>Phase 2: Contracts & Client Docs (10 docs)</h3>
     <table>
-        <thead><tr><th>Ref</th><th>Document</th><th>Purpose</th></tr></thead>
+        <thead><tr><th>✔</th><th>Ref</th><th>Document</th><th>Purpose</th></tr></thead>
         <tbody>
-            <tr><td>BEA-012</td><td>Client Service Agreement / Consultation Form</td><td>Medical history, consent, expectations</td></tr>
-            <tr><td>BEA-013</td><td>Terms & Conditions of Service</td><td>Refunds, cancellations, liability (displayed)</td></tr>
-            <tr><td>BEA-014</td><td>Cancellation / No‑Show Policy</td><td>Deposit forfeiture, late fee</td></tr>
-            <tr><td>BEA-015</td><td>Membership / Loyalty Programme Agreement</td><td>Subscription terms</td></tr>
-            <tr><td>BEA-016</td><td>Gift Voucher Terms & Conditions</td><td>Expiry, non‑refundable</td></tr>
-            <tr><td>BEA-017</td><td>Product Sales Receipt / Warranty</td><td>Returns policy for retail items</td></tr>
-            <tr><td>BEA-018</td><td>Rental Agreement (chair/room to independent stylist)</td><td>Sub‑tenant agreement</td></tr>
-            <tr><td>BEA-019</td><td>Non‑Disclosure Agreement (NDA)</td><td>For proprietary formulas or VIP lists</td></tr>
-            <tr><td>BEA-020</td><td>Consent Form (photography / social media)</td><td>For before/after photos</td></tr>
-            <tr><td>BEA-021</td><td>Minor Consent Form</td><td>Parent/guardian for clients under 18</td></tr>
+            <tr>
+            <tr>
+            <tr>
+            <tr>
+            <tr>
+            <tr>
+            </td>
+            </td>
+            <tr>
+            </tr>
         </tbody>
     </table>
 
+    <!-- PHASE 3: HUMAN RESOURCES (10 docs) -->
     <h3>Phase 3: Human Resources (10 docs)</h3>
-    <table>
-        <thead><tr><th>Ref</th><th>Document</th><th>Purpose</th></tr></thead>
+    <tr>
+        <thead><tr><th>✔</th><th>Ref</th><th>Document</th><th>Purpose</th></tr></thead>
         <tbody>
-            <tr><td>BEA-022</td><td>Employment Contract – Hair Stylist / Barber</td><td>Permanent staff</td></tr>
-            <tr><td>BEA-023</td><td>Employment Contract – Beautician / Nail Technician</td><td>Skilled staff</td></tr>
-            <tr><td>BEA-024</td><td>Employment Contract – Massage Therapist</td><td>Registered therapist (if applicable)</td></tr>
-            <tr><td>BEA-025</td><td>Employment Contract – Receptionist</td><td>Front desk</td></tr>
-            <tr><td>BEA-026</td><td>Employment Contract – Salon Manager</td><td>Senior staff</td></tr>
-            <tr><td>BEA-027</td><td>Independent Contractor Agreement (chair renter)</td><td>Self‑employed stylist</td></tr>
-            <tr><td>BEA-028</td><td>Code of Conduct (Employees)</td><td>Hygiene, punctuality, professionalism</td></tr>
-            <tr><td>BEA-029</td><td>Disciplinary Code & Procedure</td><td>HR compliance</td></tr>
-            <tr><td>BEA-030</td><td>Appointment / Shift Roster</td><td>Daily schedule</td></tr>
-            <tr><td>BEA-031</td><td>Attendance Register (Daily)</td><td>Sign‑in / sign‑out</td></tr>
+            <tr>
+            <tr>
+            <tr>
+            <tr>
+            <tr>
+            </td>
+            <tr>
+            <td>
+            </td>
+            </td>
         </tbody>
     </table>
 
+    <!-- PHASE 4: OPERATIONS & SALON MANAGEMENT (12 docs) -->
     <h3>Phase 4: Operations & Salon Management (12 docs)</h3>
     <tr>
-        <thead><tr><th>Ref</th><th>Document</th><th>Purpose</th></tr></thead>
+        <thead><tr><th>✔</th><th>Ref</th><th>Document</th><th>Purpose</th></tr></thead>
         <tbody>
-            <tr><td>BEA-032</td><td>Daily Appointment Log (booking sheet)</td><td>Client names, times, services</td></tr>
-            <tr><td>BEA-033</td><td>Client History / Preference Card</td><td>Personalised service for repeat customers</td></tr>
-            <tr><td>BEA-034</td><td>Daily Sales Summary (by service and retail)</td><td>Till reconciliation</td></tr>
-            <tr><td>BEA-035</td><td>Stock Take Sheet (retail products)</td><td>Shampoos, creams, etc.</td></tr>
-            <tr><td>BEA-036</td><td>Consumables Usage Log (disposables)</td><td>Gloves, foils, cotton – cost control</td></tr>
-            <tr><td>BEA-037</td><td>Supplier Delivery Note Log</td><td>Received stock</td></tr>
-            <tr><td>BEA-038</td><td>Purchase Order Template</td><td>To suppliers</td></tr>
-            <tr><td>BEA-039</td><td>Equipment Sterilisation Log</td><td>Autoclave, UV cabinet – health compliance</td></tr>
-            <tr><td>BEA-040</td><td>Towel / Linen Laundry Log</td><td>Hygiene</td></tr>
-            <tr><td>BEA-041</td><td>Daily Opening Checklist</td><td>Lights, music, clean towels</td></tr>
-            <tr><td>BEA-042</td><td>Daily Closing Checklist</td><td>Cash banking, alarms, waste disposal</td></tr>
-            <tr><td>BEA-043</td><td>Customer Feedback / Comment Card</td><td>Service improvement</td></tr>
+            <tr>
+            <tr>
+            </td>
+            <tr>
+            </td>
+            <tr>
+            </tr>
+            <tr>
+            <tr>
+            <tr>
+            <tr>
+            </tr>
         </tbody>
     </table>
 
+    <!-- PHASE 5: HEALTH & SAFETY (10 docs) -->
     <h3>Phase 5: Health & Safety (10 docs)</h3>
-    <table>
-        <thead><tr><th>Ref</th><th>Document</th><th>Purpose</th></tr></thead>
+    <tr>
+        <thead><tr><th>✔</th><th>Ref</th><th>Document</th><th>Purpose</th></tr></thead>
         <tbody>
-            <tr><td>BEA-044</td><td>Occupational Health & Safety (OHS) Policy</td><td>Company H&S</td></tr>
-            <tr><td>BEA-045</td><td>Risk Assessment (Salon)</td><td>Chemicals, slips, sharps</td></tr>
-            <tr><td>BEA-046</td><td>Chemical Safety Data Sheet Register</td><td>MSDS for all salon products</td></tr>
-            <tr><td>BEA-047</td><td>Incident / Accident Report Form</td><td>Customer or staff injury</td></tr>
-            <tr><td>BEA-048</td><td>First Aid Kit Register</td><td>Inventory</td></tr>
-            <tr><td>BEA-049</td><td>Fire Extinguisher Inspection Log</td><td>Monthly check</td></tr>
-            <tr><td>BEA-050</td><td>Emergency Evacuation Plan</td><td>Salon layout map</td></tr>
-            <tr><td>BEA-051</td><td>Sharps Disposal Log</td><td>Needles, razors – health waste</td></tr>
-            <tr><td>BEA-052</td><td>Personal Protective Equipment (PPE) Policy</td><td>Gloves, aprons, masks</td></tr>
-            <tr><td>BEA-053</td><td>Toolbox Talk Register</td><td>Monthly staff safety talks</td></tr>
+            <tr>
+            <tr>
+            <tr>
+            </tr>
+            <tr>
+            <tr>
+            <tr>
+            <tr>
+            </tr>
+            <tr>
         </tbody>
-    </table>
+    <tr>
 
+    <!-- PHASE 6: FINANCE & SUPPLIERS (8 docs) -->
     <h3>Phase 6: Finance & Suppliers (8 docs)</h3>
     <tr>
-        <thead><tr><th>Ref</th><th>Document</th><th>Purpose</th></tr></thead>
+        <thead><tr><th>✔</th><th>Ref</th><th>Document</th><th>Purpose</th></td></thead>
         <tbody>
-            <tr><td>BEA-054</td><td>Invoice Template (corporate / event services)</td><td>B2B billing</td></tr>
-            <tr><td>BEA-055</td><td>Supplier Invoice Register</td><td>Retail stock, consumables</td></tr>
-            <tr><td>BEA-056</td><td>Payroll Register</td><td>Staff wages (including commission)</td></tr>
-            <tr><td>BEA-057</td><td>Petty Cash Log</td><td>Small purchases</td></tr>
-            <tr><td>BEA-058</td><td>Daily Banking Register</td><td>Cash and card deposits</td></tr>
-            <tr><td>BEA-059</td><td>Supplier Payment Schedule</td><td>Creditors aging</td></tr>
-            <tr><td>BEA-060</td><td>Commission Calculator</td><td>Per stylist / service – performance tracking</td></tr>
-            <tr><td>BEA-061</td><td>Bank Reconciliation Template</td><td>Monthly finance</td></tr>
+            <tr>
+            <tr>
+            <tr>
+            <tr>
+            <tr>
+            <tr>
+            </tr>
+            <tr>
         </tbody>
     </table>
 
+    <!-- PHASE 7: EQUIPMENT & ASSETS (7 docs) -->
     <h3>Phase 7: Equipment & Assets (7 docs)</h3>
-    <table>
-        <thead><tr><th>Ref</th><th>Document</th><th>Purpose</th></tr></thead>
+    <tr>
+        <thead><tr><th>✔</th><th>Ref</th><th>Document</th><th>Purpose</th></tr></thead>
         <tbody>
-            <tr><td>BEA-062</td><td>Asset Register (Master)</td><td>Chairs, dryers, beds, computer, tools</td></tr>
-            <tr><td>BEA-063</td><td>Equipment Maintenance Log</td><td>Steriliser, dryer, pedicure spa chairs</td></tr>
-            <tr><td>BEA-064</td><td>Tool Inventory (scissors, clippers, files)</td><td>Theft tracking</td></tr>
-            <tr><td>BEA-065</td><td>Calibration Log (scales, timers if used)</td><td>Precision</td></tr>
-            <tr><td>BEA-066</td><td>Towel / Linen Inventory</td><td>Linen count</td></tr>
-            <tr><td>BEA-067</td><td>Electrical Appliance Test Log</td><td>Hairdryers, curling irons – safety</td></tr>
-            <tr><td>BEA-068</td><td>Asset Disposal Form</td><td>Retirement of old equipment</td></tr>
+            <tr>
+            <tr>
+            <tr>
+            <tr>
+            <tr>
+            <tr>
+            <tr>
         </tbody>
     </table>
 
+    <!-- PHASE 8: FORMS & TEMPLATES (7 docs) -->
     <h3>Phase 8: Forms & Templates (7 docs)</h3>
-    <table>
-        <thead><tr><th>Ref</th><th>Document</th><th>Purpose</th></tr></thead>
+    <tr>
+        <thead><tr><th>✔</th><th>Ref</th><th>Document</th><th>Purpose</th></tr></thead>
         <tbody>
-            <tr><td>BEA-069</td><td>Appointment Reminder Template</td><td>SMS/WhatsApp – reduce no‑shows</td></tr>
-            <tr><td>BEA-070</td><td>Consultation Card (new clients)</td><td>Allergies, medical conditions</td></tr>
-            <tr><td>BEA-071</td><td>Overtime Authorization Form</td><td>Staff approval</td></tr>
-            <tr><td>BEA-072</td><td>Leave Application Form</td><td>Staff requests</td></tr>
-            <tr><td>BEA-073</td><td>New Employee Induction Checklist</td><td>Salon hygiene onboarding</td></tr>
-            <tr><td>BEA-074</td><td>Supplier Evaluation Form</td><td>Product quality</td></tr>
-            <tr><td>BEA-075</td><td>Termination Checklist</td><td>Offboarding</td></tr>
+            <tr>
+            <tr>
+            <tr>
+            <tr>
+            <tr>
+            <tr>
+            <td>
         </tbody>
     </table>
+
+    <div class="button-group">
+        <a href="index.html#industries" class="btn"><i class="fas fa-arrow-left"></i> Back to Industries</a>
+        <a href="#" id="orderSelectedBtn" class="btn btn-secondary"><i class="fas fa-clipboard-list"></i> Order Selected Documents →</a>
+    </div>
+</div>
+
+<div class="footer">...</div>
+
+<script>
+    document.getElementById('orderSelectedBtn').addEventListener('click', function(e) {
+        e.preventDefault();
+        const selected = [];
+        document.querySelectorAll('.doc-check:checked').forEach(cb => {
+            selected.push({ category: cb.getAttribute('data-cat'), doc: cb.getAttribute('data-doc') });
+        });
+        if (selected.length === 0) { alert('Please select at least one document to order.'); return; }
+        const param = encodeURIComponent(JSON.stringify(selected));
+        window.location.href = `order-documents.html?industry=Health%20%26%20Beauty&preselected=${param}`;
+    });
+</script>
+</body>
+</html>
 
     <h2 class="section-title">📁 File Directory Structure</h2>
     <div class="repo-structure">
