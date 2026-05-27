@@ -123,35 +123,6 @@
                 <label><input type="checkbox" class="personal-service" data-price="300" data-name="SASSA Grant Assistance"> SASSA Grant Assistance – R300</label>
                 <label><input type="checkbox" class="personal-service" data-price="200" data-name="Police Clearance Guidance"> Police Clearance Guidance – R200</label>
             </div>
-            <!-- ==================== ADVANCED DOCUMENT SELECTION (by category) ==================== -->
-<h3 style="margin: 25px 0 15px;">📄 Advanced Document Selection (per document)</h3>
-<div class="form-group">
-    <label>Select industry</label>
-    <select id="advIndustrySelect">
-        <option value="">-- Select industry to see documents --</option>
-        <option value="Construction">Construction</option>
-        <option value="Cleaning Services">Cleaning Services</option>
-        <option value="Cash for Scrap">Cash for Scrap</option>
-        <option value="Property & Real Estate">Property & Real Estate</option>
-        <option value="Transport & Logistics">Transport & Logistics</option>
-        <option value="Retail (General)">Retail (General)</option>
-        <option value="Restaurant & Takeaway">Restaurant & Takeaway</option>
-        <option value="Security Services">Security Services</option>
-        <option value="Light Manufacturing">Light Manufacturing</option>
-        <option value="Automotive Repair & Sales">Automotive Repair & Sales</option>
-        <option value="Health & Beauty (Salon/Spa)">Health & Beauty (Salon/Spa)</option>
-        <option value="Information Technology (IT)">Information Technology (IT)</option>
-        <option value="Event Management & Catering">Event Management & Catering</option>
-        <option value="Farming & Agriculture">Farming & Agriculture</option>
-        <option value="Funeral Services">Funeral Services</option>
-        <option value="ECD (Daycare/Crèche)">ECD (Daycare/Crèche)</option>
-        <option value="Electrical & Solar">Electrical & Solar</option>
-        <option value="Plumbing & Sanitation">Plumbing & Sanitation</option>
-        <option value="Logistics & Warehousing">Logistics & Warehousing</option>
-        <option value="NGO / Non-Profit">NGO / Non-Profit</option>
-    </select>
-</div>
-<div id="advCategoriesContainer"></div>
 
             <!-- ADVANCED DOCUMENT SELECTION (by category) -->
             <h3 style="margin: 25px 0 15px;">📄 Advanced Document Selection (per document)</h3>
@@ -2272,13 +2243,14 @@ function updateTotal() {
   }
 };
 
-    // Price configuration
+    // ========================
+    // PRICE CONFIGURATION
+    // ========================
     const FDS_PRICE = 700;
     const ROADMAP_PRICE = 700;
     const BUNDLE_PRICES = { startup: 1750, compliance: 1050, franchise: 6000, 'industry-combo': 1500, none: 0 };
-    let selectedAdvDocs = [];
+    let advSelectedCount = 0;
 
-    // Helper: update total
     function updateTotal() {
         let total = 0;
         if (document.getElementById('includeFDS').checked) total += FDS_PRICE;
@@ -2286,8 +2258,8 @@ function updateTotal() {
         const bundle = document.querySelector('input[name="bundle"]:checked').value;
         total += BUNDLE_PRICES[bundle] || 0;
         document.querySelectorAll('.personal-service:checked').forEach(cb => total += parseFloat(cb.dataset.price) || 0);
-        // Advanced documents: assume each selected doc costs R30 (example)
-        total += selectedAdvDocs.length * 30;
+        advSelectedCount = document.querySelectorAll('.adv-doc:checked').length;
+        total += advSelectedCount * 30; // R30 per advanced doc
         document.getElementById('totalAmount').innerText = total;
     }
 
@@ -2298,78 +2270,88 @@ function updateTotal() {
     }
     document.getElementById('includeFDS').addEventListener('change', toggleIndustrySelect);
     document.getElementById('includeRoadmap').addEventListener('change', toggleIndustrySelect);
-    document.querySelectorAll('input[name="bundle"]').forEach(r => r.addEventListener('change', updateTotal));
+    document.getElementById('includeFDS').addEventListener('change', updateTotal);
+    document.getElementById('includeRoadmap').addEventListener('change', updateTotal);
+    document.querySelectorAll('input[name="bundle"]').forEach(radio => radio.addEventListener('change', updateTotal));
     document.querySelectorAll('.personal-service').forEach(cb => cb.addEventListener('change', updateTotal));
 
-    // Load advanced document categories when industry changes
-    document.getElementById('advIndustrySelect').addEventListener('change', function() {
-        const industry = this.value;
-        const container = document.getElementById('advCategoriesContainer');
-        if (!industry || !industryDocs[industry]) {
-            container.innerHTML = '<p>Select an industry to see documents.</p>';
-            return;
-        }
-        let html = '';
-        for (const [category, docs] of Object.entries(industryDocs[industry])) {
-            const catId = category.replace(/\s+/g, '_');
-            html += `
-                <div class="category-accordion">
-                    <div class="category-header" data-cat="${catId}">
-                        <span>📁 ${category}</span>
-                        <span>▼</span>
-                    </div>
-                    <div class="category-content" id="content_${catId}">
-                        <div class="doc-list">
-                            ${docs.map(doc => `
-                                <label class="doc-item">
-                                    <input type="checkbox" class="adv-doc" data-doc="${doc.replace(/"/g, '&quot;')}" value="${doc}">
-                                    <span>${doc}</span>
-                                </label>
-                            `).join('')}
+    // Load advanced document categories
+    const advSelect = document.getElementById('advIndustrySelect');
+    const advContainer = document.getElementById('advCategoriesContainer');
+    if (advSelect) {
+        advSelect.addEventListener('change', function() {
+            const industry = this.value;
+            if (!industry || !industryDocs[industry] || Object.keys(industryDocs[industry]).length === 0) {
+                advContainer.innerHTML = '<p>Please select an industry to see documents. (Full data not loaded – check industryDocs)</p>';
+                return;
+            }
+            const data = industryDocs[industry];
+            let html = '';
+            for (const [category, docs] of Object.entries(data)) {
+                const catId = category.replace(/\s+/g, '_');
+                html += `
+                    <div class="category-accordion">
+                        <div class="category-header" data-cat="${catId}">
+                            <span>📁 ${category}</span>
+                            <span>▼</span>
+                        </div>
+                        <div class="category-content" id="content_${catId}">
+                            <div class="doc-list">
+                                ${docs.map(doc => `
+                                    <label class="doc-item">
+                                        <input type="checkbox" class="adv-doc" data-doc="${doc.replace(/"/g, '&quot;')}">
+                                        <span>${doc}</span>
+                                    </label>
+                                `).join('')}
+                            </div>
                         </div>
                     </div>
-                </div>
-            `;
-        }
-        container.innerHTML = html;
-        // Attach accordion toggle
-        document.querySelectorAll('.category-header').forEach(header => {
-            header.addEventListener('click', () => {
-                const catId = header.dataset.cat;
-                const content = document.getElementById(`content_${catId}`);
-                content.classList.toggle('open');
-                header.querySelector('span:last-child').textContent = content.classList.contains('open') ? '▲' : '▼';
+                `;
+            }
+            advContainer.innerHTML = html;
+            // Attach accordion toggles
+            document.querySelectorAll('.category-header').forEach(header => {
+                header.addEventListener('click', () => {
+                    const catId = header.getAttribute('data-cat');
+                    const content = document.getElementById(`content_${catId}`);
+                    content.classList.toggle('open');
+                    const arrow = header.querySelector('span:last-child');
+                    arrow.textContent = content.classList.contains('open') ? '▲' : '▼';
+                });
             });
+            // Attach document checkboxes to update total
+            document.querySelectorAll('.adv-doc').forEach(cb => cb.addEventListener('change', updateTotal));
+            // Recalculate total
+            updateTotal();
         });
-        // Attach document checkbox events
-        document.querySelectorAll('.adv-doc').forEach(cb => {
-            cb.addEventListener('change', function() {
-                if (this.checked) selectedAdvDocs.push(this.dataset.doc);
-                else selectedAdvDocs = selectedAdvDocs.filter(d => d !== this.dataset.doc);
-                updateTotal();
-            });
-        });
-    });
+    }
 
-    // Pre‑fill from URL parameters
+    // Pre‑fill from URL parameters (for industry pages)
     const urlParams = new URLSearchParams(window.location.search);
-    if (urlParams.get('package') === 'full-franchise') {
-        document.getElementById('includeFDS').checked = true;
-        document.getElementById('includeRoadmap').checked = true;
-        document.querySelector('input[name="bundle"][value="franchise"]').checked = true;
-        toggleIndustrySelect();
+    const preselectedParam = urlParams.get('preselected');
+    const preselectedIndustry = urlParams.get('industry');
+    if (preselectedParam && preselectedIndustry) {
+        const preselectedDocs = JSON.parse(decodeURIComponent(preselectedParam));
+        // Set industry dropdown
+        advSelect.value = preselectedIndustry;
+        // Wait for categories to load, then check boxes
+        setTimeout(() => {
+            const event = new Event('change');
+            advSelect.dispatchEvent(event);
+            setTimeout(() => {
+                const checkboxes = document.querySelectorAll('.adv-doc');
+                preselectedDocs.forEach(pd => {
+                    for (let cb of checkboxes) {
+                        if (cb.getAttribute('data-doc') === pd.doc) {
+                            cb.checked = true;
+                            break;
+                        }
+                    }
+                });
+                updateTotal();
+            }, 300);
+        }, 100);
     }
-    if (urlParams.get('service') === 'UIF') {
-        document.querySelector('.personal-service[data-name="UIF Application"]').checked = true;
-    }
-    if (urlParams.get('industry')) {
-        const ind = urlParams.get('industry');
-        document.getElementById('industryForDocs').value = ind;
-        document.getElementById('advIndustrySelect').value = ind;
-        // trigger load
-        document.getElementById('advIndustrySelect').dispatchEvent(new Event('change'));
-    }
-    updateTotal();
 
     // Form submission to Google Apps Script
     document.getElementById('orderForm').addEventListener('submit', async function(e) {
@@ -2389,13 +2371,14 @@ function updateTotal() {
             industryForDocs: document.getElementById('industryForDocs').value,
             bundle: document.querySelector('input[name="bundle"]:checked').value,
             personalServices: Array.from(document.querySelectorAll('.personal-service:checked')).map(cb => cb.dataset.name),
-            advancedDocs: selectedAdvDocs,
+            advancedDocs: Array.from(document.querySelectorAll('.adv-doc:checked')).map(cb => cb.getAttribute('data-doc')),
             total: document.getElementById('totalAmount').innerText,
             notes: document.getElementById('notes').value,
             timestamp: new Date().toISOString()
         };
         try {
-            await fetch(https://https://script.google.com/macros/s/AKfycbzO1uuLq4YA4FHvVj9uDt5gLtdtUQvRqw7Kpu-xmLi7os6WrQY6uZsCQZE7VAhOi8T-zA/exec, {
+            // Replace with your actual Google Apps Script Web App URL
+            await fetch('YOUR_APPS_SCRIPT_WEB_APP_URL', {
                 method: 'POST',
                 mode: 'no-cors',
                 headers: { 'Content-Type': 'application/json' },
@@ -2403,7 +2386,7 @@ function updateTotal() {
             });
             alert('🎉 Congratulations! Your order has been received. We will send a quote and invoice within 24 hours.');
             document.getElementById('orderForm').reset();
-            selectedAdvDocs = [];
+            advContainer.innerHTML = '';
             updateTotal();
         } catch (err) {
             alert('Error submitting. Please contact us directly.');
