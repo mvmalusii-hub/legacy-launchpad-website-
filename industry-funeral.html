@@ -6,153 +6,29 @@
     <title>Funeral Services Document Roadmap | Legacy Launchpad</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: #f8fafc;
-            color: #1e293b;
-            line-height: 1.5;
-        }
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-        .header {
-            background: #0f172a;
-            color: white;
-            padding: 20px 0;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-        }
-        .header-flex {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 20px;
-        }
-        .logo-area {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-        }
-        .logo-placeholder {
-            width: 50px;
-            height: 50px;
-            background: #fbbf24;
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.8rem;
-            color: #0f172a;
-        }
-        .logo-text h1 {
-            font-size: 1.5rem;
-            letter-spacing: -0.5px;
-        }
-        .nav a {
-            color: white;
-            text-decoration: none;
-            margin-left: 25px;
-            transition: 0.3s;
-        }
-        .nav a:hover {
-            color: #fbbf24;
-        }
-        .hero {
-            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
-            color: white;
-            padding: 60px 0;
-            text-align: center;
-        }
-        .hero h1 {
-            font-size: 2.5rem;
-            margin-bottom: 15px;
-        }
-        .section-title {
-            font-size: 1.8rem;
-            margin: 40px 0 20px;
-            padding-bottom: 10px;
-            border-bottom: 2px solid #fbbf24;
-            display: inline-block;
-        }
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            background: white;
-            border-radius: 16px;
-            overflow: hidden;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
-            margin: 20px 0;
-        }
-        th, td {
-            padding: 12px 15px;
-            text-align: left;
-            border-bottom: 1px solid #e2e8f0;
-        }
-        th {
-            background: #0f172a;
-            color: white;
-            font-weight: 600;
-        }
-        tr:hover {
-            background: #fefce8;
-        }
-        .repo-structure {
-            background: #0f172a;
-            color: #cbd5e1;
-            padding: 25px;
-            border-radius: 16px;
-            font-family: monospace;
-            font-size: 0.85rem;
-            overflow-x: auto;
-            margin: 20px 0;
-        }
-        .button-group {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            margin: 30px 0;
-            flex-wrap: wrap;
-        }
-        .btn {
-            display: inline-block;
-            background: #0f172a;
-            color: white;
-            padding: 12px 30px;
-            border-radius: 40px;
-            text-decoration: none;
-            font-weight: bold;
-            transition: 0.3s;
-        }
-        .btn-secondary {
-            background: #fbbf24;
-            color: #0f172a;
-        }
-        .btn:hover {
-            transform: translateY(-2px);
-            background: #f59e0b;
-            color: #0f172a;
-        }
-        .footer {
-            background: #0f172a;
-            color: #94a3b8;
-            text-align: center;
-            padding: 30px 0;
-            margin-top: 40px;
-        }
-        @media (max-width: 768px) {
-            th, td { padding: 8px 10px; font-size: 0.8rem; }
-            .button-group { flex-direction: column; align-items: center; }
-        }
+        * { margin:0; padding:0; box-sizing:border-box; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #f8fafc; color: #1e293b; line-height: 1.5; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+        .header { background: #0f172a; color: white; padding: 20px 0; position: sticky; top: 0; z-index: 100; }
+        .header-flex { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px; }
+        .logo-area { display: flex; align-items: center; gap: 15px; }
+        .logo-placeholder { width: 50px; height: 50px; background: #fbbf24; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.8rem; color: #0f172a; }
+        .logo-text h1 { font-size: 1.5rem; letter-spacing: -0.5px; }
+        .nav a { color: white; text-decoration: none; margin-left: 25px; transition: 0.3s; }
+        .nav a:hover { color: #fbbf24; }
+        .hero { background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); color: white; padding: 60px 0; text-align: center; }
+        .hero h1 { font-size: 2.5rem; margin-bottom: 15px; }
+        .section-title { font-size: 1.8rem; margin: 40px 0 20px; padding-bottom: 10px; border-bottom: 2px solid #fbbf24; display: inline-block; }
+        table { width: 100%; border-collapse: collapse; background: white; border-radius: 16px; overflow: hidden; margin: 20px 0; }
+        th, td { padding: 12px 15px; text-align: left; border-bottom: 1px solid #e2e8f0; vertical-align: top; }
+        th { background: #0f172a; color: white; }
+        tr:hover { background: #fefce8; }
+        .button-group { display: flex; justify-content: center; gap: 20px; margin: 30px 0; flex-wrap: wrap; }
+        .btn { display: inline-block; background: #0f172a; color: white; padding: 12px 30px; border-radius: 40px; text-decoration: none; font-weight: bold; transition: 0.3s; }
+        .btn-secondary { background: #fbbf24; color: #0f172a; }
+        .btn:hover { transform: translateY(-2px); background: #f59e0b; color: #0f172a; }
+        .footer { background: #0f172a; color: #94a3b8; text-align: center; padding: 30px 0; margin-top: 40px; }
+        @media (max-width: 768px) { th, td { padding: 8px 10px; font-size: 0.8rem; } .button-group { flex-direction: column; align-items: center; } }
     </style>
 </head>
 <body>
@@ -167,6 +43,7 @@
             <a href="index.html">Home</a>
             <a href="index.html#industries">Industries</a>
             <a href="pricing.html">Pricing</a>
+            <a href="order-documents.html"><i class="fas fa-clipboard-list"></i> Order</a>
             <a href="index.html#contact">Contact</a>
         </div>
     </div>
@@ -175,151 +52,181 @@
 <div class="hero">
     <div class="container">
         <h1>⚰️ Funeral Services</h1>
-        <p>Complete document roadmap + file directory – 82 core documents</p>
+        <p>Complete document roadmap – 82 core documents</p>
     </div>
 </div>
 
 <div class="container">
-
     <h2 class="section-title">📋 Document Roadmap</h2>
 
+    <!-- PHASE 1: REGISTRATION & COMPLIANCE (12 docs) -->
     <h3>Phase 1: Registration & Compliance (12 docs)</h3>
     <table>
-        <thead><tr><th>Ref</th><th>Document</th><th>Purpose</th></tr></thead>
+        <thead><tr><th>✔</th><th>Ref</th><th>Document</th><th>Purpose</th></tr></thead>
         <tbody>
-            <tr><td>FUN-001</td><td>CIPC Registration Certificate</td><td>Proof of company registration</td></tr>
-            <tr><td>FUN-002</td><td>Memorandum of Incorporation (MOI)</td><td>Company constitution</td></tr>
-            <tr><td>FUN-003</td><td>SARS Registration (IT, PAYE, VAT)</td><td>Tax compliance (VAT if turnover >R1m)</td></tr>
-            <tr><td>FUN-004</td><td>COIDA Registration</td><td>Employee injury cover</td></tr>
-            <tr><td>FUN-005</td><td>Public Liability Insurance</td><td>Cover for families, visitors at services</td></tr>
-            <tr><td>FUN-006</td><td>Funeral Undertaker Licence (Municipal/Provincial)</td><td>Required to operate</td></tr>
-            <tr><td>FUN-007</td><td>Health Certificate (Mortuary / Preparation Room)</td><td>Municipality inspection</td></tr>
-            <tr><td>FUN-008</td><td>Fire Clearance Certificate</td><td>For chapel, mortuary, office</td></tr>
-            <tr><td>FUN-009</td><td>Zoning Certificate (Commercial)</td><td>Municipality confirmation</td></tr>
-            <tr><td>FUN-010</td><td>Transport / Hearse Operator Permit (if own fleet)</td><td>Road Traffic Act</td></tr>
-            <tr><td>FUN-011</td><td>B‑BBEE Certificate</td><td>For corporate and government tenders</td></tr>
-            <tr><td>FUN-012</td><td>Professional Indemnity Insurance (for prepaid policies)</td><td>If selling funeral policies</td></tr>
+            <tr><td><input type="checkbox" class="doc-check" data-cat="Registration & Compliance" data-doc="CIPC Registration Certificate"> </td><td>FUN-001</li><td>CIPC Registration Certificate</li><td>Proof of company registration</li></td>
+            <tr>
+            <tr>
+            <tr>
+            <td>
+            <tr>
+            </tr>
+            <tr>
+            </tr>
+            </td>
+            <tr>
+            <tr>
         </tbody>
     </table>
 
+    <!-- PHASE 2: CONTRACTS & CLIENT DOCS (12 docs) -->
     <h3>Phase 2: Contracts & Client Docs (12 docs)</h3>
     <table>
-        <thead><tr><th>Ref</th><th>Document</th><th>Purpose</th></tr></thead>
+        <thead><tr><th>✔</th><th>Ref</th><th>Document</th><th>Purpose</th></td></thead>
         <tbody>
-            <tr><td>FUN-013</td><td>Funeral Service Agreement (with family)</td><td>Core contract, price breakdown</td></tr>
-            <tr><td>FUN-014</td><td>Pre‑Need Funeral Plan Contract</td><td>For prepaid policies</td></tr>
-            <tr><td>FUN-015</td><td>Cremation Authorisation Form (if cremation)</td><td>Legal consent</td></tr>
-            <tr><td>FUN-016</td><td>Embalming / Body Preparation Consent Form</td><td>Family authorisation</td></tr>
-            <tr><td>FUN-017</td><td>Transport / Removal of Deceased Authorisation</td><td>From place of death</td></tr>
-            <tr><td>FUN-018</td><td>Quotation / Price List Template (standard packages)</td><td>Transparency</td></tr>
-            <tr><td>FUN-019</td><td>Supplier Agreement (coffin, flowers, catering)</td><td>With third parties</td></tr>
-            <tr><td>FUN-020</td><td>Chapel / Venue Hire Agreement (if using own chapel)</td><td>For families</td></tr>
-            <tr><td>FUN-021</td><td>Non‑Disclosure Agreement (NDA)</td><td>For sensitive family information</td></tr>
-            <tr><td>FUN-022</td><td>Indemnity Form (for delays beyond control)</td><td>Weather, road closures</td></tr>
-            <tr><td>FUN-023</td><td>Grave / Cemetery Booking Form (with municipality)</td><td>Proof of plot</td></tr>
-            <tr><td>FUN-024</td><td>Memorial / Tombstone Agreement (if selling)</td><td>With family</td></tr>
+            <tr>
+            </tr>
+            <tr>
+            <tr>
+            <tr>
+            <tr>
+            <tr>
+            </tr>
+            <tr>
+            <tr>
+            <tr>
+            </tr>
         </tbody>
     </table>
 
+    <!-- PHASE 3: HUMAN RESOURCES (10 docs) -->
     <h3>Phase 3: Human Resources (10 docs)</h3>
-    <table>
-        <thead><tr><th>Ref</th><th>Document</th><th>Purpose</th></tr></thead>
+    <tr>
+        <thead><tr><th>✔</th><th>Ref</th><th>Document</th><th>Purpose</th></td></thead>
         <tbody>
-            <tr><td>FUN-025</td><td>Employment Contract – Funeral Director / Mortician</td><td>Professional staff</td></tr>
-            <tr><td>FUN-026</td><td>Employment Contract – Embalmer / Body Preparer</td><td>Skilled</td></tr>
-            <tr><td>FUN-027</td><td>Employment Contract – Hearse Driver</td><td>Drivers</td></tr>
-            <tr><td>FUN-028</td><td>Employment Contract – Pallbearers / General Assistants</td><td>Casual labour</td></tr>
-            <tr><td>FUN-029</td><td>Employment Contract – Office Administrator</td><td>Admin</td></tr>
-            <tr><td>FUN-030</td><td>Independent Contractor Agreement (e.g., florist, catering)</td><td>Subcontractors</td></tr>
-            <tr><td>FUN-031</td><td>Code of Conduct (Employees)</td><td>Dignity, confidentiality, professionalism</td></tr>
-            <tr><td>FUN-032</td><td>Disciplinary Code & Procedure</td><td>HR compliance</td></tr>
-            <tr><td>FUN-033</td><td>Funeral Staff Roster (per day / per funeral)</td><td>Scheduling</td></tr>
-            <tr><td>FUN-034</td><td>Attendance Register (Daily)</td><td>Sign‑in / sign‑out</td></tr>
+            <tr>
+            </td>
+            <tr>
+            <td>
+            </td>
+            <tr>
+            <tr>
+            <tr>
+            <tr>
+            <tr>
         </tbody>
     </table>
 
+    <!-- PHASE 4: OPERATIONS & FUNERAL MANAGEMENT (14 docs) -->
     <h3>Phase 4: Operations & Funeral Management (14 docs)</h3>
-    <table>
-        <thead><tr><th>Ref</th><th>Document</th><th>Purpose</th></tr></thead>
+    </table>
+        <thead><tr><th>✔</th><th>Ref</th><th>Document</th><th>Purpose</th></tr></thead>
         <tbody>
-            <tr><td>FUN-035</td><td>Case File per Deceased (master record)</td><td>All documents combined</td></tr>
-            <tr><td>FUN-036</td><td>Death Certificate Copy Log</td><td>For DHA tracking</td></tr>
-            <tr><td>FUN-037</td><td>Removal of Remains Log (date, time, place, staff)</td><td>Chain of custody</td></tr>
-            <tr><td>FUN-038</td><td>Mortuary / Cold Storage Log (body holding)</td><td>Temperature, entry/exit</td></tr>
-            <tr><td>FUN-039</td><td>Embalming / Preparation Record (per body)</td><td>Chemicals, date, staff</td></tr>
-            <tr><td>FUN-040</td><td>Coffin / Casket Inventory (by type)</td><td>Stock control</td></tr>
-            <tr><td>FUN-041</td><td>Hearse / Fleet Vehicle Log (per trip)</td><td>Fuel, mileage</td></tr>
-            <tr><td>FUN-042</td><td>Order of Service (funeral programme) template</td><td>For printing</td></tr>
-            <tr><td>FUN-043</td><td>Flower Order Log (per funeral)</td><td>Supplier tracking</td></tr>
-            <tr><td>FUN-044</td><td>Catering Order Log (per funeral)</td><td>For memorial services</td></tr>
-            <tr><td>FUN-045</td><td>Cemetery / Crematorium Booking Register</td><td>Schedule</td></tr>
-            <tr><td>FUN-046</td><td>Family Complaint / Feedback Log</td><td>Service improvement</td></tr>
-            <tr><td>FUN-047</td><td>Prepaid Policy Register (clients, payments, status)</td><td>Actuarial / financial</td></tr>
-            <tr><td>FUN-048</td><td>Death Notice / Obituary Template (for newspapers)</td><td>Marketing</td></tr>
+            <tr>
+            <tr>
+            <tr>
+            <tr>
+            <tr>
+            <tr>
+            <tr>
+            </tr>
+            <tr>
+            <tr>
+            <tr>
+            <td>
+            <td>
+            <tr>
         </tbody>
     </table>
 
+    <!-- PHASE 5: HEALTH & SAFETY (10 docs) -->
     <h3>Phase 5: Health & Safety (10 docs)</h3>
-    <table>
-        <thead><tr><th>Ref</th><th>Document</th><th>Purpose</th></tr></thead>
+    <tr>
+        <thead></td><th>✔</th><th>Ref</th><th>Document</th><th>Purpose</th><tr></thead>
         <tbody>
-            <tr><td>FUN-049</td><td>Occupational Health & Safety (OHS) Policy</td><td>Mortuary‑specific</td></tr>
-            <tr><td>FUN-050</td><td>Risk Assessment (Mortuary – chemicals, lifting, body fluids)</td><td>Hazard identification</td></tr>
-            <tr><td>FUN-051</td><td>Safe Work Method Statement (SWMS) per task</td><td>Embalming, lifting, driving</td></tr>
-            </tr><td>FUN-052</td><td>Incident / Accident Report Form</td><td>Staff or family injury</td></tr>
-            <tr><td>FUN-053</td><td>First Aid Kit Register (mortuary, office, vehicles)</td><td>Inventory</td></tr>
-            <tr><td>FUN-054</td><td>Fire Extinguisher Inspection Log (chapel, mortuary)</td><td>Monthly check</td></tr>
-            <tr><td>FUN-055</td><td>Emergency Evacuation Plan (chapel, mortuary)</td><td>Map and procedure</td></tr>
-            <tr><td>FUN-056</td><td>Personal Protective Equipment (PPE) Register</td><td>Gloves, gowns, masks, goggles</td></tr>
-            <tr><td>FUN-057</td><td>Hazardous Chemical Register (formaldehyde, embalming fluids)</td><td>MSDS on file</td></tr>
-            <tr><td>FUN-058</td><td>Toolbox Talk Register (staff safety)</td><td>Monthly topics</td></tr>
+            <tr>
+            <tr>
+            <tr>
+            <tr>
+            <td>
+            <tr>
+            <tr>
+            <tr>
+            <tr>
+            <td>
         </tbody>
     </table>
 
+    <!-- PHASE 6: FINANCE & SUPPLIERS (8 docs) -->
     <h3>Phase 6: Finance & Suppliers (8 docs)</h3>
     <tr>
-        <thead><tr><th>Ref</th><th>Document</th><th>Purpose</th></tr></thead>
+        <thead><tr><th>✔</th><th>Ref</th><th>Document</th><th>Purpose</th></td></thead>
         <tbody>
-            <tr><td>FUN-059</td><td>Invoice Template (per funeral)</td><td>Billing family or insurer</td></tr>
-            <tr><td>FUN-060</td><td>Supplier Invoice Register (coffins, flowers, catering)</td><td>Expense tracking</td></tr>
-            <tr><td>FUN-061</td><td>Payroll Register</td><td>Staff wages</td></tr>
-            <tr><td>FUN-062</td><td>Petty Cash Log</td><td>Small purchases</td></tr>
-            <tr><td>FUN-063</td><td>Client Payment Log (families, insurance payouts)</td><td>Receivables</td></tr>
-            <tr><td>FUN-064</td><td>Supplier Payment Schedule</td><td>Creditors aging</td></tr>
-            <tr><td>FUN-065</td><td>Prepaid Funeral Policy Trust Account Register</td><td>Legal requirement for prepaid plans</td></tr>
-            <tr><td>FUN-066</td><td>Bank Reconciliation Template</td><td>Monthly finance</td></tr>
+            <tr>
+            </tr>
+            <tr>
+            <tr>
+            <tr>
+            </td>
+            <tr>
+            <tr>
         </tbody>
     </table>
 
+    <!-- PHASE 7: EQUIPMENT & ASSETS (9 docs) -->
     <h3>Phase 7: Equipment & Assets (9 docs)</h3>
     <tr>
-        <thead><tr><th>Ref</th><th>Document</th><th>Purpose</th></tr></thead>
+        <thead><tr><th>✔</th><th>Ref</th><th>Document</th><th>Purpose</th></tr></thead>
         <tbody>
-            <tr><td>FUN-067</td><td>Asset Register (Master)</td><td>Hearses, mortuary fridges, stretchers, chapel furniture</td></tr>
-            <tr><td>FUN-068</td><td>Vehicle Maintenance Log (hearses, support vehicles)</td><td>Service records</td></tr>
-            <tr><td>FUN-069</td><td>Mortuary Fridge / Cold Storage Temperature Log</td><td>Daily checks</td></tr>
-            <tr><td>FUN-070</td><td>Embalming Machine / Equipment Maintenance Log</td><td>Calibration</td></tr>
-            <tr><td>FUN-071</td><td>Stretcher / Trolley Inspection Log</td><td>Safety</td></tr>
-            <tr><td>FUN-072</td><td>Chapel Audio / Visual Equipment Log (if used)</td><td>Maintenance</td></tr>
-            <tr><td>FUN-073</td><td>Fleet Tyre / Brake Inspection Log</td><td>Vehicle safety</td></tr>
-            <tr><td>FUN-074</td><td>Generator / Backup Power Log (mortuary critical)</td><td>Runtime, fuel</td></tr>
-            <tr><td>FUN-075</td><td>Asset Disposal Form</td><td>Selling old vehicles/equipment</td></tr>
+            <tr>
+            <tr>
+            <tr>
+            <tr>
+            <tr>
+            <td>
+            <tr>
+            <tr>
+            <tr>
         </tbody>
     </table>
 
+    <!-- PHASE 8: FORMS & TEMPLATES (7 docs) -->
     <h3>Phase 8: Forms & Templates (7 docs)</h3>
-    <table>
-        <thead><tr><th>Ref</th><th>Document</th><th>Purpose</th></tr></thead>
+    <tr>
+        <thead><tr><th>✔</th><th>Ref</th><th>Document</th><th>Purpose</th><table></thead>
         <tbody>
-            <tr><td>FUN-076</td><td>Pre‑Funeral Planning Checklist (for clients)</td><td>Capture wishes</td></tr>
-            <tr><td>FUN-077</td><td>Overtime Authorization Form (staff)</td><td>For overnight services</td></tr>
-            <tr><td>FUN-078</td><td>Leave Application Form</td><td>Staff requests</td></tr>
-            <tr><td>FUN-079</td><td>New Employee Induction Checklist (mortuary safety)</td><td>Onboarding</td></tr>
-            <tr><td>FUN-080</td><td>Supplier Evaluation Form</td><td>Vendor performance</td></tr>
-            <tr><td>FUN-081</td><td>Bereavement Support / Aftercare Survey</td><td>Family feedback</td></tr>
-            <tr><td>FUN-082</td><td>Termination Checklist</td><td>Offboarding</td></tr>
+            <tr>
+            <td>
+            <tr>
+            <td>
+            <tr>
+            <tr>
+            </tr>
         </tbody>
     </table>
+
+    <div class="button-group">
+        <a href="index.html#industries" class="btn"><i class="fas fa-arrow-left"></i> Back to Industries</a>
+        <a href="#" id="orderSelectedBtn" class="btn btn-secondary"><i class="fas fa-clipboard-list"></i> Order Selected Documents →</a>
+    </div>
+</div>
+
+<div class="footer">...</div>
+
+<script>
+    document.getElementById('orderSelectedBtn').addEventListener('click', function(e) {
+        e.preventDefault();
+        const selected = [];
+        document.querySelectorAll('.doc-check:checked').forEach(cb => {
+            selected.push({ category: cb.getAttribute('data-cat'), doc: cb.getAttribute('data-doc') });
+        });
+        if (selected.length === 0) { alert('Please select at least one document to order.'); return; }
+        const param = encodeURIComponent(JSON.stringify(selected));
+        window.location.href = `order-documents.html?industry=Funeral%20Services&preselected=${param}`;
+    });
+</script>
+</body>
+</html>
 
     <h2 class="section-title">📁 File Directory Structure</h2>
     <div class="repo-structure">
