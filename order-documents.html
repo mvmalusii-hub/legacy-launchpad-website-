@@ -123,6 +123,35 @@
                 <label><input type="checkbox" class="personal-service" data-price="300" data-name="SASSA Grant Assistance"> SASSA Grant Assistance – R300</label>
                 <label><input type="checkbox" class="personal-service" data-price="200" data-name="Police Clearance Guidance"> Police Clearance Guidance – R200</label>
             </div>
+            <!-- ==================== ADVANCED DOCUMENT SELECTION (by category) ==================== -->
+<h3 style="margin: 25px 0 15px;">📄 Advanced Document Selection (per document)</h3>
+<div class="form-group">
+    <label>Select industry</label>
+    <select id="advIndustrySelect">
+        <option value="">-- Select industry to see documents --</option>
+        <option value="Construction">Construction</option>
+        <option value="Cleaning Services">Cleaning Services</option>
+        <option value="Cash for Scrap">Cash for Scrap</option>
+        <option value="Property & Real Estate">Property & Real Estate</option>
+        <option value="Transport & Logistics">Transport & Logistics</option>
+        <option value="Retail (General)">Retail (General)</option>
+        <option value="Restaurant & Takeaway">Restaurant & Takeaway</option>
+        <option value="Security Services">Security Services</option>
+        <option value="Light Manufacturing">Light Manufacturing</option>
+        <option value="Automotive Repair & Sales">Automotive Repair & Sales</option>
+        <option value="Health & Beauty (Salon/Spa)">Health & Beauty (Salon/Spa)</option>
+        <option value="Information Technology (IT)">Information Technology (IT)</option>
+        <option value="Event Management & Catering">Event Management & Catering</option>
+        <option value="Farming & Agriculture">Farming & Agriculture</option>
+        <option value="Funeral Services">Funeral Services</option>
+        <option value="ECD (Daycare/Crèche)">ECD (Daycare/Crèche)</option>
+        <option value="Electrical & Solar">Electrical & Solar</option>
+        <option value="Plumbing & Sanitation">Plumbing & Sanitation</option>
+        <option value="Logistics & Warehousing">Logistics & Warehousing</option>
+        <option value="NGO / Non-Profit">NGO / Non-Profit</option>
+    </select>
+</div>
+<div id="advCategoriesContainer"></div>
 
             <!-- ADVANCED DOCUMENT SELECTION (by category) -->
             <h3 style="margin: 25px 0 15px;">📄 Advanced Document Selection (per document)</h3>
@@ -177,6 +206,73 @@
     // Copy the complete industryDocs object from your previous data.
     // For brevity, I show a placeholder – you MUST replace with the full JSON.
     // ========================
+    // ========================
+// LOAD ADVANCED DOCUMENT CATEGORIES WHEN INDUSTRY CHANGES
+// ========================
+const advIndustrySelect = document.getElementById('advIndustrySelect');
+const advCategoriesContainer = document document.getElementById('advCategoriesContainer');
+
+if (advIndustrySelect) {
+    advIndustrySelect.addEventListener('change', function() {
+        const industry = this.value;
+        if (!industry || !industryDocs[industry]) {
+            advCategoriesContainer.innerHTML = '<p>Please select an industry to see documents.</p>';
+            return;
+        }
+
+        const industryData = industryDocs[industry];
+        let html = '';
+        for (const [category, docs] of Object.entries(industryData)) {
+            const catId = category.replace(/\s+/g, '_');
+            html += `
+                <div class="category-accordion">
+                    <div class="category-header" data-cat="${catId}">
+                        <span>📁 ${category}</span>
+                        <span>▼</span>
+                    </div>
+                    <div class="category-content" id="content_${catId}">
+                        <div class="doc-list">
+                            ${docs.map(doc => `
+                                <label class="doc-item">
+                                    <input type="checkbox" class="adv-doc" data-doc="${doc.replace(/"/g, '&quot;')}">
+                                    <span>${doc}</span>
+                                </label>
+                            `).join('')}
+                        </div>
+                    </div>
+                </div>
+            `;
+        }
+        advCategoriesContainer.innerHTML = html;
+
+        // Attach accordion toggle events
+        document.querySelectorAll('.category-header').forEach(header => {
+            header.addEventListener('click', () => {
+                const catId = header.getAttribute('data-cat');
+                const content = document.getElementById(`content_${catId}`);
+                content.classList.toggle('open');
+                const arrow = header.querySelector('span:last-child');
+                arrow.textContent = content.classList.contains('open') ? '▲' : '▼';
+            });
+        });
+
+        // Attach document checkbox events (for total calculation)
+        document.querySelectorAll('.adv-doc').forEach(cb => {
+            cb.addEventListener('change', updateTotal);
+        });
+    });
+}
+
+// Make sure updateTotal includes advanced documents count
+// If your updateTotal function doesn't yet count advanced docs, add this inside it:
+function updateTotal() {
+    let total = 0;
+    // ... existing calculations ...
+    const advChecked = document.querySelectorAll('.adv-doc:checked').length;
+    // Assume each advanced doc costs R30 (or use your own pricing)
+    total += advChecked * 30;
+    document.getElementById('totalAmount').innerText = total;
+}
     const industryDocs = {
   "Construction": {
     "Registration & Compliance": [
