@@ -173,77 +173,9 @@
 
 <script>
     // ========================
-    // 1. FULL INDUSTRY DOCUMENTS DATA (all 20 industries)
-    // Copy the complete industryDocs object from your previous data.
-    // For brevity, I show a placeholder – you MUST replace with the full JSON.
+    // FULL INDUSTRY DOCUMENTS DATA (all 20 industries)
+    // This is a simplified version. You can replace this with the full JSON later.
     // ========================
-    // ========================
-// LOAD ADVANCED DOCUMENT CATEGORIES WHEN INDUSTRY CHANGES
-// ========================
-const advIndustrySelect = document.getElementById('advIndustrySelect');
-const advCategoriesContainer = document document.getElementById('advCategoriesContainer');
-
-if (advIndustrySelect) {
-    advIndustrySelect.addEventListener('change', function() {
-        const industry = this.value;
-        if (!industry || !industryDocs[industry]) {
-            advCategoriesContainer.innerHTML = '<p>Please select an industry to see documents.</p>';
-            return;
-        }
-
-        const industryData = industryDocs[industry];
-        let html = '';
-        for (const [category, docs] of Object.entries(industryData)) {
-            const catId = category.replace(/\s+/g, '_');
-            html += `
-                <div class="category-accordion">
-                    <div class="category-header" data-cat="${catId}">
-                        <span>📁 ${category}</span>
-                        <span>▼</span>
-                    </div>
-                    <div class="category-content" id="content_${catId}">
-                        <div class="doc-list">
-                            ${docs.map(doc => `
-                                <label class="doc-item">
-                                    <input type="checkbox" class="adv-doc" data-doc="${doc.replace(/"/g, '&quot;')}">
-                                    <span>${doc}</span>
-                                </label>
-                            `).join('')}
-                        </div>
-                    </div>
-                </div>
-            `;
-        }
-        advCategoriesContainer.innerHTML = html;
-
-        // Attach accordion toggle events
-        document.querySelectorAll('.category-header').forEach(header => {
-            header.addEventListener('click', () => {
-                const catId = header.getAttribute('data-cat');
-                const content = document.getElementById(`content_${catId}`);
-                content.classList.toggle('open');
-                const arrow = header.querySelector('span:last-child');
-                arrow.textContent = content.classList.contains('open') ? '▲' : '▼';
-            });
-        });
-
-        // Attach document checkbox events (for total calculation)
-        document.querySelectorAll('.adv-doc').forEach(cb => {
-            cb.addEventListener('change', updateTotal);
-        });
-    });
-}
-
-// Make sure updateTotal includes advanced documents count
-// If your updateTotal function doesn't yet count advanced docs, add this inside it:
-function updateTotal() {
-    let total = 0;
-    // ... existing calculations ...
-    const advChecked = document.querySelectorAll('.adv-doc:checked').length;
-    // Assume each advanced doc costs R30 (or use your own pricing)
-    total += advChecked * 30;
-    document.getElementById('totalAmount').innerText = total;
-}
     const industryDocs = {
   "Construction": {
     "Registration & Compliance": [
@@ -2281,8 +2213,8 @@ function updateTotal() {
     if (advSelect) {
         advSelect.addEventListener('change', function() {
             const industry = this.value;
-            if (!industry || !industryDocs[industry] || Object.keys(industryDocs[industry]).length === 0) {
-                advContainer.innerHTML = '<p>Please select an industry to see documents. (Full data not loaded – check industryDocs)</p>';
+            if (!industry || !industryDocs[industry]) {
+                advContainer.innerHTML = '<p>Please select an industry to see documents.</p>';
                 return;
             }
             const data = industryDocs[industry];
@@ -2332,9 +2264,7 @@ function updateTotal() {
     const preselectedIndustry = urlParams.get('industry');
     if (preselectedParam && preselectedIndustry) {
         const preselectedDocs = JSON.parse(decodeURIComponent(preselectedParam));
-        // Set industry dropdown
         advSelect.value = preselectedIndustry;
-        // Wait for categories to load, then check boxes
         setTimeout(() => {
             const event = new Event('change');
             advSelect.dispatchEvent(event);
@@ -2377,7 +2307,6 @@ function updateTotal() {
             timestamp: new Date().toISOString()
         };
         try {
-            // Replace with your actual Google Apps Script Web App URL
             await fetch('YOUR_APPS_SCRIPT_WEB_APP_URL', {
                 method: 'POST',
                 mode: 'no-cors',
