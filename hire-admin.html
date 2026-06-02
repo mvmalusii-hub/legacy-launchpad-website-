@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Legacy Launchpad | Hire Our Admin</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * { margin:0; padding:0; box-sizing:border-box; }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f8fafc;
+            color: #1e293b;
+            line-height: 1.5;
+        }
+        .top-header {
+            background: #0f172a;
+            color: white;
+            padding: 15px 30px;
+            position: sticky;
+            top: 0;
+            z-index: 200;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .logo-area { display: flex; align-items: center; gap: 12px; }
+        .logo-icon { background: #fbbf24; width: 40px; height: 40px; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; font-weight: bold; color: #0f172a; }
+        .logo-text h1 { font-size: 1.4rem; letter-spacing: -0.5px; }
+        .logo-text p { font-size: 0.7rem; color: #94a3b8; }
+        .top-nav { display: flex; gap: 25px; flex-wrap: wrap; }
+        .top-nav a { color: white; text-decoration: none; transition: 0.3s; }
+        .top-nav a:hover { color: #fbbf24; }
+
+        .app-container { display: flex; min-height: calc(100vh - 80px); }
+        .sidebar {
+            width: 280px;
+            background: #0f172a;
+            color: #e2e8f0;
+            position: fixed;
+            top: 80px;
+            bottom: 0;
+            left: 0;
+            overflow-y: auto;
+            transition: transform 0.3s ease;
+            z-index: 100;
+            padding: 20px 0;
+        }
+        .sidebar-header { padding: 0 20px 20px; border-bottom: 1px solid #334155; margin-bottom: 20px; }
+        .sidebar-header h3 { color: #fbbf24; font-size: 1.2rem; }
+        .sidebar-menu { list-style: none; padding: 0; }
+        .sidebar-menu li { margin-bottom: 4px; }
+        .sidebar-menu a { display: flex; align-items: center; gap: 12px; padding: 12px 20px; color: #cbd5e1; text-decoration: none; transition: 0.2s; font-size: 0.9rem; }
+        .sidebar-menu a:hover { background: #1e293b; color: #fbbf24; }
+        .sidebar-menu i { width: 24px; text-align: center; }
+
+        .main-content { flex: 1; margin-left: 280px; padding: 30px; }
+        .section-title {
+            font-size: 1.8rem;
+            margin: 40px 0 20px;
+            border-left: 5px solid #fbbf24;
+            padding-left: 15px;
+            color: #0f172a;
+        }
+        .hero-admin {
+            background: linear-gradient(135deg, #0f172a, #1e293b);
+            color: white;
+            padding: 30px;
+            border-radius: 24px;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        .hero-admin i { font-size: 2.5rem; margin-bottom: 10px; color: #fbbf24; }
+        .form-card {
+            background: white;
+            border-radius: 24px;
+            padding: 30px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+            margin-bottom: 30px;
+        }
+        .form-group { margin-bottom: 20px; }
+        label { display: block; font-weight: 600; margin-bottom: 8px; }
+        input, select, textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #cbd5e1;
+            border-radius: 8px;
+            font-family: inherit;
+        }
+        .radio-group {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        .radio-group label {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-weight: normal;
+        }
+        .checkbox-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-top: 8px;
+        }
+        .checkbox-group label {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-weight: normal;
+        }
+        .btn {
+            background: #fbbf24;
+            color: #0f172a;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 40px;
+            font-weight: bold;
+            cursor: pointer;
+            width: 100%;
+            transition: 0.2s;
+        }
+        .btn:hover { background: #f59e0b; transform: translateY(-2px); }
+        .login-warning {
+            background: #fef9c3;
+            padding: 15px;
+            border-radius: 12px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .login-warning a { color: #0f172a; font-weight: bold; }
+        .file-hint { font-size: 0.75rem; color: #475569; margin-top: 5px; }
+        .footer-contact {
+            background: #0f172a;
+            color: #94a3b8;
+            padding: 30px;
+            border-radius: 20px;
+            text-align: center;
+            margin-top: 50px;
+        }
+        .footer-contact a { color: #fbbf24; text-decoration: none; }
+        @media (max-width: 768px) {
+            .sidebar { transform: translateX(-100%); position: fixed; top: 70px; width: 260px; z-index: 150; }
+            .sidebar.open { transform: translateX(0); }
+            .main-content { margin-left: 0; padding: 15px; }
+            .top-nav { display: none; }
+            .menu-toggle { display: block; background: #0f172a; color: white; border: none; padding: 8px 12px; border-radius: 30px; cursor: pointer; font-size: 1.2rem; }
+        }
+        .menu-toggle { display: none; }
+    </style>
+</head>
+<body>
+    <div class="top-header">
+        <div class="logo-area"><div class="logo-icon">LP</div><div class="logo-text"><h1>Legacy Launchpad</h1><p>Building what lasts.</p></div></div>
+        <div class="top-nav">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="industries.html">Industries</a>
+            <a href="policies.html">Policies</a>
+            <a href="#contact">Contact</a>
+        </div>
+        <button class="menu-toggle" id="menuToggle">☰</button>
+    </div>
+
+    <div class="app-container">
+        <div class="sidebar" id="sidebar">
+            <div class="sidebar-header"><h3>Enterprise Menu</h3><p>Advanced features</p></div>
+            <ul class="sidebar-menu">
+                <li><a href="profile.html"><i class="fas fa-user-plus"></i> 01 Profile / Create Profile</a></li>
+                <li><a href="partners.html"><i class="fas fa-handshake"></i> 02 Our Partners</a></li>
+                <li><a href="international.html"><i class="fas fa-globe"></i> 03 International Partners</a></li>
+                <li><a href="strategic-growth.html"><i class="fas fa-chart-line"></i> 04 Strategic Growth</a></li>
+                <li><a href="business-partners.html"><i class="fas fa-building"></i> 05 Business Partners</a></li>
+                <li><a href="market-leads.html"><i class="fas fa-chart-simple"></i> 06 Real Time Market Leads</a></li>
+                <li><a href="business-hub.html"><i class="fas fa-users"></i> 07 Business Hub</a></li>
+                <li><a href="hire-admin.html"><i class="fas fa-user-tie"></i> 08 Hire Our Admin</a></li>
+                <li><a href="#"><i class="fas fa-gift"></i> 09 Referral Program</a></li>
+                <li><a href="#"><i class="fas fa-sign-out-alt"></i> 10 Profile Log Out</a></li>
+            </ul>
+        </div>
+
+        <div class="main-content">
+            <div class="hero-admin">
+                <i class="fas fa-user-tie"></i>
+                <h2>Hire Our Administrative Team</h2>
+                <p>Scale your operations without the overhead. Our professional administrators work remotely or on‑site, seamlessly integrating with your existing team.</p>
+            </div>
+
+            <div class="form-card">
+                <div id="loginWarning" class="login-warning">
+                    ⚠️ You are not logged in. <a href="profile.html">Please log in or create a profile</a> to request admin services.
+                </div>
+
+                <form id="hireAdminForm">
+                    <div class="form-group">
+                        <label>Your name / Company name</label>
+                        <input type="text" id="companyName" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Email address</label>
+                        <input type="email" id="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Phone number</label>
+                        <input type="tel" id="phone">
+                    </div>
+
+                    <h3 style="margin: 20px 0 10px;">📄 Contract Type</h3>
+                    <div class="radio-group">
+                        <label><input type="radio" name="contractLength" value="1 year" required> 1 Year Contract</label>
+                        <label><input type="radio" name="contractLength" value="2 years"> 2 Years Contract</label>
+                        <label><input type="radio" name="contractLength" value="3 years"> 3 Years Contract</label>
+                    </div>
+
+                    <h3 style="margin: 20px 0 10px;">👥 Team Requirements</h3>
+                    <div class="form-group">
+                        <label>Number of admin staff required</label>
+                        <input type="number" id="staffCount" min="1" value="1" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Work arrangement</label>
+                        <select id="workArrangement">
+                            <option value="remote">Fully remote (our team works from our office)</option>
+                            <option value="onsite">On‑site at your premises</option>
+                            <option value="hybrid">Hybrid (remote + on‑site as needed)</option>
+                        </select>
+                    </div>
+
+                    <h3 style="margin: 20px 0 10px;">📋 Services Required</h3>
+                    <div class="checkbox-group">
+                        <label><input type="checkbox" value="Document Management"> Document Management (filing, digitising, organisation)</label>
+                        <label><input type="checkbox" value="Compliance Filing"> Compliance Filing (CIPC, SARS, DSD, etc.)</label>
+                        <label><input type="checkbox" value="Client Communication"> Client Communication (email, phone, scheduling)</label>
+                        <label><input type="checkbox" value="Bookkeeping"> Bookkeeping / Invoice Processing</label>
+                        <label><input type="checkbox" value="HR Administration"> HR Administration (contracts, payroll support)</label>
+                        <label><input type="checkbox" value="Data Entry"> Data Entry / Database Management</label>
+                        <label><input type="checkbox" value="Report Generation"> Report Generation (monthly, quarterly)</label>
+                        <label><input type="checkbox" value="Other"> Other (specify in notes)</label>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Do you currently have an internal admin team?</label>
+                        <select id="hasTeam">
+                            <option value="yes">Yes, we have a team</option>
+                            <option value="no">No, we have no admin staff</option>
+                            <option value="partial">Partial / we need augmentation</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label>When do you need the service to start?</label>
+                        <input type="date" id="startDate" min="">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Additional notes / special requirements</label>
+                        <textarea id="notes" rows="3" placeholder="Tell us more about your current systems, challenges, or specific needs."></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Upload existing filing structure or policies (optional)</label>
+                        <input type="file" id="uploadFile" accept=".pdf,.docx,.xlsx">
+                        <div class="file-hint">Helps us understand your current setup.</div>
+                    </div>
+
+                    <button type="submit" class="btn">Request Admin Team →</button>
+                    <div id="submitMessage" style="margin-top: 15px; text-align: center;"></div>
+                </form>
+            </div>
+
+            <div class="footer-contact" id="contact">
+                <p><strong>Msimelelo Victor Malusi</strong> – Founder</p>
+                <p><i class="fas fa-phone"></i> 072 152 3293 &nbsp;|&nbsp; <i class="fab fa-whatsapp"></i> 063 301 7269 &nbsp;|&nbsp; <i class="fas fa-envelope"></i> mv.malusi@legacylaunchpad.co.za</p>
+                <p>© 2025 Legacy Launchpad (Pty) Ltd – Building what lasts.</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Simulate login status (set to true for testing)
+        let isLoggedIn = false;
+
+        const loginWarning = document.getElementById('loginWarning');
+        if (isLoggedIn) {
+            loginWarning.style.display = 'none';
+        } else {
+            loginWarning.style.display = 'block';
+        }
+
+        // Set min start date to tomorrow
+        const tomorrow = new Date();
+        tomorrow.setDate(tomorrow.getDate() + 1);
+        document.getElementById('startDate').setAttribute('min', tomorrow.toISOString().split('T')[0]);
+
+        // Form submission handler
+        document.getElementById('hireAdminForm').addEventListener('submit', (e) => {
+            e.preventDefault();
+            if (!isLoggedIn) {
+                document.getElementById('submitMessage').innerHTML = '<span style="color:red;">❌ Please <a href="profile.html">log in</a> to submit a request.</span>';
+                return;
+            }
+            // Validate required fields
+            const contractLength = document.querySelector('input[name="contractLength"]:checked');
+            if (!contractLength) {
+                document.getElementById('submitMessage').innerHTML = '<span style="color:red;">❌ Please select a contract length.</span>';
+                return;
+            }
+            const staffCount = document.getElementById('staffCount').value;
+            if (staffCount < 1) {
+                document.getElementById('submitMessage').innerHTML = '<span style="color:red;">❌ Please enter a valid number of staff.</span>';
+                return;
+            }
+            // In a real app, send data to backend / email
+            document.getElementById('submitMessage').innerHTML = '<span style="color:green;">✅ Your request has been received! Our team will contact you within 48 hours to discuss a custom SLA. (Demo – backend pending)</span>';
+            // Optionally reset form
+            // document.getElementById('hireAdminForm').reset();
+        });
+
+        // Mobile sidebar toggle
+        const menuBtn = document.getElementById('menuToggle');
+        const sidebar = document.getElementById('sidebar');
+        if (menuBtn) {
+            menuBtn.addEventListener('click', () => {
+                sidebar.classList.toggle('open');
+            });
+        }
+    </script>
+</body>
+</html>
