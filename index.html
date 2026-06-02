@@ -74,7 +74,7 @@
             color: #fbbf24;
         }
 
-        /* Dropdown styling */
+        /* Dropdown */
         .dropdown {
             position: relative;
             display: inline-block;
@@ -95,7 +95,7 @@
         .dropdown-content {
             display: none;
             position: absolute;
-            background-color: white;
+            background: white;
             min-width: 200px;
             box-shadow: 0 8px 16px rgba(0,0,0,0.1);
             border-radius: 12px;
@@ -109,13 +109,12 @@
             text-decoration: none;
             display: block;
             border-bottom: 1px solid #e2e8f0;
-            transition: 0.2s;
         }
         .dropdown-content a:last-child {
             border-bottom: none;
         }
         .dropdown-content a:hover {
-            background-color: #fefce8;
+            background: #fefce8;
             color: #fbbf24;
         }
         .dropdown:hover .dropdown-content {
@@ -131,7 +130,6 @@
             min-height: calc(100vh - 80px);
         }
 
-        /* LEFT SIDEBAR (fixed) */
         .sidebar {
             width: 280px;
             background: #0f172a;
@@ -180,7 +178,6 @@
             text-align: center;
         }
 
-        /* MAIN CONTENT */
         .main-content {
             flex: 1;
             margin-left: 280px;
@@ -236,7 +233,7 @@
             text-decoration: none;
         }
 
-        /* Mobile */
+        /* MOBILE */
         @media (max-width: 768px) {
             .sidebar {
                 transform: translateX(-100%);
@@ -253,7 +250,7 @@
                 padding: 15px;
             }
             .hero h1 { font-size: 1.6rem; }
-            .top-nav { 
+            .top-nav {
                 display: none;
                 flex-direction: column;
                 width: 100%;
@@ -299,7 +296,6 @@
     </style>
 </head>
 <body>
-    <!-- TOP HEADER BAR -->
     <div class="top-header">
         <div class="logo-area">
             <div class="logo-icon">LP</div>
@@ -329,7 +325,6 @@
     </div>
 
     <div class="app-container">
-        <!-- LEFT SIDEBAR MENU -->
         <div class="sidebar" id="sidebar">
             <div class="sidebar-header">
                 <h3>Enterprise Menu</h3>
@@ -346,10 +341,10 @@
                 <li><a href="hire-admin.html"><i class="fas fa-user-tie"></i> 08 Hire Our Admin</a></li>
                 <li><a href="referral.html"><i class="fas fa-gift"></i> 09 Referral Program</a></li>
                 <li><a href="logout.html"><i class="fas fa-sign-out-alt"></i> 10 Profile Log Out</a></li>
+                <li><a href="epk-studio.html"><i class="fas fa-star"></i> 11 EPK Studio</a></li>
             </ul>
         </div>
 
-        <!-- MAIN CONTENT -->
         <div class="main-content">
             <div class="hero">
                 <h1>Document Roadmaps & Compliance Systems</h1>
@@ -384,19 +379,12 @@
     </div>
 
     <script>
-        // Mobile menu toggle for top nav
         const menuBtn = document.getElementById('menuToggle');
         const topNav = document.getElementById('topNav');
         if (menuBtn) {
             menuBtn.addEventListener('click', () => {
                 topNav.classList.toggle('show');
             });
-        }
-        // Sidebar toggle (for existing functionality)
-        const sidebar = document.getElementById('sidebar');
-        if (menuBtn) {
-            // Optional: if you want a separate button for sidebar, you can add one.
-            // For simplicity, we keep the existing sidebar toggle if you have a hamburger for sidebar.
         }
     </script>
 </body>
