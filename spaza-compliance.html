@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Spaza Shop Compliance | Legacy Launchpad</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #f4f7fc;
+            color: #1e2a3e;
+            line-height: 1.5;
+        }
+
+        /* ========== TOP HEADER (matching Legacy Launchpad) ========== */
+        .top-header {
+            background: #0f172a;
+            color: white;
+            padding: 15px 30px;
+            position: sticky;
+            top: 0;
+            z-index: 200;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .logo-area { display: flex; align-items: center; gap: 12px; }
+        .logo-icon { background: #fbbf24; width: 40px; height: 40px; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; font-weight: bold; color: #0f172a; }
+        .logo-text h1 { font-size: 1.4rem; letter-spacing: -0.5px; }
+        .logo-text p { font-size: 0.7rem; color: #94a3b8; }
+        .top-nav { display: flex; gap: 25px; flex-wrap: wrap; align-items: center; }
+        .top-nav a { color: white; text-decoration: none; transition: 0.3s; }
+        .top-nav a:hover { color: #fbbf24; }
+
+        .dropdown { position: relative; display: inline-block; }
+        .dropbtn { background: none; border: none; color: white; font-size: 1rem; cursor: pointer; font-family: inherit; padding: 0; }
+        .dropbtn i { font-size: 0.7rem; margin-left: 5px; }
+        .dropdown-content { display: none; position: absolute; background: white; min-width: 200px; box-shadow: 0 8px 16px rgba(0,0,0,0.1); border-radius: 12px; z-index: 1000; top: 30px; left: 0; }
+        .dropdown-content a { color: #0f172a; padding: 12px 16px; text-decoration: none; display: block; border-bottom: 1px solid #e2e8f0; }
+        .dropdown-content a:last-child { border-bottom: none; }
+        .dropdown-content a:hover { background: #fefce8; color: #fbbf24; }
+        .dropdown:hover .dropdown-content { display: block; }
+        .dropdown:hover .dropbtn { color: #fbbf24; }
+
+        /* ========== MAIN CONTENT (Spaza Compliance specific) ========== */
+        .container {
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: 1.5rem 2rem;
+        }
+
+        .badge {
+            display: inline-block;
+            background: #e63946;
+            color: white;
+            font-size: 0.8rem;
+            font-weight: 600;
+            padding: 0.25rem 0.8rem;
+            border-radius: 30px;
+            letter-spacing: 0.3px;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: #1e6f3f;
+            color: white;
+            font-weight: 600;
+            padding: 0.75rem 1.6rem;
+            border-radius: 40px;
+            text-decoration: none;
+            transition: 0.25s ease;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+        .btn-outline {
+            background: transparent;
+            border: 2px solid #1e6f3f;
+            color: #1e6f3f;
+        }
+        .btn-outline:hover {
+            background: #1e6f3f;
+            color: white;
+        }
+        .btn:hover {
+            background: #0f5530;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 18px rgba(0,0,0,0.1);
+        }
+
+        .hero {
+            background: linear-gradient(135deg, #0b3b2f 0%, #1f5e3f 100%);
+            color: white;
+            border-radius: 32px;
+            padding: 2.2rem 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 12px 24px -8px rgba(0,0,0,0.2);
+        }
+        .hero h1 { font-size: 2.4rem; margin-bottom: 0.5rem; }
+        .hero-tagline { font-size: 1.2rem; opacity: 0.9; margin-bottom: 1.5rem; }
+
+        .deadline-card {
+            background: #fff6e5;
+            border-left: 6px solid #e6a017;
+            border-radius: 20px;
+            padding: 1.2rem 1.8rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+        }
+        .warning-tag {
+            background: #fef7e0;
+            border-radius: 20px;
+            padding: 0.7rem 1.2rem;
+            font-size: 0.85rem;
+            margin: 1rem 0;
+            color: #b45f06;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .grid-2cols {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+        .service-card {
+            background: white;
+            border-radius: 24px;
+            padding: 1.6rem;
+            box-shadow: 0 6px 14px rgba(0,0,0,0.02), 0 1px 3px rgba(0,0,0,0.05);
+            border: 1px solid #eef2f5;
+        }
+        .service-card i { font-size: 2rem; color: #1e6f3f; margin-bottom: 1rem; }
+        .service-list { list-style: none; margin-top: 1rem; }
+        .service-list li { margin-bottom: 0.7rem; display: flex; align-items: center; gap: 10px; }
+        .service-list li i { font-size: 1rem; color: #e6a017; width: 20px; }
+
+        .table-wrapper { overflow-x: auto; border-radius: 24px; background: white; box-shadow: 0 6px 14px rgba(0,0,0,0.03); margin: 1.5rem 0; }
+        .centres-table { width: 100%; border-collapse: collapse; font-size: 0.9rem; }
+        .centres-table th { background: #1e2a3e; color: white; padding: 1rem; text-align: left; }
+        .centres-table td { padding: 0.9rem 1rem; border-bottom: 1px solid #e9edf2; vertical-align: top; }
+        .centres-table tr:hover { background: #f9fbfd; }
+        .search-input { width: 100%; padding: 0.7rem 1rem; border-radius: 60px; border: 1px solid #ccd7e4; font-size: 0.9rem; margin-bottom: 1rem; }
+
+        .contact-section {
+            background: white;
+            border-radius: 28px;
+            padding: 2rem;
+            margin: 2rem 0;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            justify-content: space-between;
+        }
+        .contact-info, .contact-form { flex: 1; }
+        .form-group input, .form-group textarea { width: 100%; padding: 0.8rem 1rem; border-radius: 20px; border: 1px solid #cddfe7; font-family: inherit; }
+
+        .footer {
+            background: #0f172a;
+            color: #94a3b8;
+            text-align: center;
+            padding: 30px;
+            margin-top: 40px;
+        }
+        .footer a { color: #fbbf24; text-decoration: none; }
+
+        @media (max-width: 780px) {
+            .container { padding: 1rem; }
+            .hero h1 { font-size: 1.8rem; }
+            .top-nav { display: none; }
+            .menu-toggle { display: block; background: #0f172a; color: white; border: none; padding: 8px 12px; border-radius: 30px; cursor: pointer; }
+        }
+        .menu-toggle { display: none; }
+    </style>
+</head>
+<body>
+    <!-- TOP HEADER (Legacy Launchpad standard) -->
+    <div class="top-header">
+        <div class="logo-area">
+            <div class="logo-icon">LP</div>
+            <div class="logo-text">
+                <h1>Legacy Launchpad</h1>
+                <p>Building what lasts.</p>
+            </div>
+        </div>
+        <div class="top-nav" id="topNav">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="industries.html">Industries</a>
+            <div class="dropdown">
+                <button class="dropbtn">Services <i class="fas fa-chevron-down"></i></button>
+                <div class="dropdown-content">
+                    <a href="3d-floor-plans.html">🏗️ 3D Floor Plans</a>
+                    <a href="personal-services.html">🧑 Personal Services</a>
+                    <a href="business-support.html">📊 Business Support</a>
+                    <a href="marketing-services.html">🎨 Marketing Services</a>
+                    <a href="order-documents.html">📋 Order Documents</a>
+                    <a href="spaza-compliance.html">🏪 Spaza Shop Compliance</a>
+                </div>
+            </div>
+            <a href="policies.html">Policies</a>
+            <a href="#contact">Contact</a>
+        </div>
+        <button class="menu-toggle" id="menuToggle">☰</button>
+    </div>
+
+    <!-- SPAZA COMPLIANCE CONTENT (copied and adapted) -->
+    <div class="container">
+        <div class="hero">
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap;">
+                <div>
+                    <h1><i class="fas fa-hand-holding-heart" style="margin-right: 10px;"></i> Spaza Compliance Pro</h1>
+                    <div class="hero-tagline">📋 I help spaza shop owners build full compliance in Ekurhuleni — from documents to approval.</div>
+                </div>
+                <div class="badge" style="background: #e6a017;">🚀 Registration Support</div>
+            </div>
+            <p style="margin-top: 1rem;">Avoid shutdowns, fines, and legal risks. Expert guidance through zoning, health certificates, CIPC, SARS tax clearance, building plans & municipal registration — I walk with you step by step.</p>
+            <div style="margin-top: 1.5rem;">
+                <a href="#contact-assist" class="btn"><i class="fas fa-calendar-check"></i> Get Compliance Help Now</a>
+                <a href="#centres-list" class="btn btn-outline" style="margin-left: 1rem; background: transparent; border-color: white; color: white;"><i class="fas fa-map-marker-alt"></i> View Registration Centres</a>
+            </div>
+        </div>
+
+        <div class="deadline-card">
+            <div style="display: flex; gap: 12px; align-items: center; flex-wrap: wrap; justify-content: space-between;">
+                <div><i class="fas fa-store" style="font-size: 1.6rem; color: #e6a017;"></i></div>
+                <div style="flex:1"><strong>🏛️ City of Ekurhuleni – Spaza Shops & Food Handling Registration Drive</strong><br>Registration currently open until <strong>Friday, 13 December 2024</strong> (historical reference). However, compliance standards remain strictly enforced. All spaza shops MUST meet the below requirements to operate legally.</div>
+            </div>
+            <div class="warning-tag" style="margin-top: 12px;">
+                <i class="fas fa-clock"></i> <span><strong>Important:</strong> Although the 2024 registration window is closed for new applications, Ekurhuleni by-laws & the Business Act require continuous compliance. I provide up‑to‑date assistance for any enforcement period, re‑registration drives, and full licensing. Your business safety starts now.</span>
+            </div>
+            <p style="margin-top: 12px;"><i class="fas fa-building"></i> <strong>Walk-in assistance:</strong> Mon–Fri 08:00–16:30 at your nearest Customer Care Centre. Failure to register or meet health standards leads to immediate closure. Ensure 100% compliance with my help.</p>
+        </div>
+
+        <div class="grid-2cols">
+            <div class="service-card">
+                <i class="fas fa-clipboard-list"></i>
+                <h3>Mandatory Requirements</h3>
+                <p>Every spaza shop must submit these to the City of Ekurhuleni:</p>
+                <ul class="service-list">
+                    <li><i class="fas fa-check-circle"></i> Completed business license application form</li>
+                    <li><i class="fas fa-check-circle"></i> Zoning certificate / written consent</li>
+                    <li><i class="fas fa-check-circle"></i> Certificate of Acceptability (health)</li>
+                    <li><i class="fas fa-check-circle"></i> Approved building plan + occupancy cert</li>
+                    <li><i class="fas fa-check-circle"></i> Title deed / landlord letter (certified copy)</li>
+                    <li><i class="fas fa-check-circle"></i> ID (SA residents) or work permit / Home Affairs letter</li>
+                    <li><i class="fas fa-check-circle"></i> CIPC registration certificate</li>
+                    <li><i class="fas fa-check-circle"></i> Latest municipal account statement</li>
+                    <li><i class="fas fa-check-circle"></i> SARS tax clearance certificate</li>
+                </ul>
+                <div class="warning-tag" style="margin-top: 1rem; background: #eef2fa;">
+                    <i class="fas fa-exclamation-triangle" style="color:#c75119;"></i> <strong>Any missing document = application rejected. I solve this.</strong>
+                </div>
+            </div>
+            <div class="service-card">
+                <i class="fas fa-user-check"></i>
+                <h3>✨ How I Help You Build Compliance</h3>
+                <p>Navigate the entire Ekurhuleni spaza registration process with a dedicated compliance partner.</p>
+                <ul class="service-list">
+                    <li><i class="fas fa-angle-right"></i> <strong>Document audit & gap analysis</strong> – know exactly what's missing</li>
+                    <li><i class="fas fa-angle-right"></i> <strong>Zoning certificate & land use consent</strong> facilitation</li>
+                    <li><i class="fas fa-angle-right"></i> <strong>Certificate of Acceptability (health)</strong> – coordinate with environmental health</li>
+                    <li><i class="fas fa-angle-right"></i> Building plan & occupancy certification guidance</li>
+                    <li><i class="fas fa-angle-right"></i> CIPC registration, SARS tax clearance assistance</li>
+                    <li><i class="fas fa-angle-right"></i> Submission at the correct service centre & follow-up</li>
+                    <li><i class="fas fa-angle-right"></i> Liaison with landlords for title deed / consent letters</li>
+                </ul>
+                <div style="margin-top: 1rem;"><a href="#contact-assist" style="font-weight: 700; color:#1e6f3f;">📞 Let’s get your spaza compliant →</a></div>
+            </div>
+        </div>
+
+        <div id="centres-list">
+            <h2><i class="fas fa-map-pin"></i> Ekurhuleni Registration Centres & Advisors</h2>
+            <p>Visit your nearest customer care centre to submit your application. Below are all official centres, physical addresses, and dedicated advisors.</p>
+            <input type="text" id="centreSearch" class="search-input" placeholder="🔍 Search by area, address, or advisor name...">
+            <div class="table-wrapper">
+                <table class="centres-table" id="centresTable">
+                    <thead><tr><th>Area</th><th>Physical Address</th><th>Advisor</th></tr></thead>
+                    <tbody id="centresTableBody"></tbody>
+                </table>
+                <div id="noResultsMsg" style="display: none; text-align: center; padding: 2rem;">❌ No registration centres match your search.</div>
+            </div>
+        </div>
+
+        <div class="warning-tag" style="background: #fef9ef; justify-content: center;">
+            <i class="fas fa-gavel" style="font-size: 1.2rem;"></i>
+            <span><strong>⚠️ Business Act, 1991 (Act 71 of 1991)</strong> — Licenses issued only to fully qualifying businesses. Any spaza shop or food handling business that fails to register or does NOT meet health & zoning standards <span style="background:#e63946; color:white; padding:0.2rem 0.6rem; border-radius:30px;">WILL FACE CLOSURE</span> and possible legal action.</span>
+        </div>
+
+        <div id="contact-assist">
+            <h2><i class="fas fa-comments"></i> Let’s Build Your Compliance – Personalised Help</h2>
+            <div class="contact-section">
+                <div class="contact-info">
+                    <i class="fas fa-store-alt" style="font-size: 2.5rem; color: #1e6f3f;"></i>
+                    <h3 style="margin: 0.5rem 0 0.3rem;">I'm your compliance partner</h3>
+                    <p>I understand the stress of dealing with municipal red tape, health inspectors, and complex paperwork. I'll personally handle the process so you can focus on your business.</p>
+                    <ul style="margin-top: 1.2rem; list-style: none;">
+                        <li><i class="fas fa-phone-alt"></i> <strong>Call / WhatsApp:</strong> 072 152 3293</li>
+                        <li><i class="fas fa-envelope"></i> <strong>Email:</strong> mv.malusi@legacylaunchpad.co.za</li>
+                        <li><i class="fas fa-clock"></i> Response within 2 hours (Mon-Fri)</li>
+                    </ul>
+                    <div style="margin-top: 1.2rem;">
+                        <a href="https://wa.me/27631425175" class="btn" style="background: #25D366;"><i class="fab fa-whatsapp"></i> WhatsApp Me Now</a>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <h3>Request a callback or free checklist</h3>
+                    <form id="complianceForm">
+                        <div class="form-group"><input type="text" placeholder="Full name" id="nameInput" required></div>
+                        <div class="form-group"><input type="tel" placeholder="Phone number" id="phoneInput" required></div>
+                        <div class="form-group"><input type="email" placeholder="Email address" id="emailInput"></div>
+                        <div class="form-group"><textarea rows="2" placeholder="Tell me about your spaza shop (location, current documents, urgent needs)"></textarea></div>
+                        <button type="submit" class="btn" style="width: 100%; justify-content: center;"><i class="fas fa-paper-plane"></i> Send & Get Compliance Plan</button>
+                        <p style="font-size: 0.7rem; margin-top: 8px;">I’ll reply with a step-by-step plan to get fully registered & avoid closure.</p>
+                    </form>
+                    <div id="formFeedback" style="margin-top: 0.7rem; font-size:0.8rem;"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- FOOTER (Legacy Launchpad standard) -->
+    <div class="footer">
+        <p><strong>Msimelelo Victor Malusi</strong> – Founder</p>
+        <p><i class="fas fa-phone"></i> 072 152 3293 &nbsp;|&nbsp; <i class="fab fa-whatsapp"></i> 063 301 7269 &nbsp;|&nbsp; <i class="fas fa-envelope"></i> mv.malusi@legacylaunchpad.co.za</p>
+        <p>© 2025 Legacy Launchpad (Pty) Ltd – Building what lasts.</p>
+        <p style="margin-top: 10px; font-size: 0.75rem;">Legacy Launchpad provides administrative and documentation support only. We are not lawyers, accountants, or tax practitioners.</p>
+    </div>
+
+    <script>
+        // Registration centres data
+        const centresData = [
+            { area: "ALBERTON", address: "Alberton Civic Centre ground floor, Alwyn Taljaard Street", advisor: "Reabetswe Mabitsela" },
+            { area: "BENONI", address: "Walk-in Centre building c/o Tom Jones Street and Elston Avenue 1st Floor", advisor: "Simphiwe Cebisa" },
+            { area: "BOKSBURG", address: "Civic Centre Ground floor room 5 Trichardt Street", advisor: "Uyabanga Shongwe" },
+            { area: "BRAKPAN", address: "Civic Centre Eliott and Escombe Road, Rates hall ground floor", advisor: "Bianca Mathe" },
+            { area: "DAVEYTON", address: "Civic Centre, ground floor Eiselen and Mocke Street", advisor: "Mashilo Leshaba" },
+            { area: "DUDUZA", address: "Civic Centre, ground floor, Nala Street", advisor: "Lebohang Mahlasela" },
+            { area: "EDENVALE", address: "Civic Centre Ground floor Van Riebeeck and Hendrik Potgieter Street", advisor: "Mpho Mogashoa" },
+            { area: "ETWATWA", address: "Civic Centre, Cnr Eiselen Street and Chris Hani Drive, 23rd Street next to Etwatwa Fire Station", advisor: "Sharon Thela" },
+            { area: "GERMISTON", address: "Civic Centre, 78C President Street, Ground floor", advisor: "Kgabo Seopa" },
+            { area: "KATLEHONG 1", address: "Civic Centre, ground floor, 2098 Masakhane Street Katlehong", advisor: "Zintle Ntshangasi" },
+            { area: "KATLEHONG 2", address: "Civic Centre, 335 Sontonga Street, Katlehong 2", advisor: "Mbali Maseko" },
+            { area: "KEMPTON PARK", address: "Civic Centre Main building ground floor, CR Swart Drive", advisor: "Tshiamo Gabankgosi" },
+            { area: "KWA THEMA", address: "Civic Centre, Cnr Moeshoeshoe and Tshaka Street, Kwa-Thema", advisor: "Tebogo Mashaba" },
+            { area: "NIGEL", address: "Civic Centre Hendrik Verwoerd Street", advisor: "Kleber Pillay" },
+            { area: "SPRINGS", address: "Civic Centre, Cnr South Main Reef and Plantation Road, Ground floor Rates hall", advisor: "Thabiso Malatje" },
+            { area: "TEMBISA 1 AND 2", address: "Civic Centre 5846 Cnr Jabu Mdunge and Riverside Street Winnie Mandela", advisor: "Matshidiso Kooko" },
+            { area: "THOKOZA", address: "Civic Centre, 3521 Moepshe Street, ground floor", advisor: "Mxolisi Makwanyana" },
+            { area: "TSAKANE", address: "Civic Centre, 10890 Nzima Street", advisor: "Lindokuhle Masiko" },
+            { area: "VOSLOORUS", address: "Civic Centre, 1 George Makhubela Road, Vosloorus", advisor: "Sibongile Masilela" }
+        ];
+
+        function renderCentresTable(filterText = "") {
+            const tbody = document.getElementById("centresTableBody");
+            const noResultsDiv = document.getElementById("noResultsMsg");
+            let filtered = centresData;
+            if (filterText.trim() !== "") {
+                const lowerFilter = filterText.toLowerCase();
+                filtered = centresData.filter(item => 
+                    item.area.toLowerCase().includes(lowerFilter) ||
+                    item.address.toLowerCase().includes(lowerFilter) ||
+                    item.advisor.toLowerCase().includes(lowerFilter)
+                );
+            }
+            tbody.innerHTML = "";
+            if (filtered.length === 0) {
+                noResultsDiv.style.display = "block";
+                return;
+            }
+            noResultsDiv.style.display = "none";
+            filtered.forEach(centre => {
+                const row = tbody.insertRow();
+                row.insertCell(0).innerHTML = `<strong>${centre.area}</strong>`;
+                row.insertCell(1).textContent = centre.address;
+                row.insertCell(2).textContent = centre.advisor;
+            });
+        }
+
+        const searchInput = document.getElementById("centreSearch");
+        if (searchInput) {
+            searchInput.addEventListener("input", (e) => renderCentresTable(e.target.value));
+        }
+        renderCentresTable("");
+
+        // Form handling
+        const form = document.getElementById("complianceForm");
+        if (form) {
+            form.addEventListener("submit", (e) => {
+                e.preventDefault();
+                const name = document.getElementById("nameInput")?.value.trim();
+                const phone = document.getElementById("phoneInput")?.value.trim();
+                if (!name || !phone) {
+                    document.getElementById("formFeedback").innerHTML = '<span style="color:#b91c1c;">Please enter your name and phone number.</span>';
+                    return;
+                }
+                document.getElementById("formFeedback").innerHTML = '<span style="color:#1e6f3f;">✅ Thanks ' + name + '! I’ll reach out within 2 hours to help you achieve full spaza compliance.</span>';
+                form.reset();
+                setTimeout(() => { document.getElementById("formFeedback").innerHTML = ""; }, 5000);
+            });
+        }
+
+        // Mobile menu toggle
+        const menuToggle = document.getElementById('menuToggle');
+        const topNav = document.getElementById('topNav');
+        if (menuToggle) {
+            menuToggle.addEventListener('click', () => {
+                topNav.classList.toggle('show');
+            });
+        }
+    </script>
+    <style>
+        @media (max-width: 768px) {
+            .top-nav { display: none; flex-direction: column; width: 100%; background: #0f172a; padding: 15px; position: absolute; top: 70px; left: 0; z-index: 200; }
+            .top-nav.show { display: flex; }
+            .menu-toggle { display: block; }
+        }
+    </style>
+</body>
+</html>
