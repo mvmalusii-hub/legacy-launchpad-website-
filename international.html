@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Legacy Launchpad | International Partners</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * { margin:0; padding:0; box-sizing:border-box; }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f0f7ff;
+            color: #0a2540;
+            line-height: 1.5;
+        }
+        /* International colour theme: deep blue + gold accents */
+        .top-header {
+            background: #0a2540;
+            color: white;
+            padding: 15px 30px;
+            position: sticky;
+            top: 0;
+            z-index: 200;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .logo-area { display: flex; align-items: center; gap: 12px; }
+        .logo-icon { background: #fbbf24; width: 40px; height: 40px; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; font-weight: bold; color: #0a2540; }
+        .logo-text h1 { font-size: 1.4rem; letter-spacing: -0.5px; }
+        .logo-text p { font-size: 0.7rem; color: #94a3b8; }
+        .top-nav { display: flex; gap: 25px; flex-wrap: wrap; }
+        .top-nav a { color: white; text-decoration: none; transition: 0.3s; }
+        .top-nav a:hover { color: #fbbf24; }
+
+        .app-container { display: flex; min-height: calc(100vh - 80px); }
+        .sidebar {
+            width: 280px;
+            background: #0a2540;
+            color: #e2e8f0;
+            position: fixed;
+            top: 80px;
+            bottom: 0;
+            left: 0;
+            overflow-y: auto;
+            transition: transform 0.3s ease;
+            z-index: 100;
+            padding: 20px 0;
+        }
+        .sidebar-header { padding: 0 20px 20px; border-bottom: 1px solid #2c4c6e; margin-bottom: 20px; }
+        .sidebar-header h3 { color: #fbbf24; font-size: 1.2rem; }
+        .sidebar-menu { list-style: none; padding: 0; }
+        .sidebar-menu li { margin-bottom: 4px; }
+        .sidebar-menu a { display: flex; align-items: center; gap: 12px; padding: 12px 20px; color: #cbd5e1; text-decoration: none; transition: 0.2s; font-size: 0.9rem; }
+        .sidebar-menu a:hover { background: #1e4a6e; color: #fbbf24; }
+        .sidebar-menu i { width: 24px; text-align: center; }
+
+        .main-content { flex: 1; margin-left: 280px; padding: 30px; }
+        .section-title {
+            font-size: 1.8rem;
+            margin: 40px 0 20px;
+            border-left: 5px solid #fbbf24;
+            padding-left: 15px;
+            color: #0a2540;
+        }
+        .global-badge {
+            background: linear-gradient(135deg, #0a2540, #1e4a6e);
+            color: white;
+            padding: 20px;
+            border-radius: 24px;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        .global-badge i { font-size: 2.5rem; margin-bottom: 10px; color: #fbbf24; }
+        .partner-container {
+            background: white;
+            border-radius: 24px;
+            padding: 30px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+            margin-bottom: 30px;
+        }
+        .form-group { margin-bottom: 20px; }
+        label { display: block; font-weight: 600; margin-bottom: 8px; }
+        input, select, textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #cbd5e1;
+            border-radius: 8px;
+            font-family: inherit;
+        }
+        .btn {
+            background: #fbbf24;
+            color: #0a2540;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 40px;
+            font-weight: bold;
+            cursor: pointer;
+            width: 100%;
+            transition: 0.2s;
+        }
+        .btn:hover { background: #f59e0b; transform: translateY(-2px); }
+        .login-warning {
+            background: #fef9c3;
+            padding: 15px;
+            border-radius: 12px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .login-warning a { color: #0a2540; font-weight: bold; }
+        .file-hint { font-size: 0.75rem; color: #475569; margin-top: 5px; }
+        .footer-contact {
+            background: #0a2540;
+            color: #94a3b8;
+            padding: 30px;
+            border-radius: 20px;
+            text-align: center;
+            margin-top: 50px;
+        }
+        .footer-contact a { color: #fbbf24; text-decoration: none; }
+        @media (max-width: 768px) {
+            .sidebar { transform: translateX(-100%); position: fixed; top: 70px; width: 260px; z-index: 150; }
+            .sidebar.open { transform: translateX(0); }
+            .main-content { margin-left: 0; padding: 15px; }
+            .top-nav { display: none; }
+            .menu-toggle { display: block; background: #0a2540; color: white; border: none; padding: 8px 12px; border-radius: 30px; cursor: pointer; font-size: 1.2rem; }
+        }
+        .menu-toggle { display: none; }
+    </style>
+</head>
+<body>
+    <div class="top-header">
+        <div class="logo-area"><div class="logo-icon">LP</div><div class="logo-text"><h1>Legacy Launchpad</h1><p>Building what lasts.</p></div></div>
+        <div class="top-nav">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="industries.html">Industries</a>
+            <a href="policies.html">Policies</a>
+            <a href="#contact">Contact</a>
+        </div>
+        <button class="menu-toggle" id="menuToggle">☰</button>
+    </div>
+
+    <div class="app-container">
+        <div class="sidebar" id="sidebar">
+            <div class="sidebar-header"><h3>Enterprise Menu</h3><p>Advanced features</p></div>
+            <ul class="sidebar-menu">
+                <li><a href="profile.html"><i class="fas fa-user-plus"></i> 01 Profile / Create Profile</a></li>
+                <li><a href="partners.html"><i class="fas fa-handshake"></i> 02 Our Partners</a></li>
+                <li><a href="international.html"><i class="fas fa-globe"></i> 03 International Partners</a></li>
+                <li><a href="#"><i class="fas fa-chart-line"></i> 04 Strategic Growth</a></li>
+                <li><a href="#"><i class="fas fa-building"></i> 05 Business Partners</a></li>
+                <li><a href="#"><i class="fas fa-chart-simple"></i> 06 Real Time Market Leads</a></li>
+                <li><a href="#"><i class="fas fa-users"></i> 07 Business Hub</a></li>
+                <li><a href="#"><i class="fas fa-user-tie"></i> 08 Hire Our Admin</a></li>
+                <li><a href="#"><i class="fas fa-gift"></i> 09 Referral Program</a></li>
+                <li><a href="#"><i class="fas fa-sign-out-alt"></i> 10 Profile Log Out</a></li>
+            </ul>
+        </div>
+
+        <div class="main-content">
+            <div class="global-badge">
+                <i class="fas fa-globe-americas"></i>
+                <h2 style="margin: 10px 0;">Global Reach, Local Expertise</h2>
+                <p>Are you a global‑oriented entrepreneur? Ready to branch out and have South Africa at the back of your mind? Legacy Launchpad is your one‑stop shop for registration, compliance, and documentation – helping multinationals expand seamlessly into South Africa.</p>
+            </div>
+
+            <h2 class="section-title">🌍 International Partners</h2>
+            <div class="partner-container">
+                <p style="margin-bottom: 20px;">We assist both newly registered and existing multinationals to manage their South African compliance, registration, and document archives. Our services include CIPC registration, SARS tax compliance, B‑BBEE advisory, and ongoing corporate governance.</p>
+                <p style="margin-bottom: 30px;">Complete the form below to start your journey with Legacy Launchpad. Upload your company documents and we will contact you within 48 hours.</p>
+
+                <!-- Login check (demo) -->
+                <div id="loginWarning" class="login-warning">
+                    ⚠️ You are not logged in. <a href="profile.html">Please log in or create a profile</a> to submit an international partnership request.
+                </div>
+
+                <!-- Entity Type Selection -->
+                <div class="form-group">
+                    <label>Entity type</label>
+                    <select id="entityType">
+                        <option value="individual">Individual / Sole Proprietor</option>
+                        <option value="company">Company / Multinational</option>
+                    </select>
+                </div>
+
+                <!-- Dynamic Form Container -->
+                <div id="dynamicForm"></div>
+
+                <button id="submitInternationalBtn" class="btn">Submit International Request →</button>
+                <div id="submitMessage" style="margin-top: 15px; text-align: center;"></div>
+            </div>
+
+            <div class="footer-contact" id="contact">
+                <p><strong>Msimelelo Victor Malusi</strong> – Founder</p>
+                <p><i class="fas fa-phone"></i> 072 152 3293 &nbsp;|&nbsp; <i class="fab fa-whatsapp"></i> 063 301 7269 &nbsp;|&nbsp; <i class="fas fa-envelope"></i> mv.malusi@legacylaunchpad.co.za</p>
+                <p>© 2025 Legacy Launchpad (Pty) Ltd – Building what lasts.</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Simulate login status (set to true to test)
+        let isLoggedIn = false;  // Change to true after profile integration
+
+        const loginWarningDiv = document.getElementById('loginWarning');
+        if (isLoggedIn) {
+            loginWarningDiv.style.display = 'none';
+        } else {
+            loginWarningDiv.style.display = 'block';
+        }
+
+        // Form templates for individual and company
+        const forms = {
+            individual: `
+                <div class="form-group"><label>Full name</label><input type="text" id="indName" required></div>
+                <div class="form-group"><label>Email address</label><input type="email" id="indEmail" required></div>
+                <div class="form-group"><label>Phone (with country code)</label><input type="tel" id="indPhone" required></div>
+                <div class="form-group"><label>Country of residence / incorporation</label><input type="text" id="indCountry" required></div>
+                <div class="form-group"><label>What services do you need? (Registration, tax, compliance, etc.)</label><textarea id="indNeeds" rows="3" required></textarea></div>
+                <div class="form-group"><label>Upload passport / ID copy (PDF, JPG)</label><input type="file" id="indFile" accept=".pdf,.jpg,.png"></div>
+                <div class="file-hint">Optional – you can upload supporting documents.</div>
+            `,
+            company: `
+                <div class="form-group"><label>Company name</label><input type="text" id="compName" required></div>
+                <div class="form-group"><label>Registration number (in home country)</label><input type="text" id="compRegNo" required></div>
+                <div class="form-group"><label>Country of incorporation</label><input type="text" id="compCountry" required></div>
+                <div class="form-group"><label>Contact person</label><input type="text" id="compContactPerson" required></div>
+                <div class="form-group"><label>Email address</label><input type="email" id="compEmail" required></div>
+                <div class="form-group"><label>What South African services do you need?</label><textarea id="compNeeds" rows="3" placeholder="e.g., company registration, tax clearance, B-BBEE, payroll"></textarea></div>
+                <div class="form-group"><label>Upload certificate of incorporation / company profile (PDF)</label><input type="file" id="compFile" accept=".pdf,.jpg,.png"></div>
+                <div class="file-hint">Optional – helps us understand your structure.</div>
+            `
+        };
+
+        const container = document.getElementById('dynamicForm');
+        const entitySelect = document.getElementById('entityType');
+
+        function loadForm() {
+            const selected = entitySelect.value;
+            container.innerHTML = forms[selected];
+        }
+        loadForm();
+        entitySelect.addEventListener('change', loadForm);
+
+        // Submit handler
+        document.getElementById('submitInternationalBtn').addEventListener('click', () => {
+            if (!isLoggedIn) {
+                document.getElementById('submitMessage').innerHTML = '<span style="color:red;">❌ Please <a href="profile.html">log in</a> to submit an international partnership request.</span>';
+                return;
+            }
+            // In a real app, gather data and send to backend / email
+            document.getElementById('submitMessage').innerHTML = '<span style="color:green;">✅ Thank you! Your international request has been received. We will contact you within 48 hours. (Demo – backend pending)</span>';
+        });
+
+        // Mobile sidebar toggle
+        const menuBtn = document.getElementById('menuToggle');
+        const sidebar = document.getElementById('sidebar');
+        if (menuBtn) {
+            menuBtn.addEventListener('click', () => {
+                sidebar.classList.toggle('open');
+            });
+        }
+    </script>
+</body>
+</html>
