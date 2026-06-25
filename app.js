@@ -500,3 +500,23 @@ if (loginWarningRef && referralContent) {
     // (Optional) Expose login toggle for testing
     // window.setLoggedInReferral = function(status) { isLoggedIn = status; updateReferralVisibility(); };
 }
+
+// ===== MOBILE TOGGLE (Top Nav + Sidebar) =====
+const menuBtnTop = document.getElementById('menuToggleTop');
+const topNav = document.getElementById('topNav');
+const menuBtnSide = document.getElementById('menuToggle');
+const sidebar = document.getElementById('sidebar');
+
+if (menuBtnTop && topNav) {
+    menuBtnTop.addEventListener('click', function(e) {
+        e.stopPropagation();
+        topNav.classList.toggle('show');
+    });
+}
+
+if (menuBtnSide && sidebar) {
+    menuBtnSide.addEventListener('click', function(e) {
+        e.stopPropagation();
+        sidebar.classList.toggle('open');
+    });
+}
