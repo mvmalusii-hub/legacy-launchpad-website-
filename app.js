@@ -290,3 +290,213 @@ if (hireAdminForm) {
         // hireAdminForm.reset();
     });
 }
+
+// ===== REFERRAL PAGE =====
+const loginWarningRef = document.getElementById('loginWarning');
+const referralContent = document.getElementById('referralContent');
+const totalReferralsEl = document.getElementById('totalReferrals');
+const totalEarningsEl = document.getElementById('totalEarnings');
+const pendingEarningsEl = document.getElementById('pendingEarnings');
+const referralLinkEl = document.getElementById('referralLink');
+const copyBtn = document.getElementById('copyLinkBtn');
+const refreshBtn = document.getElementById('refreshLinkBtn');
+const historyDiv = document.getElementById('referralHistory');
+const simulateAmount = document.getElementById('simulateAmount');
+const simulateBtn = document.getElementById('simulatePurchaseBtn');
+
+if (loginWarningRef && referralContent) {
+    // Simulate login status (use same variable as before)
+    let isLoggedIn = false; // In practice, make this global
+
+    // Referral data structure
+    let referralData = {
+        referralCode: '',
+        referrals: [],
+        totalEarned: 0
+    };
+
+    function loadReferralData() {
+        const stored = localStorage.getItem('legacyReferral');
+        if (stored) {
+            try {
+                referralData = JSON.parse(stored);
+            } catch (e) {
+                initReferralData();
+            }
+        } else {
+            initReferralData();
+        }
+        updateReferralUI();
+    }
+
+    function initReferralData() {
+        referralData.referralCode = 'REF' + Math.random().toString(36).substring(2, 8).toUpperCase();
+        referralData.referrals = [];
+        referralData.totalEarned = 0;
+        localStorage.setItem('legacyReferral', JSON.stringify(referralData));
+    }
+
+    function updateReferralUI() {
+        if (!referralContent) return;
+
+        // Update stats
+        if (totalReferralsEl) totalReferralsEl.innerText = referralData.referrals.length;
+        if (totalEarningsEl) totalEarningsEl.innerText = 'R' + referralData.totalEarned;
+        if (pendingEarningsEl) pendingEarningsEl.innerText = 'R0'; // Demo – could be enhanced
+
+        // Update link
+        if (referralLinkEl) {
+            const linkBase = window.location.origin + window.location.pathname.replace('referral.html', '') + '?ref=';
+            referralLinkEl.innerText = linkBase + referralData.referralCode;
+        }
+
+        // Update history
+        if (historyDiv) {
+            if (referralData.referrals.length === 0) {
+                historyDiv.innerHTML = '<p>No referrals yet. Share your link to get started!</p>';
+            } else {
+                let html = '<ul class="referral-history-list">';
+                referralData.referrals.forEach(ref => {
+                    html += `<li class="referral-history-item">
+                                <strong>${escapeHtml(ref.referredEmail) || 'Anonymous'}</strong> – Spent R${ref.purchaseAmount} → Earned R${ref.earnings}<br>
+                                <small>${ref.date}</small>
+                            </li>`;
+                });
+                html += '</ul>';
+                historyDiv.innerHTML = html;
+            }
+        }
+    }
+
+    function addReferral(email, amount) {
+        const earnings = amount * 0.1;
+        referralData.referrals.push({
+            referredEmail: email || 'Guest',
+            purchaseAmount: amount,
+            earnings: Math.round(earnings * 100) / 100,
+            date: new Date().toLocaleString(),
+            status: 'completed'
+        });
+        referralData.totalEarned += earnings;
+        localStorage.setItem('legacyReferral', JSON.stringify(referralData));
+        updateReferralUI();
+    }
+
+    // Copy link
+    if (copyBtn) {
+        copyBtn.addEventListener('click', function() {
+            const linkText = referralLinkEl.innerText;
+            if (navigator.clipboard && navigator.clipboard.writeText) {
+                navigator.clipboard.writeText(linkText).then(() => {
+                    showToast('Referral link copied to clipboard!', 'success');
+                }).catch(() => {
+                    fallbackCopy(linkText);
+                });
+            } else {
+                fallbackCopy(linkText);
+            }
+        });
+    }
+
+    function fallbackCopy(text) {
+        const textarea = document.createElement('textarea');
+        textarea.value = text;
+        document.body.appendChild(textarea);
+        textarea.select();
+        try {
+            document.execCommand('copy');
+            showToast('Referral link copied to clipboard!', 'success');
+        } catch (e) {
+            alert('Could not copy. Please select and copy manually.');
+        }
+        document.body.removeChild(textarea);
+    }
+
+    // Refresh / generate new link
+    if (refreshBtn) {
+        refreshBtn.addEventListener('click', function() {
+            if (confirm('Generating a new link will invalidate the old one. Any pending referrals using the old link will not be credited. Continue?')) {
+                referralData.referralCode = 'REF' + Math.random().toString(36).substring(2, 8).toUpperCase();
+                localStorage.setItem('legacyReferral', JSON.stringify(referralData));
+                updateReferralUI();
+                showToast('New referral link generated!', 'success');
+            }
+        });
+    }
+
+    // Simulate purchase
+    if (simulateBtn && simulateAmount) {
+        simulateBtn.addEventListener('click', function() {
+            const amount = parseFloat(simulateAmount.value);
+            if (isNaN(amount) || amount < 1000) {
+                showToast('Please enter a valid amount of R1,000 or more.', 'error');
+                return;
+            }
+            addReferral('Simulated User', amount);
+            simulateAmount.value = '';
+            showToast(`Referral recorded! You earned R${(amount * 0.1).toFixed(2)}.`, 'success');
+        });
+    }
+
+    // Simple toast notification
+    function showToast(message, type) {
+        // Check if toast container exists, create if not
+        let toastContainer = document.getElementById('toastContainer');
+        if (!toastContainer) {
+            toastContainer = document.createElement('div');
+            toastContainer.id = 'toastContainer';
+            toastContainer.style.cssText = 'position:fixed; bottom:20px; right:20px; z-index:9999; display:flex; flex-direction:column; gap:10px; max-width:350px;';
+            document.body.appendChild(toastContainer);
+        }
+        const toast = document.createElement('div');
+        const bgColor = type === 'success' ? '#10b981' : '#ef4444';
+        toast.style.cssText = `
+            background: ${bgColor};
+            color: white;
+            padding: 12px 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            animation: slideIn 0.3s ease;
+            font-family: 'Segoe UI', sans-serif;
+            font-size: 0.9rem;
+        `;
+        toast.innerText = message;
+        toastContainer.appendChild(toast);
+        setTimeout(() => {
+            toast.style.opacity = '0';
+            toast.style.transition = 'opacity 0.3s';
+            setTimeout(() => toast.remove(), 300);
+        }, 3000);
+    }
+
+    // Inject slideIn animation if not already present
+    if (!document.getElementById('toastStyles')) {
+        const style = document.createElement('style');
+        style.id = 'toastStyles';
+        style.textContent = `
+            @keyframes slideIn {
+                from { transform: translateX(100%); opacity: 0; }
+                to { transform: translateX(0); opacity: 1; }
+            }
+        `;
+        document.head.appendChild(style);
+    }
+
+    // Update UI based on login status
+    function updateReferralVisibility() {
+        if (!isLoggedIn) {
+            loginWarningRef.classList.remove('hidden');
+            referralContent.classList.add('hidden');
+        } else {
+            loginWarningRef.classList.add('hidden');
+            referralContent.classList.remove('hidden');
+            loadReferralData();
+        }
+    }
+
+    // Initial setup
+    updateReferralVisibility();
+
+    // (Optional) Expose login toggle for testing
+    // window.setLoggedInReferral = function(status) { isLoggedIn = status; updateReferralVisibility(); };
+}
