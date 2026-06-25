@@ -123,6 +123,111 @@ if (loginWarning || dataConsentSection || databaseSection) {
         });
     }
 
+    // ===== BUSINESS HUB PAGE =====
+const loginWarningHub = document.getElementById('loginWarning');
+const commentArea = document.getElementById('commentArea');
+const commentList = document.getElementById('commentList');
+const postBtn = document.getElementById('postCommentBtn');
+const newCommentInput = document.getElementById('newComment');
+
+if (loginWarningHub || commentArea) {
+    // Simulate login status (use same variable as before)
+    let isLoggedIn = false; // In practice, make this global
+
+    // Comment storage (demo using localStorage)
+    let comments = [];
+
+    function loadComments() {
+        const stored = localStorage.getItem('hubComments');
+        if (stored) {
+            try {
+                comments = JSON.parse(stored);
+            } catch (e) {
+                comments = getDefaultComments();
+            }
+        } else {
+            comments = getDefaultComments();
+            localStorage.setItem('hubComments', JSON.stringify(comments));
+        }
+        renderComments();
+    }
+
+    function getDefaultComments() {
+        return [
+            { author: "Mzolisi", date: new Date().toLocaleString(), text: "Excited about this new platform!" },
+            { author: "Thabo", date: new Date().toLocaleString(), text: "When is the next live session?" }
+        ];
+    }
+
+    function renderComments() {
+        if (!commentList) return;
+        if (comments.length === 0) {
+            commentList.innerHTML = '<p>No comments yet. Be the first to post!</p>';
+            return;
+        }
+        commentList.innerHTML = '';
+        comments.forEach(comm => {
+            const div = document.createElement('div');
+            div.className = 'comment-item';
+            div.innerHTML = `
+                <div><span class="comment-author">${escapeHtml(comm.author)}</span><span class="comment-date">${comm.date}</span></div>
+                <div class="comment-text">${escapeHtml(comm.text)}</div>
+            `;
+            commentList.appendChild(div);
+        });
+    }
+
+    function escapeHtml(str) {
+        if (!str) return '';
+        return str.replace(/[&<>]/g, function(m) {
+            if (m === '&') return '&amp;';
+            if (m === '<') return '&lt;';
+            if (m === '>') return '&gt;';
+            return m;
+        });
+    }
+
+    function updateHubUI() {
+        if (!isLoggedIn) {
+            loginWarningHub.classList.remove('hidden');
+            commentArea.classList.add('hidden');
+        } else {
+            loginWarningHub.classList.add('hidden');
+            commentArea.classList.remove('hidden');
+            loadComments();
+        }
+    }
+
+    // Post comment
+    if (postBtn) {
+        postBtn.addEventListener('click', function() {
+            if (!isLoggedIn) {
+                alert('Please log in to comment.');
+                return;
+            }
+            const newText = newCommentInput.value.trim();
+            if (!newText) {
+                alert('Please enter a comment.');
+                return;
+            }
+            const comment = {
+                author: "LoggedInUser", // In a real system, get from profile
+                date: new Date().toLocaleString(),
+                text: newText
+            };
+            comments.push(comment);
+            localStorage.setItem('hubComments', JSON.stringify(comments));
+            renderComments();
+            newCommentInput.value = '';
+        });
+    }
+
+    // Initial UI update
+    updateHubUI();
+
+    // (Optional) expose a way to change login status for testing
+    // window.setLoggedInHub = function(status) { isLoggedIn = status; updateHubUI(); };
+}
     // Initial UI update
     updateUI();
 
