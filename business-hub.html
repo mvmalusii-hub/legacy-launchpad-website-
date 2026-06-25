@@ -4,182 +4,49 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
     <title>Legacy Launchpad | Business Hub</title>
+
+    <!-- External Styles -->
+    <link rel="stylesheet" href="main.css">
+
+    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <style>
-        * { margin:0; padding:0; box-sizing:border-box; }
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: #f8fafc;
-            color: #1e293b;
-            line-height: 1.5;
-        }
-        /* Unique theme: deep purple/blue for innovation */
-        .top-header {
-            background: #2d2b5e;
-            color: white;
-            padding: 15px 30px;
-            position: sticky;
-            top: 0;
-            z-index: 200;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 15px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-        }
-        .logo-area { display: flex; align-items: center; gap: 12px; }
-        .logo-icon { background: #fbbf24; width: 40px; height: 40px; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; font-weight: bold; color: #2d2b5e; }
-        .logo-text h1 { font-size: 1.4rem; letter-spacing: -0.5px; }
-        .logo-text p { font-size: 0.7rem; color: #a5b4fc; }
-        .top-nav { display: flex; gap: 25px; flex-wrap: wrap; }
-        .top-nav a { color: white; text-decoration: none; transition: 0.3s; }
-        .top-nav a:hover { color: #fbbf24; }
-
-        .app-container { display: flex; min-height: calc(100vh - 80px); }
-        .sidebar {
-            width: 280px;
-            background: #2d2b5e;
-            color: #e2e8f0;
-            position: fixed;
-            top: 80px;
-            bottom: 0;
-            left: 0;
-            overflow-y: auto;
-            transition: transform 0.3s ease;
-            z-index: 100;
-            padding: 20px 0;
-        }
-        .sidebar-header { padding: 0 20px 20px; border-bottom: 1px solid #4c4794; margin-bottom: 20px; }
-        .sidebar-header h3 { color: #fbbf24; font-size: 1.2rem; }
-        .sidebar-menu { list-style: none; padding: 0; }
-        .sidebar-menu li { margin-bottom: 4px; }
-        .sidebar-menu a { display: flex; align-items: center; gap: 12px; padding: 12px 20px; color: #cbd5e1; text-decoration: none; transition: 0.2s; font-size: 0.9rem; }
-        .sidebar-menu a:hover { background: #4c4794; color: #fbbf24; }
-        .sidebar-menu i { width: 24px; text-align: center; }
-
-        .main-content { flex: 1; margin-left: 280px; padding: 30px; }
-        .section-title {
-            font-size: 1.8rem;
-            margin: 40px 0 20px;
-            border-left: 5px solid #fbbf24;
-            padding-left: 15px;
-            color: #2d2b5e;
-        }
-        .hero-hub {
-            background: linear-gradient(135deg, #2d2b5e, #4c4794);
-            color: white;
-            padding: 30px;
-            border-radius: 24px;
-            margin-bottom: 30px;
-            text-align: center;
-        }
-        .hero-hub i { font-size: 2.5rem; margin-bottom: 10px; color: #fbbf24; }
-        .video-container {
-            background: #000;
-            border-radius: 24px;
-            overflow: hidden;
-            margin-bottom: 30px;
-            aspect-ratio: 16 / 9;
-            position: relative;
-        }
-        .video-placeholder {
-            width: 100%;
-            height: 100%;
-            background: #1e1b4b;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-direction: column;
-            color: white;
-        }
-        .video-placeholder i { font-size: 4rem; margin-bottom: 15px; color: #fbbf24; }
-        .comment-section {
-            background: white;
-            border-radius: 24px;
-            padding: 30px;
-            box-shadow: 0 8px 20px rgba(0,0,0,0.05);
-        }
-        .comment-list {
-            max-height: 400px;
-            overflow-y: auto;
-            margin-bottom: 20px;
-            border: 1px solid #e2e8f0;
-            border-radius: 16px;
-            padding: 15px;
-            background: #f8fafc;
-        }
-        .comment-item {
-            padding: 12px;
-            border-bottom: 1px solid #e2e8f0;
-        }
-        .comment-item:last-child { border-bottom: none; }
-        .comment-author { font-weight: bold; color: #2d2b5e; }
-        .comment-date { font-size: 0.7rem; color: #475569; margin-left: 10px; }
-        .comment-text { margin-top: 5px; }
-        .login-warning {
-            background: #fef9c3;
-            padding: 15px;
-            border-radius: 12px;
-            margin-bottom: 20px;
-            text-align: center;
-        }
-        .login-warning a { color: #2d2b5e; font-weight: bold; }
-        .form-group { margin-bottom: 15px; }
-        label { font-weight: 600; display: block; margin-bottom: 8px; }
-        textarea {
-            width: 100%;
-            padding: 12px;
-            border: 1px solid #cbd5e1;
-            border-radius: 8px;
-            font-family: inherit;
-        }
-        .btn {
-            background: #fbbf24;
-            color: #2d2b5e;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 40px;
-            font-weight: bold;
-            cursor: pointer;
-            transition: 0.2s;
-        }
-        .btn:hover { background: #f59e0b; }
-        .footer-contact {
-            background: #2d2b5e;
-            color: #94a3b8;
-            padding: 30px;
-            border-radius: 20px;
-            text-align: center;
-            margin-top: 50px;
-        }
-        .footer-contact a { color: #fbbf24; text-decoration: none; }
-        @media (max-width: 768px) {
-            .sidebar { transform: translateX(-100%); position: fixed; top: 70px; width: 260px; z-index: 150; }
-            .sidebar.open { transform: translateX(0); }
-            .main-content { margin-left: 0; padding: 15px; }
-            .top-nav { display: none; }
-            .menu-toggle { display: block; background: #2d2b5e; color: white; border: none; padding: 8px 12px; border-radius: 30px; cursor: pointer; font-size: 1.2rem; }
-        }
-        .menu-toggle { display: none; }
-    </style>
 </head>
-<body>
-    <div class="top-header">
-        <div class="logo-area"><div class="logo-icon">LP</div><div class="logo-text"><h1>Legacy Launchpad</h1><p>Building what lasts.</p></div></div>
-        <div class="top-nav">
+<body class="theme-hub">
+    <!-- ============================================================ -->
+    <!-- 1. TOP HEADER                                                -->
+    <!-- ============================================================ -->
+    <header class="top-header">
+        <div class="logo-area">
+            <div class="logo-icon">LP</div>
+            <div class="logo-text">
+                <h1>Legacy Launchpad</h1>
+                <p>Building what lasts.</p>
+            </div>
+        </div>
+
+        <nav class="top-nav" id="topNav">
             <a href="index.html">Home</a>
             <a href="about.html">About</a>
             <a href="industries.html">Industries</a>
             <a href="policies.html">Policies</a>
             <a href="#contact">Contact</a>
-        </div>
-        <button class="menu-toggle" id="menuToggle">☰</button>
-    </div>
+        </nav>
 
+        <button class="menu-toggle" id="menuToggleTop" aria-label="Toggle navigation">☰</button>
+        <button class="menu-toggle" id="menuToggle" aria-label="Toggle sidebar">☰</button>
+    </header>
+
+    <!-- ============================================================ -->
+    <!-- 2. MAIN APP CONTAINER                                        -->
+    <!-- ============================================================ -->
     <div class="app-container">
-        <div class="sidebar" id="sidebar">
-            <div class="sidebar-header"><h3>Enterprise Menu</h3><p>Advanced features</p></div>
+
+        <!-- SIDEBAR (Shared) -->
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <h3>Enterprise Menu</h3>
+                <p>Advanced features</p>
+            </div>
             <ul class="sidebar-menu">
                 <li><a href="profile.html"><i class="fas fa-user-plus"></i> 01 Profile / Create Profile</a></li>
                 <li><a href="partners.html"><i class="fas fa-handshake"></i> 02 Our Partners</a></li>
@@ -192,9 +59,12 @@
                 <li><a href="#"><i class="fas fa-gift"></i> 09 Referral Program</a></li>
                 <li><a href="#"><i class="fas fa-sign-out-alt"></i> 10 Profile Log Out</a></li>
             </ul>
-        </div>
+        </aside>
 
-        <div class="main-content">
+        <!-- MAIN CONTENT (Page‑specific) -->
+        <main class="main-content">
+
+            <!-- Hero -->
             <div class="hero-hub">
                 <i class="fas fa-chalkboard-user"></i>
                 <h2>Business Hub – Where Innovation Meets Action</h2>
@@ -209,8 +79,8 @@
                     <i class="fas fa-video"></i>
                     <h3>Live stream will appear here</h3>
                     <p>Weekly innovation sessions – check schedule in announcements.</p>
-                    <!-- Example embed (commented): 
-                    <iframe width="100%" height="100%" src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0" allowfullscreen></iframe> 
+                    <!-- Example embed (commented):
+                    <iframe width="100%" height="100%" src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0" allowfullscreen></iframe>
                     -->
                 </div>
             </div>
@@ -218,131 +88,39 @@
             <!-- Comment Section -->
             <h2 class="section-title">💬 Live Discussion</h2>
             <div class="comment-section">
-                <div id="loginWarning" class="login-warning">
+                <div id="loginWarning" class="login-warning hidden">
                     ⚠️ You are not logged in. <a href="profile.html">Please log in or create a profile</a> to join the conversation.
                 </div>
-                <div id="commentArea" style="display: none;">
+                <div id="commentArea" class="hidden">
                     <div class="comment-list" id="commentList">
                         <!-- Comments will appear here -->
                     </div>
                     <div class="form-group">
-                        <label>Add your comment</label>
+                        <label for="newComment">Add your comment</label>
                         <textarea id="newComment" rows="3" placeholder="Share your thoughts..."></textarea>
                     </div>
                     <button id="postCommentBtn" class="btn">Post Comment →</button>
                 </div>
             </div>
 
+            <!-- Footer / Contact (Shared) -->
             <div class="footer-contact" id="contact">
                 <p><strong>Msimelelo Victor Malusi</strong> – Founder</p>
-                <p><i class="fas fa-phone"></i> 072 152 3293 &nbsp;|&nbsp; <i class="fab fa-whatsapp"></i> 063 301 7269 &nbsp;|&nbsp; <i class="fas fa-envelope"></i> mv.malusi@legacylaunchpad.co.za</p>
+                <p>
+                    <i class="fas fa-phone"></i> 072 152 3293 &nbsp;|&nbsp;
+                    <i class="fab fa-whatsapp"></i> 063 301 7269 &nbsp;|&nbsp;
+                    <i class="fas fa-envelope"></i> mv.malusi@legacylaunchpad.co.za
+                </p>
                 <p>© 2025 Legacy Launchpad (Pty) Ltd – Building what lasts.</p>
             </div>
-        </div>
+
+        </main>
     </div>
 
-    <script>
-        // Simulate login status (set to true for testing)
-        let isLoggedIn = false;
+    <!-- ============================================================ -->
+    <!-- 3. EXTERNAL JAVASCRIPT                                       -->
+    <!-- ============================================================ -->
+    <script src="app.js"></script>
 
-        // Store comments in localStorage
-        let comments = [];
-
-        function loadComments() {
-            const stored = localStorage.getItem('hubComments');
-            if (stored) {
-                comments = JSON.parse(stored);
-            } else {
-                // Sample comments
-                comments = [
-                    { author: "Mzolisi", date: new Date().toLocaleString(), text: "Excited about this new platform!" },
-                    { author: "Thabo", date: new Date().toLocaleString(), text: "When is the next live session?" }
-                ];
-                localStorage.setItem('hubComments', JSON.stringify(comments));
-            }
-            renderComments();
-        }
-
-        function renderComments() {
-            const container = document.getElementById('commentList');
-            if (!container) return;
-            if (comments.length === 0) {
-                container.innerHTML = '<p>No comments yet. Be the first to post!</p>';
-                return;
-            }
-            container.innerHTML = '';
-            comments.forEach(comm => {
-                const div = document.createElement('div');
-                div.className = 'comment-item';
-                div.innerHTML = `
-                    <div><span class="comment-author">${escapeHtml(comm.author)}</span><span class="comment-date">${comm.date}</span></div>
-                    <div class="comment-text">${escapeHtml(comm.text)}</div>
-                `;
-                container.appendChild(div);
-            });
-        }
-
-        function escapeHtml(str) {
-            if (!str) return '';
-            return str.replace(/[&<>]/g, function(m) {
-                if (m === '&') return '&amp;';
-                if (m === '<') return '&lt;';
-                if (m === '>') return '&gt;';
-                return m;
-            });
-        }
-
-        // Update UI based on login status
-        const loginWarning = document.getElementById('loginWarning');
-        const commentArea = document.getElementById('commentArea');
-
-        function updateUI() {
-            if (!isLoggedIn) {
-                loginWarning.style.display = 'block';
-                commentArea.style.display = 'none';
-            } else {
-                loginWarning.style.display = 'none';
-                commentArea.style.display = 'block';
-                loadComments();
-            }
-        }
-
-        // Post comment
-        const postBtn = document.getElementById('postCommentBtn');
-        if (postBtn) {
-            postBtn.addEventListener('click', () => {
-                if (!isLoggedIn) {
-                    alert('Please log in to comment.');
-                    return;
-                }
-                const newText = document.getElementById('newComment').value.trim();
-                if (!newText) {
-                    alert('Please enter a comment.');
-                    return;
-                }
-                const comment = {
-                    author: "LoggedInUser", // In a real system, get from profile
-                    date: new Date().toLocaleString(),
-                    text: newText
-                };
-                comments.push(comment);
-                localStorage.setItem('hubComments', JSON.stringify(comments));
-                renderComments();
-                document.getElementById('newComment').value = '';
-            });
-        }
-
-        // Initial load
-        updateUI();
-
-        // Mobile sidebar toggle
-        const menuBtn = document.getElementById('menuToggle');
-        const sidebar = document.getElementById('sidebar');
-        if (menuBtn) {
-            menuBtn.addEventListener('click', () => {
-                sidebar.classList.toggle('open');
-            });
-        }
-    </script>
 </body>
 </html>
