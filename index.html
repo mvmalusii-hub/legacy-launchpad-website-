@@ -3,300 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-    <title>Legacy Launchpad | Home</title>
+    <title>Legacy Launchpad | Document Roadmaps & Compliance Systems</title>
+
+    <!-- External Styles -->
+    <link rel="stylesheet" href="main.css">
+
+    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
 
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: #f8fafc;
-            color: #1e293b;
-            line-height: 1.5;
-        }
-
-        /* TOP HEADER BAR (sticky) */
-        .top-header {
-            background: #0f172a;
-            color: white;
-            padding: 15px 30px;
-            position: sticky;
-            top: 0;
-            z-index: 200;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 15px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-        }
-        .logo-area {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
-        .logo-icon {
-            background: #fbbf24;
-            width: 40px;
-            height: 40px;
-            border-radius: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.5rem;
-            font-weight: bold;
-            color: #0f172a;
-        }
-        .logo-text h1 {
-            font-size: 1.4rem;
-            letter-spacing: -0.5px;
-        }
-        .logo-text p {
-            font-size: 0.7rem;
-            color: #94a3b8;
-        }
-        .top-nav {
-            display: flex;
-            gap: 25px;
-            flex-wrap: wrap;
-            align-items: center;
-        }
-        .top-nav a {
-            color: white;
-            text-decoration: none;
-            transition: 0.3s;
-        }
-        .top-nav a:hover {
-            color: #fbbf24;
-        }
-
-        /* Dropdown */
-        .dropdown {
-            position: relative;
-            display: inline-block;
-        }
-        .dropbtn {
-            background: none;
-            border: none;
-            color: white;
-            font-size: 1rem;
-            cursor: pointer;
-            font-family: inherit;
-            padding: 0;
-        }
-        .dropbtn i {
-            font-size: 0.7rem;
-            margin-left: 5px;
-        }
-        .dropdown-content {
-            display: none;
-            position: absolute;
-            background: white;
-            min-width: 200px;
-            box-shadow: 0 8px 16px rgba(0,0,0,0.1);
-            border-radius: 12px;
-            z-index: 1000;
-            top: 30px;
-            left: 0;
-        }
-        .dropdown-content a {
-            color: #0f172a;
-            padding: 12px 16px;
-            text-decoration: none;
-            display: block;
-            border-bottom: 1px solid #e2e8f0;
-        }
-        .dropdown-content a:last-child {
-            border-bottom: none;
-        }
-        .dropdown-content a:hover {
-            background: #fefce8;
-            color: #fbbf24;
-        }
-        .dropdown:hover .dropdown-content {
-            display: block;
-        }
-        .dropdown:hover .dropbtn {
-            color: #fbbf24;
-        }
-
-        /* LAYOUT: SIDEBAR + MAIN */
-        .app-container {
-            display: flex;
-            min-height: calc(100vh - 80px);
-        }
-
-        .sidebar {
-            width: 280px;
-            background: #0f172a;
-            color: #e2e8f0;
-            position: fixed;
-            top: 80px;
-            bottom: 0;
-            left: 0;
-            overflow-y: auto;
-            transition: transform 0.3s ease;
-            z-index: 100;
-            padding: 20px 0;
-        }
-        .sidebar-header {
-            padding: 0 20px 20px;
-            border-bottom: 1px solid #334155;
-            margin-bottom: 20px;
-        }
-        .sidebar-header h3 {
-            color: #fbbf24;
-            font-size: 1.2rem;
-        }
-        .sidebar-menu {
-            list-style: none;
-            padding: 0;
-        }
-        .sidebar-menu li {
-            margin-bottom: 4px;
-        }
-        .sidebar-menu a {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            padding: 12px 20px;
-            color: #cbd5e1;
-            text-decoration: none;
-            transition: 0.2s;
-            font-size: 0.9rem;
-        }
-        .sidebar-menu a:hover {
-            background: #1e293b;
-            color: #fbbf24;
-        }
-        .sidebar-menu i {
-            width: 24px;
-            text-align: center;
-        }
-
-        .main-content {
-            flex: 1;
-            margin-left: 280px;
-            padding: 30px;
-        }
-
-        /* HERO & CARDS */
-        .hero {
-            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
-            color: white;
-            padding: 50px 30px;
-            border-radius: 24px;
-            text-align: center;
-            margin-bottom: 40px;
-        }
-        .hero h1 { font-size: 2.2rem; margin-bottom: 15px; }
-        .hero p { font-size: 1.1rem; max-width: 700px; margin: 0 auto 25px; opacity: 0.9; }
-        .btn { display: inline-block; background: #fbbf24; color: #0f172a; padding: 12px 30px; border-radius: 40px; text-decoration: none; font-weight: bold; transition: 0.2s; }
-        .btn:hover { background: #f59e0b; transform: translateY(-2px); }
-
-        .section-title {
-            font-size: 1.8rem;
-            margin: 40px 0 20px;
-            border-left: 5px solid #fbbf24;
-            padding-left: 15px;
-        }
-        .grid-3 {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 25px;
-            margin: 30px 0;
-        }
-        .card {
-            background: white;
-            padding: 25px;
-            border-radius: 20px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-            transition: 0.2s;
-        }
-        .card:hover { transform: translateY(-4px); box-shadow: 0 10px 25px rgba(0,0,0,0.1); }
-        .card i { font-size: 2rem; color: #fbbf24; margin-bottom: 15px; }
-
-        .footer-contact {
-            background: #0f172a;
-            color: #94a3b8;
-            padding: 30px;
-            border-radius: 20px;
-            text-align: center;
-            margin-top: 50px;
-        }
-        .footer-contact a {
-            color: #fbbf24;
-            text-decoration: none;
-        }
-
-        /* MOBILE */
-        @media (max-width: 768px) {
-            .sidebar {
-                transform: translateX(-100%);
-                position: fixed;
-                top: 70px;
-                width: 260px;
-                z-index: 150;
-            }
-            .sidebar.open {
-                transform: translateX(0);
-            }
-            .main-content {
-                margin-left: 0;
-                padding: 15px;
-            }
-            .hero h1 { font-size: 1.6rem; }
-            .top-nav {
-                display: none;
-                flex-direction: column;
-                width: 100%;
-                background: #0f172a;
-                padding: 15px;
-                border-radius: 12px;
-                position: absolute;
-                top: 70px;
-                left: 0;
-                z-index: 200;
-            }
-            .top-nav.show {
-                display: flex;
-            }
-            .dropdown-content {
-                position: static;
-                background: #1e293b;
-                box-shadow: none;
-                width: 100%;
-            }
-            .dropdown-content a {
-                color: white;
-                border-bottom-color: #334155;
-            }
-            .dropdown-content a:hover {
-                background: #fbbf24;
-                color: #0f172a;
-            }
-            .menu-toggle {
-                display: block;
-                background: #0f172a;
-                color: white;
-                border: none;
-                padding: 8px 12px;
-                border-radius: 30px;
-                cursor: pointer;
-                font-size: 1.2rem;
-            }
-        }
-        .menu-toggle {
-            display: none;
-        }
-    </style>
+    <!-- Google Fonts (Premium feel) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="top-header">
+    <!-- ============================================================ -->
+    <!-- 1. TOP HEADER                                                -->
+    <!-- ============================================================ -->
+    <header class="top-header">
         <div class="logo-area">
             <div class="logo-icon">LP</div>
             <div class="logo-text">
@@ -304,8 +28,9 @@
                 <p>Building what lasts.</p>
             </div>
         </div>
-        <div class="top-nav" id="topNav">
-            <a href="index.html">Home</a>
+
+        <nav class="top-nav" id="topNav">
+            <a href="index.html" class="active">Home</a>
             <a href="about.html">About</a>
             <a href="industries.html">Industries</a>
             <div class="dropdown">
@@ -320,72 +45,214 @@
             </div>
             <a href="policies.html">Policies</a>
             <a href="#contact">Contact</a>
-        </div>
-        <button class="menu-toggle" id="menuToggle">☰</button>
-    </div>
+        </nav>
 
+        <button class="menu-toggle" id="menuToggleTop" aria-label="Toggle navigation">☰</button>
+        <button class="menu-toggle" id="menuToggle" aria-label="Toggle sidebar">☰</button>
+    </header>
+
+    <!-- ============================================================ -->
+    <!-- 2. MAIN APP CONTAINER                                        -->
+    <!-- ============================================================ -->
     <div class="app-container">
-<!-- LEFT SIDEBAR (Enterprise Menu) -->
-<div class="sidebar" id="sidebar">
-    <div class="sidebar-header">
-        <h3>Enterprise Menu</h3>
-        <p>Advanced features</p>
-    </div>
-    <ul class="sidebar-menu">
-        <li><a href="profile.html"><i class="fas fa-user-plus"></i> 01 Profile / Create Profile</a></li>
-        <li><a href="partners.html"><i class="fas fa-handshake"></i> 02 Our Partners</a></li>
-        <li><a href="international.html"><i class="fas fa-globe"></i> 03 International Partners</a></li>
-        <li><a href="strategic-growth.html"><i class="fas fa-chart-line"></i> 04 Strategic Growth</a></li>
-        <li><a href="business-partners.html"><i class="fas fa-building"></i> 05 Business Partners</a></li>
-        <li><a href="market-leads.html"><i class="fas fa-chart-simple"></i> 06 Real Time Market Leads</a></li>
-        <li><a href="business-hub.html"><i class="fas fa-users"></i> 07 Business Hub</a></li>
-        <li><a href="hire-admin.html"><i class="fas fa-user-tie"></i> 08 Hire Our Admin</a></li>
-        <li><a href="referral.html"><i class="fas fa-gift"></i> 09 Referral Program</a></li>
-        <li><a href="logout.html"><i class="fas fa-sign-out-alt"></i> 10 Profile Log Out</a></li>
-        <li><a href="epk-studio.html"><i class="fas fa-star"></i> 11 EPK Studio</a></li>
-    </ul>
-</div>
-        <div class="main-content">
-            <div class="hero">
-                <h1>Document Roadmaps & Compliance Systems</h1>
-                <p>For 20+ industries. Plus 3D floor plans, personal applications, and admin support – all fixed fees.</p>
-                <a href="industries.html" class="btn">Explore industries →</a>
-            </div>
 
-            <div class="section-title">📌 Core Services</div>
-            <div class="grid-3">
-                <div class="card"><i class="fas fa-folder-tree"></i><h3>File Directory Structures</h3><p>Ready‑to‑use folder hierarchies for 20+ industries.</p></div>
-                <div class="card"><i class="fas fa-list-ul"></i><h3>Document Roadmaps</h3><p>70–100 essential documents per sector.</p></div>
-                <div class="card"><i class="fas fa-building"></i><h3>Company & NPO Registration</h3><p>CIPC, SARS, DSD, B‑BBEE, COIDA.</p></div>
-                <div class="card"><i class="fas fa-cube"></i><h3>3D Floor Plans</h3><p>Turn sketches into virtual walkthroughs.</p></div>
-                <div class="card"><i class="fas fa-paint-brush"></i><h3>Marketing & Branding</h3><p>Logos, websites, EPK for artists.</p></div>
-                <div class="card"><i class="fas fa-chart-simple"></i><h3>Business Support</h3><p>Annual returns, liquor licences, UIF.</p></div>
+        <!-- SIDEBAR (Shared) -->
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <h3>Enterprise Menu</h3>
+                <p>Advanced features</p>
             </div>
+            <ul class="sidebar-menu">
+                <li><a href="profile.html"><i class="fas fa-user-plus"></i> 01 Profile / Create Profile</a></li>
+                <li><a href="partners.html"><i class="fas fa-handshake"></i> 02 Our Partners</a></li>
+                <li><a href="international.html"><i class="fas fa-globe"></i> 03 International Partners</a></li>
+                <li><a href="strategic-growth.html"><i class="fas fa-chart-line"></i> 04 Strategic Growth</a></li>
+                <li><a href="business-partners.html"><i class="fas fa-building"></i> 05 Business Partners</a></li>
+                <li><a href="market-leads.html"><i class="fas fa-chart-simple"></i> 06 Real Time Market Leads</a></li>
+                <li><a href="business-hub.html"><i class="fas fa-users"></i> 07 Business Hub</a></li>
+                <li><a href="hire-admin.html"><i class="fas fa-user-tie"></i> 08 Hire Our Admin</a></li>
+                <li><a href="referral.html"><i class="fas fa-gift"></i> 09 Referral Program</a></li>
+                <li><a href="logout.html"><i class="fas fa-sign-out-alt"></i> 10 Profile Log Out</a></li>
+                <!-- ✅ NEW: EPK Studio link – opens in new tab for safety -->
+                <li><a href="https://www.legacylaunchpad.co.za/artist-profile-service.html" target="_blank"><i class="fas fa-star"></i> 11 EPK Studio</a></li>
+            </ul>
+        </aside>
 
-            <div class="section-title">📄 Sample Document Roadmap (Construction)</div>
-            <div class="card">
-                <i class="fas fa-hard-hat"></i>
-                <h3>Construction – 84 documents</h3>
-                <p>CIDB registration, MOI, SLA, site diary, risk assessments, incident reports, asset register, and more.</p>
-                <a href="industry-construction.html" class="btn" style="margin-top: 10px; display: inline-block;">View full roadmap →</a>
-            </div>
+        <!-- MAIN CONTENT -->
+        <main class="main-content">
 
+            <!-- ===== HERO (Enhanced) ===== -->
+            <section class="hero-premium">
+                <div class="hero-badge">✨ Trusted by 500+ businesses</div>
+                <h1>Document Roadmaps &amp; Compliance Systems</h1>
+                <p class="hero-subtitle">For 20+ industries. Plus 3D floor plans, personal applications, and admin support – all fixed fees.</p>
+                <div class="hero-actions">
+                    <a href="industries.html" class="btn btn-primary">Explore industries →</a>
+                    <a href="#services" class="btn btn-outline">View services</a>
+                </div>
+                <div class="hero-stats">
+                    <span><strong>20+</strong> Industries</span>
+                    <span><strong>70–100</strong> Documents per sector</span>
+                    <span><strong>Fixed</strong> Pricing</span>
+                </div>
+            </section>
+
+            <!-- ===== WHY CHOOSE US ===== -->
+            <section class="why-us">
+                <h2 class="section-title">Why Legacy Launchpad</h2>
+                <div class="why-grid">
+                    <div class="why-card">
+                        <i class="fas fa-file-alt"></i>
+                        <h3>Ready‑to‑Use Systems</h3>
+                        <p>Pre‑built directory structures and document roadmaps – just plug and play.</p>
+                    </div>
+                    <div class="why-card">
+                        <i class="fas fa-gem"></i>
+                        <h3>Premium Quality</h3>
+                        <p>All documents professionally drafted and aligned with South African regulations.</p>
+                    </div>
+                    <div class="why-card">
+                        <i class="fas fa-clock"></i>
+                        <h3>Save Months of Work</h3>
+                        <p>Skip the research. Get compliant in days, not months.</p>
+                    </div>
+                    <div class="why-card">
+                        <i class="fas fa-headset"></i>
+                        <h3>Dedicated Support</h3>
+                        <p>Our team is on standby to help you customise and implement.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ===== CORE SERVICES ===== -->
+            <section id="services">
+                <h2 class="section-title">📌 Core Services</h2>
+                <div class="grid-3">
+                    <div class="card premium-card">
+                        <i class="fas fa-folder-tree"></i>
+                        <h3>File Directory Structures</h3>
+                        <p>Ready‑to‑use folder hierarchies for 20+ industries, including construction, healthcare, retail, and more.</p>
+                    </div>
+                    <div class="card premium-card">
+                        <i class="fas fa-list-ul"></i>
+                        <h3>Document Roadmaps</h3>
+                        <p>70–100 essential documents per sector, from MOI and SLA to risk assessments and incident reports.</p>
+                    </div>
+                    <div class="card premium-card">
+                        <i class="fas fa-building"></i>
+                        <h3>Company &amp; NPO Registration</h3>
+                        <p>CIPC, SARS, DSD, B‑BBEE, COIDA – we handle the full compliance lifecycle.</p>
+                    </div>
+                    <div class="card premium-card">
+                        <i class="fas fa-cube"></i>
+                        <h3>3D Floor Plans</h3>
+                        <p>Turn your sketches into immersive virtual walkthroughs – perfect for property, events, and retail.</p>
+                    </div>
+                    <div class="card premium-card">
+                        <i class="fas fa-paint-brush"></i>
+                        <h3>Marketing &amp; Branding</h3>
+                        <p>Logos, websites, and EPK (Electronic Press Kits) for artists and creatives.</p>
+                    </div>
+                    <div class="card premium-card">
+                        <i class="fas fa-chart-simple"></i>
+                        <h3>Business Support</h3>
+                        <p>Annual returns, liquor licences, UIF registration, and ongoing compliance monitoring.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ===== FEATURED INDUSTRIES ===== -->
+            <section>
+                <h2 class="section-title">🏗️ Featured Industries</h2>
+                <div class="industry-grid">
+                    <div class="industry-card">
+                        <i class="fas fa-hard-hat"></i>
+                        <h4>Construction</h4>
+                        <p>84 documents • CIDB • MOI • Site diary</p>
+                        <a href="industry-construction.html" class="btn-small">View roadmap →</a>
+                    </div>
+                    <div class="industry-card">
+                        <i class="fas fa-heartbeat"></i>
+                        <h4>Healthcare</h4>
+                        <p>92 documents • HPCSA • Patient records</p>
+                        <a href="industry-healthcare.html" class="btn-small">View roadmap →</a>
+                    </div>
+                    <div class="industry-card">
+                        <i class="fas fa-store"></i>
+                        <h4>Retail</h4>
+                        <p>76 documents • Consumer protection • Stock control</p>
+                        <a href="industry-retail.html" class="btn-small">View roadmap →</a>
+                    </div>
+                    <div class="industry-card">
+                        <i class="fas fa-chart-pie"></i>
+                        <h4>Finance</h4>
+                        <p>88 documents • FSCA • Compliance manuals</p>
+                        <a href="industry-finance.html" class="btn-small">View roadmap →</a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ===== TESTIMONIALS (Premium touch) ===== -->
+            <section>
+                <h2 class="section-title">💬 What Our Clients Say</h2>
+                <div class="testimonial-grid">
+                    <div class="testimonial-card">
+                        <div class="stars">★★★★★</div>
+                        <p>"Legacy Launchpad transformed our compliance chaos into a streamlined system. We saved 3 months of work."</p>
+                        <div class="author">– Thabo M., Construction Director</div>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="stars">★★★★★</div>
+                        <p>"The 3D floor plans helped us win a major event pitch. The team is responsive and professional."</p>
+                        <div class="author">– Lindiwe K., Event Planner</div>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="stars">★★★★★</div>
+                        <p>"From CIPC registration to annual returns – they handle everything. I can focus on growing my business."</p>
+                        <div class="author">– Sipho N., Retail Owner</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ===== SAMPLE ROADMAP (Existing) ===== -->
+            <section>
+                <h2 class="section-title">📄 Sample Document Roadmap (Construction)</h2>
+                <div class="card premium-card roadmap-highlight">
+                    <i class="fas fa-hard-hat"></i>
+                    <h3>Construction – 84 documents</h3>
+                    <p>CIDB registration, MOI, SLA, site diary, risk assessments, incident reports, asset register, and more.</p>
+                    <a href="industry-construction.html" class="btn btn-primary" style="margin-top: 10px; display: inline-block;">View full roadmap →</a>
+                </div>
+            </section>
+
+            <!-- ===== PRICING / CTA (New premium section) ===== -->
+            <section class="cta-section">
+                <div class="cta-content">
+                    <h2>Ready to Build Your Compliance System?</h2>
+                    <p>Get started with a fixed‑fee package tailored to your industry. We'll have your roadmap ready in 48 hours.</p>
+                    <a href="order-documents.html" class="btn btn-primary btn-lg">Order Now →</a>
+                    <p class="cta-note">📞 Or call us: 072 152 3293</p>
+                </div>
+            </section>
+
+            <!-- ===== FOOTER / CONTACT ===== -->
             <div class="footer-contact" id="contact">
                 <p><strong>Msimelelo Victor Malusi</strong> – Founder</p>
-                <p><i class="fas fa-phone"></i> 072 152 3293 &nbsp;|&nbsp; <i class="fab fa-whatsapp"></i> 063 301 7269 &nbsp;|&nbsp; <i class="fas fa-envelope"></i> mv.malusi@legacylaunchpad.co.za</p>
+                <p>
+                    <i class="fas fa-phone"></i> 072 152 3293 &nbsp;|&nbsp;
+                    <i class="fab fa-whatsapp"></i> 063 301 7269 &nbsp;|&nbsp;
+                    <i class="fas fa-envelope"></i> mv.malusi@legacylaunchpad.co.za
+                </p>
                 <p>© 2025 Legacy Launchpad (Pty) Ltd – Building what lasts.</p>
             </div>
-        </div>
+
+        </main>
     </div>
 
-    <script>
-        const menuBtn = document.getElementById('menuToggle');
-        const topNav = document.getElementById('topNav');
-        if (menuBtn) {
-            menuBtn.addEventListener('click', () => {
-                topNav.classList.toggle('show');
-            });
-        }
-    </script>
+    <!-- ============================================================ -->
+    <!-- 3. EXTERNAL JAVASCRIPT                                       -->
+    <!-- ============================================================ -->
+    <script src="app.js"></script>
+
 </body>
 </html>
