@@ -285,3 +285,70 @@ input, select, textarea {
 .form-intro {
     margin-bottom: 20px;
 }
+
+/* ========== BUSINESS PARTNERS PAGE ========== */
+/* Hero */
+.hero-partner {
+    background: linear-gradient(135deg, #0f172a, #1e293b);
+    color: white;
+    padding: 30px;
+    border-radius: 24px;
+    margin-bottom: 30px;
+    text-align: center;
+}
+.hero-partner i {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    color: #fbbf24;
+}
+.hero-partner h2 {
+    margin: 10px 0;
+}
+
+/* Partner Grid & Cards */
+.partner-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+.partner-card {
+    background: white;
+    border-radius: 16px;
+    padding: 15px;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    transition: 0.2s;
+}
+.partner-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+.partner-card img {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+    margin-bottom: 10px;
+}
+.partner-card h4 {
+    margin: 5px 0;
+}
+.partner-card p {
+    font-size: 0.9rem;
+    color: #475569;
+}
+.btn-small {
+    background: #0f172a;
+    color: white;
+    padding: 5px 12px;
+    border-radius: 20px;
+    text-decoration: none;
+    font-size: 0.7rem;
+    display: inline-block;
+    margin-top: 10px;
+    transition: 0.2s;
+}
+.btn-small:hover {
+    background: #fbbf24;
+    color: #0f172a;
+}
