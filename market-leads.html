@@ -4,193 +4,49 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
     <title>Legacy Launchpad | Real Time Market Leads</title>
+
+    <!-- External Styles -->
+    <link rel="stylesheet" href="main.css">
+
+    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <style>
-        * { margin:0; padding:0; box-sizing:border-box; }
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: #f8fafc;
-            color: #1e293b;
-            line-height: 1.5;
-        }
-        .top-header {
-            background: #0f172a;
-            color: white;
-            padding: 15px 30px;
-            position: sticky;
-            top: 0;
-            z-index: 200;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 15px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-        }
-        .logo-area { display: flex; align-items: center; gap: 12px; }
-        .logo-icon { background: #fbbf24; width: 40px; height: 40px; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; font-weight: bold; color: #0f172a; }
-        .logo-text h1 { font-size: 1.4rem; letter-spacing: -0.5px; }
-        .logo-text p { font-size: 0.7rem; color: #94a3b8; }
-        .top-nav { display: flex; gap: 25px; flex-wrap: wrap; }
-        .top-nav a { color: white; text-decoration: none; transition: 0.3s; }
-        .top-nav a:hover { color: #fbbf24; }
-
-        .app-container { display: flex; min-height: calc(100vh - 80px); }
-        .sidebar {
-            width: 280px;
-            background: #0f172a;
-            color: #e2e8f0;
-            position: fixed;
-            top: 80px;
-            bottom: 0;
-            left: 0;
-            overflow-y: auto;
-            transition: transform 0.3s ease;
-            z-index: 100;
-            padding: 20px 0;
-        }
-        .sidebar-header { padding: 0 20px 20px; border-bottom: 1px solid #334155; margin-bottom: 20px; }
-        .sidebar-header h3 { color: #fbbf24; font-size: 1.2rem; }
-        .sidebar-menu { list-style: none; padding: 0; }
-        .sidebar-menu li { margin-bottom: 4px; }
-        .sidebar-menu a { display: flex; align-items: center; gap: 12px; padding: 12px 20px; color: #cbd5e1; text-decoration: none; transition: 0.2s; font-size: 0.9rem; }
-        .sidebar-menu a:hover { background: #1e293b; color: #fbbf24; }
-        .sidebar-menu i { width: 24px; text-align: center; }
-
-        .main-content { flex: 1; margin-left: 280px; padding: 30px; }
-        .section-title {
-            font-size: 1.8rem;
-            margin: 40px 0 20px;
-            border-left: 5px solid #fbbf24;
-            padding-left: 15px;
-            color: #0f172a;
-        }
-        .hero-market {
-            background: linear-gradient(135deg, #0f172a, #1e293b);
-            color: white;
-            padding: 30px;
-            border-radius: 24px;
-            margin-bottom: 30px;
-            text-align: center;
-        }
-        .hero-market i { font-size: 2.5rem; margin-bottom: 10px; color: #fbbf24; }
-        .form-card {
-            background: white;
-            border-radius: 24px;
-            padding: 30px;
-            box-shadow: 0 8px 20px rgba(0,0,0,0.05);
-            margin-bottom: 30px;
-        }
-        .form-group { margin-bottom: 20px; }
-        label { display: block; font-weight: 600; margin-bottom: 8px; }
-        input, select, textarea {
-            width: 100%;
-            padding: 12px;
-            border: 1px solid #cbd5e1;
-            border-radius: 8px;
-            font-family: inherit;
-        }
-        .btn {
-            background: #fbbf24;
-            color: #0f172a;
-            padding: 12px 20px;
-            border: none;
-            border-radius: 40px;
-            font-weight: bold;
-            cursor: pointer;
-            width: 100%;
-            transition: 0.2s;
-        }
-        .btn:hover { background: #f59e0b; transform: translateY(-2px); }
-        .login-warning {
-            background: #fef9c3;
-            padding: 15px;
-            border-radius: 12px;
-            margin-bottom: 20px;
-            text-align: center;
-        }
-        .login-warning a { color: #0f172a; font-weight: bold; }
-        .checkbox-group {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            margin: 15px 0;
-        }
-        .company-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-            gap: 25px;
-            margin-top: 20px;
-        }
-        .company-card {
-            background: white;
-            border-radius: 20px;
-            padding: 20px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-            text-align: center;
-            transition: 0.2s;
-        }
-        .company-card:hover { transform: translateY(-5px); }
-        .company-logo {
-            width: 80px;
-            height: 80px;
-            margin: 0 auto 15px;
-            background: #f1f5f9;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 2rem;
-            color: #fbbf24;
-        }
-        .company-card h3 { margin-bottom: 5px; }
-        .company-card .industry { font-size: 0.8rem; color: #475569; margin-bottom: 10px; }
-        .btn-small {
-            background: #0f172a;
-            color: white;
-            padding: 6px 16px;
-            border-radius: 30px;
-            text-decoration: none;
-            font-size: 0.8rem;
-            display: inline-block;
-            margin-top: 10px;
-        }
-        .btn-small:hover { background: #fbbf24; color: #0f172a; }
-        .footer-contact {
-            background: #0f172a;
-            color: #94a3b8;
-            padding: 30px;
-            border-radius: 20px;
-            text-align: center;
-            margin-top: 50px;
-        }
-        .footer-contact a { color: #fbbf24; text-decoration: none; }
-        @media (max-width: 768px) {
-            .sidebar { transform: translateX(-100%); position: fixed; top: 70px; width: 260px; z-index: 150; }
-            .sidebar.open { transform: translateX(0); }
-            .main-content { margin-left: 0; padding: 15px; }
-            .top-nav { display: none; }
-            .menu-toggle { display: block; background: #0f172a; color: white; border: none; padding: 8px 12px; border-radius: 30px; cursor: pointer; font-size: 1.2rem; }
-        }
-        .menu-toggle { display: none; }
-    </style>
 </head>
 <body>
-    <div class="top-header">
-        <div class="logo-area"><div class="logo-icon">LP</div><div class="logo-text"><h1>Legacy Launchpad</h1><p>Building what lasts.</p></div></div>
-        <div class="top-nav">
+    <!-- ============================================================ -->
+    <!-- 1. TOP HEADER                                                -->
+    <!-- ============================================================ -->
+    <header class="top-header">
+        <div class="logo-area">
+            <div class="logo-icon">LP</div>
+            <div class="logo-text">
+                <h1>Legacy Launchpad</h1>
+                <p>Building what lasts.</p>
+            </div>
+        </div>
+
+        <nav class="top-nav" id="topNav">
             <a href="index.html">Home</a>
             <a href="about.html">About</a>
             <a href="industries.html">Industries</a>
             <a href="policies.html">Policies</a>
             <a href="#contact">Contact</a>
-        </div>
-        <button class="menu-toggle" id="menuToggle">☰</button>
-    </div>
+        </nav>
 
+        <button class="menu-toggle" id="menuToggleTop" aria-label="Toggle navigation">☰</button>
+        <button class="menu-toggle" id="menuToggle" aria-label="Toggle sidebar">☰</button>
+    </header>
+
+    <!-- ============================================================ -->
+    <!-- 2. MAIN APP CONTAINER                                        -->
+    <!-- ============================================================ -->
     <div class="app-container">
-        <div class="sidebar" id="sidebar">
-            <div class="sidebar-header"><h3>Enterprise Menu</h3><p>Advanced features</p></div>
+
+        <!-- SIDEBAR (Shared) -->
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <h3>Enterprise Menu</h3>
+                <p>Advanced features</p>
+            </div>
             <ul class="sidebar-menu">
                 <li><a href="profile.html"><i class="fas fa-user-plus"></i> 01 Profile / Create Profile</a></li>
                 <li><a href="partners.html"><i class="fas fa-handshake"></i> 02 Our Partners</a></li>
@@ -203,22 +59,25 @@
                 <li><a href="#"><i class="fas fa-gift"></i> 09 Referral Program</a></li>
                 <li><a href="#"><i class="fas fa-sign-out-alt"></i> 10 Profile Log Out</a></li>
             </ul>
-        </div>
+        </aside>
 
-        <div class="main-content">
+        <!-- MAIN CONTENT (Page‑specific) -->
+        <main class="main-content">
+
+            <!-- Hero -->
             <div class="hero-market">
                 <i class="fas fa-chart-line"></i>
                 <h2>Real Time Market Leads</h2>
                 <p>To Get one, you must Give. To be heard, you must Listen.</p>
-                <p style="margin-top: 10px;">Share your company info and gain access to the Legacy Launchpad Database – a live marketplace of businesses ready to trade services with you.</p>
+                <p>Share your company info and gain access to the Legacy Launchpad Database – a live marketplace of businesses ready to trade services with you.</p>
             </div>
 
             <!-- LOGIN CHECK & DATA SHARING AGREEMENT -->
             <div class="form-card">
-                <div id="loginWarning" class="login-warning">
+                <div id="loginWarning" class="login-warning hidden">
                     ⚠️ You are not logged in. <a href="profile.html">Please log in or create a profile</a> to access market leads.
                 </div>
-                <div id="dataConsentSection" style="display: none;">
+                <div id="dataConsentSection" class="hidden">
                     <div class="checkbox-group">
                         <input type="checkbox" id="dataConsent">
                         <label for="dataConsent" style="font-weight: normal;">I agree that my company information (name, industry, services, logo) may be shared with other Legacy Launchpad users as part of the Real Time Market Leads database. In return, I gain access to the full directory.</label>
@@ -228,170 +87,61 @@
             </div>
 
             <!-- DATABASE / MARKETPLACE SECTION (visible only after consent) -->
-            <div id="databaseSection" style="display: none;">
+            <div id="databaseSection" class="hidden">
                 <h2 class="section-title">📊 Legacy Launchpad Database</h2>
                 <div class="form-card">
                     <p>Below are companies that have opted in. You can contact them directly via the "Order Service" button (which will open a contact form / email).</p>
                     <div id="companyList" class="company-grid">
-                        <!-- Companies will be loaded here -->
+                        <!-- Dynamically filled by JS -->
                     </div>
                 </div>
 
-                <!-- REGISTER YOUR OWN COMPANY (to be listed) -->
+                <!-- REGISTER YOUR OWN COMPANY -->
                 <h2 class="section-title">➕ Add Your Company to the Database</h2>
                 <div class="form-card">
                     <p>Fill in the form below to list your business. Once you agree to the data sharing policy (above), your company will appear here within 24 hours (demo: instantly).</p>
                     <form id="registerCompanyForm">
                         <div class="form-group">
-                            <label>Company name</label>
+                            <label for="regCompanyName">Company name</label>
                             <input type="text" id="regCompanyName" required>
                         </div>
                         <div class="form-group">
-                            <label>Industry / Sector</label>
+                            <label for="regIndustry">Industry / Sector</label>
                             <input type="text" id="regIndustry" required>
                         </div>
                         <div class="form-group">
-                            <label>Services offered (short description)</label>
+                            <label for="regServices">Services offered (short description)</label>
                             <textarea id="regServices" rows="2" required></textarea>
                         </div>
                         <div class="form-group">
-                            <label>Company logo (image URL or upload)</label>
+                            <label for="regLogo">Company logo (image URL or upload)</label>
                             <input type="file" id="regLogo" accept="image/png,image/jpeg">
                             <div class="file-hint">Optional. Upload a logo (PNG/JPG).</div>
                         </div>
                         <button type="submit" class="btn">Register Company →</button>
-                        <div id="regMessage" style="margin-top: 15px; text-align: center;"></div>
+                        <div id="regMessage" class="message"></div>
                     </form>
                 </div>
             </div>
 
+            <!-- Footer / Contact (Shared) -->
             <div class="footer-contact" id="contact">
                 <p><strong>Msimelelo Victor Malusi</strong> – Founder</p>
-                <p><i class="fas fa-phone"></i> 072 152 3293 &nbsp;|&nbsp; <i class="fab fa-whatsapp"></i> 063 301 7269 &nbsp;|&nbsp; <i class="fas fa-envelope"></i> mv.malusi@legacylaunchpad.co.za</p>
+                <p>
+                    <i class="fas fa-phone"></i> 072 152 3293 &nbsp;|&nbsp;
+                    <i class="fab fa-whatsapp"></i> 063 301 7269 &nbsp;|&nbsp;
+                    <i class="fas fa-envelope"></i> mv.malusi@legacylaunchpad.co.za
+                </p>
                 <p>© 2025 Legacy Launchpad (Pty) Ltd – Building what lasts.</p>
             </div>
-        </div>
+
+        </main>
     </div>
 
-    <script>
-        // Simulate login status (change to true for testing)
-        let isLoggedIn = false;
+    <!-- ============================================================ -->
+    <!-- 3. EXTERNAL JAVASCRIPT                                       -->
+    <!-- ============================================================ -->
+    <script src="app.js"></script>
 
-        // Sample initial companies (database)
-        let companies = [
-            { name: "ABC Logistics", industry: "Logistics", services: "Freight & courier services", logo: null },
-            { name: "CleanCo", industry: "Cleaning", services: "Office & industrial cleaning", logo: null },
-            { name: "Steel Masters", industry: "Manufacturing", services: "Steel fabrication", logo: null }
-        ];
-
-        // Local storage to persist companies (demo)
-        if (localStorage.getItem('marketCompanies')) {
-            companies = JSON.parse(localStorage.getItem('marketCompanies'));
-        }
-
-        function renderCompanies() {
-            const container = document.getElementById('companyList');
-            if (!container) return;
-            if (companies.length === 0) {
-                container.innerHTML = '<p>No companies yet. Be the first to register!</p>';
-                return;
-            }
-            container.innerHTML = '';
-            companies.forEach(comp => {
-                const card = document.createElement('div');
-                card.className = 'company-card';
-                const logoHtml = comp.logoData ? `<img src="${comp.logoData}" style="width:80px; height:80px; border-radius:50%; object-fit:cover; margin:0 auto 15px;">` : `<div class="company-logo"><i class="fas fa-building"></i></div>`;
-                card.innerHTML = `
-                    ${logoHtml}
-                    <h3>${comp.name}</h3>
-                    <div class="industry">${comp.industry}</div>
-                    <p style="font-size:0.85rem; margin:10px 0;">${comp.services}</p>
-                    <a href="order-documents.html" class="btn-small">Order Service →</a>
-                `;
-                container.appendChild(card);
-            });
-        }
-
-        // Check login and show appropriate UI
-        const loginWarning = document.getElementById('loginWarning');
-        const dataConsentSection = document.getElementById('dataConsentSection');
-        const databaseSection = document.getElementById('databaseSection');
-
-        function updateUI() {
-            if (!isLoggedIn) {
-                loginWarning.style.display = 'block';
-                dataConsentSection.style.display = 'none';
-                databaseSection.style.display = 'none';
-            } else {
-                loginWarning.style.display = 'none';
-                // Check if user has already agreed (store in localStorage)
-                const hasAgreed = localStorage.getItem('marketConsent') === 'true';
-                if (hasAgreed) {
-                    dataConsentSection.style.display = 'none';
-                    databaseSection.style.display = 'block';
-                    renderCompanies();
-                } else {
-                    dataConsentSection.style.display = 'block';
-                    databaseSection.style.display = 'none';
-                }
-            }
-        }
-
-        // Handle agree button
-        document.getElementById('agreeBtn')?.addEventListener('click', () => {
-            const consent = document.getElementById('dataConsent').checked;
-            if (!consent) {
-                alert('You must agree to the data sharing policy to access the database.');
-                return;
-            }
-            localStorage.setItem('marketConsent', 'true');
-            dataConsentSection.style.display = 'none';
-            databaseSection.style.display = 'block';
-            renderCompanies();
-        });
-
-        // Register new company
-        const regForm = document.getElementById('registerCompanyForm');
-        if (regForm) {
-            regForm.addEventListener('submit', (e) => {
-                e.preventDefault();
-                const name = document.getElementById('regCompanyName').value;
-                const industry = document.getElementById('regIndustry').value;
-                const services = document.getElementById('regServices').value;
-                const logoFile = document.getElementById('regLogo').files[0];
-
-                const reader = new FileReader();
-                reader.onload = function(evt) {
-                    const logoData = evt.target.result;
-                    companies.push({ name, industry, services, logoData: logoData || null });
-                    localStorage.setItem('marketCompanies', JSON.stringify(companies));
-                    renderCompanies();
-                    document.getElementById('regMessage').innerHTML = '<span style="color:green;">✅ Company registered and now appears in the database!</span>';
-                    regForm.reset();
-                };
-                if (logoFile) {
-                    reader.readAsDataURL(logoFile);
-                } else {
-                    companies.push({ name, industry, services, logoData: null });
-                    localStorage.setItem('marketCompanies', JSON.stringify(companies));
-                    renderCompanies();
-                    document.getElementById('regMessage').innerHTML = '<span style="color:green;">✅ Company registered and now appears in the database!</span>';
-                    regForm.reset();
-                }
-            });
-        }
-
-        // Initial UI update
-        updateUI();
-
-        // Mobile sidebar toggle
-        const menuBtn = document.getElementById('menuToggle');
-        const sidebar = document.getElementById('sidebar');
-        if (menuBtn) {
-            menuBtn.addEventListener('click', () => {
-                sidebar.classList.toggle('open');
-            });
-        }
-    </script>
 </body>
 </html>
