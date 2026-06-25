@@ -4,126 +4,50 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
     <title>Legacy Launchpad | Our Partners</title>
+
+    <!-- External Styles -->
+    <link rel="stylesheet" href="main.css">
+    
+    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <style>
-        * { margin:0; padding:0; box-sizing:border-box; }
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #f8fafc; color: #1e293b; line-height: 1.5; }
-        .top-header {
-            background: #0f172a;
-            color: white;
-            padding: 15px 30px;
-            position: sticky;
-            top: 0;
-            z-index: 200;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 15px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-        }
-        .logo-area { display: flex; align-items: center; gap: 12px; }
-        .logo-icon { background: #fbbf24; width: 40px; height: 40px; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; font-weight: bold; color: #0f172a; }
-        .logo-text h1 { font-size: 1.4rem; letter-spacing: -0.5px; }
-        .logo-text p { font-size: 0.7rem; color: #94a3b8; }
-        .top-nav { display: flex; gap: 25px; flex-wrap: wrap; }
-        .top-nav a { color: white; text-decoration: none; transition: 0.3s; }
-        .top-nav a:hover { color: #fbbf24; }
-        .app-container { display: flex; min-height: calc(100vh - 80px); }
-        .sidebar {
-            width: 280px;
-            background: #0f172a;
-            color: #e2e8f0;
-            position: fixed;
-            top: 80px;
-            bottom: 0;
-            left: 0;
-            overflow-y: auto;
-            transition: transform 0.3s ease;
-            z-index: 100;
-            padding: 20px 0;
-        }
-        .sidebar-header { padding: 0 20px 20px; border-bottom: 1px solid #334155; margin-bottom: 20px; }
-        .sidebar-header h3 { color: #fbbf24; font-size: 1.2rem; }
-        .sidebar-menu { list-style: none; padding: 0; }
-        .sidebar-menu li { margin-bottom: 4px; }
-        .sidebar-menu a { display: flex; align-items: center; gap: 12px; padding: 12px 20px; color: #cbd5e1; text-decoration: none; transition: 0.2s; font-size: 0.9rem; }
-        .sidebar-menu a:hover { background: #1e293b; color: #fbbf24; }
-        .sidebar-menu i { width: 24px; text-align: center; }
-        .main-content { flex: 1; margin-left: 280px; padding: 30px; }
-        .section-title { font-size: 1.8rem; margin: 40px 0 20px; border-left: 5px solid #fbbf24; padding-left: 15px; }
-        .partner-container {
-            background: white;
-            border-radius: 24px;
-            padding: 30px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-            margin-bottom: 30px;
-        }
-        .form-group { margin-bottom: 20px; }
-        label { display: block; font-weight: 600; margin-bottom: 8px; }
-        input, select, textarea {
-            width: 100%;
-            padding: 12px;
-            border: 1px solid #cbd5e1;
-            border-radius: 8px;
-            font-family: inherit;
-        }
-        .btn {
-            background: #fbbf24;
-            color: #0f172a;
-            padding: 12px 20px;
-            border: none;
-            border-radius: 40px;
-            font-weight: bold;
-            cursor: pointer;
-            width: 100%;
-            transition: 0.2s;
-        }
-        .btn:hover { background: #f59e0b; transform: translateY(-2px); }
-        .login-warning {
-            background: #fef9c3;
-            padding: 15px;
-            border-radius: 12px;
-            margin-bottom: 20px;
-            text-align: center;
-        }
-        .login-warning a { color: #0f172a; font-weight: bold; }
-        .file-hint { font-size: 0.75rem; color: #475569; margin-top: 5px; }
-        .footer-contact {
-            background: #0f172a;
-            color: #94a3b8;
-            padding: 30px;
-            border-radius: 20px;
-            text-align: center;
-            margin-top: 50px;
-        }
-        .footer-contact a { color: #fbbf24; text-decoration: none; }
-        @media (max-width: 768px) {
-            .sidebar { transform: translateX(-100%); position: fixed; top: 70px; width: 260px; z-index: 150; }
-            .sidebar.open { transform: translateX(0); }
-            .main-content { margin-left: 0; padding: 15px; }
-            .top-nav { display: none; }
-            .menu-toggle { display: block; background: #0f172a; color: white; border: none; padding: 8px 12px; border-radius: 30px; cursor: pointer; font-size: 1.2rem; }
-        }
-        .menu-toggle { display: none; }
-    </style>
 </head>
 <body>
-    <div class="top-header">
-        <div class="logo-area"><div class="logo-icon">LP</div><div class="logo-text"><h1>Legacy Launchpad</h1><p>Building what lasts.</p></div></div>
-        <div class="top-nav">
+
+    <!-- ============================================================ -->
+    <!-- 1. TOP HEADER (Shared)                                       -->
+    <!-- ============================================================ -->
+    <header class="top-header">
+        <div class="logo-area">
+            <div class="logo-icon">LP</div>
+            <div class="logo-text">
+                <h1>Legacy Launchpad</h1>
+                <p>Building what lasts.</p>
+            </div>
+        </div>
+
+        <nav class="top-nav" id="topNav">
             <a href="index.html">Home</a>
             <a href="about.html">About</a>
             <a href="industries.html">Industries</a>
             <a href="policies.html">Policies</a>
             <a href="#contact">Contact</a>
-        </div>
-        <button class="menu-toggle" id="menuToggle">☰</button>
-    </div>
+        </nav>
 
+        <button class="menu-toggle" id="menuToggleTop" aria-label="Toggle navigation">☰</button>
+        <button class="menu-toggle" id="menuToggle" aria-label="Toggle sidebar">☰</button>
+    </header>
+
+    <!-- ============================================================ -->
+    <!-- 2. MAIN APP CONTAINER                                        -->
+    <!-- ============================================================ -->
     <div class="app-container">
-        <div class="sidebar" id="sidebar">
-            <div class="sidebar-header"><h3>Enterprise Menu</h3><p>Advanced features</p></div>
+
+        <!-- SIDEBAR (Shared) -->
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <h3>Enterprise Menu</h3>
+                <p>Advanced features</p>
+            </div>
             <ul class="sidebar-menu">
                 <li><a href="profile.html"><i class="fas fa-user-plus"></i> 01 Profile / Create Profile</a></li>
                 <li><a href="partners.html"><i class="fas fa-handshake"></i> 02 Our Partners</a></li>
@@ -136,22 +60,29 @@
                 <li><a href="#"><i class="fas fa-gift"></i> 09 Referral Program</a></li>
                 <li><a href="#"><i class="fas fa-sign-out-alt"></i> 10 Profile Log Out</a></li>
             </ul>
-        </div>
+        </aside>
 
-        <div class="main-content">
+        <!-- MAIN CONTENT (Page-specific) -->
+        <main class="main-content">
+
             <h2 class="section-title">🤝 Our Partners</h2>
-            <div class="partner-container">
-                <p style="margin-bottom: 20px;">Legacy Launchpad collaborates with trusted legal, accounting, audit, and tax professionals to offer you a complete business support ecosystem. Partner with us to share workload while your clients benefit from all‑round expertise.</p>
-                <p style="margin-bottom: 30px;">Select your profession below and complete the form. Once approved, you'll be listed on our website and gain access to client referrals.</p>
 
-                <!-- Login check (demo) -->
-                <div id="loginWarning" class="login-warning">
+            <div class="partner-container">
+                <p class="partner-intro">
+                    Legacy Launchpad collaborates with trusted legal, accounting, audit, and tax professionals to offer you a complete business support ecosystem. Partner with us to share workload while your clients benefit from all‑round expertise.
+                </p>
+                <p class="partner-instruction">
+                    Select your profession below and complete the form. Once approved, you'll be listed on our website and gain access to client referrals.
+                </p>
+
+                <!-- Login warning (hidden by default, shown via JS if not logged in) -->
+                <div id="loginWarning" class="login-warning hidden">
                     ⚠️ You are not logged in. <a href="profile.html">Please log in or create a profile</a> before submitting a partnership application.
                 </div>
 
                 <!-- Partner Type Dropdown -->
                 <div class="form-group">
-                    <label>I am applying as a:</label>
+                    <label for="partnerType">I am applying as a:</label>
                     <select id="partnerType">
                         <option value="legal">Legal Partner (Lawyer / Firm)</option>
                         <option value="accounting">Accounting Partner</option>
@@ -163,101 +94,31 @@
 
                 <!-- Dynamic Form Container -->
                 <div id="dynamicForm">
-                    <!-- Will be filled by JavaScript -->
+                    <!-- Filled by JavaScript -->
                 </div>
 
                 <button id="submitPartnerBtn" class="btn">Submit Partnership Application →</button>
-                <div id="submitMessage" style="margin-top: 15px; text-align: center;"></div>
+                <div id="submitMessage" class="message"></div>
             </div>
 
+            <!-- Footer / Contact (Shared) -->
             <div class="footer-contact" id="contact">
                 <p><strong>Msimelelo Victor Malusi</strong> – Founder</p>
-                <p><i class="fas fa-phone"></i> 072 152 3293 &nbsp;|&nbsp; <i class="fab fa-whatsapp"></i> 063 301 7269 &nbsp;|&nbsp; <i class="fas fa-envelope"></i> mv.malusi@legacylaunchpad.co.za</p>
+                <p>
+                    <i class="fas fa-phone"></i> 072 152 3293 &nbsp;|&nbsp;
+                    <i class="fab fa-whatsapp"></i> 063 301 7269 &nbsp;|&nbsp;
+                    <i class="fas fa-envelope"></i> mv.malusi@legacylaunchpad.co.za
+                </p>
                 <p>© 2025 Legacy Launchpad (Pty) Ltd – Building what lasts.</p>
             </div>
-        </div>
+
+        </main>
     </div>
 
-    <script>
-        // Simulate login status (you can change to true for testing)
-        let isLoggedIn = false;  // Change to true to test logged-in state
+    <!-- ============================================================ -->
+    <!-- 3. EXTERNAL JAVASCRIPT                                       -->
+    <!-- ============================================================ -->
+    <script src="app.js"></script>
 
-        // Show/hide login warning based on status
-        const loginWarningDiv = document.getElementById('loginWarning');
-        if (isLoggedIn) {
-            loginWarningDiv.style.display = 'none';
-        } else {
-            loginWarningDiv.style.display = 'block';
-        }
-
-        // Define form templates for each partner type
-        const forms = {
-            legal: `
-                <div class="form-group"><label>Full name / Firm name</label><input type="text" id="legalName" placeholder="e.g., John Doe Attorneys" required></div>
-                <div class="form-group"><label>Professional registration number (e.g., LPC / Fidelity Fund)</label><input type="text" id="legalRegNo" required></div>
-                <div class="form-group"><label>Years of experience</label><input type="number" id="legalExp" required></div>
-                <div class="form-group"><label>Upload your certificate / practising licence (PDF)</label><input type="file" id="legalCert" accept=".pdf,.jpg,.png"></div>
-                <div class="form-group"><label>Short bio</label><textarea id="legalBio" rows="3" placeholder="Describe your practice areas"></textarea></div>
-            `,
-            accounting: `
-                <div class="form-group"><label>Full name / Firm name</label><input type="text" id="accName" placeholder="e.g., ABC Accountants" required></div>
-                <div class="form-group"><label>SAICA / SAIPA registration number</label><input type="text" id="accRegNo" required></div>
-                <div class="form-group"><label>Years of experience</label><input type="number" id="accExp" required></div>
-                <div class="form-group"><label>Upload your practising certificate (PDF)</label><input type="file" id="accCert" accept=".pdf,.jpg,.png"></div>
-                <div class="form-group"><label>Services offered</label><textarea id="accServices" rows="3" placeholder="e.g., tax, bookkeeping, financial statements"></textarea></div>
-            `,
-            audit: `
-                <div class="form-group"><label>Full name / Firm name</label><input type="text" id="auditName" required></div>
-                <div class="form-group"><label>IRBA registration number</label><input type="text" id="auditRegNo" required></div>
-                <div class="form-group"><label>Years of experience</label><input type="number" id="auditExp" required></div>
-                <div class="form-group"><label>Upload your audit firm certificate (PDF)</label><input type="file" id="auditCert" accept=".pdf,.jpg,.png"></div>
-                <div class="form-group"><label>Industries you specialise in</label><textarea id="auditIndustries" rows="2"></textarea></div>
-            `,
-            tax: `
-                <div class="form-group"><label>Full name / Firm name</label><input type="text" id="taxName" required></div>
-                <div class="form-group"><label>SARS registered tax practitioner number</label><input type="text" id="taxRegNo" required></div>
-                <div class="form-group"><label>Years of experience</label><input type="number" id="taxExp" required></div>
-                <div class="form-group"><label>Upload your tax practitioner certificate (PDF)</label><input type="file" id="taxCert" accept=".pdf,.jpg,.png"></div>
-                <div class="form-group"><label>Areas of expertise</label><textarea id="taxAreas" rows="2"></textarea></div>
-            `,
-            business: `
-                <div class="form-group"><label>Your name / Business name</label><input type="text" id="businessName" required></div>
-                <div class="form-group"><label>Business registration number (if any)</label><input type="text" id="businessReg"></div>
-                <div class="form-group"><label>Describe your business / venture idea</label><textarea id="businessDesc" rows="4" required></textarea></div>
-                <div class="form-group"><label>What kind of partnership are you seeking?</label><textarea id="businessPartnership" rows="2" placeholder="e.g., joint venture, capital investment, skills exchange"></textarea></div>
-                <div class="form-group"><label>Upload business profile / pitch deck (optional)</label><input type="file" id="businessFile" accept=".pdf,.pptx,.docx"></div>
-            `
-        };
-
-        const container = document.getElementById('dynamicForm');
-        const typeSelect = document.getElementById('partnerType');
-
-        function loadForm() {
-            const selected = typeSelect.value;
-            container.innerHTML = forms[selected];
-        }
-        loadForm();
-        typeSelect.addEventListener('change', loadForm);
-
-        // Submit handler
-        document.getElementById('submitPartnerBtn').addEventListener('click', () => {
-            if (!isLoggedIn) {
-                document.getElementById('submitMessage').innerHTML = '<span style="color:red;">❌ Please <a href="profile.html">log in</a> to submit a partnership application.</span>';
-                return;
-            }
-            // In a real app, you would gather all form data and send to backend
-            document.getElementById('submitMessage').innerHTML = '<span style="color:green;">✅ Application received! Our team will review and contact you within 5 business days. (Demo – backend pending)</span>';
-            // Optionally clear form
-        });
-
-        // Mobile sidebar toggle
-        const menuBtn = document.getElementById('menuToggle');
-        const sidebar = document.getElementById('sidebar');
-        if (menuBtn) {
-            menuBtn.addEventListener('click', () => {
-                sidebar.classList.toggle('open');
-            });
-        }
-    </script>
 </body>
 </html>
