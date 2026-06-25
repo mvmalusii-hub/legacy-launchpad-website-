@@ -4,170 +4,49 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
     <title>Legacy Launchpad | Referral Program</title>
+
+    <!-- External Styles -->
+    <link rel="stylesheet" href="main.css">
+
+    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <style>
-        * { margin:0; padding:0; box-sizing:border-box; }
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: #f8fafc;
-            color: #1e293b;
-            line-height: 1.5;
-        }
-        .top-header {
-            background: #0f172a;
-            color: white;
-            padding: 15px 30px;
-            position: sticky;
-            top: 0;
-            z-index: 200;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 15px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-        }
-        .logo-area { display: flex; align-items: center; gap: 12px; }
-        .logo-icon { background: #fbbf24; width: 40px; height: 40px; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; font-weight: bold; color: #0f172a; }
-        .logo-text h1 { font-size: 1.4rem; letter-spacing: -0.5px; }
-        .logo-text p { font-size: 0.7rem; color: #94a3b8; }
-        .top-nav { display: flex; gap: 25px; flex-wrap: wrap; }
-        .top-nav a { color: white; text-decoration: none; transition: 0.3s; }
-        .top-nav a:hover { color: #fbbf24; }
-
-        .app-container { display: flex; min-height: calc(100vh - 80px); }
-        .sidebar {
-            width: 280px;
-            background: #0f172a;
-            color: #e2e8f0;
-            position: fixed;
-            top: 80px;
-            bottom: 0;
-            left: 0;
-            overflow-y: auto;
-            transition: transform 0.3s ease;
-            z-index: 100;
-            padding: 20px 0;
-        }
-        .sidebar-header { padding: 0 20px 20px; border-bottom: 1px solid #334155; margin-bottom: 20px; }
-        .sidebar-header h3 { color: #fbbf24; font-size: 1.2rem; }
-        .sidebar-menu { list-style: none; padding: 0; }
-        .sidebar-menu li { margin-bottom: 4px; }
-        .sidebar-menu a { display: flex; align-items: center; gap: 12px; padding: 12px 20px; color: #cbd5e1; text-decoration: none; transition: 0.2s; font-size: 0.9rem; }
-        .sidebar-menu a:hover { background: #1e293b; color: #fbbf24; }
-        .sidebar-menu i { width: 24px; text-align: center; }
-
-        .main-content { flex: 1; margin-left: 280px; padding: 30px; }
-        .section-title {
-            font-size: 1.8rem;
-            margin: 40px 0 20px;
-            border-left: 5px solid #fbbf24;
-            padding-left: 15px;
-            color: #0f172a;
-        }
-        .hero-referral {
-            background: linear-gradient(135deg, #0f172a, #1e293b);
-            color: white;
-            padding: 30px;
-            border-radius: 24px;
-            margin-bottom: 30px;
-            text-align: center;
-        }
-        .hero-referral i { font-size: 2.5rem; margin-bottom: 10px; color: #fbbf24; }
-        .form-card {
-            background: white;
-            border-radius: 24px;
-            padding: 30px;
-            box-shadow: 0 8px 20px rgba(0,0,0,0.05);
-            margin-bottom: 30px;
-        }
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 20px;
-            margin: 20px 0;
-        }
-        .stat-card {
-            background: #f1f5f9;
-            padding: 20px;
-            border-radius: 20px;
-            text-align: center;
-        }
-        .stat-card h3 { font-size: 2rem; color: #fbbf24; margin-bottom: 5px; }
-        .btn {
-            background: #fbbf24;
-            color: #0f172a;
-            padding: 12px 20px;
-            border: none;
-            border-radius: 40px;
-            font-weight: bold;
-            cursor: pointer;
-            transition: 0.2s;
-            width: auto;
-        }
-        .btn:hover { background: #f59e0b; transform: translateY(-2px); }
-        .referral-link-box {
-            background: #f8fafc;
-            border: 1px solid #cbd5e1;
-            border-radius: 12px;
-            padding: 12px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            gap: 10px;
-            flex-wrap: wrap;
-        }
-        .referral-link-box code {
-            background: white;
-            padding: 6px 12px;
-            border-radius: 8px;
-            font-size: 0.9rem;
-            word-break: break-all;
-            flex: 1;
-        }
-        .login-warning {
-            background: #fef9c3;
-            padding: 15px;
-            border-radius: 12px;
-            margin-bottom: 20px;
-            text-align: center;
-        }
-        .login-warning a { color: #0f172a; font-weight: bold; }
-        .footer-contact {
-            background: #0f172a;
-            color: #94a3b8;
-            padding: 30px;
-            border-radius: 20px;
-            text-align: center;
-            margin-top: 50px;
-        }
-        .footer-contact a { color: #fbbf24; text-decoration: none; }
-        @media (max-width: 768px) {
-            .sidebar { transform: translateX(-100%); position: fixed; top: 70px; width: 260px; z-index: 150; }
-            .sidebar.open { transform: translateX(0); }
-            .main-content { margin-left: 0; padding: 15px; }
-            .top-nav { display: none; }
-            .menu-toggle { display: block; background: #0f172a; color: white; border: none; padding: 8px 12px; border-radius: 30px; cursor: pointer; font-size: 1.2rem; }
-        }
-        .menu-toggle { display: none; }
-    </style>
 </head>
 <body>
-    <div class="top-header">
-        <div class="logo-area"><div class="logo-icon">LP</div><div class="logo-text"><h1>Legacy Launchpad</h1><p>Building what lasts.</p></div></div>
-        <div class="top-nav">
+    <!-- ============================================================ -->
+    <!-- 1. TOP HEADER                                                -->
+    <!-- ============================================================ -->
+    <header class="top-header">
+        <div class="logo-area">
+            <div class="logo-icon">LP</div>
+            <div class="logo-text">
+                <h1>Legacy Launchpad</h1>
+                <p>Building what lasts.</p>
+            </div>
+        </div>
+
+        <nav class="top-nav" id="topNav">
             <a href="index.html">Home</a>
             <a href="about.html">About</a>
             <a href="industries.html">Industries</a>
             <a href="policies.html">Policies</a>
             <a href="#contact">Contact</a>
-        </div>
-        <button class="menu-toggle" id="menuToggle">☰</button>
-    </div>
+        </nav>
 
+        <button class="menu-toggle" id="menuToggleTop" aria-label="Toggle navigation">☰</button>
+        <button class="menu-toggle" id="menuToggle" aria-label="Toggle sidebar">☰</button>
+    </header>
+
+    <!-- ============================================================ -->
+    <!-- 2. MAIN APP CONTAINER                                        -->
+    <!-- ============================================================ -->
     <div class="app-container">
-        <div class="sidebar" id="sidebar">
-            <div class="sidebar-header"><h3>Enterprise Menu</h3><p>Advanced features</p></div>
+
+        <!-- SIDEBAR (Shared) -->
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <h3>Enterprise Menu</h3>
+                <p>Advanced features</p>
+            </div>
             <ul class="sidebar-menu">
                 <li><a href="profile.html"><i class="fas fa-user-plus"></i> 01 Profile / Create Profile</a></li>
                 <li><a href="partners.html"><i class="fas fa-handshake"></i> 02 Our Partners</a></li>
@@ -180,21 +59,26 @@
                 <li><a href="referral.html"><i class="fas fa-gift"></i> 09 Referral Program</a></li>
                 <li><a href="#"><i class="fas fa-sign-out-alt"></i> 10 Profile Log Out</a></li>
             </ul>
-        </div>
+        </aside>
 
-        <div class="main-content">
+        <!-- MAIN CONTENT (Page‑specific) -->
+        <main class="main-content">
+
+            <!-- Hero -->
             <div class="hero-referral">
                 <i class="fas fa-gift"></i>
                 <h2>Referral Program – Earn While You Grow</h2>
                 <p>Share Legacy Launchpad with your network. When someone you refer makes a purchase of R1,000 or more, you earn <strong>10% of their spend</strong> (minimum R100 per qualified referral).</p>
             </div>
 
-            <!-- Login check & stats -->
-            <div id="loginWarning" class="login-warning">
+            <!-- Login check -->
+            <div id="loginWarning" class="login-warning hidden">
                 ⚠️ You are not logged in. <a href="profile.html">Please log in or create a profile</a> to access your referral link and earnings.
             </div>
 
-            <div id="referralContent" style="display: none;">
+            <!-- Referral Content (visible when logged in) -->
+            <div id="referralContent" class="hidden">
+                <!-- Stats -->
                 <div class="stats-grid">
                     <div class="stat-card">
                         <h3 id="totalReferrals">0</h3>
@@ -210,159 +94,54 @@
                     </div>
                 </div>
 
+                <!-- Referral Link -->
                 <div class="form-card">
-                    <h3 style="margin-bottom: 15px;">🔗 Your Unique Referral Link</h3>
+                    <h3>🔗 Your Unique Referral Link</h3>
                     <div class="referral-link-box">
                         <code id="referralLink">https://legacylaunchpad.co.za/?ref=YOUR_CODE</code>
-                        <button id="copyLinkBtn" class="btn" style="width: auto; padding: 8px 20px;">Copy</button>
+                        <button id="copyLinkBtn" class="btn btn-sm">Copy</button>
                     </div>
-                    <button id="refreshLinkBtn" class="btn" style="margin-top: 15px; width: auto; background: #0f172a; color: white;">Generate New Link</button>
-                    <p style="margin-top: 15px; font-size: 0.85rem;">Share this link with friends, colleagues, and business partners. When they sign up and make a qualifying purchase, you earn 10% (credited automatically).</p>
+                    <button id="refreshLinkBtn" class="btn btn-sm btn-outline">Generate New Link</button>
+                    <p class="referral-note">Share this link with friends, colleagues, and business partners. When they sign up and make a qualifying purchase, you earn 10% (credited automatically).</p>
                 </div>
 
+                <!-- Referral History -->
                 <div class="form-card">
-                    <h3 style="margin-bottom: 15px;">📋 Referral History</h3>
+                    <h3>📋 Referral History</h3>
                     <div id="referralHistory">
                         <p>No referrals yet. Share your link to get started!</p>
                     </div>
                 </div>
 
-                <!-- Simulate a referral purchase (for demo) -->
+                <!-- Simulation (demo) -->
                 <div class="form-card">
-                    <h3 style="margin-bottom: 15px;">🔧 Demo: Simulate a Referral Purchase</h3>
+                    <h3>🔧 Demo: Simulate a Referral Purchase</h3>
                     <p>For testing purposes, you can simulate that a referred person made a purchase. Enter the amount (≥ R1,000) and click "Record Purchase".</p>
-                    <div style="display: flex; gap: 10px; margin-top: 15px; flex-wrap: wrap;">
-                        <input type="number" id="simulateAmount" placeholder="Purchase amount (R)" min="1000" step="100" style="flex: 1;">
-                        <button id="simulatePurchaseBtn" class="btn" style="width: auto;">Record Purchase</button>
+                    <div class="simulate-row">
+                        <input type="number" id="simulateAmount" placeholder="Purchase amount (R)" min="1000" step="100">
+                        <button id="simulatePurchaseBtn" class="btn btn-sm">Record Purchase</button>
                     </div>
                 </div>
             </div>
 
+            <!-- Footer / Contact (Shared) -->
             <div class="footer-contact" id="contact">
                 <p><strong>Msimelelo Victor Malusi</strong> – Founder</p>
-                <p><i class="fas fa-phone"></i> 072 152 3293 &nbsp;|&nbsp; <i class="fab fa-whatsapp"></i> 063 301 7269 &nbsp;|&nbsp; <i class="fas fa-envelope"></i> mv.malusi@legacylaunchpad.co.za</p>
+                <p>
+                    <i class="fas fa-phone"></i> 072 152 3293 &nbsp;|&nbsp;
+                    <i class="fab fa-whatsapp"></i> 063 301 7269 &nbsp;|&nbsp;
+                    <i class="fas fa-envelope"></i> mv.malusi@legacylaunchpad.co.za
+                </p>
                 <p>© 2025 Legacy Launchpad (Pty) Ltd – Building what lasts.</p>
             </div>
-        </div>
+
+        </main>
     </div>
 
-    <script>
-        // Simulate login status (set to true for testing)
-        let isLoggedIn = false;
+    <!-- ============================================================ -->
+    <!-- 3. EXTERNAL JAVASCRIPT                                       -->
+    <!-- ============================================================ -->
+    <script src="app.js"></script>
 
-        // Referral data structure
-        let referralData = {
-            referralCode: '',
-            referrals: [],   // each { referredEmail, purchaseAmount, earnings, date, status }
-            totalEarned: 0
-        };
-
-        function loadReferralData() {
-            const stored = localStorage.getItem('legacyReferral');
-            if (stored) {
-                referralData = JSON.parse(stored);
-            } else {
-                // Generate a random referral code for new user
-                referralData.referralCode = 'REF' + Math.random().toString(36).substring(2, 8).toUpperCase();
-                referralData.referrals = [];
-                referralData.totalEarned = 0;
-                localStorage.setItem('legacyReferral', JSON.stringify(referralData));
-            }
-            updateUI();
-        }
-
-        function updateUI() {
-            document.getElementById('totalReferrals').innerText = referralData.referrals.length;
-            document.getElementById('totalEarnings').innerText = 'R' + referralData.totalEarned;
-            // Pending earnings = sum of earnings from referrals that haven't been paid? For demo, we'll just show 0 (or we could track)
-            document.getElementById('pendingEarnings').innerText = 'R0';
-
-            const linkBase = window.location.origin + window.location.pathname.replace('referral.html', '') + '?ref=';
-            document.getElementById('referralLink').innerText = linkBase + referralData.referralCode;
-
-            // Render history
-            const historyDiv = document.getElementById('referralHistory');
-            if (referralData.referrals.length === 0) {
-                historyDiv.innerHTML = '<p>No referrals yet. Share your link to get started!</p>';
-            } else {
-                let html = '<ul style="list-style: none; padding: 0;">';
-                referralData.referrals.forEach(ref => {
-                    html += `<li style="padding: 8px 0; border-bottom: 1px solid #e2e8f0;">
-                                <strong>${ref.referredEmail || 'Anonymous'}</strong> – Spent R${ref.purchaseAmount} → Earned R${ref.earnings}<br>
-                                <small>${ref.date}</small>
-                            </li>`;
-                });
-                html += '</ul>';
-                historyDiv.innerHTML = html;
-            }
-        }
-
-        function addReferral(email, amount) {
-            const earnings = amount * 0.1;
-            referralData.referrals.push({
-                referredEmail: email || 'Guest',
-                purchaseAmount: amount,
-                earnings: earnings,
-                date: new Date().toLocaleString(),
-                status: 'completed'
-            });
-            referralData.totalEarned += earnings;
-            localStorage.setItem('legacyReferral', JSON.stringify(referralData));
-            updateUI();
-        }
-
-        // Copy link
-        document.getElementById('copyLinkBtn')?.addEventListener('click', () => {
-            const linkText = document.getElementById('referralLink').innerText;
-            navigator.clipboard.writeText(linkText).then(() => {
-                alert('Referral link copied to clipboard!');
-            }).catch(() => {
-                alert('Could not copy. Please select and copy manually.');
-            });
-        });
-
-        // Generate new link (new referral code)
-        document.getElementById('refreshLinkBtn')?.addEventListener('click', () => {
-            if (confirm('Generating a new link will invalidate the old one. Any pending referrals using the old link will not be credited. Continue?')) {
-                referralData.referralCode = 'REF' + Math.random().toString(36).substring(2, 8).toUpperCase();
-                localStorage.setItem('legacyReferral', JSON.stringify(referralData));
-                updateUI();
-                alert('New referral link generated!');
-            }
-        });
-
-        // Simulate purchase
-        document.getElementById('simulatePurchaseBtn')?.addEventListener('click', () => {
-            const amount = parseFloat(document.getElementById('simulateAmount').value);
-            if (isNaN(amount) || amount < 1000) {
-                alert('Please enter a valid amount of R1,000 or more.');
-                return;
-            }
-            addReferral('Simulated User', amount);
-            document.getElementById('simulateAmount').value = '';
-            alert(`Referral recorded! You earned R${amount * 0.1}.`);
-        });
-
-        // Handle login/visibility
-        const loginWarning = document.getElementById('loginWarning');
-        const referralContent = document.getElementById('referralContent');
-        if (isLoggedIn) {
-            loginWarning.style.display = 'none';
-            referralContent.style.display = 'block';
-            loadReferralData();
-        } else {
-            loginWarning.style.display = 'block';
-            referralContent.style.display = 'none';
-        }
-
-        // Mobile sidebar toggle
-        const menuBtn = document.getElementById('menuToggle');
-        const sidebar = document.getElementById('sidebar');
-        if (menuBtn) {
-            menuBtn.addEventListener('click', () => {
-                sidebar.classList.toggle('open');
-            });
-        }
-    </script>
 </body>
 </html>
