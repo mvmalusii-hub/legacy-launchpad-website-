@@ -631,3 +631,111 @@ input, select, textarea {
     width: auto;
     margin: 0;
 }
+
+/* ========== REFERRAL PAGE ========== */
+.hero-referral {
+    background: linear-gradient(135deg, #0f172a, #1e293b);
+    color: white;
+    padding: 30px;
+    border-radius: 24px;
+    margin-bottom: 30px;
+    text-align: center;
+}
+.hero-referral i {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    color: #fbbf24;
+}
+.hero-referral h2 {
+    margin: 10px 0;
+}
+
+/* Stats */
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    margin: 20px 0 30px;
+}
+.stat-card {
+    background: #f1f5f9;
+    padding: 20px;
+    border-radius: 20px;
+    text-align: center;
+    transition: 0.2s;
+}
+.stat-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+.stat-card h3 {
+    font-size: 2rem;
+    color: #fbbf24;
+    margin-bottom: 5px;
+}
+.stat-card p {
+    color: #475569;
+    font-size: 0.9rem;
+}
+
+/* Referral link box */
+.referral-link-box {
+    background: #f8fafc;
+    border: 1px solid #cbd5e1;
+    border-radius: 12px;
+    padding: 12px 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-bottom: 15px;
+}
+.referral-link-box code {
+    background: white;
+    padding: 6px 12px;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    word-break: break-all;
+    flex: 1;
+    font-family: 'Courier New', monospace;
+}
+.referral-note {
+    margin-top: 15px;
+    font-size: 0.85rem;
+    color: #475569;
+}
+
+/* Buttons - small variant */
+.btn-sm {
+    width: auto;
+    padding: 8px 20px;
+    font-size: 0.85rem;
+}
+.btn-outline {
+    background: transparent;
+    color: #0f172a;
+    border: 2px solid #0f172a;
+    margin-top: 5px;
+}
+.btn-outline:hover {
+    background: #0f172a;
+    color: white;
+    transform: translateY(-2px);
+}
+
+/* Simulation row */
+.simulate-row {
+    display: flex;
+    gap: 10px;
+    margin-top: 15px;
+    flex-wrap: wrap;
+    align-items: center;
+}
+.simulate-row input {
+    flex: 1;
+    min-width: 150px;
+    padding: 10px;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+}
