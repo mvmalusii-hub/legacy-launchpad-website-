@@ -234,3 +234,59 @@ if (loginWarningHub || commentArea) {
     // (Optional) If you later change login status, you can call updateUI() again
     // For demo, we keep isLoggedIn = false, but you can set it to true to test.
 }
+
+// ===== HIRE ADMIN PAGE =====
+const hireAdminForm = document.getElementById('hireAdminForm');
+const hireLoginWarning = document.getElementById('loginWarning');
+const hireSubmitMsg = document.getElementById('submitMessage');
+const startDateInput = document.getElementById('startDate');
+
+if (hireAdminForm) {
+    // Simulate login status (use the same variable as before)
+    let isLoggedIn = false; // In practice, make this global
+
+    // Show/hide login warning
+    if (hireLoginWarning) {
+        if (isLoggedIn) {
+            hireLoginWarning.classList.add('hidden');
+        } else {
+            hireLoginWarning.classList.remove('hidden');
+        }
+    }
+
+    // Set min start date to tomorrow
+    if (startDateInput) {
+        const tomorrow = new Date();
+        tomorrow.setDate(tomorrow.getDate() + 1);
+        startDateInput.setAttribute('min', tomorrow.toISOString().split('T')[0]);
+    }
+
+    // Form submission
+    hireAdminForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+
+        if (!isLoggedIn) {
+            hireSubmitMsg.innerHTML = '<span style="color:red;">❌ Please <a href="profile.html">log in</a> to submit a request.</span>';
+            return;
+        }
+
+        // Validate contract length
+        const contractLength = document.querySelector('input[name="contractLength"]:checked');
+        if (!contractLength) {
+            hireSubmitMsg.innerHTML = '<span style="color:red;">❌ Please select a contract length.</span>';
+            return;
+        }
+
+        // Validate staff count
+        const staffCount = document.getElementById('staffCount').value;
+        if (staffCount < 1) {
+            hireSubmitMsg.innerHTML = '<span style="color:red;">❌ Please enter a valid number of staff.</span>';
+            return;
+        }
+
+        // In a real app, gather all form data and send to backend
+        hireSubmitMsg.innerHTML = '<span style="color:green;">✅ Your request has been received! Our team will contact you within 48 hours to discuss a custom SLA. (Demo – backend pending)</span>';
+        // Optionally reset the form
+        // hireAdminForm.reset();
+    });
+}
