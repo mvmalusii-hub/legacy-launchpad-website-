@@ -4,161 +4,49 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
     <title>Legacy Launchpad | Strategic Growth</title>
+
+    <!-- External Styles -->
+    <link rel="stylesheet" href="main.css">
+
+    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <style>
-        * { margin:0; padding:0; box-sizing:border-box; }
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: #f5fbf7;
-            color: #1a3b2f;
-            line-height: 1.5;
-        }
-        /* Growth theme: green/teal + gold */
-        .top-header {
-            background: #1a3b2f;
-            color: white;
-            padding: 15px 30px;
-            position: sticky;
-            top: 0;
-            z-index: 200;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 15px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-        }
-        .logo-area { display: flex; align-items: center; gap: 12px; }
-        .logo-icon { background: #fbbf24; width: 40px; height: 40px; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; font-weight: bold; color: #1a3b2f; }
-        .logo-text h1 { font-size: 1.4rem; letter-spacing: -0.5px; }
-        .logo-text p { font-size: 0.7rem; color: #94a3b8; }
-        .top-nav { display: flex; gap: 25px; flex-wrap: wrap; }
-        .top-nav a { color: white; text-decoration: none; transition: 0.3s; }
-        .top-nav a:hover { color: #fbbf24; }
-
-        .app-container { display: flex; min-height: calc(100vh - 80px); }
-        .sidebar {
-            width: 280px;
-            background: #1a3b2f;
-            color: #e2e8f0;
-            position: fixed;
-            top: 80px;
-            bottom: 0;
-            left: 0;
-            overflow-y: auto;
-            transition: transform 0.3s ease;
-            z-index: 100;
-            padding: 20px 0;
-        }
-        .sidebar-header { padding: 0 20px 20px; border-bottom: 1px solid #2d5a47; margin-bottom: 20px; }
-        .sidebar-header h3 { color: #fbbf24; font-size: 1.2rem; }
-        .sidebar-menu { list-style: none; padding: 0; }
-        .sidebar-menu li { margin-bottom: 4px; }
-        .sidebar-menu a { display: flex; align-items: center; gap: 12px; padding: 12px 20px; color: #cbd5e1; text-decoration: none; transition: 0.2s; font-size: 0.9rem; }
-        .sidebar-menu a:hover { background: #2d5a47; color: #fbbf24; }
-        .sidebar-menu i { width: 24px; text-align: center; }
-
-        .main-content { flex: 1; margin-left: 280px; padding: 30px; }
-        .section-title {
-            font-size: 1.8rem;
-            margin: 40px 0 20px;
-            border-left: 5px solid #fbbf24;
-            padding-left: 15px;
-            color: #1a3b2f;
-        }
-        .hero-growth {
-            background: linear-gradient(135deg, #1a3b2f, #2d5a47);
-            color: white;
-            padding: 30px;
-            border-radius: 24px;
-            margin-bottom: 30px;
-            text-align: center;
-        }
-        .hero-growth i { font-size: 2.5rem; margin-bottom: 10px; color: #fbbf24; }
-        .form-card {
-            background: white;
-            border-radius: 24px;
-            padding: 30px;
-            box-shadow: 0 8px 20px rgba(0,0,0,0.05);
-            margin-bottom: 30px;
-        }
-        .form-group { margin-bottom: 20px; }
-        label { display: block; font-weight: 600; margin-bottom: 8px; }
-        input, select, textarea {
-            width: 100%;
-            padding: 12px;
-            border: 1px solid #cbd5e1;
-            border-radius: 8px;
-            font-family: inherit;
-        }
-        .checkbox-group {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 15px;
-            margin-top: 8px;
-        }
-        .checkbox-group label {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            font-weight: normal;
-        }
-        .btn {
-            background: #fbbf24;
-            color: #1a3b2f;
-            padding: 12px 20px;
-            border: none;
-            border-radius: 40px;
-            font-weight: bold;
-            cursor: pointer;
-            width: 100%;
-            transition: 0.2s;
-        }
-        .btn:hover { background: #f59e0b; transform: translateY(-2px); }
-        .login-warning {
-            background: #fef9c3;
-            padding: 15px;
-            border-radius: 12px;
-            margin-bottom: 20px;
-            text-align: center;
-        }
-        .login-warning a { color: #1a3b2f; font-weight: bold; }
-        .file-hint { font-size: 0.75rem; color: #475569; margin-top: 5px; }
-        .footer-contact {
-            background: #1a3b2f;
-            color: #94a3b8;
-            padding: 30px;
-            border-radius: 20px;
-            text-align: center;
-            margin-top: 50px;
-        }
-        .footer-contact a { color: #fbbf24; text-decoration: none; }
-        @media (max-width: 768px) {
-            .sidebar { transform: translateX(-100%); position: fixed; top: 70px; width: 260px; z-index: 150; }
-            .sidebar.open { transform: translateX(0); }
-            .main-content { margin-left: 0; padding: 15px; }
-            .top-nav { display: none; }
-            .menu-toggle { display: block; background: #1a3b2f; color: white; border: none; padding: 8px 12px; border-radius: 30px; cursor: pointer; font-size: 1.2rem; }
-        }
-        .menu-toggle { display: none; }
-    </style>
 </head>
-<body>
-    <div class="top-header">
-        <div class="logo-area"><div class="logo-icon">LP</div><div class="logo-text"><h1>Legacy Launchpad</h1><p>Building what lasts.</p></div></div>
-        <div class="top-nav">
+<body class="theme-growth">
+    <!-- ============================================================ -->
+    <!-- 1. TOP HEADER                                                -->
+    <!-- ============================================================ -->
+    <header class="top-header">
+        <div class="logo-area">
+            <div class="logo-icon">LP</div>
+            <div class="logo-text">
+                <h1>Legacy Launchpad</h1>
+                <p>Building what lasts.</p>
+            </div>
+        </div>
+
+        <nav class="top-nav" id="topNav">
             <a href="index.html">Home</a>
             <a href="about.html">About</a>
             <a href="industries.html">Industries</a>
             <a href="policies.html">Policies</a>
             <a href="#contact">Contact</a>
-        </div>
-        <button class="menu-toggle" id="menuToggle">☰</button>
-    </div>
+        </nav>
 
+        <button class="menu-toggle" id="menuToggleTop" aria-label="Toggle navigation">☰</button>
+        <button class="menu-toggle" id="menuToggle" aria-label="Toggle sidebar">☰</button>
+    </header>
+
+    <!-- ============================================================ -->
+    <!-- 2. MAIN APP CONTAINER                                        -->
+    <!-- ============================================================ -->
     <div class="app-container">
-        <div class="sidebar" id="sidebar">
-            <div class="sidebar-header"><h3>Enterprise Menu</h3><p>Advanced features</p></div>
+
+        <!-- SIDEBAR (Shared) -->
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <h3>Enterprise Menu</h3>
+                <p>Advanced features</p>
+            </div>
             <ul class="sidebar-menu">
                 <li><a href="profile.html"><i class="fas fa-user-plus"></i> 01 Profile / Create Profile</a></li>
                 <li><a href="partners.html"><i class="fas fa-handshake"></i> 02 Our Partners</a></li>
@@ -171,40 +59,48 @@
                 <li><a href="#"><i class="fas fa-gift"></i> 09 Referral Program</a></li>
                 <li><a href="#"><i class="fas fa-sign-out-alt"></i> 10 Profile Log Out</a></li>
             </ul>
-        </div>
+        </aside>
 
-        <div class="main-content">
+        <!-- MAIN CONTENT (Page‑specific) -->
+        <main class="main-content">
+
+            <!-- Hero Section -->
             <div class="hero-growth">
                 <i class="fas fa-seedling"></i>
                 <h2>Strategic Business Growth</h2>
                 <p>Live sessions, diversification, mass production, process management & market preparedness.</p>
-                <p style="margin-top: 10px;">With our team of experienced professionals, Legacy Launchpad is your most sound all‑rounded business partner.</p>
+                <p>With our team of experienced professionals, Legacy Launchpad is your most sound all‑rounded business partner.</p>
             </div>
 
             <h2 class="section-title">📈 Business Strategic Growth Consultation</h2>
-            <div class="form-card">
-                <p style="margin-bottom: 20px;">Complete the detailed questionnaire below. Our experts will review your operational history and schedule a one‑on‑one strategic session. The more thorough your answers, the better we can help you diversify, scale, and prepare for market challenges.</p>
 
-                <!-- Login check (demo) -->
-                <div id="loginWarning" class="login-warning">
+            <div class="form-card">
+                <p class="form-intro">
+                    Complete the detailed questionnaire below. Our experts will review your operational history and schedule a one‑on‑one strategic session. The more thorough your answers, the better we can help you diversify, scale, and prepare for market challenges.
+                </p>
+
+                <!-- Login warning (hidden by default) -->
+                <div id="loginWarning" class="login-warning hidden">
                     ⚠️ You are not logged in. <a href="profile.html">Please log in or create a profile</a> to book a consultation.
                 </div>
 
                 <form id="growthForm">
+                    <!-- Basic Info -->
                     <div class="form-group">
-                        <label>Your name / Company name</label>
+                        <label for="businessName">Your name / Company name</label>
                         <input type="text" id="businessName" required>
                     </div>
                     <div class="form-group">
-                        <label>Email address</label>
+                        <label for="businessEmail">Email address</label>
                         <input type="email" id="businessEmail" required>
                     </div>
                     <div class="form-group">
-                        <label>Phone number</label>
+                        <label for="businessPhone">Phone number</label>
                         <input type="tel" id="businessPhone" value="072 152 3293">
                     </div>
 
-                    <h3 style="margin: 20px 0 10px;">📋 Operational & Market Readiness</h3>
+                    <h3>📋 Operational & Market Readiness</h3>
+
                     <div class="form-group">
                         <label>Which areas of your business need strategic intervention? (tick all that apply)</label>
                         <div class="checkbox-group">
@@ -220,7 +116,7 @@
                     </div>
 
                     <div class="form-group">
-                        <label>Current annual turnover (approx.)</label>
+                        <label for="turnover">Current annual turnover (approx.)</label>
                         <select id="turnover">
                             <option value="">Select</option>
                             <option>Under R500k</option>
@@ -232,34 +128,36 @@
                     </div>
 
                     <div class="form-group">
-                        <label>Number of employees</label>
+                        <label for="employees">Number of employees</label>
                         <input type="number" id="employees" placeholder="e.g., 5">
                     </div>
 
                     <div class="form-group">
-                        <label>What are your biggest operational pain points?</label>
+                        <label for="painPoints">What are your biggest operational pain points?</label>
                         <textarea id="painPoints" rows="3" placeholder="e.g., outdated processes, lack of systems, quality control issues"></textarea>
                     </div>
 
                     <div class="form-group">
-                        <label>What specific growth goals do you have for the next 12 months?</label>
+                        <label for="growthGoals">What specific growth goals do you have for the next 12 months?</label>
                         <textarea id="growthGoals" rows="3" placeholder="e.g., increase revenue by 30%, enter new markets, launch new product line"></textarea>
                     </div>
 
                     <div class="form-group">
-                        <label>Upload supporting documents (financial statements, operational reports, business plan – optional)</label>
+                        <label for="growthFile">Upload supporting documents (financial statements, operational reports, business plan – optional)</label>
                         <input type="file" id="growthFile" accept=".pdf,.docx,.xlsx">
                         <div class="file-hint">Max 10MB. Helps us prepare for your session.</div>
                     </div>
 
-                    <h3 style="margin: 20px 0 10px;">📅 Book a Consultation</h3>
+                    <h3>📅 Book a Consultation</h3>
+
                     <div class="form-group">
-                        <label>Preferred date (sessions are scheduled at least 7 days in advance)</label>
-                        <input type="date" id="appointmentDate" min="">
+                        <label for="appointmentDate">Preferred date (sessions are scheduled at least 7 days in advance)</label>
+                        <input type="date" id="appointmentDate">
                         <div class="file-hint" style="color:#d97706;">We require at least 7 days to prepare a tailored strategic plan for your business.</div>
                     </div>
+
                     <div class="form-group">
-                        <label>Preferred time (SAST)</label>
+                        <label for="appointmentTime">Preferred time (SAST)</label>
                         <select id="appointmentTime">
                             <option>09:00 – 10:00</option>
                             <option>10:00 – 11:00</option>
@@ -271,64 +169,28 @@
                     </div>
 
                     <button type="submit" class="btn">Request Strategic Session →</button>
-                    <div id="submitMessage" style="margin-top: 15px; text-align: center;"></div>
+                    <div id="submitMessage" class="message"></div>
                 </form>
             </div>
 
+            <!-- Footer / Contact (Shared) -->
             <div class="footer-contact" id="contact">
                 <p><strong>Msimelelo Victor Malusi</strong> – Founder</p>
-                <p><i class="fas fa-phone"></i> 072 152 3293 &nbsp;|&nbsp; <i class="fab fa-whatsapp"></i> 063 301 7269 &nbsp;|&nbsp; <i class="fas fa-envelope"></i> mv.malusi@legacylaunchpad.co.za</p>
+                <p>
+                    <i class="fas fa-phone"></i> 072 152 3293 &nbsp;|&nbsp;
+                    <i class="fab fa-whatsapp"></i> 063 301 7269 &nbsp;|&nbsp;
+                    <i class="fas fa-envelope"></i> mv.malusi@legacylaunchpad.co.za
+                </p>
                 <p>© 2025 Legacy Launchpad (Pty) Ltd – Building what lasts.</p>
             </div>
-        </div>
+
+        </main>
     </div>
 
-    <script>
-        // Simulate login status (set to true for testing)
-        let isLoggedIn = false;
+    <!-- ============================================================ -->
+    <!-- 3. EXTERNAL JAVASCRIPT                                       -->
+    <!-- ============================================================ -->
+    <script src="app.js"></script>
 
-        const loginWarningDiv = document.getElementById('loginWarning');
-        if (isLoggedIn) {
-            loginWarningDiv.style.display = 'none';
-        } else {
-            loginWarningDiv.style.display = 'block';
-        }
-
-        // Set min date for appointment (7 days from today)
-        const today = new Date();
-        const minDate = new Date(today);
-        minDate.setDate(today.getDate() + 7);
-        const minDateStr = minDate.toISOString().split('T')[0];
-        document.getElementById('appointmentDate').setAttribute('min', minDateStr);
-
-        // Form submission handler
-        document.getElementById('growthForm').addEventListener('submit', (e) => {
-            e.preventDefault();
-            if (!isLoggedIn) {
-                document.getElementById('submitMessage').innerHTML = '<span style="color:red;">❌ Please <a href="profile.html">log in</a> to book a strategic growth session.</span>';
-                return;
-            }
-
-            const selectedDate = document.getElementById('appointmentDate').value;
-            if (!selectedDate) {
-                document.getElementById('submitMessage').innerHTML = '<span style="color:red;">❌ Please select a preferred date (at least 7 days from now).</span>';
-                return;
-            }
-
-            // In a real app, send data to backend / email
-            document.getElementById('submitMessage').innerHTML = '<span style="color:green;">✅ Your strategic growth consultation request has been received! We will confirm your appointment within 48 hours. (Demo – backend pending)</span>';
-            // Optionally reset form
-            // document.getElementById('growthForm').reset();
-        });
-
-        // Mobile sidebar toggle
-        const menuBtn = document.getElementById('menuToggle');
-        const sidebar = document.getElementById('sidebar');
-        if (menuBtn) {
-            menuBtn.addEventListener('click', () => {
-                sidebar.classList.toggle('open');
-            });
-        }
-    </script>
 </body>
 </html>
