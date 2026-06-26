@@ -2,859 +2,361 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
     <title>Security Services Document Roadmap | Legacy Launchpad</title>
+
+    <!-- External Styles -->
+    <link rel="stylesheet" href="main.css">
+
+    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <style>
-        * { margin:0; padding:0; box-sizing:border-box; }
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #f8fafc; color: #1e293b; line-height: 1.5; }
-        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
-        .header { background: #0f172a; color: white; padding: 20px 0; position: sticky; top: 0; z-index: 100; }
-        .header-flex { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px; }
-        .logo-area { display: flex; align-items: center; gap: 15px; }
-        .logo-placeholder { width: 50px; height: 50px; background: #fbbf24; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.8rem; color: #0f172a; }
-        .logo-text h1 { font-size: 1.5rem; letter-spacing: -0.5px; }
-        .nav a { color: white; text-decoration: none; margin-left: 25px; transition: 0.3s; }
-        .nav a:hover { color: #fbbf24; }
-        .hero { background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); color: white; padding: 60px 0; text-align: center; }
-        .hero h1 { font-size: 2.5rem; margin-bottom: 15px; }
-        .section-title { font-size: 1.8rem; margin: 40px 0 20px; padding-bottom: 10px; border-bottom: 2px solid #fbbf24; display: inline-block; }
-        table { width: 100%; border-collapse: collapse; background: white; border-radius: 16px; overflow: hidden; margin: 20px 0; }
-        th, td { padding: 12px 15px; text-align: left; border-bottom: 1px solid #e2e8f0; vertical-align: top; }
-        th { background: #0f172a; color: white; }
-        tr:hover { background: #fefce8; }
-        .button-group { display: flex; justify-content: center; gap: 20px; margin: 30px 0; flex-wrap: wrap; }
-        .btn { display: inline-block; background: #0f172a; color: white; padding: 12px 30px; border-radius: 40px; text-decoration: none; font-weight: bold; transition: 0.3s; }
-        .btn-secondary { background: #fbbf24; color: #0f172a; }
-        .btn:hover { transform: translateY(-2px); background: #f59e0b; color: #0f172a; }
-        .footer { background: #0f172a; color: #94a3b8; text-align: center; padding: 30px 0; margin-top: 40px; }
-        @media (max-width: 768px) { th, td { padding: 8px 10px; font-size: 0.8rem; } .button-group { flex-direction: column; align-items: center; } }
-    </style>
 </head>
-<body>
-
-<div class="header">
-    <div class="container header-flex">
+<body class="page-industry">
+    <!-- ============================================================ -->
+    <!-- 1. TOP HEADER                                                -->
+    <!-- ============================================================ -->
+    <header class="top-header">
         <div class="logo-area">
-            <div class="logo-placeholder"><i class="fas fa-cube"></i></div>
-            <div class="logo-text"><h1>Legacy Launchpad</h1><p>Building what lasts.</p></div>
+            <div class="logo-icon">LP</div>
+            <div class="logo-text">
+                <h1>Legacy Launchpad</h1>
+                <p>Building what lasts.</p>
+            </div>
         </div>
-        <div class="nav">
+
+        <nav class="top-nav" id="topNav">
             <a href="index.html">Home</a>
-            <a href="index.html#industries">Industries</a>
-            <a href="pricing.html">Pricing</a>
-            <a href="order-documents.html"><i class="fas fa-clipboard-list"></i> Order</a>
-            <a href="index.html#contact">Contact</a>
-        </div>
-    </div>
-</div>
+            <a href="about.html">About</a>
+            <a href="industries.html">Industries</a>
+            <div class="dropdown">
+                <button class="dropbtn">Services <i class="fas fa-chevron-down"></i></button>
+                <div class="dropdown-content">
+                    <a href="3d-floor-plans.html">🏗️ 3D Floor Plans</a>
+                    <a href="personal-services.html">🧑 Personal Services</a>
+                    <a href="business-support.html">📊 Business Support</a>
+                    <a href="marketing-services.html">🎨 Marketing Services</a>
+                    <a href="spaza-shop.html">🏪 Spaza Shop</a>
+                    <a href="liquor-licence.html">🍷 Liquor Licence Application</a>
+                    <a href="order-documents.html">📋 Order Documents</a>
+                </div>
+            </div>
+            <a href="policies.html">Policies</a>
+            <a href="#contact">Contact</a>
+        </nav>
 
-<div class="hero">
-    <div class="container">
-        <h1>🛡️ Security Services</h1>
-        <p>Complete document roadmap – 108 core documents</p>
-    </div>
-</div>
+        <button class="menu-toggle" id="menuToggleTop" aria-label="Toggle navigation">☰</button>
+        <button class="menu-toggle" id="menuToggle" aria-label="Toggle sidebar">☰</button>
+    </header>
 
-<div class="container">
-    <h2 class="section-title">📋 Document Roadmap</h2>
+    <!-- ============================================================ -->
+    <!-- 2. MAIN APP CONTAINER                                        -->
+    <!-- ============================================================ -->
+    <div class="app-container">
 
-   <h3>Phase 1: Registration & Licences (7 docs)</h3>
-<table>
-    <thead>
-        <tr><th>✔</th><th>Ref</th><th>Document</th><th>Purpose</th></tr>
-    </thead>
-    <tbody>
-        <tr>
-  
-            <td><input type="checkbox" class="doc-check" data-cat="Registration & Licences" data-doc="CIPC Registration Certificate"></li>
-            <td>SC-001</li>
-            <td>CIPC Registration Certificate</li>
-            <td>Proof of company registration</li>
-        </tr>
-        <tr>
-            <td><input type="checkbox" class="doc-check" data-cat="Registration & Licences" data-doc="Memorandum of Incorporation (MOI)"></li>
-            <td>SC-002</li>
-            <td>Memorandum of Incorporation (MOI)</li>
-            <td>Company constitution</li>
-        </tr>
-        <tr>
-            <td><input type="checkbox" class="doc-check" data-cat="Registration & Licences" data-doc="SARS Registration (IT, PAYE, VAT)"></li>
-            <td>SC-003</li>
-            <td>SARS Registration (IT, PAYE, VAT)</li>
-            <td>Tax compliance</li>
-        </tr>
-        <tr>
-            <td><input type="checkbox" class="doc-check" data-cat="Registration & Licences" data-doc="PSIRA Registration Certificate"></li>
-            <td>SC-004</li>
-            <td>PSIRA Registration Certificate</li>
-            <td>Private Security Industry Regulatory Authority</li>
-        </tr>
-        <tr>
-            <td><input type="checkbox" class="doc-check" data-cat="Registration & Licences" data-doc="PSIRA Business Licence"></li>
-            <td>SC-005</li>
-            <td>PSIRA Business Licence</li>
-            <td>Required for security operations</li>
-        </tr>
-        <tr>
-            <td><input type="checkbox" class="doc-check" data-cat="Registration & Licences" data-doc="Firearm Licences Register (if armed)"></li>
-            <td>SC-006</li>
-            <td>Firearm Licences Register (if armed)</li>
-            <td>For each armed guard</li>
-        </tr>
-        <tr>
-            <td><input type="checkbox" class="doc-check" data-cat="Registration & Licences" data-doc="B-BBEE Certificate"></li>
-            <td>SC-007</li>
-            <td>B‑BBEE Certificate</li>
-            <td>For tenders</li>
-        </tr>
-    </tbody>
-</table>
+        <!-- SIDEBAR (Shared) -->
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <h3>Enterprise Menu</h3>
+                <p>Advanced features</p>
+            </div>
+            <ul class="sidebar-menu">
+                <li><a href="profile.html"><i class="fas fa-user-plus"></i> 01 Profile / Create Profile</a></li>
+                <li><a href="partners.html"><i class="fas fa-handshake"></i> 02 Our Partners</a></li>
+                <li><a href="international.html"><i class="fas fa-globe"></i> 03 International Partners</a></li>
+                <li><a href="strategic-growth.html"><i class="fas fa-chart-line"></i> 04 Strategic Growth</a></li>
+                <li><a href="business-partners.html"><i class="fas fa-building"></i> 05 Business Partners</a></li>
+                <li><a href="market-leads.html"><i class="fas fa-chart-simple"></i> 06 Real Time Market Leads</a></li>
+                <li><a href="business-hub.html"><i class="fas fa-users"></i> 07 Business Hub</a></li>
+                <li><a href="hire-admin.html"><i class="fas fa-user-tie"></i> 08 Hire Our Admin</a></li>
+                <li><a href="referral.html"><i class="fas fa-gift"></i> 09 Referral Program</a></li>
+                <li><a href="logout.html"><i class="fas fa-sign-out-alt"></i> 10 Profile Log Out</a></li>
+                <!-- EPK Studio link (opens in new tab) -->
+                <li><a href="https://www.legacylaunchpad.co.za/artist-profile-service.html" target="_blank"><i class="fas fa-star"></i> 11 EPK Studio</a></li>
+            </ul>
+        </aside>
 
-  <h3>Phase 2: Governance & Admin (8 docs)</h3>
-<table>
-    <thead>
-        <tr><th>✔</th><th>Ref</th><th>Document</th><th>Purpose</th></tr>
-    </thead>
-    <tbody>
-        <tr>
-  
-            <td><input type="checkbox" class="doc-check" data-cat="Governance & Admin" data-doc="Register of Directors"></li>
-            <td>SC-008</li>
-            <td>Register of Directors</li>
-            <td>Board governance</li>
-        </tr>
-        <tr>
-            <td><input type="checkbox" class="doc-check" data-cat="Governance & Admin" data-doc="Share Register (if Pty Ltd)"></li>
-            <td>SC-009</li>
-            <td>Share Register (if Pty Ltd)</li>
-            <td>Shareholder records</li>
-        </tr>
-        <tr>
-            <td><input type="checkbox" class="doc-check" data-cat="Governance & Admin" data-doc="Conflict of Interest Register"></li>
-            <td>SC-010</li>
-            <td>Conflict of Interest Register</li>
-            <td>Ethics compliance</li>
-        </tr>
-        <tr>
-            <td><input type="checkbox" class="doc-check" data-cat="Governance & Admin" data-doc="Board Meeting Minutes Template"></li>
-            <td>SC-011</li>
-            <td>Board Meeting Minutes Template</li>
-            <td>Governance record</li>
-        </tr>
-        <tr>
-            <td><input type="checkbox" class="doc-check" data-cat="Governance & Admin" data-doc="Annual Return (CIPC) filing record"></li>
-            <td>SC-012</li>
-            <td>Annual Return (CIPC) filing record</li>
-            <td>Compliance proof</li>
-        </tr>
-        <tr>
-            <td><input type="checkbox" class="doc-check" data-cat="Governance & Admin" data-doc="Company Policies Index"></li>
-            <td>SC-013</li>
-            <td>Company Policies Index</li>
-            <td>Master policy list</li>
-        </tr>
-        <tr>
-            <td><input type="checkbox" class="doc-check" data-cat="Governance & Admin" data-doc="Code of Conduct (Board)"></li>
-            <td>SC-014</li>
-            <td>Code of Conduct (Board)</li>
-            <td>Director behaviour</li>
-        </tr>
-        <tr>
-            <td><input type="checkbox" class="doc-check" data-cat="Governance & Admin" data-doc="Code of Ethics (Company)"></li>
-            <td>SC-015</li>
-            <td>Code of Ethics (Company)</li>
-            <td>Company values</li>
-        </tr>
-    </tbody>
-</table>
-    
-   <h3>Phase 3: Contracts & Client Docs (12 docs)</h3>
-<table>
-    <thead>
-        <tr><th>✔</th><th>Ref</th><th>Document</th><th>Purpose</th></tr>
-    </thead>
-    <tbody>
-        <tr>
-  
-            <td><input type="checkbox" class="doc-check" data-cat="Contracts & Client Docs" data-doc="Service Level Agreement (SLA) – Master Template"></li>
-            <td>SC-016</li>
-            <td>Service Level Agreement (SLA) – Master Template</li>
-            <td>Core contract</li>
-        </tr>
-        <tr>
-            <td><input type="checkbox" class="doc-check" data-cat="Contracts & Client Docs" data-doc="SLA – Site‑Specific Addendum"></li>
-            <td>SC-017</li>
-            <td>SLA – Site‑Specific Addendum</li>
-            <td>Per client site</li>
-        </tr>
-        <tr>
-            <td><input type="checkbox" class="doc-check" data-cat="Contracts & Client Docs" data-doc="Site Security Instructions / Post Orders"></li>
-            <td>SC-018</li>
-            <td>Site Security Instructions / Post Orders</li>
-            <td>Duties per site</li>
-        </td>
-        <tr>
-            <td><input type="checkbox" class="doc-check" data-cat="Contracts & Client Docs" data-doc="Quotation / Proposal Template"></li>
-            <td>SC-019</li>
-            <td>Quotation / Proposal Template</li>
-            <td>For tenders</li>
-        </tr>
-        <tr>
-            <td><input type="checkbox" class="doc-check" data-cat="Contracts & Client Docs" data-doc="Non-Disclosure Agreement (NDA)"></li>
-            <td>SC-020</li>
-            <td>Non‑Disclosure Agreement (NDA)</li>
-            <td>Confidentiality</li>
-        </tr>
-        </tr>
-            <td><input type="checkbox" class="doc-check" data-cat="Contracts & Client Docs" data-doc="Client Induction Checklist"></li>
-            <td>SC-021</li>
-            <td>Client Induction Checklist</li>
-            <td>New site setup</li>
-        </tr>
-        <tr>
-            <td><input type="checkbox" class="doc-check" data-cat="Contracts & Client Docs" data-doc="Access Control Register Template"></li>
-            <td>SC-022</li>
-            <td>Access Control Register Template</li>
-            <td>Daily logs</li>
-        </tr>
-        <tr>
-            <td><input type="checkbox" class="doc-check" data-cat="Contracts & Client Docs" data-doc="Key Register Template"></li>
-            <td>SC-023</li>
-            <td>Key Register Template</li>
-            <td>Key control</li>
-        </tr>
-        <tr>
-            <td><input type="checkbox" class="doc-check" data-cat="Contracts & Client Docs" data-doc="Visitor Register Template"></li>
-            <td>SC-024</li>
-            <td>Visitor Register Template</li>
-            <td>Per site</li>
-        </tr>
-        <tr>
-            <td><input type="checkbox" class="doc-check" data-cat="Contracts & Client Docs" data-doc="Vehicle Access Register"></li>
-            <td>SC-025</li>
-            <td>Vehicle Access Register</li>
-            <td>Gate control</li>
-        </tr>
-        <tr>
-            <td><input type="checkbox" class="doc-check" data-cat="Contracts & Client Docs" data-doc="Incident Report Form (Client Copy)"></li>
-            <td>SC-026</li>
-            <td>Incident Report Form (Client Copy)</li>
-            <td>For client reporting</li>
-        </tr>
-        <tr>
-            <td><input type="checkbox" class="doc-check" data-cat="Contracts & Client Docs" data-doc="Contract Renewal / Termination Letter Template"></li>
-            <td>SC-027</li>
-            <td>Contract Renewal / Termination Letter Template</li>
-            <td>Admin</li>
-        </tr>
-    </tbody>
-</table>
+        <!-- MAIN CONTENT (Page‑specific) -->
+        <main class="main-content">
 
-    <h3>Phase 4: Human Resources (15 docs)</h3>
-<table>
-    <thead>
-        <tr><th>✔</th><th>Ref</th><th>Document</th><th>Purpose</th></tr>
-    </thead>
-    <tbody>
-        <tr>
-  
-            <td><input type="checkbox" class="doc-check" data-cat="Human Resources" data-doc="Employment Contract – Security Guard (Permanent)"></li>
-            <td>SC-028</li>
-            <td>Employment Contract – Security Guard (Permanent)</li>
-            <td>Standard employee</li>
-        </tr>
-        <tr>
-            <td><input type="checkbox" class="doc-check" data-cat="Human Resources" data-doc="Employment Contract – Security Guard (Casual)"></li>
-            <td>SC-029</li>
-            <td>Employment Contract – Security Guard (Casual)</li>
-            <td>Flexi staff</li>
-        </tr>
-        <tr>
-            <td><input type="checkbox" class="doc-check" data-cat="Human Resources" data-doc="Employment Contract – Supervisor"></li>
-            <td>SC-030</li>
-            <td>Employment Contract – Supervisor</li>
-            <td>Team lead</li>
-        </tr>
-        <tr>
-            <td><input type="checkbox" class="doc-check" data-cat="Human Resources" data-doc="Employment Contract – Manager"></li>
-            <td>SC-031</li>
-            <td>Employment Contract – Manager</li>
-            <td>Senior staff</li>
-        </tr>
-        <tr>
-            <td><input type="checkbox" class="doc-check" data-cat="Human Resources" data-doc="Independent Contractor Agreement"></li>
-            <td>SC-032</li>
-            <td>Independent Contractor Agreement</li>
-            <td>Subcontractors</li>
-        </tr>
-        <tr>
-            <td><input type="checkbox" class="doc-check" data-cat="Human Resources" data-doc="PSIRA Registration Form (for employees)"></li>
-            <td>SC-033</li>
-            <td>PSIRA Registration Form (for employees)</li>
-            <td>Guard licensing</li>
-        </tr>
-        <tr>
-            <td><input type="checkbox" class="doc-check" data-cat="Human Resources" data-doc="Code of Conduct (Employees)"></li>
-            <td>SC-034</li>
-            <td>Code of Conduct (Employees)</li>
-            <td>Behaviour rules</li>
-        </tr>
-        <tr>
-            <td><input type="checkbox" class="doc-check" data-cat="Human Resources" data-doc="Shift Roster Template"></li>
-            <td>SC-035</li>
-            <td>Shift Roster Template</li>
-            <td>Weekly schedule</li>
-        </tr>
-        <tr>
-            <td><input type="checkbox" class="doc-check" data-cat="Human Resources" data-doc="Attendance Register (Daily)"></li>
-            <td>SC-036</li>
-            <td>Attendance Register (Daily)</li>
-            <td>Sign‑in / sign‑out</li>
-        </tr>
-        <tr>
-            <td><input type="checkbox" class="doc-check" data-cat="Human Resources" data-doc="Uniform Issue Register"></li>
-            <td>SC-037</li>
-            <td>Uniform Issue Register</li>
-            <td>PPE tracking</li>
-        </tr>
-        <tr>
-            <td><input type="checkbox" class="doc-check" data-cat="Human Resources" data-doc="Training Record – Firearms"></li>
-            <td>SC-038</li>
-            <td>Training Record – Firearms</li>
-            <td>Armed guards</li>
-        </tr>
-        <tr>
-            <td><input type="checkbox" class="doc-check" data-cat="Human Resources" data-doc="Training Record – First Aid"></li>
-            <td>SC-039</li>
-            <td>Training Record – First Aid</li>
-            <td>First aiders</li>
-        </tr>
-        <tr>
-            <td><input type="checkbox" class="doc-check" data-cat="Human Resources" data-doc="Training Record – Basic Security"></li>
-            <td>SC-040</li>
-            <td>Training Record – Basic Security</li>
-            <td>Induction</li>
-        </tr>
-        <tr>
-            <td><input type="checkbox" class="doc-check" data-cat="Human Resources" data-doc="Disciplinary Code & Procedure"></li>
-            <td>SC-041</li>
-            <td>Disciplinary Code & Procedure</li>
-            <td>HR compliance</li>
-        </tr>
-        <tr>
-            <td><input type="checkbox" class="doc-check" data-cat="Human Resources" data-doc="Leave Application Form"></li>
-            <td>SC-042</li>
-            <td>Leave Application Form</li>
-            <td>Staff requests</li>
-        </tr>
-    </tbody>
-</table>
+            <!-- ===== HERO ===== -->
+            <section class="hero-industry">
+                <h1>🛡️ Security Services</h1>
+                <p>Complete document roadmap – 108 core documents</p>
+                <a href="#roadmap" class="btn btn-primary">View Roadmap ↓</a>
+            </section>
 
-    <h3>Phase 5: Operations & Site Management (15 docs)</h3>
-<table>
-    <thead>
-        <tr><th>✔</th><th>Ref</th><th>Document</th><th>Purpose</th></tr>
-    </thead>
-    <tbody>
-        <tr>
-  
-            <td><input type="checkbox" class="doc-check" data-cat="Operations & Site Management" data-doc="Daily Occurrence Book (DOB) Template"></li>
-            <td>SC-043</li>
-            <td>Daily Occurrence Book (DOB) Template</li>
-            <td>Primary log</li>
-        </tr>
-        <tr>
-            <td><input type="checkbox" class="doc-check" data-cat="Operations & Site Management" data-doc="Shift Handover Report"></li>
-            <td>SC-044</li>
-            <td>Shift Handover Report</li>
-            <td>Between shifts</li>
-        </tr>
-        <tr>
-            <td><input type="checkbox" class="doc-check" data-cat="Operations & Site Management" data-doc="Patrol Log (Foot / Vehicle)"></li>
-            <td>SC-045</li>
-            <td>Patrol Log (Foot / Vehicle)</li>
-            <td>Route tracking</li>
-        </tr>
-        <tr>
-            <td><input type="checkbox" class="doc-check" data-cat="Operations & Site Management" data-doc="Incident Report Form (Internal)"></li>
-            <td>SC-046</li>
-            <td>Incident Report Form (Internal)</li>
-            <td>Detailed report</li>
-        </tr>
-        <tr>
-            <td><input type="checkbox" class="doc-check" data-cat="Operations & Site Management" data-doc="Accident / Injury Report"></li>
-            <td>SC-047</li>
-            <td>Accident / Injury Report</li>
-            <td>Health & safety</li>
-        </td>
-        <tr>
-            <td><input type="checkbox" class="doc-check" data-cat="Operations & Site Management" data-doc="Vehicle Log Sheet"></li>
-            <td>SC-048</li>
-            <td>Vehicle Log Sheet</li>
-            <td>For patrol vehicles</li>
-        </tr>
-        <tr>
-            <td><input type="checkbox" class="doc-check" data-cat="Operations & Site Management" data-doc="Equipment Sign-Out Register"></li>
-            <td>SC-049</li>
-            <td>Equipment Sign‑Out Register</li>
-            <td>Radios, torches, etc.</li>
-        </tr>
-        <tr>
-            <td><input type="checkbox" class="doc-check" data-cat="Operations & Site Management" data-doc="Firearm Sign-Out Register (if armed)"></li>
-            <td>SC-050</li>
-            <td>Firearm Sign‑Out Register (if armed)</li>
-            <td>Strict control</li>
-        </tr>
-        <tr>
-            <td><input type="checkbox" class="doc-check" data-cat="Operations & Site Management" data-doc="Key Register (Detailed)"></li>
-            <td>SC-051</li>
-            <td>Key Register (Detailed)</li>
-            <td>Per key, per person</li>
-        </tr>
-        <tr>
-            <td><input type="checkbox" class="doc-check" data-cat="Operations & Site Management" data-doc="Alarm Activation Log"></li>
-            <td>SC-052</li>
-            <td>Alarm Activation Log</li>
-            <td>Response records</li>
-        </tr>
-        <tr>
-            <td><input type="checkbox" class="doc-check" data-cat="Operations & Site Management" data-doc="CCTV Footage Request Form"></li>
-            <td>SC-053</li>
-            <td>CCTV Footage Request Form</li>
-            <td>Evidence requests</li>
-        </tr>
-        <tr>
-            <td><input type="checkbox" class="doc-check" data-cat="Operations & Site Management" data-doc="Lost Property Register"></li>
-            <td>SC-054</li>
-            <td>Lost Property Register</li>
-            <td>Guest items</li>
-        </tr>
-        <tr>
-            <td><input type="checkbox" class="doc-check" data-cat="Operations & Site Management" data-doc="Search Register (Vehicle / Person)"></li>
-            <td>SC-055</li>
-            <td>Search Register (Vehicle / Person)</li>
-            <td>Access control</li>
-        </tr>
-        <tr>
-            <td><input type="checkbox" class="doc-check" data-cat="Operations & Site Management" data-doc="Emergency Contact List (per site)"></li>
-            <td>SC-056</li>
-            <td>Emergency Contact List (per site)</li>
-            <td>Quick reference</li>
-        </tr>
-        <tr>
-            <td><input type="checkbox" class="doc-check" data-cat="Operations & Site Management" data-doc="Site Inspection Checklist (Daily)"></li>
-            <td>SC-057</li>
-            <td>Site Inspection Checklist (Daily)</li>
-            <td>Quality control</li>
-        </tr>
-    </tbody>
-</table>
+            <!-- ===== SELECTION PANEL ===== -->
+            <section class="selection-panel">
+                <h2 class="section-title">📦 Select Your Package</h2>
+                <div class="selection-grid">
+                    <div class="selection-card">
+                        <div class="selection-header">
+                            <input type="checkbox" id="selectRoadmap" checked>
+                            <label for="selectRoadmap"><strong>Document Roadmap</strong></label>
+                        </div>
+                        <p class="selection-price">R 700</p>
+                        <p class="selection-desc">Complete list of 108 documents with descriptions – ready to implement.</p>
+                    </div>
+                    <div class="selection-card">
+                        <div class="selection-header">
+                            <input type="checkbox" id="selectDirectory" checked>
+                            <label for="selectDirectory"><strong>File Directory Structure</strong></label>
+                        </div>
+                        <p class="selection-price">R 700</p>
+                        <p class="selection-desc">Pre‑built folder structure – just copy and start filing.</p>
+                    </div>
+                    <div class="selection-card selection-combo">
+                        <div class="selection-header">
+                            <span class="combo-badge">🔥 SAVE R100</span>
+                        </div>
+                        <p class="selection-price"><strong>R 1,300</strong> <span class="strike">R 1,400</span></p>
+                        <p class="selection-desc">Both Roadmap + Directory – the complete system.</p>
+                    </div>
+                </div>
+                <div class="selection-actions">
+                    <a href="#" id="orderSelectedBtn" class="btn btn-primary"><i class="fas fa-clipboard-list"></i> Proceed to Order →</a>
+                    <span class="selection-note">You can also select individual documents below.</span>
+                </div>
+            </section>
 
-    <h3>Phase 6: Health & Safety (10 docs)</h3>
-<table>
-    <thead>
-        <tr><th>✔</th><th>Ref</th><th>Document</th><th>Purpose</th></tr>
-    </thead>
-    <tbody>
-        <tr>
-  
-            <td><input type="checkbox" class="doc-check" data-cat="Health & Safety" data-doc="Occupational Health & Safety (OHS) Policy"></li>
-            <td>SC-058</li>
-            <td>Occupational Health & Safety (OHS) Policy</li>
-            <td>Company H&S</li>
-        </tr>
-        <tr>
-            <td><input type="checkbox" class="doc-check" data-cat="Health & Safety" data-doc="Risk Assessment – General"></li>
-            <td>SC-059</li>
-            <td>Risk Assessment – General</li>
-            <td>Workplace hazards</li>
-        </tr>
-        <tr>
-            <td><input type="checkbox" class="doc-check" data-cat="Health & Safety" data-doc="Risk Assessment – Per Site"></li>
-            <td>SC-060</li>
-            <td>Risk Assessment – Per Site</li>
-            <td>Site‑specific</li>
-        </tr>
-        <tr>
-            <td><input type="checkbox" class="doc-check" data-cat="Health & Safety" data-doc="Safe Work Method Statement"></li>
-            <td>SC-061</li>
-            <td>Safe Work Method Statement</li>
-            <td>Task safety</li>
-        </tr>
-        <tr>
-            <td><input type="checkbox" class="doc-check" data-cat="Health & Safety" data-doc="First Aid Kit Register"></li>
-            <td>SC-062</li>
-            <td>First Aid Kit Register</li>
-            <td>Inventory</li>
-        </tr>
-        <tr>
-            <td><input type="checkbox" class="doc-check" data-cat="Health & Safety" data-doc="Fire Equipment Inspection Log"></li>
-            <td>SC-063</li>
-            <td>Fire Equipment Inspection Log</li>
-            <td>Extinguishers</li>
-        </tr>
-        <tr>
-            <td><input type="checkbox" class="doc-check" data-cat="Health & Safety" data-doc="Fire Drill Log"></li>
-            <td>SC-064</li>
-            <td>Fire Drill Log</li>
-            <td>Evacuation practice</li>
-        </tr>
-        <tr>
-            <td><input type="checkbox" class="doc-check" data-cat="Health & Safety" data-doc="Personal Protective Equipment (PPE) Register"></li>
-            <td>SC-065</li>
-            <td>Personal Protective Equipment (PPE) Register</li>
-            <td>Gear tracking</li>
-        </tr>
-        <tr>
-            <td><input type="checkbox" class="doc-check" data-cat="Health & Safety" data-doc="Health & Safety Committee Minutes"></li>
-            <td>SC-066</li>
-            <td>Health & Safety Committee Minutes</li>
-            <td>Compliance</li>
-        </tr>
-        <tr>
-            <td><input type="checkbox" class="doc-check" data-cat="Health & Safety" data-doc="OHS Training Record"></li>
-            <td>SC-067</li>
-            <td>OHS Training Record</li>
-            <td>Staff certification</li>
-        </tr>
-    </tbody>
-</table>
+            <!-- ===== DOCUMENT ROADMAP ===== -->
+            <section id="roadmap">
+                <h2 class="section-title">📋 Document Roadmap</h2>
 
-    <h3>Phase 7: Finance & Suppliers (8 docs)</h3>
-<table>
-    <thead>
-        <tr><th>✔</th><th>Ref</th><th>Document</th><th>Purpose</th></tr>
-    </thead>
-    <tbody>
-        <tr>
-  
-            <td><input type="checkbox" class="doc-check" data-cat="Finance & Suppliers" data-doc="Invoice Template"></li>
-            <td>SC-068</li>
-            <td>Invoice Template</li>
-            <td>Client billing</li>
-        </tr>
-        <tr>
-            <td><input type="checkbox" class="doc-check" data-cat="Finance & Suppliers" data-doc="Supplier Invoice Register"></li>
-            <td>SC-069</li>
-            <td>Supplier Invoice Register</li>
-            <td>Payments tracking</li>
-        </tr>
-        <tr>
-            <td><input type="checkbox" class="doc-check" data-cat="Finance & Suppliers" data-doc="Payroll Register"></li>
-            <td>SC-070</li>
-            <td>Payroll Register</li>
-            <td>Staff wages</li>
-        </tr>
-        <tr>
-            <td><input type="checkbox" class="doc-check" data-cat="Finance & Suppliers" data-doc="Petty Cash Log"></li>
-            <td>SC-071</li>
-            <td>Petty Cash Log</li>
-            <td>Small expenses</li>
-        </tr>
-        <tr>
-            <td><input type="checkbox" class="doc-check" data-cat="Finance & Suppliers" data-doc="Uniform Purchase Register"></li>
-            <td>SC-072</li>
-            <td>Uniform Purchase Register</li>
-            <td>Stock control</li>
-        </tr>
-        <tr>
-            <td><input type="checkbox" class="doc-check" data-cat="Finance & Suppliers" data-doc="Equipment Purchase Register"></li>
-            <td>SC-073</li>
-            <td>Equipment Purchase Register</li>
-            <td>Assets</li>
-        </tr>
-        <tr>
-            <td><input type="checkbox" class="doc-check" data-cat="Finance & Suppliers" data-doc="Client Payment History"></li>
-            <td>SC-074</li>
-            <td>Client Payment History</li>
-            <td>Accounts receivable</li>
-        </tr>
-        <tr>
-            <td><input type="checkbox" class="doc-check" data-cat="Finance & Suppliers" data-doc="Bank Reconciliation Template"></li>
-            <td>SC-075</li>
-            <td>Bank Reconciliation Template</li>
-            <td>Monthly finance</li>
-        </tr>
-    </tbody>
-</table>
+                <!-- Phase 1 -->
+                <h3>Phase 1: Registration &amp; Licences (7 docs)</h3>
+                <table class="doc-table">
+                    <thead>
+                        <tr><th>✔</th><th>Document</th><th>Description</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td><input type="checkbox" class="doc-check" data-cat="Registration &amp; Licences" data-doc="CIPC Registration Certificate"></td><td>SC-001 – CIPC Registration Certificate</td><td>Proof of company registration</td></tr>
+                        <tr><td><input type="checkbox" class="doc-check" data-cat="Registration &amp; Licences" data-doc="Memorandum of Incorporation (MOI)"></td><td>SC-002 – Memorandum of Incorporation (MOI)</td><td>Company constitution</td></tr>
+                        <tr><td><input type="checkbox" class="doc-check" data-cat="Registration &amp; Licences" data-doc="SARS Registration (IT, PAYE, VAT)"></td><td>SC-003 – SARS Registration (IT, PAYE, VAT)</td><td>Tax compliance</td></tr>
+                        <tr><td><input type="checkbox" class="doc-check" data-cat="Registration &amp; Licences" data-doc="PSIRA Registration Certificate"></td><td>SC-004 – PSIRA Registration Certificate</td><td>Private Security Industry Regulatory Authority</td></tr>
+                        <tr><td><input type="checkbox" class="doc-check" data-cat="Registration &amp; Licences" data-doc="PSIRA Business Licence"></td><td>SC-005 – PSIRA Business Licence</td><td>Required for security operations</td></tr>
+                        <tr><td><input type="checkbox" class="doc-check" data-cat="Registration &amp; Licences" data-doc="Firearm Licences Register (if armed)"></td><td>SC-006 – Firearm Licences Register (if armed)</td><td>For each armed guard</td></tr>
+                        <tr><td><input type="checkbox" class="doc-check" data-cat="Registration &amp; Licences" data-doc="B-BBEE Certificate"></td><td>SC-007 – B‑BBEE Certificate</td><td>For tenders</td></tr>
+                    </tbody>
+                </table>
 
-    <h3>Phase 8: Equipment & Assets (6 docs)</h3>
-<table>
-    <thead>
-        <tr><th>✔</th><th>Ref</th><th>Document</th><th>Purpose</th></tr>
-    </thead>
-    <tbody>
-        <tr>
-  
-            <td><input type="checkbox" class="doc-check" data-cat="Equipment & Assets" data-doc="Asset Register (Master)"></li>
-            <td>SC-076</li>
-            <td>Asset Register (Master)</li>
-            <td>All company assets</li>
-        </tr>
-        <tr>
-            <td><input type="checkbox" class="doc-check" data-cat="Equipment & Assets" data-doc="Vehicle Maintenance Log"></li>
-            <td>SC-077</li>
-            <td>Vehicle Maintenance Log</li>
-            <td>Service records</li>
-        </tr>
-        <tr>
-            <td><input type="checkbox" class="doc-check" data-cat="Equipment & Assets" data-doc="Two-Way Radio Register"></li>
-            <td>SC-078</li>
-            <td>Two‑Way Radio Register</li>
-            <td>Issue/tracking</li>
-        </tr>
-        <tr>
-            <td><input type="checkbox" class="doc-check" data-cat="Equipment & Assets" data-doc="Uniform Stock Take"></li>
-            <td>SC-079</li>
-            <td>Uniform Stock Take</li>
-            <td>Quarterly count</li>
-        </tr>
-        <tr>
-            <td><input type="checkbox" class="doc-check" data-cat="Equipment & Assets" data-doc="Equipment Calibration Log"></li>
-            <td>SC-080</li>
-            <td>Equipment Calibration Log</li>
-            <td>If applicable</li>
-        <tr>
-        <tr>
-            <td><input type="checkbox" class="doc-check" data-cat="Equipment & Assets" data-doc="Asset Disposal Form"></li>
-            <td>SC-081</li>
-            <td>Asset Disposal Form</li>
-            <td>Retirement of assets</li>
-        </tr>
-    </tbody>
-</table>
+                <!-- Phase 2 -->
+                <h3>Phase 2: Governance &amp; Admin (8 docs)</h3>
+                <table class="doc-table">
+                    <thead>
+                        <tr><th>✔</th><th>Document</th><th>Description</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td><input type="checkbox" class="doc-check" data-cat="Governance &amp; Admin" data-doc="Register of Directors"></td><td>SC-008 – Register of Directors</td><td>Board governance</td></tr>
+                        <tr><td><input type="checkbox" class="doc-check" data-cat="Governance &amp; Admin" data-doc="Share Register (if Pty Ltd)"></td><td>SC-009 – Share Register (if Pty Ltd)</td><td>Shareholder records</td></tr>
+                        <tr><td><input type="checkbox" class="doc-check" data-cat="Governance &amp; Admin" data-doc="Conflict of Interest Register"></td><td>SC-010 – Conflict of Interest Register</td><td>Ethics compliance</td></tr>
+                        <tr><td><input type="checkbox" class="doc-check" data-cat="Governance &amp; Admin" data-doc="Board Meeting Minutes Template"></td><td>SC-011 – Board Meeting Minutes Template</td><td>Governance record</td></tr>
+                        <tr><td><input type="checkbox" class="doc-check" data-cat="Governance &amp; Admin" data-doc="Annual Return (CIPC) filing record"></td><td>SC-012 – Annual Return (CIPC) filing record</td><td>Compliance proof</td></tr>
+                        <tr><td><input type="checkbox" class="doc-check" data-cat="Governance &amp; Admin" data-doc="Company Policies Index"></td><td>SC-013 – Company Policies Index</td><td>Master policy list</td></tr>
+                        <tr><td><input type="checkbox" class="doc-check" data-cat="Governance &amp; Admin" data-doc="Code of Conduct (Board)"></td><td>SC-014 – Code of Conduct (Board)</td><td>Director behaviour</td></tr>
+                        <tr><td><input type="checkbox" class="doc-check" data-cat="Governance &amp; Admin" data-doc="Code of Ethics (Company)"></td><td>SC-015 – Code of Ethics (Company)</td><td>Company values</td></tr>
+                    </tbody>
+                </table>
 
-    <h3>Phase 9: Training & Development (6 docs)</h3>
-<table>
-    <thead>
-        <tr><th>✔</th><th>Ref</th><th>Document</th><th>Purpose</th></tr>
-    </thead>
-    <tbody>
-        <tr>
-  
-            <td><input type="checkbox" class="doc-check" data-cat="Training & Development" data-doc="Training Needs Assessment"></li>
-            <td>SC-082</li>
-            <td>Training Needs Assessment</li>
-            <td>Annual review</li>
-        </tr>
-        <tr>
-            <td><input type="checkbox" class="doc-check" data-cat="Training & Development" data-doc="Training Attendance Register"></li>
-            <td>SC-083</li>
-            <td>Training Attendance Register</li>
-            <td>Per course</li>
-        </tr>
-        <tr>
-            <td><input type="checkbox" class="doc-check" data-cat="Training & Development" data-doc="PSIRA Grade Training Certificates"></li>
-            <td>SC-084</li>
-            <td>PSIRA Grade Training Certificates</li>
-            <td>Compliance proof</li>
-        </tr>
-        <tr>
-            <td><input type="checkbox" class="doc-check" data-cat="Training & Development" data-doc="First Aid Certificate Register"></li>
-            <td>SC-085</li>
-            <td>First Aid Certificate Register</li>
-            <td>Expiry tracking</li>
-        </tr>
-        <tr>
-            <td><input type="checkbox" class="doc-check" data-cat="Training & Development" data-doc="Firearm Proficiency Records"></li>
-            <td>SC-086</li>
-            <td>Firearm Proficiency Records</li>
-            <td>Annual shooting test</li>
-        </tr>
-        <tr>
-            <td><input type="checkbox" class="doc-check" data-cat="Training & Development" data-doc="Refresher Training Schedule"></li>
-            <td>SC-087</li>
-            <td>Refresher Training Schedule</li>
-            <td>Ongoing competency</li>
-        </tr>
-    </tbody>
-</table>
+                <!-- Phase 3 -->
+                <h3>Phase 3: Contracts &amp; Client Docs (12 docs)</h3>
+                <table class="doc-table">
+                    <thead>
+                        <tr><th>✔</th><th>Document</th><th>Description</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td><input type="checkbox" class="doc-check" data-cat="Contracts &amp; Client Docs" data-doc="Service Level Agreement (SLA) – Master Template"></td><td>SC-016 – Service Level Agreement (SLA) – Master Template</td><td>Core contract</td></tr>
+                        <tr><td><input type="checkbox" class="doc-check" data-cat="Contracts &amp; Client Docs" data-doc="SLA – Site‑Specific Addendum"></td><td>SC-017 – SLA – Site‑Specific Addendum</td><td>Per client site</td></tr>
+                        <tr><td><input type="checkbox" class="doc-check" data-cat="Contracts &amp; Client Docs" data-doc="Site Security Instructions / Post Orders"></td><td>SC-018 – Site Security Instructions / Post Orders</td><td>Duties per site</td></tr>
+                        <tr><td><input type="checkbox" class="doc-check" data-cat="Contracts &amp; Client Docs" data-doc="Quotation / Proposal Template"></td><td>SC-019 – Quotation / Proposal Template</td><td>For tenders</td></tr>
+                        <tr><td><input type="checkbox" class="doc-check" data-cat="Contracts &amp; Client Docs" data-doc="Non-Disclosure Agreement (NDA)"></td><td>SC-020 – Non‑Disclosure Agreement (NDA)</td><td>Confidentiality</td></tr>
+                        <tr><td><input type="checkbox" class="doc-check" data-cat="Contracts &amp; Client Docs" data-doc="Client Induction Checklist"></td><td>SC-021 – Client Induction Checklist</td><td>New site setup</td></tr>
+                        <tr><td><input type="checkbox" class="doc-check" data-cat="Contracts &amp; Client Docs" data-doc="Access Control Register Template"></td><td>SC-022 – Access Control Register Template</td><td>Daily logs</td></tr>
+                        <tr><td><input type="checkbox" class="doc-check" data-cat="Contracts &amp; Client Docs" data-doc="Key Register Template"></td><td>SC-023 – Key Register Template</td><td>Key control</td></tr>
+                        <tr><td><input type="checkbox" class="doc-check" data-cat="Contracts &amp; Client Docs" data-doc="Visitor Register Template"></td><td>SC-024 – Visitor Register Template</td><td>Per site</td></tr>
+                        <tr><td><input type="checkbox" class="doc-check" data-cat="Contracts &amp; Client Docs" data-doc="Vehicle Access Register"></td><td>SC-025 – Vehicle Access Register</td><td>Gate control</td></tr>
+                        <tr><td><input type="checkbox" class="doc-check" data-cat="Contracts &amp; Client Docs" data-doc="Incident Report Form (Client Copy)"></td><td>SC-026 – Incident Report Form (Client Copy)</td><td>For client reporting</td></tr>
+                        <tr><td><input type="checkbox" class="doc-check" data-cat="Contracts &amp; Client Docs" data-doc="Contract Renewal / Termination Letter Template"></td><td>SC-027 – Contract Renewal / Termination Letter Template</td><td>Admin</td></tr>
+                    </tbody>
+                </table>
 
-    <h3>Phase 10: Forms & Templates (10 docs)</h3>
-<table>
-    <thead>
-        <tr><th>✔</th><th>Ref</th><th>Document</th><th>Purpose</th></tr>
-    </thead>
-    <tbody>
-        <tr>
-  
-            <td><input type="checkbox" class="doc-check" data-cat="Forms & Templates" data-doc="Employee Personnel File Checklist"></li>
-            <td>SC-088</li>
-            <td>Employee Personnel File Checklist</li>
-            <td>New starter</li>
-        </tr>
-        <tR>
-            <td><input type="checkbox" class="doc-check" data-cat="Forms & Templates" data-doc="Incident Report Form (Short)"></li>
-            <td>SC-089</li>
-            <td>Incident Report Form (Short)</li>
-            <td>Quick capture</li>
-        </tr>
-        <tr>
-            <td><input type="checkbox" class="doc-check" data-cat="Forms & Templates" data-doc="Witness Statement Form"></li>
-            <td>SC-090</li>
-            <td>Witness Statement Form</li>
-            <td>Investigations</li>
-        </tr>
-        <tr>
-            <td><input type="checkbox" class="doc-check" data-cat="Forms & Templates" data-doc="Client Complaint Form"></li>
-            <td>SC-091</li>
-            <td>Client Complaint Form</li>
-            <td>Feedback</li>
-        </tr>
-        <tr>
-            <td><input type="checkbox" class="doc-check" data-cat="Forms & Templates" data-doc="Request for Leave"></li>
-            <td>SC-092</li>
-            <td>Request for Leave</li>
-            <td>Staff admin</li>
-        </tr>
-        <tr>
-            <td><input type="checkbox" class="doc-check" data-cat="Forms & Templates" data-doc="Overtime Authorization Form"></li>
-            <td>SC-093</li>
-            <td>Overtime Authorization Form</li>
-            <td>Payroll</li>
-        </tr>
-        </tr>
-            <td><input type="checkbox" class="doc-check" data-cat="Forms & Templates" data-doc="Vehicle Inspection Checklist (Daily)"></li>
-            <td>SC-094</li>
-            <td>Vehicle Inspection Checklist (Daily)</li>
-            <td>Safety</li>
-        </tr>
-        <tr>
-            <td><input type="checkbox" class="doc-check" data-cat="Forms & Templates" data-doc="Site Opening/Closing Checklist"></li>
-            <td>SC-095</li>
-            <td>Site Opening/Closing Checklist</li>
-            <td>Daily routine</li>
-        </tr>
-        <tr>
-            <td><input type="checkbox" class="doc-check" data-cat="Forms & Templates" data-doc="Contractor Induction Form"></li>
-            <td>SC-096</li>
-            <td>Contractor Induction Form</li>
-            <td>Third parties</li>
-        </tr>
-        <tr>
-            <td><input type="checkbox" class="doc-check" data-cat="Forms & Templates" data-doc="Termination Checklist"></li>
-            <td>SC-097</li>
-            <td>Termination Checklist</li>
-            <td>Offboarding</li>
-        </tr>
-    </tbody>
-</table>
+                <!-- Phase 4 -->
+                <h3>Phase 4: Human Resources (15 docs)</h3>
+                <table class="doc-table">
+                    <thead>
+                        <tr><th>✔</th><th>Document</th><th>Description</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td><input type="checkbox" class="doc-check" data-cat="Human Resources" data-doc="Employment Contract – Security Guard (Permanent)"></td><td>SC-028 – Employment Contract – Security Guard (Permanent)</td><td>Standard employee</td></tr>
+                        <tr><td><input type="checkbox" class="doc-check" data-cat="Human Resources" data-doc="Employment Contract – Security Guard (Casual)"></td><td>SC-029 – Employment Contract – Security Guard (Casual)</td><td>Flexi staff</td></tr>
+                        <tr><td><input type="checkbox" class="doc-check" data-cat="Human Resources" data-doc="Employment Contract – Supervisor"></td><td>SC-030 – Employment Contract – Supervisor</td><td>Team lead</td></tr>
+                        <tr><td><input type="checkbox" class="doc-check" data-cat="Human Resources" data-doc="Employment Contract – Manager"></td><td>SC-031 – Employment Contract – Manager</td><td>Senior staff</td></tr>
+                        <tr><td><input type="checkbox" class="doc-check" data-cat="Human Resources" data-doc="Independent Contractor Agreement"></td><td>SC-032 – Independent Contractor Agreement</td><td>Subcontractors</td></tr>
+                        <tr><td><input type="checkbox" class="doc-check" data-cat="Human Resources" data-doc="PSIRA Registration Form (for employees)"></td><td>SC-033 – PSIRA Registration Form (for employees)</td><td>Guard licensing</td></tr>
+                        <tr><td><input type="checkbox" class="doc-check" data-cat="Human Resources" data-doc="Code of Conduct (Employees)"></td><td>SC-034 – Code of Conduct (Employees)</td><td>Behaviour rules</td></tr>
+                        <tr><td><input type="checkbox" class="doc-check" data-cat="Human Resources" data-doc="Shift Roster Template"></td><td>SC-035 – Shift Roster Template</td><td>Weekly schedule</td></tr>
+                        <tr><td><input type="checkbox" class="doc-check" data-cat="Human Resources" data-doc="Attendance Register (Daily)"></td><td>SC-036 – Attendance Register (Daily)</td><td>Sign‑in / sign‑out</td></tr>
+                        <tr><td><input type="checkbox" class="doc-check" data-cat="Human Resources" data-doc="Uniform Issue Register"></td><td>SC-037 – Uniform Issue Register</td><td>PPE tracking</td></tr>
+                        <tr><td><input type="checkbox" class="doc-check" data-cat="Human Resources" data-doc="Training Record – Firearms"></td><td>SC-038 – Training Record – Firearms</td><td>Armed guards</td></tr>
+                        <tr><td><input type="checkbox" class="doc-check" data-cat="Human Resources" data-doc="Training Record – First Aid"></td><td>SC-039 – Training Record – First Aid</td><td>First aiders</td></tr>
+                        <tr><td><input type="checkbox" class="doc-check" data-cat="Human Resources" data-doc="Training Record – Basic Security"></td><td>SC-040 – Training Record – Basic Security</td><td>Induction</td></tr>
+                        <tr><td><input type="checkbox" class="doc-check" data-cat="Human Resources" data-doc="Disciplinary Code & Procedure"></td><td>SC-041 – Disciplinary Code &amp; Procedure</td><td>HR compliance</td></tr>
+                        <tr><td><input type="checkbox" class="doc-check" data-cat="Human Resources" data-doc="Leave Application Form"></td><td>SC-042 – Leave Application Form</td><td>Staff requests</td></tr>
+                    </tbody>
+                </table>
 
-    <h3>Phase 11: Marketing & Business Development (6 docs)</h3>
-<table>
-    <thead>
-        <tr><th>✔</th><th>Ref</th><th>Document</th><th>Purpose</th></tr>
-    </thead>
-    <tbody>
-        <tr>
-  
-            <td><input type="checkbox" class="doc-check" data-cat="Marketing & Business Development" data-doc="Capability Statement (Company Profile)"></li>
-            <td>SC-098</li>
-            <td>Capability Statement (Company Profile)</li>
-            <td>For tenders</li>
-        </tr>
-        <tr>
-            <td><input type="checkbox" class="doc-check" data-cat="Marketing & Business Development" data-doc="Services Brochure"></li>
-            <td>SC-099</li>
-            <td>Services Brochure</li>
-            <td>Client handouts</li>
-        </tr>
-        <tr>
-            <td><input type="checkbox" class="doc-check" data-cat="Marketing & Business Development" data-doc="Client Testimonial Log"></li>
-            <td>SC-100</li>
-            <td>Client Testimonial Log</li>
-            <td>Reputation</li>
-        </tr>
-        <tr>
-            <td><input type="checkbox" class="doc-check" data-cat="Marketing & Business Development" data-doc="Tender Checklist (PSIRA, CIDB, etc.)"></li>
-            <td>SC-101</li>
-            <td>Tender Checklist (PSIRA, CIDB, etc.)</li>
-            <td>Compliance</li>
-        </td>
-        </tr>
-            <td><input type="checkbox" class="doc-check" data-cat="Marketing & Business Development" data-doc="Marketing Plan (Security)"></li>
-            <td>SC-102</li>
-            <td>Marketing Plan (Security)</li>
-            <td>Growth strategy</li>
-        <tr>
-        </tr>
-            <td><input type="checkbox" class="doc-check" data-cat="Marketing & Business Development" data-doc="Social Media Policy (for staff)"></li>
-            <td>SC-103</li>
-            <td>Social Media Policy (for staff)</li>
-            <td>Brand protection</li>
-        </tr>
-    </tbody>
-</table>
+                <!-- Phase 5 -->
+                <h3>Phase 5: Operations &amp; Site Management (15 docs)</h3>
+                <table class="doc-table">
+                    <thead>
+                        <tr><th>✔</th><th>Document</th><th>Description</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td><input type="checkbox" class="doc-check" data-cat="Operations &amp; Site Management" data-doc="Daily Occurrence Book (DOB) Template"></td><td>SC-043 – Daily Occurrence Book (DOB) Template</td><td>Primary log</td></tr>
+                        <tr><td><input type="checkbox" class="doc-check" data-cat="Operations &amp; Site Management" data-doc="Shift Handover Report"></td><td>SC-044 – Shift Handover Report</td><td>Between shifts</td></tr>
+                        <tr><td><input type="checkbox" class="doc-check" data-cat="Operations &amp; Site Management" data-doc="Patrol Log (Foot / Vehicle)"></td><td>SC-045 – Patrol Log (Foot / Vehicle)</td><td>Route tracking</td></tr>
+                        <tr><td><input type="checkbox" class="doc-check" data-cat="Operations &amp; Site Management" data-doc="Incident Report Form (Internal)"></td><td>SC-046 – Incident Report Form (Internal)</td><td>Detailed report</td></tr>
+                        <tr><td><input type="checkbox" class="doc-check" data-cat="Operations &amp; Site Management" data-doc="Accident / Injury Report"></td><td>SC-047 – Accident / Injury Report</td><td>Health &amp; safety</td></tr>
+                        <tr><td><input type="checkbox" class="doc-check" data-cat="Operations &amp; Site Management" data-doc="Vehicle Log Sheet"></td><td>SC-048 – Vehicle Log Sheet</td><td>For patrol vehicles</td></tr>
+                        <tr><td><input type="checkbox" class="doc-check" data-cat="Operations &amp; Site Management" data-doc="Equipment Sign-Out Register"></td><td>SC-049 – Equipment Sign‑Out Register</td><td>Radios, torches, etc.</td></tr>
+                        <tr><td><input type="checkbox" class="doc-check" data-cat="Operations &amp; Site Management" data-doc="Firearm Sign-Out Register (if armed)"></td><td>SC-050 – Firearm Sign‑Out Register (if armed)</td><td>Strict control</td></tr>
+                        <tr><td><input type="checkbox" class="doc-check" data-cat="Operations &amp; Site Management" data-doc="Key Register (Detailed)"></td><td>SC-051 – Key Register (Detailed)</td><td>Per key, per person</td></tr>
+                        <tr><td><input type="checkbox" class="doc-check" data-cat="Operations &amp; Site Management" data-doc="Alarm Activation Log"></td><td>SC-052 – Alarm Activation Log</td><td>Response records</td></tr>
+                        <tr><td><input type="checkbox" class="doc-check" data-cat="Operations &amp; Site Management" data-doc="CCTV Footage Request Form"></td><td>SC-053 – CCTV Footage Request Form</td><td>Evidence requests</td></tr>
+                        <tr><td><input type="checkbox" class="doc-check" data-cat="Operations &amp; Site Management" data-doc="Lost Property Register"></td><td>SC-054 – Lost Property Register</td><td>Guest items</td></tr>
+                        <tr><td><input type="checkbox" class="doc-check" data-cat="Operations &amp; Site Management" data-doc="Search Register (Vehicle / Person)"></td><td>SC-055 – Search Register (Vehicle / Person)</td><td>Access control</td></tr>
+                        <tr><td><input type="checkbox" class="doc-check" data-cat="Operations &amp; Site Management" data-doc="Emergency Contact List (per site)"></td><td>SC-056 – Emergency Contact List (per site)</td><td>Quick reference</td></tr>
+                        <tr><td><input type="checkbox" class="doc-check" data-cat="Operations &amp; Site Management" data-doc="Site Inspection Checklist (Daily)"></td><td>SC-057 – Site Inspection Checklist (Daily)</td><td>Quality control</td></tr>
+                    </tbody>
+                </table>
 
-    <h3>Phase 12: Legal & Insurance (5 docs)</h3>
-<table>
-    <thead>
-        <tr><th>✔</th><th>Ref</th><th>Document</th><th>Purpose</th></tr>
-    </thead>
-    <tbody>
-        <tr>
-  
-            <td><input type="checkbox" class="doc-check" data-cat="Legal & Insurance" data-doc="Public Liability Insurance Certificate"></li>
-            <td>SC-104</li>
-            <td>Public Liability Insurance Certificate</li>
-            <td>Cover proof</li>
-        </tr>
-        <tr>
-            <td><input type="checkbox" class="doc-check" data-cat="Legal & Insurance" data-doc="Goods-in-Transit Insurance (if mobile)"></li>
-            <td>SC-105</li>
-            <td>Goods‑in‑Transit Insurance (if mobile)</li>
-            <td>Cargo cover</li>
-        </tr>
-        <tr>
-            <td><input type="checkbox" class="doc-check" data-cat="Legal & Insurance" data-doc="Workmen's Compensation (COIDA)"></li>
-            <td>SC-106</li>
-            <td>Workmen's Compensation (COIDA)</li>
-            <td>Employee injuries</li>
-        </tr>
-        <tr>
-            <td><input type="checkbox" class="doc-check" data-cat="Legal & Insurance" data-doc="Legal Compliance Checklist"></li>
-            <td>SC-107</li>
-            <td>Legal Compliance Checklist</li>
-            <td>Annual audit</li>
-        </tr>
-        <tr>
-            <td><input type="checkbox" class="doc-check" data-cat="Legal & Insurance" data-doc="Data Protection / POPIA Policy"></li>
-            <td>SC-108</li>
-            <td>Data Protection / POPIA Policy</li>
-            <td>Client data</li>
-        </tr>
-    </tbody>
-</table>
+                <!-- Phase 6 -->
+                <h3>Phase 6: Health &amp; Safety (10 docs)</h3>
+                <table class="doc-table">
+                    <thead>
+                        <tr><th>✔</th><th>Document</th><th>Description</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td><input type="checkbox" class="doc-check" data-cat="Health &amp; Safety" data-doc="Occupational Health & Safety (OHS) Policy"></td><td>SC-058 – Occupational Health &amp; Safety (OHS) Policy</td><td>Company H&amp;S</td></tr>
+                        <tr><td><input type="checkbox" class="doc-check" data-cat="Health &amp; Safety" data-doc="Risk Assessment – General"></td><td>SC-059 – Risk Assessment – General</td><td>Workplace hazards</td></tr>
+                        <tr><td><input type="checkbox" class="doc-check" data-cat="Health &amp; Safety" data-doc="Risk Assessment – Per Site"></td><td>SC-060 – Risk Assessment – Per Site</td><td>Site‑specific</td></tr>
+                        <tr><td><input type="checkbox" class="doc-check" data-cat="Health &amp; Safety" data-doc="Safe Work Method Statement"></td><td>SC-061 – Safe Work Method Statement</td><td>Task safety</td></tr>
+                        <tr><td><input type="checkbox" class="doc-check" data-cat="Health &amp; Safety" data-doc="First Aid Kit Register"></td><td>SC-062 – First Aid Kit Register</td><td>Inventory</td></tr>
+                        <tr><td><input type="checkbox" class="doc-check" data-cat="Health &amp; Safety" data-doc="Fire Equipment Inspection Log"></td><td>SC-063 – Fire Equipment Inspection Log</td><td>Extinguishers</td></tr>
+                        <tr><td><input type="checkbox" class="doc-check" data-cat="Health &amp; Safety" data-doc="Fire Drill Log"></td><td>SC-064 – Fire Drill Log</td><td>Evacuation practice</td></tr>
+                        <tr><td><input type="checkbox" class="doc-check" data-cat="Health &amp; Safety" data-doc="Personal Protective Equipment (PPE) Register"></td><td>SC-065 – Personal Protective Equipment (PPE) Register</td><td>Gear tracking</td></tr>
+                        <tr><td><input type="checkbox" class="doc-check" data-cat="Health &amp; Safety" data-doc="Health & Safety Committee Minutes"></td><td>SC-066 – Health &amp; Safety Committee Minutes</td><td>Compliance</td></tr>
+                        <tr><td><input type="checkbox" class="doc-check" data-cat="Health &amp; Safety" data-doc="OHS Training Record"></td><td>SC-067 – OHS Training Record</td><td>Staff certification</td></tr>
+                    </tbody>
+                </table>
 
-    <div class="button-group">
-        <a href="index.html#industries" class="btn"><i class="fas fa-arrow-left"></i> Back to Industries</a>
-        <a href="#" id="orderSelectedBtn" class="btn btn-secondary"><i class="fas fa-clipboard-list"></i> Order Selected Documents →</a>
-    </div>
-</div>
+                <!-- Phase 7 -->
+                <h3>Phase 7: Finance &amp; Suppliers (8 docs)</h3>
+                <table class="doc-table">
+                    <thead>
+                        <tr><th>✔</th><th>Document</th><th>Description</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td><input type="checkbox" class="doc-check" data-cat="Finance &amp; Suppliers" data-doc="Invoice Template"></td><td>SC-068 – Invoice Template</td><td>Client billing</td></tr>
+                        <tr><td><input type="checkbox" class="doc-check" data-cat="Finance &amp; Suppliers" data-doc="Supplier Invoice Register"></td><td>SC-069 – Supplier Invoice Register</td><td>Payments tracking</td></tr>
+                        <tr><td><input type="checkbox" class="doc-check" data-cat="Finance &amp; Suppliers" data-doc="Payroll Register"></td><td>SC-070 – Payroll Register</td><td>Staff wages</td></tr>
+                        <tr><td><input type="checkbox" class="doc-check" data-cat="Finance &amp; Suppliers" data-doc="Petty Cash Log"></td><td>SC-071 – Petty Cash Log</td><td>Small expenses</td></tr>
+                        <tr><td><input type="checkbox" class="doc-check" data-cat="Finance &amp; Suppliers" data-doc="Uniform Purchase Register"></td><td>SC-072 – Uniform Purchase Register</td><td>Stock control</td></tr>
+                        <tr><td><input type="checkbox" class="doc-check" data-cat="Finance &amp; Suppliers" data-doc="Equipment Purchase Register"></td><td>SC-073 – Equipment Purchase Register</td><td>Assets</td></tr>
+                        <tr><td><input type="checkbox" class="doc-check" data-cat="Finance &amp; Suppliers" data-doc="Client Payment History"></td><td>SC-074 – Client Payment History</td><td>Accounts receivable</td></tr>
+                        <tr><td><input type="checkbox" class="doc-check" data-cat="Finance &amp; Suppliers" data-doc="Bank Reconciliation Template"></td><td>SC-075 – Bank Reconciliation Template</td><td>Monthly finance</td></tr>
+                    </tbody>
+                </table>
 
-<div class="footer">...</div>
+                <!-- Phase 8 -->
+                <h3>Phase 8: Equipment &amp; Assets (6 docs)</h3>
+                <table class="doc-table">
+                    <thead>
+                        <tr><th>✔</th><th>Document</th><th>Description</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td><input type="checkbox" class="doc-check" data-cat="Equipment &amp; Assets" data-doc="Asset Register (Master)"></td><td>SC-076 – Asset Register (Master)</td><td>All company assets</td></tr>
+                        <tr><td><input type="checkbox" class="doc-check" data-cat="Equipment &amp; Assets" data-doc="Vehicle Maintenance Log"></td><td>SC-077 – Vehicle Maintenance Log</td><td>Service records</td></tr>
+                        <tr><td><input type="checkbox" class="doc-check" data-cat="Equipment &amp; Assets" data-doc="Two-Way Radio Register"></td><td>SC-078 – Two‑Way Radio Register</td><td>Issue/tracking</td></tr>
+                        <tr><td><input type="checkbox" class="doc-check" data-cat="Equipment &amp; Assets" data-doc="Uniform Stock Take"></td><td>SC-079 – Uniform Stock Take</td><td>Quarterly count</td></tr>
+                        <tr><td><input type="checkbox" class="doc-check" data-cat="Equipment &amp; Assets" data-doc="Equipment Calibration Log"></td><td>SC-080 – Equipment Calibration Log</td><td>If applicable</td></tr>
+                        <tr><td><input type="checkbox" class="doc-check" data-cat="Equipment &amp; Assets" data-doc="Asset Disposal Form"></td><td>SC-081 – Asset Disposal Form</td><td>Retirement of assets</td></tr>
+                    </tbody>
+                </table>
 
-<script>
-    document.getElementById('orderSelectedBtn').addEventListener('click', function(e) {
-        e.preventDefault();
-        const selected = [];
-        document.querySelectorAll('.doc-check:checked').forEach(cb => {
-            selected.push({ category: cb.getAttribute('data-cat'), doc: cb.getAttribute('data-doc') });
-        });
-        if (selected.length === 0) { alert('Please select at least one document to order.'); return; }
-        const param = encodeURIComponent(JSON.stringify(selected));
-        window.location.href = `order-documents.html?industry=Security%20Services&preselected=${param}`;
-    });
-</script>
-</body>
-</html>
+                <!-- Phase 9 -->
+                <h3>Phase 9: Training &amp; Development (6 docs)</h3>
+                <table class="doc-table">
+                    <thead>
+                        <tr><th>✔</th><th>Document</th><th>Description</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td><input type="checkbox" class="doc-check" data-cat="Training &amp; Development" data-doc="Training Needs Assessment"></td><td>SC-082 – Training Needs Assessment</td><td>Annual review</td></tr>
+                        <tr><td><input type="checkbox" class="doc-check" data-cat="Training &amp; Development" data-doc="Training Attendance Register"></td><td>SC-083 – Training Attendance Register</td><td>Per course</td></tr>
+                        <tr><td><input type="checkbox" class="doc-check" data-cat="Training &amp; Development" data-doc="PSIRA Grade Training Certificates"></td><td>SC-084 – PSIRA Grade Training Certificates</td><td>Compliance proof</td></tr>
+                        <tr><td><input type="checkbox" class="doc-check" data-cat="Training &amp; Development" data-doc="First Aid Certificate Register"></td><td>SC-085 – First Aid Certificate Register</td><td>Expiry tracking</td></tr>
+                        <tr><td><input type="checkbox" class="doc-check" data-cat="Training &amp; Development" data-doc="Firearm Proficiency Records"></td><td>SC-086 – Firearm Proficiency Records</td><td>Annual shooting test</td></tr>
+                        <tr><td><input type="checkbox" class="doc-check" data-cat="Training &amp; Development" data-doc="Refresher Training Schedule"></td><td>SC-087 – Refresher Training Schedule</td><td>Ongoing competency</td></tr>
+                    </tbody>
+                </table>
 
-    <h2 class="section-title">📁 File Directory Structure</h2>
-    <div class="repo-structure">
-<pre>
+                <!-- Phase 10 -->
+                <h3>Phase 10: Forms &amp; Templates (10 docs)</h3>
+                <table class="doc-table">
+                    <thead>
+                        <tr><th>✔</th><th>Document</th><th>Description</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td><input type="checkbox" class="doc-check" data-cat="Forms &amp; Templates" data-doc="Employee Personnel File Checklist"></td><td>SC-088 – Employee Personnel File Checklist</td><td>New starter</td></tr>
+                        <tr><td><input type="checkbox" class="doc-check" data-cat="Forms &amp; Templates" data-doc="Incident Report Form (Short)"></td><td>SC-089 – Incident Report Form (Short)</td><td>Quick capture</td></tr>
+                        <tr><td><input type="checkbox" class="doc-check" data-cat="Forms &amp; Templates" data-doc="Witness Statement Form"></td><td>SC-090 – Witness Statement Form</td><td>Investigations</td></tr>
+                        <tr><td><input type="checkbox" class="doc-check" data-cat="Forms &amp; Templates" data-doc="Client Complaint Form"></td><td>SC-091 – Client Complaint Form</td><td>Feedback</td></tr>
+                        <tr><td><input type="checkbox" class="doc-check" data-cat="Forms &amp; Templates" data-doc="Request for Leave"></td><td>SC-092 – Request for Leave</td><td>Staff admin</td></tr>
+                        <tr><td><input type="checkbox" class="doc-check" data-cat="Forms &amp; Templates" data-doc="Overtime Authorization Form"></td><td>SC-093 – Overtime Authorization Form</td><td>Payroll</td></tr>
+                        <tr><td><input type="checkbox" class="doc-check" data-cat="Forms &amp; Templates" data-doc="Vehicle Inspection Checklist (Daily)"></td><td>SC-094 – Vehicle Inspection Checklist (Daily)</td><td>Safety</td></tr>
+                        <tr><td><input type="checkbox" class="doc-check" data-cat="Forms &amp; Templates" data-doc="Site Opening/Closing Checklist"></td><td>SC-095 – Site Opening/Closing Checklist</td><td>Daily routine</td></tr>
+                        <tr><td><input type="checkbox" class="doc-check" data-cat="Forms &amp; Templates" data-doc="Contractor Induction Form"></td><td>SC-096 – Contractor Induction Form</td><td>Third parties</td></tr>
+                        <tr><td><input type="checkbox" class="doc-check" data-cat="Forms &amp; Templates" data-doc="Termination Checklist"></td><td>SC-097 – Termination Checklist</td><td>Offboarding</td></tr>
+                    </tbody>
+                </table>
 
-<pre>   
+                <!-- Phase 11 -->
+                <h3>Phase 11: Marketing &amp; Business Development (6 docs)</h3>
+                <table class="doc-table">
+                    <thead>
+                        <tr><th>✔</th><th>Document</th><th>Description</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td><input type="checkbox" class="doc-check" data-cat="Marketing &amp; Business Development" data-doc="Capability Statement (Company Profile)"></td><td>SC-098 – Capability Statement (Company Profile)</td><td>For tenders</td></tr>
+                        <tr><td><input type="checkbox" class="doc-check" data-cat="Marketing &amp; Business Development" data-doc="Services Brochure"></td><td>SC-099 – Services Brochure</td><td>Client handouts</td></tr>
+                        <tr><td><input type="checkbox" class="doc-check" data-cat="Marketing &amp; Business Development" data-doc="Client Testimonial Log"></td><td>SC-100 – Client Testimonial Log</td><td>Reputation</td></tr>
+                        <tr><td><input type="checkbox" class="doc-check" data-cat="Marketing &amp; Business Development" data-doc="Tender Checklist (PSIRA, CIDB, etc.)"></td><td>SC-101 – Tender Checklist (PSIRA, CIDB, etc.)</td><td>Compliance</td></tr>
+                        <tr><td><input type="checkbox" class="doc-check" data-cat="Marketing &amp; Business Development" data-doc="Marketing Plan (Security)"></td><td>SC-102 – Marketing Plan (Security)</td><td>Growth strategy</td></tr>
+                        <tr><td><input type="checkbox" class="doc-check" data-cat="Marketing &amp; Business Development" data-doc="Social Media Policy (for staff)"></td><td>SC-103 – Social Media Policy (for staff)</td><td>Brand protection</td></tr>
+                    </tbody>
+                </table>
+
+                <!-- Phase 12 -->
+                <h3>Phase 12: Legal &amp; Insurance (5 docs)</h3>
+                <table class="doc-table">
+                    <thead>
+                        <tr><th>✔</th><th>Document</th><th>Description</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td><input type="checkbox" class="doc-check" data-cat="Legal &amp; Insurance" data-doc="Public Liability Insurance Certificate"></td><td>SC-104 – Public Liability Insurance Certificate</td><td>Cover proof</td></tr>
+                        <tr><td><input type="checkbox" class="doc-check" data-cat="Legal &amp; Insurance" data-doc="Goods-in-Transit Insurance (if mobile)"></td><td>SC-105 – Goods‑in‑Transit Insurance (if mobile)</td><td>Cargo cover</td></tr>
+                        <tr><td><input type="checkbox" class="doc-check" data-cat="Legal &amp; Insurance" data-doc="Workmen's Compensation (COIDA)"></td><td>SC-106 – Workmen's Compensation (COIDA)</td><td>Employee injuries</td></tr>
+                        <tr><td><input type="checkbox" class="doc-check" data-cat="Legal &amp; Insurance" data-doc="Legal Compliance Checklist"></td><td>SC-107 – Legal Compliance Checklist</td><td>Annual audit</td></tr>
+                        <tr><td><input type="checkbox" class="doc-check" data-cat="Legal &amp; Insurance" data-doc="Data Protection / POPIA Policy"></td><td>SC-108 – Data Protection / POPIA Policy</td><td>Client data</td></tr>
+                    </tbody>
+                </table>
+            </section>
+
+            <!-- ===== FILE DIRECTORY STRUCTURE ===== -->
+            <section>
+                <h2 class="section-title">📁 File Directory Structure</h2>
+                <div class="repo-structure">
+                    <pre>
 Security Company (Pty) Ltd/
 │
 ├── 01 Registration & Licences/
@@ -905,22 +407,78 @@ Security Company (Pty) Ltd/
     ├── Services_Brochure.pdf
     ├── Public_Liability_Insurance.pdf
     └── POPIA_Policy.pdf
-</pre>
+                    </pre>
+                </div>
+            </section>
+
+            <!-- ===== BUTTONS ===== -->
+            <div class="industry-buttons">
+                <a href="industries.html" class="btn btn-outline"><i class="fas fa-arrow-left"></i> Back to Industries</a>
+                <a href="#" id="orderSelectedBtnBottom" class="btn btn-primary"><i class="fas fa-clipboard-list"></i> Order Selected Documents →</a>
+            </div>
+
+            <!-- ===== FOOTER / CONTACT ===== -->
+            <div class="footer-contact" id="contact">
+                <p><strong>Msimelelo Victor Malusi</strong> – Founder</p>
+                <p>
+                    <i class="fas fa-phone"></i> 072 152 3293 &nbsp;|&nbsp;
+                    <i class="fab fa-whatsapp"></i> 063 301 7269 &nbsp;|&nbsp;
+                    <i class="fas fa-envelope"></i> mv.malusi@legacylaunchpad.co.za
+                </p>
+                <p>© 2025 Legacy Launchpad (Pty) Ltd – Building what lasts.</p>
+                <p style="margin-top: 10px; font-size: 0.75rem; opacity: 0.6;">Legacy Launchpad provides administrative and documentation support only. We are not lawyers, accountants, or tax practitioners.</p>
+            </div>
+
+        </main>
     </div>
 
-    <div class="button-group">
-        <a href="index.html#industries" class="btn"><i class="fas fa-arrow-left"></i> Back to Industries</a>
-        <a href="#" id="orderSelectedBtn" class="btn btn-secondary"><i class="fas fa-clipboard-list"></i> Order Selected Documents →</a>
-    </div>
+    <!-- ============================================================ -->
+    <!-- 3. PAGE-SPECIFIC JAVASCRIPT                                   -->
+    <!-- ============================================================ -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Both order buttons (top and bottom) trigger the same action
+            const orderBtns = document.querySelectorAll('#orderSelectedBtn, #orderSelectedBtnBottom');
+            orderBtns.forEach(function(btn) {
+                btn.addEventListener('click', function(e) {
+                    e.preventDefault();
 
-</div>
+                    // Check which packages are selected
+                    const selectRoadmap = document.getElementById('selectRoadmap');
+                    const selectDirectory = document.getElementById('selectDirectory');
 
-<div class="footer">
-    <div class="container">
-        <p>© 2025 Legacy Launchpad (Pty) Ltd – Building what lasts.</p>
-        <p style="margin-top: 10px; font-size: 0.75rem;">Legacy Launchpad provides administrative and documentation support only. We are not lawyers, accountants, or tax practitioners.</p>
-    </div>
-</div>
+                    // Collect selected individual documents
+                    const selected = [];
+                    document.querySelectorAll('.doc-check:checked').forEach(function(cb) {
+                        selected.push({
+                            category: cb.getAttribute('data-cat'),
+                            doc: cb.getAttribute('data-doc')
+                        });
+                    });
+
+                    // Build preselected data including package selections
+                    const preselected = {
+                        roadmap: selectRoadmap ? selectRoadmap.checked : false,
+                        directory: selectDirectory ? selectDirectory.checked : false,
+                        documents: selected
+                    };
+
+                    if (!preselected.roadmap && !preselected.directory && selected.length === 0) {
+                        alert('Please select at least one package or document to order.');
+                        return;
+                    }
+
+                    const param = encodeURIComponent(JSON.stringify(preselected));
+                    window.location.href = 'order-documents.html?industry=Security%20Services&preselected=' + param;
+                });
+            });
+        });
+    </script>
+
+    <!-- ============================================================ -->
+    <!-- 4. EXTERNAL JAVASCRIPT (Mobile toggles)                      -->
+    <!-- ============================================================ -->
+    <script src="app.js"></script>
 
 </body>
 </html>
