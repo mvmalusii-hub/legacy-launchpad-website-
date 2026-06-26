@@ -912,3 +912,201 @@ body {
         grid-template-columns: 1fr;
     }
 }
+
+/* ============================================================ */
+/*  FLOOR PLANS ONE‑PAGER (flyer)                               */
+/* ============================================================ */
+.page-flyer {
+    background: #e2e8f0; /* matches original flyer background */
+}
+
+.flyer-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 20px 0;
+}
+
+.flyer-card {
+    max-width: 900px;
+    width: 100%;
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 20px 35px -10px rgba(0,0,0,0.2);
+    overflow: hidden;
+    margin: 0 auto;
+}
+
+.flyer-hero {
+    background: #0f172a;
+    color: white;
+    text-align: center;
+    padding: 30px 20px;
+}
+.flyer-hero h1 {
+    font-size: 2.2rem;
+    margin-bottom: 8px;
+    letter-spacing: -0.5px;
+    font-family: inherit;
+}
+.flyer-hero p {
+    font-size: 1rem;
+    opacity: 0.9;
+}
+.flyer-tag {
+    background: #fbbf24;
+    color: #0f172a;
+    display: inline-block;
+    padding: 4px 16px;
+    border-radius: 40px;
+    font-weight: bold;
+    margin-top: 15px;
+    font-size: 0.8rem;
+}
+
+.flyer-body {
+    padding: 30px 35px;
+}
+
+.flyer-two-col {
+    display: flex;
+    gap: 30px;
+    margin: 20px 0 30px;
+    flex-wrap: wrap;
+}
+.flyer-col {
+    flex: 1;
+    min-width: 200px;
+}
+
+.flyer-section-title {
+    font-size: 1.2rem;
+    font-weight: 700;
+    border-left: 5px solid #fbbf24;
+    padding-left: 12px;
+    margin-bottom: 15px;
+}
+
+.flyer-feature-list {
+    list-style: none;
+    padding: 0;
+}
+.flyer-feature-list li {
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.flyer-feature-list i {
+    color: #fbbf24;
+    width: 20px;
+    font-size: 1rem;
+}
+
+.flyer-price-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #f8fafc;
+    border-radius: 12px;
+    overflow: hidden;
+    margin: 15px 0;
+}
+.flyer-price-table th,
+.flyer-price-table td {
+    padding: 10px 12px;
+    text-align: left;
+    border-bottom: 1px solid #e2e8f0;
+}
+.flyer-price-table th {
+    background: #0f172a;
+    color: white;
+    font-weight: 600;
+    font-size: 0.85rem;
+}
+.flyer-price-table .price {
+    font-weight: bold;
+    color: #0f172a;
+}
+
+.flyer-small-note {
+    font-size: 0.75rem;
+    margin: 5px 0 15px;
+    color: #475569;
+}
+
+.flyer-contact {
+    background: #f1f5f9;
+    text-align: center;
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 12px;
+}
+.flyer-contact p {
+    margin: 5px 0;
+}
+
+.flyer-btn {
+    display: inline-block;
+    background: #fbbf24;
+    color: #0f172a;
+    text-decoration: none;
+    padding: 12px 28px;
+    border-radius: 40px;
+    font-weight: bold;
+    margin: 10px 0;
+    transition: 0.2s;
+}
+.flyer-btn:hover {
+    background: #f59e0b;
+    transform: scale(1.02);
+}
+
+.flyer-footer-note {
+    font-size: 0.7rem;
+    color: #475569;
+    text-align: center;
+    margin-top: 20px;
+    border-top: 1px solid #e2e8f0;
+    padding-top: 15px;
+}
+
+/* ---- Print styles (preserve flyer appearance) ---- */
+@media print {
+    .page-flyer {
+        background: white;
+    }
+    .flyer-card {
+        max-width: 100%;
+        box-shadow: none;
+        border-radius: 0;
+    }
+    .flyer-btn {
+        background: #0f172a;
+        color: white;
+        border: 1px solid #ccc;
+    }
+    .top-header, .sidebar, .footer-contact, .menu-toggle {
+        display: none !important;
+    }
+    .main-content {
+        margin-left: 0 !important;
+        padding: 0 !important;
+    }
+    .flyer-wrapper {
+        padding: 0;
+    }
+}
+
+/* ---- Responsive tweaks ---- */
+@media (max-width: 700px) {
+    .flyer-body {
+        padding: 20px;
+    }
+    .flyer-two-col {
+        flex-direction: column;
+    }
+    .flyer-hero h1 {
+        font-size: 1.6rem;
+    }
+}
+
