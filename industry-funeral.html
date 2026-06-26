@@ -2,662 +2,295 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
     <title>Funeral Services Document Roadmap | Legacy Launchpad</title>
+
+    <!-- External Styles -->
+    <link rel="stylesheet" href="main.css">
+
+    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <style>
-        * { margin:0; padding:0; box-sizing:border-box; }
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #f8fafc; color: #1e293b; line-height: 1.5; }
-        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
-        .header { background: #0f172a; color: white; padding: 20px 0; position: sticky; top: 0; z-index: 100; }
-        .header-flex { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px; }
-        .logo-area { display: flex; align-items: center; gap: 15px; }
-        .logo-placeholder { width: 50px; height: 50px; background: #fbbf24; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.8rem; color: #0f172a; }
-        .logo-text h1 { font-size: 1.5rem; letter-spacing: -0.5px; }
-        .nav a { color: white; text-decoration: none; margin-left: 25px; transition: 0.3s; }
-        .nav a:hover { color: #fbbf24; }
-        .hero { background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); color: white; padding: 60px 0; text-align: center; }
-        .hero h1 { font-size: 2.5rem; margin-bottom: 15px; }
-        .section-title { font-size: 1.8rem; margin: 40px 0 20px; padding-bottom: 10px; border-bottom: 2px solid #fbbf24; display: inline-block; }
-        table { width: 100%; border-collapse: collapse; background: white; border-radius: 16px; overflow: hidden; margin: 20px 0; }
-        th, td { padding: 12px 15px; text-align: left; border-bottom: 1px solid #e2e8f0; vertical-align: top; }
-        th { background: #0f172a; color: white; }
-        tr:hover { background: #fefce8; }
-        .button-group { display: flex; justify-content: center; gap: 20px; margin: 30px 0; flex-wrap: wrap; }
-        .btn { display: inline-block; background: #0f172a; color: white; padding: 12px 30px; border-radius: 40px; text-decoration: none; font-weight: bold; transition: 0.3s; }
-        .btn-secondary { background: #fbbf24; color: #0f172a; }
-        .btn:hover { transform: translateY(-2px); background: #f59e0b; color: #0f172a; }
-        .footer { background: #0f172a; color: #94a3b8; text-align: center; padding: 30px 0; margin-top: 40px; }
-        @media (max-width: 768px) { th, td { padding: 8px 10px; font-size: 0.8rem; } .button-group { flex-direction: column; align-items: center; } }
-    </style>
 </head>
-<body>
-
-<div class="header">
-    <div class="container header-flex">
+<body class="page-industry">
+    <!-- ============================================================ -->
+    <!-- 1. TOP HEADER                                                -->
+    <!-- ============================================================ -->
+    <header class="top-header">
         <div class="logo-area">
-            <div class="logo-placeholder"><i class="fas fa-cube"></i></div>
-            <div class="logo-text"><h1>Legacy Launchpad</h1><p>Building what lasts.</p></div>
+            <div class="logo-icon">LP</div>
+            <div class="logo-text">
+                <h1>Legacy Launchpad</h1>
+                <p>Building what lasts.</p>
+            </div>
         </div>
-        <div class="nav">
+
+        <nav class="top-nav" id="topNav">
             <a href="index.html">Home</a>
-            <a href="index.html#industries">Industries</a>
-            <a href="pricing.html">Pricing</a>
-            <a href="order-documents.html"><i class="fas fa-clipboard-list"></i> Order</a>
-            <a href="index.html#contact">Contact</a>
-        </div>
-    </div>
-</div>
+            <a href="about.html">About</a>
+            <a href="industries.html">Industries</a>
+            <div class="dropdown">
+                <button class="dropbtn">Services <i class="fas fa-chevron-down"></i></button>
+                <div class="dropdown-content">
+                    <a href="3d-floor-plans.html">🏗️ 3D Floor Plans</a>
+                    <a href="personal-services.html">🧑 Personal Services</a>
+                    <a href="business-support.html">📊 Business Support</a>
+                    <a href="marketing-services.html">🎨 Marketing Services</a>
+                    <a href="spaza-shop.html">🏪 Spaza Shop</a>
+                    <a href="liquor-licence.html">🍷 Liquor Licence Application</a>
+                    <a href="order-documents.html">📋 Order Documents</a>
+                </div>
+            </div>
+            <a href="policies.html">Policies</a>
+            <a href="#contact">Contact</a>
+        </nav>
 
-<div class="hero">
-    <div class="container">
-        <h1>⚰️ Funeral Services</h1>
-        <p>Complete document roadmap – 82 core documents</p>
-    </div>
-</div>
+        <button class="menu-toggle" id="menuToggleTop" aria-label="Toggle navigation">☰</button>
+        <button class="menu-toggle" id="menuToggle" aria-label="Toggle sidebar">☰</button>
+    </header>
 
-<div class="container">
-    <h2 class="section-title">📋 Document Roadmap</h2>
+    <!-- ============================================================ -->
+    <!-- 2. MAIN APP CONTAINER                                        -->
+    <!-- ============================================================ -->
+    <div class="app-container">
 
-<h3>Phase 1: Registration & Compliance (12 docs)</h3>
-<table>
-    <thead>
-        <tr><th>✔</th><th>Ref</th><th>Document</th><th>Purpose</th></tr>
-    </thead>
-    <tbody>
-        <tr>
-  
-            <td><input type="checkbox" class="doc-check" data-cat="Registration & Compliance" data-doc="CIPC Registration Certificate"></li>
-            <td>FUN-001</li>
-            <td>CIPC Registration Certificate</li>
-            <td>Proof of company registration</li>
-        </tr>
-        <tr>
-            <td><input type="checkbox" class="doc-check" data-cat="Registration & Compliance" data-doc="Memorandum of Incorporation (MOI)"></li>
-            <td>FUN-002</li>
-            <td>Memorandum of Incorporation (MOI)</li>
-            <td>Company constitution</li>
-        </tr>
-        <tr>
-            <td><input type="checkbox" class="doc-check" data-cat="Registration & Compliance" data-doc="SARS Registration (IT, PAYE, VAT)"></li>
-            <td>FUN-003</li>
-            <td>SARS Registration (IT, PAYE, VAT)</li>
-            <td>Tax compliance (VAT if turnover >R1m)</li>
-        </tr>
-        <tr>
-            <td><input type="checkbox" class="doc-check" data-cat="Registration & Compliance" data-doc="COIDA Registration"></li>
-            <td>FUN-004</li>
-            <td>COIDA Registration</li>
-            <td>Employee injury cover</li>
-        </tr>
-        <tr>
-            <td><input type="checkbox" class="doc-check" data-cat="Registration & Compliance" data-doc="Public Liability Insurance"></li>
-            <td>FUN-005</li>
-            <td>Public Liability Insurance</li>
-            <td>Cover for families, visitors at services</li>
-        </tr>
-        </tr>
-            <td><input type="checkbox" class="doc-check" data-cat="Registration & Compliance" data-doc="Funeral Undertaker Licence (Municipal/Provincial)"></li>
-            <td>FUN-006</li>
-            <td>Funeral Undertaker Licence (Municipal/Provincial)</li>
-            <td>Required to operate</li>
-        </table>
-        <tr>
-            <td><input type="checkbox" class="doc-check" data-cat="Registration & Compliance" data-doc="Health Certificate (Mortuary / Preparation Room)"></li>
-            <td>FUN-007</li>
-            <td>Health Certificate (Mortuary / Preparation Room)</li>
-            <td>Municipality inspection</li>
-        </tr>
-        <tr>
-            <td><input type="checkbox" class="doc-check" data-cat="Registration & Compliance" data-doc="Fire Clearance Certificate"></li>
-            <td>FUN-008</li>
-            <td>Fire Clearance Certificate</li>
-            <td>For chapel, mortuary, office</li>
-        </tr>
-        <tr>
-            <td><input type="checkbox" class="doc-check" data-cat="Registration & Compliance" data-doc="Zoning Certificate (Commercial)"></li>
-            <td>FUN-009</li>
-            <td>Zoning Certificate (Commercial)</li>
-            <td>Municipality confirmation</li>
-        </tr>
-        <tr>
-            <td><input type="checkbox" class="doc-check" data-cat="Registration & Compliance" data-doc="Transport / Hearse Operator Permit (if own fleet)"></li>
-            <td>FUN-010</li>
-            <td>Transport / Hearse Operator Permit (if own fleet)</li>
-            <td>Road Traffic Act</li>
-        </tr>
-        </table>
-            <td><input type="checkbox" class="doc-check" data-cat="Registration & Compliance" data-doc="B-BBEE Certificate"></li>
-            <td>FUN-011</li>
-            <td>B‑BBEE Certificate</li>
-            <td>For corporate and government tenders</li>
-        </tr>
-        <tr>
-            <td><input type="checkbox" class="doc-check" data-cat="Registration & Compliance" data-doc="Professional Indemnity Insurance (for prepaid policies)"></li>
-            <td>FUN-012</li>
-            <td>Professional Indemnity Insurance (for prepaid policies)</li>
-            <td>If selling funeral policies</li>
-        </tr>
-    </tbody>
-</table>
+        <!-- SIDEBAR (Shared) -->
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <h3>Enterprise Menu</h3>
+                <p>Advanced features</p>
+            </div>
+            <ul class="sidebar-menu">
+                <li><a href="profile.html"><i class="fas fa-user-plus"></i> 01 Profile / Create Profile</a></li>
+                <li><a href="partners.html"><i class="fas fa-handshake"></i> 02 Our Partners</a></li>
+                <li><a href="international.html"><i class="fas fa-globe"></i> 03 International Partners</a></li>
+                <li><a href="strategic-growth.html"><i class="fas fa-chart-line"></i> 04 Strategic Growth</a></li>
+                <li><a href="business-partners.html"><i class="fas fa-building"></i> 05 Business Partners</a></li>
+                <li><a href="market-leads.html"><i class="fas fa-chart-simple"></i> 06 Real Time Market Leads</a></li>
+                <li><a href="business-hub.html"><i class="fas fa-users"></i> 07 Business Hub</a></li>
+                <li><a href="hire-admin.html"><i class="fas fa-user-tie"></i> 08 Hire Our Admin</a></li>
+                <li><a href="referral.html"><i class="fas fa-gift"></i> 09 Referral Program</a></li>
+                <li><a href="logout.html"><i class="fas fa-sign-out-alt"></i> 10 Profile Log Out</a></li>
+                <!-- EPK Studio link (opens in new tab) -->
+                <li><a href="https://www.legacylaunchpad.co.za/artist-profile-service.html" target="_blank"><i class="fas fa-star"></i> 11 EPK Studio</a></li>
+            </ul>
+        </aside>
 
-<h3>Phase 2: Contracts & Client Docs (12 docs)</h3>
-</table>
-    <thead>
-        <tr><th>✔</th><th>Ref</th><th>Document</th><th>Purpose</th></tr>
-    </thead>
-    <tbody>
-        <tr>
-  
-            <td><input type="checkbox" class="doc-check" data-cat="Contracts & Client Docs" data-doc="Funeral Service Agreement (with family)"></li>
-            <td>FUN-013</li>
-            <td>Funeral Service Agreement (with family)</li>
-            <td>Core contract, price breakdown</li>
-        </tr>
-        <tr>
-            <td><input type="checkbox" class="doc-check" data-cat="Contracts & Client Docs" data-doc="Pre‑Need Funeral Plan Contract"></li>
-            <td>FUN-014</li>
-            <td>Pre‑Need Funeral Plan Contract</li>
-            <td>For prepaid policies</li>
-        </tr>
-        <tr>
-            <td><input type="checkbox" class="doc-check" data-cat="Contracts & Client Docs" data-doc="Cremation Authorisation Form (if cremation)"></li>
-            <td>FUN-015</li>
-            <td>Cremation Authorisation Form (if cremation)</li>
-            <td>Legal consent</li>
-        </tr>
-        <tr>
-            <td><input type="checkbox" class="doc-check" data-cat="Contracts & Client Docs" data-doc="Embalming / Body Preparation Consent Form"></li>
-            <td>FUN-016</li>
-            <td>Embalming / Body Preparation Consent Form</li>
-            <td>Family authorisation</li>
-        </tr>
-        <tr>
-            <td><input type="checkbox" class="doc-check" data-cat="Contracts & Client Docs" data-doc="Transport / Removal of Deceased Authorisation"></li>
-            <td>FUN-017</li>
-            <td>Transport / Removal of Deceased Authorisation</li>
-            <td>From place of death</li>
-        </tr>
-        </tr>
-            <td><input type="checkbox" class="doc-check" data-cat="Contracts & Client Docs" data-doc="Quotation / Price List Template (standard packages)"></li>
-            <td>FUN-018</li>
-            <td>Quotation / Price List Template (standard packages)</li>
-            <td>Transparency</li>
-        </tr>
-        <tr>
-            <td><input type="checkbox" class="doc-check" data-cat="Contracts & Client Docs" data-doc="Supplier Agreement (coffin, flowers, catering)"></li>
-            <td>FUN-019</li>
-            <td>Supplier Agreement (coffin, flowers, catering)</li>
-            <td>With third parties</li>
-        </tr>
-        <tr>
-            <td><input type="checkbox" class="doc-check" data-cat="Contracts & Client Docs" data-doc="Chapel / Venue Hire Agreement (if using own chapel)"></li>
-            <td>FUN-020</li>
-            <td>Chapel / Venue Hire Agreement (if using own chapel)</li>
-            <td>For families</li>
-        </tr>
-        <tr>
-            <td><input type="checkbox" class="doc-check" data-cat="Contracts & Client Docs" data-doc="Non-Disclosure Agreement (NDA)"></li>
-            <td>FUN-021</li>
-            <td>Non‑Disclosure Agreement (NDA)</li>
-            <td>For sensitive family information</li>
-        </tr>
-        <tr>
-            <td><input type="checkbox" class="doc-check" data-cat="Contracts & Client Docs" data-doc="Indemnity Form (for delays beyond control)"></li>
-            <td>FUN-022</li>
-            <td>Indemnity Form (for delays beyond control)</li>
-            <td>Weather, road closures</li>
-        </tr>
-        <tr>
-            <td><input type="checkbox" class="doc-check" data-cat="Contracts & Client Docs" data-doc="Grave / Cemetery Booking Form (with municipality)"></li>
-            <td>FUN-023</li>
-            <td>Grave / Cemetery Booking Form (with municipality)</li>
-            <td>Proof of plot</li>
-        </tr>
-        <tr>
-            <td><input type="checkbox" class="doc-check" data-cat="Contracts & Client Docs" data-doc="Memorial / Tombstone Agreement (if selling)"></li>
-            <td>FUN-024</li>
-            <td>Memorial / Tombstone Agreement (if selling)</li>
-            <td>With family</li>
-       </tr>
-    </tbody>
-</table>
+        <!-- MAIN CONTENT (Page‑specific) -->
+        <main class="main-content">
 
-<h3>Phase 3: Human Resources (10 docs)</h3>
-<tr>
-    <thead>
-        <tr><th>✔</th><th>Ref</th><th>Document</th><th>Purpose</th></tr>
-    </thead>
-    <tbody>
-        <tr>
-  
-            <td><input type="checkbox" class="doc-check" data-cat="Human Resources" data-doc="Employment Contract – Funeral Director / Mortician"></li>
-            <td>FUN-025</li>
-            <td>Employment Contract – Funeral Director / Mortician</li>
-            <td>Professional staff</li>
-        </tr>
-        <tr>
-            <td><input type="checkbox" class="doc-check" data-cat="Human Resources" data-doc="Employment Contract – Embalmer / Body Preparer"></li>
-            <td>FUN-026</li>
-            <td>Employment Contract – Embalmer / Body Preparer</li>
-            <td>Skilled</li>
-        </tr>
-        <tr>
-            <td><input type="checkbox" class="doc-check" data-cat="Human Resources" data-doc="Employment Contract – Hearse Driver"></li>
-            <td>FUN-027</li>
-            <td>Employment Contract – Hearse Driver</li>
-            <td>Drivers</li>
-        </tr>
-        <tr>
-            <td><input type="checkbox" class="doc-check" data-cat="Human Resources" data-doc="Employment Contract – Pallbearers / General Assistants"></li>
-            <td>FUN-028</li>
-            <td>Employment Contract – Pallbearers / General Assistants</li>
-            <td>Casual labour</li>
-        </tr>
-        <tr>
-            <td><input type="checkbox" class="doc-check" data-cat="Human Resources" data-doc="Employment Contract – Office Administrator"></li>
-            <td>FUN-029</li>
-            <td>Employment Contract – Office Administrator</li>
-            <td>Admin</li>
-        </tr>
-        </tr>
-            <td><input type="checkbox" class="doc-check" data-cat="Human Resources" data-doc="Independent Contractor Agreement (e.g., florist, catering)"></li>
-            <td>FUN-030</li>
-            <td>Independent Contractor Agreement (e.g., florist, catering)</li>
-            <td>Subcontractors</li>
-        </table>
-        <tr>
-            <td><input type="checkbox" class="doc-check" data-cat="Human Resources" data-doc="Code of Conduct (Employees)"></li>
-            <td>FUN-031</li>
-            <td>Code of Conduct (Employees)</li>
-            <td>Dignity, confidentiality, professionalism</li>
-        </tr>
-        <tr>
-            <td><input type="checkbox" class="doc-check" data-cat="Human Resources" data-doc="Disciplinary Code & Procedure"></li>
-            <td>FUN-032</li>
-            <td>Disciplinary Code & Procedure</li>
-            <td>HR compliance</li>
-        </tr>
-        </tr>
-            <td><input type="checkbox" class="doc-check" data-cat="Human Resources" data-doc="Funeral Staff Roster (per day / per funeral)"></li>
-            <td>FUN-033</li>
-            <td>Funeral Staff Roster (per day / per funeral)</li>
-            <td>Scheduling</li>
-        </tr>
-        <tr>
-            <td><input type="checkbox" class="doc-check" data-cat="Human Resources" data-doc="Attendance Register (Daily)"></li>
-            <td>FUN-034</li>
-            <td>Attendance Register (Daily)</li>
-            <td>Sign‑in / sign‑out</li>
-        </tr>
-    </tbody>
-</table>
+            <!-- ===== HERO ===== -->
+            <section class="hero-industry">
+                <h1>⚰️ Funeral Services</h1>
+                <p>Complete document roadmap – 82 core documents</p>
+                <a href="#roadmap" class="btn btn-primary">View Roadmap ↓</a>
+            </section>
 
-<h3>Phase 4: Operations & Funeral Management (14 docs)</h3>
-<tr>
-    <thead>
-        <tr><th>✔</th><th>Ref</th><th>Document</th><th>Purpose</th></td>
-    </thead>
-    <tbody>
-        <td>
-  
-            <td><input type="checkbox" class="doc-check" data-cat="Operations & Funeral Management" data-doc="Case File per Deceased (master record)"></li>
-            <td>FUN-035</li>
-            <td>Case File per Deceased (master record)</li>
-            <td>All documents combined</li>
-        </tr>
-        <tr>
-            <td><input type="checkbox" class="doc-check" data-cat="Operations & Funeral Management" data-doc="Death Certificate Copy Log"></li>
-            <td>FUN-036</li>
-            <td>Death Certificate Copy Log</li>
-            <td>For DHA tracking</li>
-        </tr>
-        <tr>
-            <td><input type="checkbox" class="doc-check" data-cat="Operations & Funeral Management" data-doc="Removal of Remains Log (date, time, place, staff)"></li>
-            <td>FUN-037</li>
-            <td>Removal of Remains Log (date, time, place, staff)</li>
-            <td>Chain of custody</li>
-        </tr>
-        <tr>
-            <td><input type="checkbox" class="doc-check" data-cat="Operations & Funeral Management" data-doc="Mortuary / Cold Storage Log (body holding)"></li>
-            <td>FUN-038</li>
-            <td>Mortuary / Cold Storage Log (body holding)</li>
-            <td>Temperature, entry/exit</li>
-        </tr>
-        <tr>
-            <td><input type="checkbox" class="doc-check" data-cat="Operations & Funeral Management" data-doc="Embalming / Preparation Record (per body)"></li>
-            <td>FUN-039</li>
-            <td>Embalming / Preparation Record (per body)</li>
-            <td>Chemicals, date, staff</li>
-        </tr>
-        <tr>
-            <td><input type="checkbox" class="doc-check" data-cat="Operations & Funeral Management" data-doc="Coffin / Casket Inventory (by type)"></li>
-            <td>FUN-040</li>
-            <td>Coffin / Casket Inventory (by type)</li>
-            <td>Stock control</li>
-        </tr>
-        <tr>
-            <td><input type="checkbox" class="doc-check" data-cat="Operations & Funeral Management" data-doc="Hearse / Fleet Vehicle Log (per trip)"></li>
-            <td>FUN-041</li>
-            <td>Hearse / Fleet Vehicle Log (per trip)</li>
-            <td>Fuel, mileage</li>
-        </tr>
-        </tr>
-            <td><input type="checkbox" class="doc-check" data-cat="Operations & Funeral Management" data-doc="Order of Service (funeral programme) template"></li>
-            <td>FUN-042</li>
-            <td>Order of Service (funeral programme) template</li>
-            <td>For printing</li>
-        </tr>
-        <tr>
-            <td><input type="checkbox" class="doc-check" data-cat="Operations & Funeral Management" data-doc="Flower Order Log (per funeral)"></li>
-            <td>FUN-043</li>
-            <td>Flower Order Log (per funeral)</li>
-            <td>Supplier tracking</li>
-        </tr>
-        <tr>
-            <td><input type="checkbox" class="doc-check" data-cat="Operations & Funeral Management" data-doc="Catering Order Log (per funeral)"></li>
-            <td>FUN-044</li>
-            <td>Catering Order Log (per funeral)</li>
-            <td>For memorial services</li>
-        </tr>
-        <tr>
-            <td><input type="checkbox" class="doc-check" data-cat="Operations & Funeral Management" data-doc="Cemetery / Crematorium Booking Register"></li>
-            <td>FUN-045</li>
-            <td>Cemetery / Crematorium Booking Register</li>
-            <td>Schedule</li>
-        </tr>
-        <tr>
-            <td><input type="checkbox" class="doc-check" data-cat="Operations & Funeral Management" data-doc="Family Complaint / Feedback Log"></li>
-            <td>FUN-046</li>
-            <td>Family Complaint / Feedback Log</li>
-            <td>Service improvement</li>
-        </table>
-        <tr>
-            <td><input type="checkbox" class="doc-check" data-cat="Operations & Funeral Management" data-doc="Prepaid Policy Register (clients, payments, status)"></li>
-            <td>FUN-047</li>
-            <td>Prepaid Policy Register (clients, payments, status)</li>
-            <td>Actuarial / financial</li>
-        </tr>
-        <tr>
-            <td><input type="checkbox" class="doc-check" data-cat="Operations & Funeral Management" data-doc="Death Notice / Obituary Template (for newspapers)"></li>
-            <td>FUN-048</li>
-            <td>Death Notice / Obituary Template (for newspapers)</li>
-            <td>Marketing</li>
-        </tr>
-    </tbody>
-</table>
+            <!-- ===== SELECTION PANEL ===== -->
+            <section class="selection-panel">
+                <h2 class="section-title">📦 Select Your Package</h2>
+                <div class="selection-grid">
+                    <div class="selection-card">
+                        <div class="selection-header">
+                            <input type="checkbox" id="selectRoadmap" checked>
+                            <label for="selectRoadmap"><strong>Document Roadmap</strong></label>
+                        </div>
+                        <p class="selection-price">R 700</p>
+                        <p class="selection-desc">Complete list of 82 documents with descriptions – ready to implement.</p>
+                    </div>
+                    <div class="selection-card">
+                        <div class="selection-header">
+                            <input type="checkbox" id="selectDirectory" checked>
+                            <label for="selectDirectory"><strong>File Directory Structure</strong></label>
+                        </div>
+                        <p class="selection-price">R 700</p>
+                        <p class="selection-desc">Pre‑built folder structure – just copy and start filing.</p>
+                    </div>
+                    <div class="selection-card selection-combo">
+                        <div class="selection-header">
+                            <span class="combo-badge">🔥 SAVE R100</span>
+                        </div>
+                        <p class="selection-price"><strong>R 1,300</strong> <span class="strike">R 1,400</span></p>
+                        <p class="selection-desc">Both Roadmap + Directory – the complete system.</p>
+                    </div>
+                </div>
+                <div class="selection-actions">
+                    <a href="#" id="orderSelectedBtn" class="btn btn-primary"><i class="fas fa-clipboard-list"></i> Proceed to Order →</a>
+                    <span class="selection-note">You can also select individual documents below.</span>
+                </div>
+            </section>
 
-<h3>Phase 5: Health & Safety (10 docs)</h3>
-</table>
-    <thead>
-        <tr><th>✔</th><th>Ref</th><th>Document</th><th>Purpose</th></td>
-    </thead>
-    <tbody>
-        <tr>
-  
-            <td><input type="checkbox" class="doc-check" data-cat="Health & Safety" data-doc="Occupational Health & Safety (OHS) Policy"></li>
-            <td>FUN-049</li>
-            <td>Occupational Health & Safety (OHS) Policy</li>
-            <td>Mortuary‑specific</li>
-        </td>
-        <tr>
-            <td><input type="checkbox" class="doc-check" data-cat="Health & Safety" data-doc="Risk Assessment (Mortuary – chemicals, lifting, body fluids)"></li>
-            <td>FUN-050</li>
-            <td>Risk Assessment (Mortuary – chemicals, lifting, body fluids)</li>
-            <td>Hazard identification</li>
-        </tr>
-        <tr>
-            <td><input type="checkbox" class="doc-check" data-cat="Health & Safety" data-doc="Safe Work Method Statement (SWMS) per task"></li>
-            <td>FUN-051</li>
-            <td>Safe Work Method Statement (SWMS) per task</li>
-            <td>Embalming, lifting, driving</li>
-        </tr>
-        <td>
-            <td><input type="checkbox" class="doc-check" data-cat="Health & Safety" data-doc="Incident / Accident Report Form"></li>
-            <td>FUN-052</li>
-            <td>Incident / Accident Report Form</li>
-            <td>Staff or family injury</li>
-        <tr>
-        <tr>
-            <td><input type="checkbox" class="doc-check" data-cat="Health & Safety" data-doc="First Aid Kit Register (mortuary, office, vehicles)"></li>
-            <td>FUN-053</li>
-            <td>First Aid Kit Register (mortuary, office, vehicles)</li>
-            <td>Inventory</li>
-        </tr>
-        </tr>
-            <td><input type="checkbox" class="doc-check" data-cat="Health & Safety" data-doc="Fire Extinguisher Inspection Log (chapel, mortuary)"></li>
-            <td>FUN-054</li>
-            <td>Fire Extinguisher Inspection Log (chapel, mortuary)</li>
-            <td>Monthly check</li>
-        </td>
-        <tr>
-            <td><input type="checkbox" class="doc-check" data-cat="Health & Safety" data-doc="Emergency Evacuation Plan (chapel, mortuary)"></li>
-            <td>FUN-055</li>
-            <td>Emergency Evacuation Plan (chapel, mortuary)</li>
-            <td>Map and procedure</li>
-        </tr>
-        <tr>
-            <td><input type="checkbox" class="doc-check" data-cat="Health & Safety" data-doc="Personal Protective Equipment (PPE) Register"></li>
-            <td>FUN-056</li>
-            <td>Personal Protective Equipment (PPE) Register</li>
-            <td>Gloves, gowns, masks, goggles</li>
-        </tr>
-        </tr>
-            <td><input type="checkbox" class="doc-check" data-cat="Health & Safety" data-doc="Hazardous Chemical Register (formaldehyde, embalming fluids)"></li>
-            <td>FUN-057</li>
-            <td>Hazardous Chemical Register (formaldehyde, embalming fluids)</li>
-            <td>MSDS on file</li>
-        </tr>
-        <tr>
-            <td><input type="checkbox" class="doc-check" data-cat="Health & Safety" data-doc="Toolbox Talk Register (staff safety)"></li>
-            <td>FUN-058</li>
-            <td>Toolbox Talk Register (staff safety)</li>
-            <td>Monthly topics</li>
-        </tr>
-    </tbody>
-</table>
+            <!-- ===== DOCUMENT ROADMAP ===== -->
+            <section id="roadmap">
+                <h2 class="section-title">📋 Document Roadmap</h2>
 
-<h3>Phase 6: Finance & Suppliers (8 docs)</h3>
-<tr>
-    <thead>
-        <tr><th>✔</th><th>Ref</th><th>Document</th><th>Purpose</th></td>
-    </thead>
-    <tbody>
-        <tr>
-  
-            <td><input type="checkbox" class="doc-check" data-cat="Finance & Suppliers" data-doc="Invoice Template (per funeral)"></li>
-            <td>FUN-059</li>
-            <td>Invoice Template (per funeral)</li>
-            <td>Billing family or insurer</li>
-        </tr>
-        <tr>
-            <td><input type="checkbox" class="doc-check" data-cat="Finance & Suppliers" data-doc="Supplier Invoice Register (coffins, flowers, catering)"></li>
-            <td>FUN-060</li>
-            <td>Supplier Invoice Register (coffins, flowers, catering)</li>
-            <td>Expense tracking</li>
-        </tr>
-        <tr>
-            <td><input type="checkbox" class="doc-check" data-cat="Finance & Suppliers" data-doc="Payroll Register"></li>
-            <td>FUN-061</li>
-            <td>Payroll Register</li>
-            <td>Staff wages</li>
-        </tr>
-        <tr>
-            <td><input type="checkbox" class="doc-check" data-cat="Finance & Suppliers" data-doc="Petty Cash Log"></li>
-            <td>FUN-062</li>
-            <td>Petty Cash Log</li>
-            <td>Small purchases</li>
-        </td>
-        <tr>
-            <td><input type="checkbox" class="doc-check" data-cat="Finance & Suppliers" data-doc="Client Payment Log (families, insurance payouts)"></li>
-            <td>FUN-063</li>
-            <td>Client Payment Log (families, insurance payouts)</li>
-            <td>Receivables</li>
-        </tr>
-        </tr>
-            <td><input type="checkbox" class="doc-check" data-cat="Finance & Suppliers" data-doc="Supplier Payment Schedule"></li>
-            <td>FUN-064</li>
-            <td>Supplier Payment Schedule</li>
-            <td>Creditors aging</li>
-        </tr>
-        <tr>
-            <td><input type="checkbox" class="doc-check" data-cat="Finance & Suppliers" data-doc="Prepaid Funeral Policy Trust Account Register"></li>
-            <td>FUN-065</li>
-            <td>Prepaid Funeral Policy Trust Account Register</li>
-            <td>Legal requirement for prepaid plans</li>
-        </tr>
-        <tr>
-            <td><input type="checkbox" class="doc-check" data-cat="Finance & Suppliers" data-doc="Bank Reconciliation Template"></li>
-            <td>FUN-066</li>
-            <td>Bank Reconciliation Template</li>
-            <td>Monthly finance</li>
-        </tr>
-    </tbody>
-</table>
+                <!-- Phase 1 -->
+                <h3>Phase 1: Registration &amp; Compliance (12 docs)</h3>
+                <table class="doc-table">
+                    <thead>
+                        <tr><th>✔</th><th>Document</th><th>Description</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td><input type="checkbox" class="doc-check" data-cat="Registration &amp; Compliance" data-doc="CIPC Registration Certificate"></td><td>FUN-001 – CIPC Registration Certificate</td><td>Proof of company registration</td></tr>
+                        <tr><td><input type="checkbox" class="doc-check" data-cat="Registration &amp; Compliance" data-doc="Memorandum of Incorporation (MOI)"></td><td>FUN-002 – Memorandum of Incorporation (MOI)</td><td>Company constitution</td></tr>
+                        <tr><td><input type="checkbox" class="doc-check" data-cat="Registration &amp; Compliance" data-doc="SARS Registration (IT, PAYE, VAT)"></td><td>FUN-003 – SARS Registration (IT, PAYE, VAT)</td><td>Tax compliance (VAT if turnover &gt;R1m)</td></tr>
+                        <tr><td><input type="checkbox" class="doc-check" data-cat="Registration &amp; Compliance" data-doc="COIDA Registration"></td><td>FUN-004 – COIDA Registration</td><td>Employee injury cover</td></tr>
+                        <tr><td><input type="checkbox" class="doc-check" data-cat="Registration &amp; Compliance" data-doc="Public Liability Insurance"></td><td>FUN-005 – Public Liability Insurance</td><td>Cover for families, visitors at services</td></tr>
+                        <tr><td><input type="checkbox" class="doc-check" data-cat="Registration &amp; Compliance" data-doc="Funeral Undertaker Licence (Municipal/Provincial)"></td><td>FUN-006 – Funeral Undertaker Licence (Municipal/Provincial)</td><td>Required to operate</td></tr>
+                        <tr><td><input type="checkbox" class="doc-check" data-cat="Registration &amp; Compliance" data-doc="Health Certificate (Mortuary / Preparation Room)"></td><td>FUN-007 – Health Certificate (Mortuary / Preparation Room)</td><td>Municipality inspection</td></tr>
+                        <tr><td><input type="checkbox" class="doc-check" data-cat="Registration &amp; Compliance" data-doc="Fire Clearance Certificate"></td><td>FUN-008 – Fire Clearance Certificate</td><td>For chapel, mortuary, office</td></tr>
+                        <tr><td><input type="checkbox" class="doc-check" data-cat="Registration &amp; Compliance" data-doc="Zoning Certificate (Commercial)"></td><td>FUN-009 – Zoning Certificate (Commercial)</td><td>Municipality confirmation</td></tr>
+                        <tr><td><input type="checkbox" class="doc-check" data-cat="Registration &amp; Compliance" data-doc="Transport / Hearse Operator Permit (if own fleet)"></td><td>FUN-010 – Transport / Hearse Operator Permit (if own fleet)</td><td>Road Traffic Act</td></tr>
+                        <tr><td><input type="checkbox" class="doc-check" data-cat="Registration &amp; Compliance" data-doc="B-BBEE Certificate"></td><td>FUN-011 – B‑BBEE Certificate</td><td>For corporate and government tenders</td></tr>
+                        <tr><td><input type="checkbox" class="doc-check" data-cat="Registration &amp; Compliance" data-doc="Professional Indemnity Insurance (for prepaid policies)"></td><td>FUN-012 – Professional Indemnity Insurance (for prepaid policies)</td><td>If selling funeral policies</td></tr>
+                    </tbody>
+                </table>
 
-<h3>Phase 7: Equipment & Assets (9 docs)</h3>
-</table>
-    <thead>
-        <tr><th>✔</th><th>Ref</th><th>Document</th><th>Purpose</th></tr>
-    </thead>
-    <tbody>
-        <tr>
-  
-            <td><input type="checkbox" class="doc-check" data-cat="Equipment & Assets" data-doc="Asset Register (Master)"></li>
-            <td>FUN-067</li>
-            <td>Asset Register (Master)</li>
-            <td>Hearses, mortuary fridges, stretchers, chapel furniture</li>
-        </tr>
-        <tr>
-            <td><input type="checkbox" class="doc-check" data-cat="Equipment & Assets" data-doc="Vehicle Maintenance Log (hearses, support vehicles)"></li>
-            <td>FUN-068</li>
-            <td>Vehicle Maintenance Log (hearses, support vehicles)</li>
-            <td>Service records</li>
-        </tr>
-        <tr>
-            <td><input type="checkbox" class="doc-check" data-cat="Equipment & Assets" data-doc="Mortuary Fridge / Cold Storage Temperature Log"></li>
-            <td>FUN-069</li>
-            <td>Mortuary Fridge / Cold Storage Temperature Log</li>
-            <td>Daily checks</li>
-        </tr>
-        <tr>
-            <td><input type="checkbox" class="doc-check" data-cat="Equipment & Assets" data-doc="Embalming Machine / Equipment Maintenance Log"></li>
-            <td>FUN-070</li>
-            <td>Embalming Machine / Equipment Maintenance Log</li>
-            <td>Calibration</li>
-        </td>
-        <tr>
-            <td><input type="checkbox" class="doc-check" data-cat="Equipment & Assets" data-doc="Stretcher / Trolley Inspection Log"></li>
-            <td>FUN-071</li>
-            <td>Stretcher / Trolley Inspection Log</li>
-            <td>Safety</li>
-        </tr>
-        </tr>
-            <td><input type="checkbox" class="doc-check" data-cat="Equipment & Assets" data-doc="Chapel Audio / Visual Equipment Log (if used)"></li>
-            <td>FUN-072</li>
-            <td>Chapel Audio / Visual Equipment Log (if used)</li>
-            <td>Maintenance</li>
-        </tr>
-        <tr>
-            <td><input type="checkbox" class="doc-check" data-cat="Equipment & Assets" data-doc="Fleet Tyre / Brake Inspection Log"></li>
-            <td>FUN-073</li>
-            <td>Fleet Tyre / Brake Inspection Log</li>
-            <td>Vehicle safety</li>
-        </td>
-        <tr>
-            <td><input type="checkbox" class="doc-check" data-cat="Equipment & Assets" data-doc="Generator / Backup Power Log (mortuary critical)"></li>
-            <td>FUN-074</li>
-            <td>Generator / Backup Power Log (mortuary critical)</li>
-            <td>Runtime, fuel</li>
-        </tr>
-        <tr>
-            <td><input type="checkbox" class="doc-check" data-cat="Equipment & Assets" data-doc="Asset Disposal Form"></li>
-            <td>FUN-075</li>
-            <td>Asset Disposal Form</li>
-            <td>Selling old vehicles/equipment</li>
-        </tr>
-    </tbody>
-</table>
+                <!-- Phase 2 -->
+                <h3>Phase 2: Contracts &amp; Client Docs (12 docs)</h3>
+                <table class="doc-table">
+                    <thead>
+                        <tr><th>✔</th><th>Document</th><th>Description</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td><input type="checkbox" class="doc-check" data-cat="Contracts &amp; Client Docs" data-doc="Funeral Service Agreement (with family)"></td><td>FUN-013 – Funeral Service Agreement (with family)</td><td>Core contract, price breakdown</td></tr>
+                        <tr><td><input type="checkbox" class="doc-check" data-cat="Contracts &amp; Client Docs" data-doc="Pre‑Need Funeral Plan Contract"></td><td>FUN-014 – Pre‑Need Funeral Plan Contract</td><td>For prepaid policies</td></tr>
+                        <tr><td><input type="checkbox" class="doc-check" data-cat="Contracts &amp; Client Docs" data-doc="Cremation Authorisation Form (if cremation)"></td><td>FUN-015 – Cremation Authorisation Form (if cremation)</td><td>Legal consent</td></tr>
+                        <tr><td><input type="checkbox" class="doc-check" data-cat="Contracts &amp; Client Docs" data-doc="Embalming / Body Preparation Consent Form"></td><td>FUN-016 – Embalming / Body Preparation Consent Form</td><td>Family authorisation</td></tr>
+                        <tr><td><input type="checkbox" class="doc-check" data-cat="Contracts &amp; Client Docs" data-doc="Transport / Removal of Deceased Authorisation"></td><td>FUN-017 – Transport / Removal of Deceased Authorisation</td><td>From place of death</td></tr>
+                        <tr><td><input type="checkbox" class="doc-check" data-cat="Contracts &amp; Client Docs" data-doc="Quotation / Price List Template (standard packages)"></td><td>FUN-018 – Quotation / Price List Template (standard packages)</td><td>Transparency</td></tr>
+                        <tr><td><input type="checkbox" class="doc-check" data-cat="Contracts &amp; Client Docs" data-doc="Supplier Agreement (coffin, flowers, catering)"></td><td>FUN-019 – Supplier Agreement (coffin, flowers, catering)</td><td>With third parties</td></tr>
+                        <tr><td><input type="checkbox" class="doc-check" data-cat="Contracts &amp; Client Docs" data-doc="Chapel / Venue Hire Agreement (if using own chapel)"></td><td>FUN-020 – Chapel / Venue Hire Agreement (if using own chapel)</td><td>For families</td></tr>
+                        <tr><td><input type="checkbox" class="doc-check" data-cat="Contracts &amp; Client Docs" data-doc="Non-Disclosure Agreement (NDA)"></td><td>FUN-021 – Non‑Disclosure Agreement (NDA)</td><td>For sensitive family information</td></tr>
+                        <tr><td><input type="checkbox" class="doc-check" data-cat="Contracts &amp; Client Docs" data-doc="Indemnity Form (for delays beyond control)"></td><td>FUN-022 – Indemnity Form (for delays beyond control)</td><td>Weather, road closures</td></tr>
+                        <tr><td><input type="checkbox" class="doc-check" data-cat="Contracts &amp; Client Docs" data-doc="Grave / Cemetery Booking Form (with municipality)"></td><td>FUN-023 – Grave / Cemetery Booking Form (with municipality)</td><td>Proof of plot</td></tr>
+                        <tr><td><input type="checkbox" class="doc-check" data-cat="Contracts &amp; Client Docs" data-doc="Memorial / Tombstone Agreement (if selling)"></td><td>FUN-024 – Memorial / Tombstone Agreement (if selling)</td><td>With family</td></tr>
+                    </tbody>
+                </table>
 
-<h3>Phase 8: Forms & Templates (7 docs)</h3>
-<tr>
-    <thead>
-        <tr><th>✔</th><th>Ref</th><th>Document</th><th>Purpose</th></tr>
-    </thead>
-    <tbody>
-        <tr>
-  
-            <td><input type="checkbox" class="doc-check" data-cat="Forms & Templates" data-doc="Pre‑Funeral Planning Checklist (for clients)"></li>
-            <td>FUN-076</li>
-            <td>Pre‑Funeral Planning Checklist (for clients)</li>
-            <td>Capture wishes</li>
-        </tr>
-        <tr>
-            <td><input type="checkbox" class="doc-check" data-cat="Forms & Templates" data-doc="Overtime Authorization Form (staff)"></li>
-            <td>FUN-077</li>
-            <td>Overtime Authorization Form (staff)</li>
-            <td>For overnight services</li>
-        </td>
-        <tr>
-            <td><input type="checkbox" class="doc-check" data-cat="Forms & Templates" data-doc="Leave Application Form"></li>
-            <td>FUN-078</li>
-            <td>Leave Application Form</li>
-            <td>Staff requests</li>
-        </tr>
-        <tr>
-            <td><input type="checkbox" class="doc-check" data-cat="Forms & Templates" data-doc="New Employee Induction Checklist (mortuary safety)"></li>
-            <td>FUN-079</li>
-            <td>New Employee Induction Checklist (mortuary safety)</li>
-            <td>Onboarding</li>
-        </tr>
-        <tr>
-            <td><input type="checkbox" class="doc-check" data-cat="Forms & Templates" data-doc="Supplier Evaluation Form"></li>
-            <td>FUN-080</li>
-            <td>Supplier Evaluation Form</li>
-            <td>Vendor performance</li>
-        <tr>
-        <tr>
-            <td><input type="checkbox" class="doc-check" data-cat="Forms & Templates" data-doc="Bereavement Support / Aftercare Survey"></li>
-            <td>FUN-081</li>
-            <td>Bereavement Support / Aftercare Survey</li>
-            <td>Family feedback</li>
-        </tr>
-        <tr>
-            <td><input type="checkbox" class="doc-check" data-cat="Forms & Templates" data-doc="Termination Checklist"></li>
-            <td>FUN-082</li>
-            <td>Termination Checklist</li>
-            <td>Offboarding</li>
-        </tr>
-    </tbody>
-</table>
+                <!-- Phase 3 -->
+                <h3>Phase 3: Human Resources (10 docs)</h3>
+                <table class="doc-table">
+                    <thead>
+                        <tr><th>✔</th><th>Document</th><th>Description</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td><input type="checkbox" class="doc-check" data-cat="Human Resources" data-doc="Employment Contract – Funeral Director / Mortician"></td><td>FUN-025 – Employment Contract – Funeral Director / Mortician</td><td>Professional staff</td></tr>
+                        <tr><td><input type="checkbox" class="doc-check" data-cat="Human Resources" data-doc="Employment Contract – Embalmer / Body Preparer"></td><td>FUN-026 – Employment Contract – Embalmer / Body Preparer</td><td>Skilled</td></tr>
+                        <tr><td><input type="checkbox" class="doc-check" data-cat="Human Resources" data-doc="Employment Contract – Hearse Driver"></td><td>FUN-027 – Employment Contract – Hearse Driver</td><td>Drivers</td></tr>
+                        <tr><td><input type="checkbox" class="doc-check" data-cat="Human Resources" data-doc="Employment Contract – Pallbearers / General Assistants"></td><td>FUN-028 – Employment Contract – Pallbearers / General Assistants</td><td>Casual labour</td></tr>
+                        <tr><td><input type="checkbox" class="doc-check" data-cat="Human Resources" data-doc="Employment Contract – Office Administrator"></td><td>FUN-029 – Employment Contract – Office Administrator</td><td>Admin</td></tr>
+                        <tr><td><input type="checkbox" class="doc-check" data-cat="Human Resources" data-doc="Independent Contractor Agreement (e.g., florist, catering)"></td><td>FUN-030 – Independent Contractor Agreement (e.g., florist, catering)</td><td>Subcontractors</td></tr>
+                        <tr><td><input type="checkbox" class="doc-check" data-cat="Human Resources" data-doc="Code of Conduct (Employees)"></td><td>FUN-031 – Code of Conduct (Employees)</td><td>Dignity, confidentiality, professionalism</td></tr>
+                        <tr><td><input type="checkbox" class="doc-check" data-cat="Human Resources" data-doc="Disciplinary Code & Procedure"></td><td>FUN-032 – Disciplinary Code &amp; Procedure</td><td>HR compliance</td></tr>
+                        <tr><td><input type="checkbox" class="doc-check" data-cat="Human Resources" data-doc="Funeral Staff Roster (per day / per funeral)"></td><td>FUN-033 – Funeral Staff Roster (per day / per funeral)</td><td>Scheduling</td></tr>
+                        <tr><td><input type="checkbox" class="doc-check" data-cat="Human Resources" data-doc="Attendance Register (Daily)"></td><td>FUN-034 – Attendance Register (Daily)</td><td>Sign‑in / sign‑out</td></tr>
+                    </tbody>
+                </table>
 
-    <div class="button-group">
-        <a href="index.html#industries" class="btn"><i class="fas fa-arrow-left"></i> Back to Industries</a>
-        <a href="#" id="orderSelectedBtn" class="btn btn-secondary"><i class="fas fa-clipboard-list"></i> Order Selected Documents →</a>
-    </div>
-</div>
+                <!-- Phase 4 -->
+                <h3>Phase 4: Operations &amp; Funeral Management (14 docs)</h3>
+                <table class="doc-table">
+                    <thead>
+                        <tr><th>✔</th><th>Document</th><th>Description</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td><input type="checkbox" class="doc-check" data-cat="Operations &amp; Funeral Management" data-doc="Case File per Deceased (master record)"></td><td>FUN-035 – Case File per Deceased (master record)</td><td>All documents combined</td></tr>
+                        <tr><td><input type="checkbox" class="doc-check" data-cat="Operations &amp; Funeral Management" data-doc="Death Certificate Copy Log"></td><td>FUN-036 – Death Certificate Copy Log</td><td>For DHA tracking</td></tr>
+                        <tr><td><input type="checkbox" class="doc-check" data-cat="Operations &amp; Funeral Management" data-doc="Removal of Remains Log (date, time, place, staff)"></td><td>FUN-037 – Removal of Remains Log (date, time, place, staff)</td><td>Chain of custody</td></tr>
+                        <tr><td><input type="checkbox" class="doc-check" data-cat="Operations &amp; Funeral Management" data-doc="Mortuary / Cold Storage Log (body holding)"></td><td>FUN-038 – Mortuary / Cold Storage Log (body holding)</td><td>Temperature, entry/exit</td></tr>
+                        <tr><td><input type="checkbox" class="doc-check" data-cat="Operations &amp; Funeral Management" data-doc="Embalming / Preparation Record (per body)"></td><td>FUN-039 – Embalming / Preparation Record (per body)</td><td>Chemicals, date, staff</td></tr>
+                        <tr><td><input type="checkbox" class="doc-check" data-cat="Operations &amp; Funeral Management" data-doc="Coffin / Casket Inventory (by type)"></td><td>FUN-040 – Coffin / Casket Inventory (by type)</td><td>Stock control</td></tr>
+                        <tr><td><input type="checkbox" class="doc-check" data-cat="Operations &amp; Funeral Management" data-doc="Hearse / Fleet Vehicle Log (per trip)"></td><td>FUN-041 – Hearse / Fleet Vehicle Log (per trip)</td><td>Fuel, mileage</td></tr>
+                        <tr><td><input type="checkbox" class="doc-check" data-cat="Operations &amp; Funeral Management" data-doc="Order of Service (funeral programme) template"></td><td>FUN-042 – Order of Service (funeral programme) template</td><td>For printing</td></tr>
+                        <tr><td><input type="checkbox" class="doc-check" data-cat="Operations &amp; Funeral Management" data-doc="Flower Order Log (per funeral)"></td><td>FUN-043 – Flower Order Log (per funeral)</td><td>Supplier tracking</td></tr>
+                        <tr><td><input type="checkbox" class="doc-check" data-cat="Operations &amp; Funeral Management" data-doc="Catering Order Log (per funeral)"></td><td>FUN-044 – Catering Order Log (per funeral)</td><td>For memorial services</td></tr>
+                        <tr><td><input type="checkbox" class="doc-check" data-cat="Operations &amp; Funeral Management" data-doc="Cemetery / Crematorium Booking Register"></td><td>FUN-045 – Cemetery / Crematorium Booking Register</td><td>Schedule</td></tr>
+                        <tr><td><input type="checkbox" class="doc-check" data-cat="Operations &amp; Funeral Management" data-doc="Family Complaint / Feedback Log"></td><td>FUN-046 – Family Complaint / Feedback Log</td><td>Service improvement</td></tr>
+                        <tr><td><input type="checkbox" class="doc-check" data-cat="Operations &amp; Funeral Management" data-doc="Prepaid Policy Register (clients, payments, status)"></td><td>FUN-047 – Prepaid Policy Register (clients, payments, status)</td><td>Actuarial / financial</td></tr>
+                        <tr><td><input type="checkbox" class="doc-check" data-cat="Operations &amp; Funeral Management" data-doc="Death Notice / Obituary Template (for newspapers)"></td><td>FUN-048 – Death Notice / Obituary Template (for newspapers)</td><td>Marketing</td></tr>
+                    </tbody>
+                </table>
 
-<div class="footer">...</div>
+                <!-- Phase 5 -->
+                <h3>Phase 5: Health &amp; Safety (10 docs)</h3>
+                <table class="doc-table">
+                    <thead>
+                        <tr><th>✔</th><th>Document</th><th>Description</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td><input type="checkbox" class="doc-check" data-cat="Health &amp; Safety" data-doc="Occupational Health & Safety (OHS) Policy"></td><td>FUN-049 – Occupational Health &amp; Safety (OHS) Policy</td><td>Mortuary‑specific</td></tr>
+                        <tr><td><input type="checkbox" class="doc-check" data-cat="Health &amp; Safety" data-doc="Risk Assessment (Mortuary – chemicals, lifting, body fluids)"></td><td>FUN-050 – Risk Assessment (Mortuary – chemicals, lifting, body fluids)</td><td>Hazard identification</td></tr>
+                        <tr><td><input type="checkbox" class="doc-check" data-cat="Health &amp; Safety" data-doc="Safe Work Method Statement (SWMS) per task"></td><td>FUN-051 – Safe Work Method Statement (SWMS) per task</td><td>Embalming, lifting, driving</td></tr>
+                        <tr><td><input type="checkbox" class="doc-check" data-cat="Health &amp; Safety" data-doc="Incident / Accident Report Form"></td><td>FUN-052 – Incident / Accident Report Form</td><td>Staff or family injury</td></tr>
+                        <tr><td><input type="checkbox" class="doc-check" data-cat="Health &amp; Safety" data-doc="First Aid Kit Register (mortuary, office, vehicles)"></td><td>FUN-053 – First Aid Kit Register (mortuary, office, vehicles)</td><td>Inventory</td></tr>
+                        <tr><td><input type="checkbox" class="doc-check" data-cat="Health &amp; Safety" data-doc="Fire Extinguisher Inspection Log (chapel, mortuary)"></td><td>FUN-054 – Fire Extinguisher Inspection Log (chapel, mortuary)</td><td>Monthly check</td></tr>
+                        <tr><td><input type="checkbox" class="doc-check" data-cat="Health &amp; Safety" data-doc="Emergency Evacuation Plan (chapel, mortuary)"></td><td>FUN-055 – Emergency Evacuation Plan (chapel, mortuary)</td><td>Map and procedure</td></tr>
+                        <tr><td><input type="checkbox" class="doc-check" data-cat="Health &amp; Safety" data-doc="Personal Protective Equipment (PPE) Register"></td><td>FUN-056 – Personal Protective Equipment (PPE) Register</td><td>Gloves, gowns, masks, goggles</td></tr>
+                        <tr><td><input type="checkbox" class="doc-check" data-cat="Health &amp; Safety" data-doc="Hazardous Chemical Register (formaldehyde, embalming fluids)"></td><td>FUN-057 – Hazardous Chemical Register (formaldehyde, embalming fluids)</td><td>MSDS on file</td></tr>
+                        <tr><td><input type="checkbox" class="doc-check" data-cat="Health &amp; Safety" data-doc="Toolbox Talk Register (staff safety)"></td><td>FUN-058 – Toolbox Talk Register (staff safety)</td><td>Monthly topics</td></tr>
+                    </tbody>
+                </table>
 
-<script>
-    document.getElementById('orderSelectedBtn').addEventListener('click', function(e) {
-        e.preventDefault();
-        const selected = [];
-        document.querySelectorAll('.doc-check:checked').forEach(cb => {
-            selected.push({ category: cb.getAttribute('data-cat'), doc: cb.getAttribute('data-doc') });
-        });
-        if (selected.length === 0) { alert('Please select at least one document to order.'); return; }
-        const param = encodeURIComponent(JSON.stringify(selected));
-        window.location.href = `order-documents.html?industry=Funeral%20Services&preselected=${param}`;
-    });
-</script>
-</body>
-</html>
-<h2 class="section-title">📁 File Directory Structure</h2>
-    <div class="repo-structure">
-<pre>
+                <!-- Phase 6 -->
+                <h3>Phase 6: Finance &amp; Suppliers (8 docs)</h3>
+                <table class="doc-table">
+                    <thead>
+                        <tr><th>✔</th><th>Document</th><th>Description</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td><input type="checkbox" class="doc-check" data-cat="Finance &amp; Suppliers" data-doc="Invoice Template (per funeral)"></td><td>FUN-059 – Invoice Template (per funeral)</td><td>Billing family or insurer</td></tr>
+                        <tr><td><input type="checkbox" class="doc-check" data-cat="Finance &amp; Suppliers" data-doc="Supplier Invoice Register (coffins, flowers, catering)"></td><td>FUN-060 – Supplier Invoice Register (coffins, flowers, catering)</td><td>Expense tracking</td></tr>
+                        <tr><td><input type="checkbox" class="doc-check" data-cat="Finance &amp; Suppliers" data-doc="Payroll Register"></td><td>FUN-061 – Payroll Register</td><td>Staff wages</td></tr>
+                        <tr><td><input type="checkbox" class="doc-check" data-cat="Finance &amp; Suppliers" data-doc="Petty Cash Log"></td><td>FUN-062 – Petty Cash Log</td><td>Small purchases</td></tr>
+                        <tr><td><input type="checkbox" class="doc-check" data-cat="Finance &amp; Suppliers" data-doc="Client Payment Log (families, insurance payouts)"></td><td>FUN-063 – Client Payment Log (families, insurance payouts)</td><td>Receivables</td></tr>
+                        <tr><td><input type="checkbox" class="doc-check" data-cat="Finance &amp; Suppliers" data-doc="Supplier Payment Schedule"></td><td>FUN-064 – Supplier Payment Schedule</td><td>Creditors aging</td></tr>
+                        <tr><td><input type="checkbox" class="doc-check" data-cat="Finance &amp; Suppliers" data-doc="Prepaid Funeral Policy Trust Account Register"></td><td>FUN-065 – Prepaid Funeral Policy Trust Account Register</td><td>Legal requirement for prepaid plans</td></tr>
+                        <tr><td><input type="checkbox" class="doc-check" data-cat="Finance &amp; Suppliers" data-doc="Bank Reconciliation Template"></td><td>FUN-066 – Bank Reconciliation Template</td><td>Monthly finance</td></tr>
+                    </tbody>
+                </table>
 
-<pre>
+                <!-- Phase 7 -->
+                <h3>Phase 7: Equipment &amp; Assets (9 docs)</h3>
+                <table class="doc-table">
+                    <thead>
+                        <tr><th>✔</th><th>Document</th><th>Description</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td><input type="checkbox" class="doc-check" data-cat="Equipment &amp; Assets" data-doc="Asset Register (Master)"></td><td>FUN-067 – Asset Register (Master)</td><td>Hearses, mortuary fridges, stretchers, chapel furniture</td></tr>
+                        <tr><td><input type="checkbox" class="doc-check" data-cat="Equipment &amp; Assets" data-doc="Vehicle Maintenance Log (hearses, support vehicles)"></td><td>FUN-068 – Vehicle Maintenance Log (hearses, support vehicles)</td><td>Service records</td></tr>
+                        <tr><td><input type="checkbox" class="doc-check" data-cat="Equipment &amp; Assets" data-doc="Mortuary Fridge / Cold Storage Temperature Log"></td><td>FUN-069 – Mortuary Fridge / Cold Storage Temperature Log</td><td>Daily checks</td></tr>
+                        <tr><td><input type="checkbox" class="doc-check" data-cat="Equipment &amp; Assets" data-doc="Embalming Machine / Equipment Maintenance Log"></td><td>FUN-070 – Embalming Machine / Equipment Maintenance Log</td><td>Calibration</td></tr>
+                        <tr><td><input type="checkbox" class="doc-check" data-cat="Equipment &amp; Assets" data-doc="Stretcher / Trolley Inspection Log"></td><td>FUN-071 – Stretcher / Trolley Inspection Log</td><td>Safety</td></tr>
+                        <tr><td><input type="checkbox" class="doc-check" data-cat="Equipment &amp; Assets" data-doc="Chapel Audio / Visual Equipment Log (if used)"></td><td>FUN-072 – Chapel Audio / Visual Equipment Log (if used)</td><td>Maintenance</td></tr>
+                        <tr><td><input type="checkbox" class="doc-check" data-cat="Equipment &amp; Assets" data-doc="Fleet Tyre / Brake Inspection Log"></td><td>FUN-073 – Fleet Tyre / Brake Inspection Log</td><td>Vehicle safety</td></tr>
+                        <tr><td><input type="checkbox" class="doc-check" data-cat="Equipment &amp; Assets" data-doc="Generator / Backup Power Log (mortuary critical)"></td><td>FUN-074 – Generator / Backup Power Log (mortuary critical)</td><td>Runtime, fuel</td></tr>
+                        <tr><td><input type="checkbox" class="doc-check" data-cat="Equipment &amp; Assets" data-doc="Asset Disposal Form"></td><td>FUN-075 – Asset Disposal Form</td><td>Selling old vehicles/equipment</td></tr>
+                    </tbody>
+                </table>
+
+                <!-- Phase 8 -->
+                <h3>Phase 8: Forms &amp; Templates (7 docs)</h3>
+                <table class="doc-table">
+                    <thead>
+                        <tr><th>✔</th><th>Document</th><th>Description</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td><input type="checkbox" class="doc-check" data-cat="Forms &amp; Templates" data-doc="Pre‑Funeral Planning Checklist (for clients)"></td><td>FUN-076 – Pre‑Funeral Planning Checklist (for clients)</td><td>Capture wishes</td></tr>
+                        <tr><td><input type="checkbox" class="doc-check" data-cat="Forms &amp; Templates" data-doc="Overtime Authorization Form (staff)"></td><td>FUN-077 – Overtime Authorization Form (staff)</td><td>For overnight services</td></tr>
+                        <tr><td><input type="checkbox" class="doc-check" data-cat="Forms &amp; Templates" data-doc="Leave Application Form"></td><td>FUN-078 – Leave Application Form</td><td>Staff requests</td></tr>
+                        <tr><td><input type="checkbox" class="doc-check" data-cat="Forms &amp; Templates" data-doc="New Employee Induction Checklist (mortuary safety)"></td><td>FUN-079 – New Employee Induction Checklist (mortuary safety)</td><td>Onboarding</td></tr>
+                        <tr><td><input type="checkbox" class="doc-check" data-cat="Forms &amp; Templates" data-doc="Supplier Evaluation Form"></td><td>FUN-080 – Supplier Evaluation Form</td><td>Vendor performance</td></tr>
+                        <tr><td><input type="checkbox" class="doc-check" data-cat="Forms &amp; Templates" data-doc="Bereavement Support / Aftercare Survey"></td><td>FUN-081 – Bereavement Support / Aftercare Survey</td><td>Family feedback</td></tr>
+                        <tr><td><input type="checkbox" class="doc-check" data-cat="Forms &amp; Templates" data-doc="Termination Checklist"></td><td>FUN-082 – Termination Checklist</td><td>Offboarding</td></tr>
+                    </tbody>
+                </table>
+            </section>
+
+            <!-- ===== FILE DIRECTORY STRUCTURE ===== -->
+            <section>
+                <h2 class="section-title">📁 File Directory Structure</h2>
+                <div class="repo-structure">
+                    <pre>
 Funeral Services (Pty) Ltd/
 │
 ├── 01 Registration & Compliance/
@@ -758,22 +391,78 @@ Funeral Services (Pty) Ltd/
     ├── Supplier_Evaluation_Form.docx
     ├── Bereavement_Aftercare_Survey.docx
     └── Termination_Checklist.docx
-</pre>
+                    </pre>
+                </div>
+            </section>
+
+            <!-- ===== BUTTONS ===== -->
+            <div class="industry-buttons">
+                <a href="industries.html" class="btn btn-outline"><i class="fas fa-arrow-left"></i> Back to Industries</a>
+                <a href="#" id="orderSelectedBtnBottom" class="btn btn-primary"><i class="fas fa-clipboard-list"></i> Order Selected Documents →</a>
+            </div>
+
+            <!-- ===== FOOTER / CONTACT ===== -->
+            <div class="footer-contact" id="contact">
+                <p><strong>Msimelelo Victor Malusi</strong> – Founder</p>
+                <p>
+                    <i class="fas fa-phone"></i> 072 152 3293 &nbsp;|&nbsp;
+                    <i class="fab fa-whatsapp"></i> 063 301 7269 &nbsp;|&nbsp;
+                    <i class="fas fa-envelope"></i> mv.malusi@legacylaunchpad.co.za
+                </p>
+                <p>© 2025 Legacy Launchpad (Pty) Ltd – Building what lasts.</p>
+                <p style="margin-top: 10px; font-size: 0.75rem; opacity: 0.6;">Legacy Launchpad provides administrative and documentation support only. We are not lawyers, accountants, or tax practitioners.</p>
+            </div>
+
+        </main>
     </div>
 
-    <div class="button-group">
-        <a href="index.html#industries" class="btn"><i class="fas fa-arrow-left"></i> Back to Industries</a>
-        <a href="#" id="orderSelectedBtn" class="btn btn-secondary"><i class="fas fa-clipboard-list"></i> Order Selected Documents →</a>
-    </div>
+    <!-- ============================================================ -->
+    <!-- 3. PAGE-SPECIFIC JAVASCRIPT                                   -->
+    <!-- ============================================================ -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Both order buttons (top and bottom) trigger the same action
+            const orderBtns = document.querySelectorAll('#orderSelectedBtn, #orderSelectedBtnBottom');
+            orderBtns.forEach(function(btn) {
+                btn.addEventListener('click', function(e) {
+                    e.preventDefault();
 
-</div>
+                    // Check which packages are selected
+                    const selectRoadmap = document.getElementById('selectRoadmap');
+                    const selectDirectory = document.getElementById('selectDirectory');
 
-<div class="footer">
-    <div class="container">
-        <p>© 2025 Legacy Launchpad (Pty) Ltd – Building what lasts.</p>
-        <p style="margin-top: 10px; font-size: 0.75rem;">Legacy Launchpad provides administrative and documentation support only. We are not lawyers, accountants, or tax practitioners.</p>
-    </div>
-</div>
+                    // Collect selected individual documents
+                    const selected = [];
+                    document.querySelectorAll('.doc-check:checked').forEach(function(cb) {
+                        selected.push({
+                            category: cb.getAttribute('data-cat'),
+                            doc: cb.getAttribute('data-doc')
+                        });
+                    });
+
+                    // Build preselected data including package selections
+                    const preselected = {
+                        roadmap: selectRoadmap ? selectRoadmap.checked : false,
+                        directory: selectDirectory ? selectDirectory.checked : false,
+                        documents: selected
+                    };
+
+                    if (!preselected.roadmap && !preselected.directory && selected.length === 0) {
+                        alert('Please select at least one package or document to order.');
+                        return;
+                    }
+
+                    const param = encodeURIComponent(JSON.stringify(preselected));
+                    window.location.href = 'order-documents.html?industry=Funeral%20Services&preselected=' + param;
+                });
+            });
+        });
+    </script>
+
+    <!-- ============================================================ -->
+    <!-- 4. EXTERNAL JAVASCRIPT (Mobile toggles)                      -->
+    <!-- ============================================================ -->
+    <script src="app.js"></script>
 
 </body>
 </html>
