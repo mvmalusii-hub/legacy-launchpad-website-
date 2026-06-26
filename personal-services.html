@@ -2,380 +2,273 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
     <title>Personal Services | Legacy Launchpad</title>
+
+    <!-- External Styles -->
+    <link rel="stylesheet" href="main.css">
+
+    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: #f8fafc;
-            color: #1e293b;
-            line-height: 1.5;
-        }
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-        .header {
-            background: #0f172a;
-            color: white;
-            padding: 20px 0;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-        }
-        .header-flex {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 20px;
-        }
-        .logo-area {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-        }
-        .logo-placeholder {
-            width: 50px;
-            height: 50px;
-            background: #fbbf24;
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.8rem;
-            color: #0f172a;
-        }
-        .logo-text h1 {
-            font-size: 1.5rem;
-            letter-spacing: -0.5px;
-        }
-        .nav a {
-            color: white;
-            text-decoration: none;
-            margin-left: 25px;
-            transition: 0.3s;
-        }
-        .nav a:hover {
-            color: #fbbf24;
-        }
-        .hero {
-            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
-            color: white;
-            padding: 60px 0;
-            text-align: center;
-        }
-        .hero h1 {
-            font-size: 2.5rem;
-            margin-bottom: 15px;
-        }
-        .hero p {
-            font-size: 1.2rem;
-            max-width: 700px;
-            margin: 0 auto 30px;
-            opacity: 0.9;
-        }
-        .section-title {
-            font-size: 1.8rem;
-            margin: 40px 0 20px;
-            padding-bottom: 10px;
-            border-bottom: 2px solid #fbbf24;
-            display: inline-block;
-        }
-        .grid-2 {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            margin: 30px 0;
-        }
-        .card {
-            background: white;
-            padding: 25px;
-            border-radius: 16px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-            transition: transform 0.2s;
-        }
-        .card:hover {
-            transform: translateY(-5px);
-        }
-        .card i {
-            font-size: 2rem;
-            color: #fbbf24;
-            margin-bottom: 15px;
-        }
-        .card h3 {
-            margin-bottom: 10px;
-        }
-        .btn-small {
-            display: inline-block;
-            margin-top: 15px;
-            background: #0f172a;
-            color: white;
-            padding: 8px 20px;
-            border-radius: 30px;
-            text-decoration: none;
-            font-size: 0.85rem;
-            transition: 0.2s;
-        }
-        .btn-small:hover {
-            background: #fbbf24;
-            color: #0f172a;
-        }
-        .pricing-table {
-            background: white;
-            border-radius: 16px;
-            overflow: hidden;
-            margin: 30px 0;
-        }
-        .pricing-table table {
-            width: 100%;
-            border-collapse: collapse;
-        }
-        .pricing-table th, .pricing-table td {
-            padding: 12px 15px;
-            text-align: left;
-            border-bottom: 1px solid #e2e8f0;
-        }
-        .pricing-table th {
-            background: #0f172a;
-            color: white;
-        }
-        .btn {
-            display: inline-block;
-            background: #fbbf24;
-            color: #0f172a;
-            padding: 12px 30px;
-            border-radius: 40px;
-            text-decoration: none;
-            font-weight: bold;
-            transition: 0.3s;
-        }
-        .btn-secondary {
-            background: #0f172a;
-            color: white;
-        }
-        .btn-secondary:hover {
-            background: #fbbf24;
-            color: #0f172a;
-        }
-        .button-group {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            margin: 40px 0;
-            flex-wrap: wrap;
-        }
-        .footer {
-            background: #0f172a;
-            color: #94a3b8;
-            text-align: center;
-            padding: 30px 0;
-            margin-top: 40px;
-        }
-        @media (max-width: 768px) {
-            .hero h1 { font-size: 1.8rem; }
-            .button-group { flex-direction: column; align-items: center; }
-        }
-    </style>
 </head>
 <body>
-
-<div class="header">
-    <div class="container header-flex">
+    <!-- ============================================================ -->
+    <!-- 1. TOP HEADER                                                -->
+    <!-- ============================================================ -->
+    <header class="top-header">
         <div class="logo-area">
-            <div class="logo-placeholder"><i class="fas fa-cube"></i></div>
-            <div class="logo-text"><h1>Legacy Launchpad</h1><p>Building what lasts.</p></div>
+            <div class="logo-icon">LP</div>
+            <div class="logo-text">
+                <h1>Legacy Launchpad</h1>
+                <p>Building what lasts.</p>
+            </div>
         </div>
-        <div class="nav">
+
+        <nav class="top-nav" id="topNav">
             <a href="index.html">Home</a>
-            <a href="index.html#industries">Industries</a>
-            <a href="pricing.html">Pricing</a>
-            <a href="index.html#contact">Contact</a>
-        </div>
+            <a href="about.html">About</a>
+            <a href="industries.html">Industries</a>
+            <div class="dropdown">
+                <button class="dropbtn">Services <i class="fas fa-chevron-down"></i></button>
+                <div class="dropdown-content">
+                    <a href="3d-floor-plans.html">🏗️ 3D Floor Plans</a>
+                    <a href="personal-services.html">🧑 Personal Services</a>
+                    <a href="business-support.html">📊 Business Support</a>
+                    <a href="marketing-services.html">🎨 Marketing Services</a>
+                    <a href="order-documents.html">📋 Order Documents</a>
+                </div>
+            </div>
+            <a href="policies.html">Policies</a>
+            <a href="#contact">Contact</a>
+        </nav>
+
+        <button class="menu-toggle" id="menuToggleTop" aria-label="Toggle navigation">☰</button>
+        <button class="menu-toggle" id="menuToggle" aria-label="Toggle sidebar">☰</button>
+    </header>
+
+    <!-- ============================================================ -->
+    <!-- 2. MAIN APP CONTAINER                                        -->
+    <!-- ============================================================ -->
+    <div class="app-container">
+
+        <!-- SIDEBAR (full menu + EPK Studio) -->
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <h3>Enterprise Menu</h3>
+                <p>Advanced features</p>
+            </div>
+            <ul class="sidebar-menu">
+                <li><a href="profile.html"><i class="fas fa-user-plus"></i> 01 Profile / Create Profile</a></li>
+                <li><a href="partners.html"><i class="fas fa-handshake"></i> 02 Our Partners</a></li>
+                <li><a href="international.html"><i class="fas fa-globe"></i> 03 International Partners</a></li>
+                <li><a href="strategic-growth.html"><i class="fas fa-chart-line"></i> 04 Strategic Growth</a></li>
+                <li><a href="business-partners.html"><i class="fas fa-building"></i> 05 Business Partners</a></li>
+                <li><a href="market-leads.html"><i class="fas fa-chart-simple"></i> 06 Real Time Market Leads</a></li>
+                <li><a href="business-hub.html"><i class="fas fa-users"></i> 07 Business Hub</a></li>
+                <li><a href="hire-admin.html"><i class="fas fa-user-tie"></i> 08 Hire Our Admin</a></li>
+                <li><a href="referral.html"><i class="fas fa-gift"></i> 09 Referral Program</a></li>
+                <li><a href="logout.html"><i class="fas fa-sign-out-alt"></i> 10 Profile Log Out</a></li>
+                <!-- EPK Studio link (opens in new tab) -->
+                <li><a href="https://www.legacylaunchpad.co.za/artist-profile-service.html" target="_blank"><i class="fas fa-star"></i> 11 EPK Studio</a></li>
+            </ul>
+        </aside>
+
+        <!-- MAIN CONTENT -->
+        <main class="main-content">
+
+            <!-- ===== HERO ===== -->
+            <section class="hero-personal">
+                <h1>🧑 Personal Services</h1>
+                <p>Applications, profiles, and administrative support for individuals – fast, affordable, and hassle‑free.</p>
+                <a href="#pricing" class="btn btn-primary">See pricing →</a>
+            </section>
+
+            <!-- ===== SERVICES GRID ===== -->
+            <section>
+                <h2 class="section-title">📌 Services We Offer for Individuals</h2>
+                <div class="grid-3 personal-grid">
+                    <!-- UIF Applications -->
+                    <div class="card premium-card">
+                        <i class="fas fa-file-alt"></i>
+                        <h3>UIF Applications</h3>
+                        <p>Unemployment Insurance Fund (UIF) claims – we help you complete and submit the required forms, track your application, and follow up with the Department of Labour.</p>
+                        <a href="uif-service.html" class="btn-small">Learn more →</a>
+                    </div>
+                    <!-- ID & Passport Applications -->
+                    <div class="card premium-card">
+                        <i class="fas fa-id-card"></i>
+                        <h3>ID &amp; Passport Applications</h3>
+                        <p>Assistance with South African ID applications, re‑issues, and passport renewals. We guide you through the e‑HomeAffairs process and help you gather the correct documents.</p>
+                        <a href="id-passport-service.html" class="btn-small">Learn more →</a>
+                    </div>
+                    <!-- Professional Artist Profiles -->
+                    <div class="card premium-card">
+                        <i class="fas fa-user-astronaut"></i>
+                        <h3>Professional Artist Profiles</h3>
+                        <p>One‑page artist bios, CVs, portfolios, and EPK (electronic press kits). Perfect for musicians, visual artists, actors, and creatives applying for grants or gigs.</p>
+                        <a href="artist-profile-service.html" class="btn-small">Learn more →</a>
+                    </div>
+                    <!-- Police Clearance Certificates -->
+                    <div class="card premium-card">
+                        <i class="fas fa-passport"></i>
+                        <h3>Police Clearance Certificates</h3>
+                        <p>We guide you through the process, help complete the application, and arrange fingerprint submission – so you don't have to stand in long queues.</p>
+                        <a href="get-quote.html?service=Police-Clearance" class="btn-small">Get quote →</a>
+                    </div>
+                    <!-- Personal CV & Cover Letter -->
+                    <div class="card premium-card">
+                        <i class="fas fa-file-signature"></i>
+                        <h3>Personal CV &amp; Cover Letter</h3>
+                        <p>Professional, ATS‑friendly CVs and custom cover letters for job applications. We also help with LinkedIn profile optimisation.</p>
+                        <a href="cv-coverletter-service.html" class="btn-small">Learn more →</a>
+                    </div>
+                    <!-- Social Grant Applications (SASSA) -->
+                    <div class="card premium-card">
+                        <i class="fas fa-hands-helping"></i>
+                        <h3>Social Grant Applications</h3>
+                        <p>Assistance with SASSA older person's grant, disability grant, and child support grant applications – including document gathering and submission.</p>
+                        <a href="sassa-grant-service.html" class="btn-small">Learn more →</a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ===== PRICING TABLE ===== -->
+            <section id="pricing">
+                <h2 class="section-title">💰 Pricing (Fixed Fees)</h2>
+                <div class="pricing-wrapper">
+                    <table class="pricing-table">
+                        <thead>
+                            <tr>
+                                <th>Service</th>
+                                <th>Price (R)</th>
+                                <th>Turnaround</th>
+                                <th>Notes</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>UIF Application assistance</td>
+                                <td class="price">R 350</td>
+                                <td>3‑5 days</td>
+                                <td>Does not include Department of Labour processing time. You provide payslips and termination letter.</td>
+                            </tr>
+                            <tr>
+                                <td>ID / Passport application assistance</td>
+                                <td class="price">R 250</td>
+                                <td>1‑2 days</td>
+                                <td>You still need to visit Home Affairs for biometrics. We help with online booking and document checklist.</td>
+                            </tr>
+                            <tr>
+                                <td>Police Clearance guidance</td>
+                                <td class="price">R 200</td>
+                                <td>1 day</td>
+                                <td>You pay SAPS fee separately (approx R 150). We provide step‑by‑step instructions and form completion.</td>
+                            </tr>
+                            <tr>
+                                <td>Professional Artist Profile (1 page)</td>
+                                <td class="price">R 450</td>
+                                <td>3‑5 days</td>
+                                <td>Includes bio, CV, headshot placement, and social links. Delivered as PDF and editable Word doc.</td>
+                            </tr>
+                            <tr>
+                                <td>Artist EPK (Electronic Press Kit)</td>
+                                <td class="price">R 800</td>
+                                <td>5‑7 days</td>
+                                <td>PDF + web‑ready version. Includes bio, press quotes, high‑res images, music/video links, contact.</td>
+                            </tr>
+                            <tr>
+                                <td>Personal CV + Cover Letter</td>
+                                <td class="price">R 400</td>
+                                <td>3‑5 days</td>
+                                <td>One round of revisions included.</td>
+                            </tr>
+                            <tr>
+                                <td>SASSA Grant application assistance</td>
+                                <td class="price">R 300</td>
+                                <td>2‑3 days</td>
+                                <td>You provide required documents (ID, proof of income, medical reports for disability).</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <p class="pricing-note">* All prices exclude VAT. Government or SAPS fees are paid directly by you.</p>
+                </div>
+            </section>
+
+            <!-- ===== COMBO SPECIALS ===== -->
+            <section>
+                <h2 class="section-title">📦 Combo Specials</h2>
+                <div class="grid-3">
+                    <div class="card premium-card combo-card">
+                        <i class="fas fa-box"></i>
+                        <h3>Artist Launch Package</h3>
+                        <p>Artist Profile + EPK + Social Media Bio – <strong>R 1,100 (save R 150)</strong></p>
+                    </div>
+                    <div class="card premium-card combo-card">
+                        <i class="fas fa-box"></i>
+                        <h3>Job Seeker Package</h3>
+                        <p>CV + Cover Letter + LinkedIn Profile review – <strong>R 600 (save R 100)</strong></p>
+                    </div>
+                    <div class="card premium-card combo-card">
+                        <i class="fas fa-box"></i>
+                        <h3>Document Assistant Package</h3>
+                        <p>UIF + Police Clearance + ID assistance – <strong>R 700 (save R 100)</strong></p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ===== WHY CHOOSE US ===== -->
+            <section>
+                <h2 class="section-title">🤔 Why Choose Legacy Launchpad for Personal Services?</h2>
+                <div class="why-grid">
+                    <div class="why-card">
+                        <i class="fas fa-clock"></i>
+                        <h3>No Queues</h3>
+                        <p>We handle the paperwork and know exactly which forms to use – saving you hours of frustration.</p>
+                    </div>
+                    <div class="why-card">
+                        <i class="fas fa-shield-alt"></i>
+                        <h3>POPIA Compliant</h3>
+                        <p>Your personal information is handled with strict confidentiality.</p>
+                    </div>
+                    <div class="why-card">
+                        <i class="fas fa-phone-alt"></i>
+                        <h3>Direct Access</h3>
+                        <p>Work directly with Msimelelo – no call centres, no runaround.</p>
+                    </div>
+                    <div class="why-card">
+                        <i class="fas fa-file-contract"></i>
+                        <h3>Fixed Fees</h3>
+                        <p>No hourly billing – you know the price before we start.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ===== CTA BUTTONS ===== -->
+            <div class="cta-buttons">
+                <a href="pricing.html" class="btn btn-outline"><i class="fas fa-file-invoice-dollar"></i> View full pricing</a>
+                <a href="#contact" class="btn btn-primary">Contact us →</a>
+                <a href="get-quote.html?service=UIF" class="btn btn-secondary">Get quote</a>
+            </div>
+
+            <!-- ===== FOOTER / CONTACT ===== -->
+            <div class="footer-contact" id="contact">
+                <p><strong>Msimelelo Victor Malusi</strong> – Founder</p>
+                <p>
+                    <i class="fas fa-phone"></i> 072 152 3293 &nbsp;|&nbsp;
+                    <i class="fab fa-whatsapp"></i> 063 301 7269 &nbsp;|&nbsp;
+                    <i class="fas fa-envelope"></i> mv.malusi@legacylaunchpad.co.za
+                </p>
+                <p>© 2025 Legacy Launchpad (Pty) Ltd – Building what lasts.</p>
+                <p style="margin-top: 10px; font-size: 0.75rem; opacity: 0.6;">Legacy Launchpad provides administrative and documentation support only. For legal or financial advice, consult a qualified professional.</p>
+            </div>
+
+        </main>
     </div>
-</div>
 
-<div class="hero">
-    <div class="container">
-        <h1>🧑 Personal Services</h1>
-        <p>Applications, profiles, and administrative support for individuals – fast, affordable, and hassle‑free.</p>
-        <a href="#pricing" class="btn">See pricing →</a>
-    </div>
-</div>
-
-<div class="container">
-
-    <h2 class="section-title">📌 Services We Offer for Individuals</h2>
-    <div class="grid-2">
-        <!-- UIF Applications -->
-        <div class="card">
-            <i class="fas fa-file-alt"></i>
-            <h3>UIF Applications</h3>
-            <p>Unemployment Insurance Fund (UIF) claims – we help you complete and submit the required forms, track your application, and follow up with the Department of Labour.</p>
-            <a href="uif-service.html" class="btn-small">Learn more →</a>
-        </div>
-        <!-- ID & Passport Applications -->
-        <div class="card">
-            <i class="fas fa-id-card"></i>
-            <h3>ID & Passport Applications</h3>
-            <p>Assistance with South African ID applications, re‑issues, and passport renewals. We guide you through the e‑HomeAffairs process and help you gather the correct documents.</p>
-            <a href="id-passport-service.html" class="btn-small">Learn more →</a>
-        </div>
-        <!-- Professional Artist Profiles -->
-        <div class="card">
-            <i class="fas fa-user-astronaut"></i>
-            <h3>Professional Artist Profiles</h3>
-            <p>One‑page artist bios, CVs, portfolios, and EPK (electronic press kits). Perfect for musicians, visual artists, actors, and creatives applying for grants or gigs.</p>
-            <a href="artist-profile-service.html" class="btn-small">Learn more →</a>
-        </div>
-        <!-- Police Clearance Certificates -->
-        <div class="card">
-            <i class="fas fa-passport"></i>
-            <h3>Police Clearance Certificates</h3>
-            <p>We guide you through the process, help complete the application, and arrange fingerprint submission – so you don't have to stand in long queues.</p>
-            <!-- No dedicated page for this yet – link to Get Quote -->
-            <a href="get-quote.html?service=Police-Clearance" class="btn-small">Get quote →</a>
-        </div>
-        <!-- Personal CV & Cover Letter -->
-        <div class="card">
-            <i class="fas fa-file-signature"></i>
-            <h3>Personal CV & Cover Letter</h3>
-            <p>Professional, ATS‑friendly CVs and custom cover letters for job applications. We also help with LinkedIn profile optimisation.</p>
-            <a href="cv-coverletter-service.html" class="btn-small">Learn more →</a>
-        </div>
-        <!-- Social Grant Applications (SASSA) -->
-        <div class="card">
-            <i class="fas fa-hands-helping"></i>
-            <h3>Social Grant Applications</h3>
-            <p>Assistance with SASSA older person’s grant, disability grant, and child support grant applications – including document gathering and submission.</p>
-            <a href="sassa-grant-service.html" class="btn-small">Learn more →</a>
-        </div>
-    </div>
-
-    <h2 class="section-title" id="pricing">💰 Pricing (Fixed Fees)</h2>
-    <div class="pricing-table">
-        <table>
-            <thead>
-                <tr>
-                    <th>Service</th>
-                    <th>Price (R)</th>
-                    <th>Turnaround</th>
-                    <th>Notes</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>UIF Application assistance</td>
-                    <td class="price">R 350</td>
-                    <td>3‑5 days</td>
-                    <td>Does not include Department of Labour processing time. You provide payslips and termination letter.</td>
-                </tr>
-                <tr>
-                    <td>ID / Passport application assistance</td>
-                    <td class="price">R 250</td>
-                    <td>1‑2 days</td>
-                    <td>You still need to visit Home Affairs for biometrics. We help with online booking and document checklist.</td>
-                </tr>
-                <tr>
-                    <td>Police Clearance guidance</td>
-                    <td class="price">R 200</td>
-                    <td>1 day</td>
-                    <td>You pay SAPS fee separately (approx R 150). We provide step‑by‑step instructions and form completion.</td>
-                </tr>
-                <tr>
-                    <td>Professional Artist Profile (1 page)</td>
-                    <td class="price">R 450</td>
-                    <td>3‑5 days</td>
-                    <td>Includes bio, CV, headshot placement, and social links. Delivered as PDF and editable Word doc.</td>
-                </tr>
-                <tr>
-                    <td>Artist EPK (Electronic Press Kit)</td>
-                    <td class="price">R 800</td>
-                    <td>5‑7 days</td>
-                    <td>PDF + web‑ready version. Includes bio, press quotes, high‑res images, music/video links, contact.</td>
-                </tr>
-                <tr>
-                    <td>Personal CV + Cover Letter</td>
-                    <td class="price">R 400</td>
-                    <td>3‑5 days</td>
-                    <td>One round of revisions included.</td>
-                </tr>
-                <tr>
-                    <td>SASSA Grant application assistance</td>
-                    <td class="price">R 300</td>
-                    <td>2‑3 days</td>
-                    <td>You provide required documents (ID, proof of income, medical reports for disability).</td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
-    <p style="font-size: 0.85rem; text-align: center;">* All prices exclude VAT. Government or SAPS fees are paid directly by you.</p>
-
-    <h2 class="section-title">📦 Combo Specials</h2>
-    <div class="grid-2">
-        <div class="card">
-            <i class="fas fa-box"></i>
-            <h3>Artist Launch Package</h3>
-            <p>Artist Profile + EPK + Social Media Bio – <strong>R 1,100 (save R 150)</strong></p>
-        </div>
-        <div class="card">
-            <i class="fas fa-box"></i>
-            <h3>Job Seeker Package</h3>
-            <p>CV + Cover Letter + LinkedIn Profile review – <strong>R 600 (save R 100)</strong></p>
-        </div>
-        <div class="card">
-            <i class="fas fa-box"></i>
-            <h3>Document Assistant Package</h3>
-            <p>UIF + Police Clearance + ID assistance – <strong>R 700 (save R 100)</strong></p>
-        </div>
-    </div>
-
-    <h2 class="section-title">🤔 Why Choose Legacy Launchpad for Personal Services?</h2>
-    <div class="grid-2">
-        <div class="card">
-            <i class="fas fa-clock"></i>
-            <h3>No Queues</h3>
-            <p>We handle the paperwork and know exactly which forms to use – saving you hours of frustration.</p>
-        </div>
-        <div class="card">
-            <i class="fas fa-shield-alt"></i>
-            <h3>POPIA Compliant</h3>
-            <p>Your personal information is handled with strict confidentiality.</p>
-        </div>
-        <div class="card">
-            <i class="fas fa-phone-alt"></i>
-            <h3>Direct Access</h3>
-            <p>Work directly with Msimelelo – no call centres, no runaround.</p>
-        </div>
-        <div class="card">
-            <i class="fas fa-file-contract"></i>
-            <h3>Fixed Fees</h3>
-            <p>No hourly billing – you know the price before we start.</p>
-        </div>
-    </div>
-
-    <div class="button-group">
-        <a href="pricing.html" class="btn btn-secondary"><i class="fas fa-file-invoice-dollar"></i> View full pricing</a>
-        <a href="index.html#contact" class="btn">Contact us →</a>
-        <td><a href="get-quote.html?service=UIF">Get quote</a></td>
-    </div>
-
-</div>
-
-<div class="footer">
-    <div class="container">
-        <p>© 2025 Legacy Launchpad (Pty) Ltd – Building what lasts.</p>
-        <p style="margin-top: 10px; font-size: 0.75rem;">Legacy Launchpad provides administrative and documentation support only. For legal or financial advice, consult a qualified professional.</p>
-    </div>
-</div>
+    <!-- ============================================================ -->
+    <!-- 3. EXTERNAL JAVASCRIPT                                       -->
+    <!-- ============================================================ -->
+    <script src="app.js"></script>
 
 </body>
 </html>
