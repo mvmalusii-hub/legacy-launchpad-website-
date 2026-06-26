@@ -2,659 +2,295 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
     <title>Automotive Repair & Sales Document Roadmap | Legacy Launchpad</title>
+
+    <!-- External Styles -->
+    <link rel="stylesheet" href="main.css">
+
+    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <style>
-        * { margin:0; padding:0; box-sizing:border-box; }
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #f8fafc; color: #1e293b; line-height: 1.5; }
-        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
-        .header { background: #0f172a; color: white; padding: 20px 0; position: sticky; top: 0; z-index: 100; }
-        .header-flex { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px; }
-        .logo-area { display: flex; align-items: center; gap: 15px; }
-        .logo-placeholder { width: 50px; height: 50px; background: #fbbf24; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.8rem; color: #0f172a; }
-        .logo-text h1 { font-size: 1.5rem; letter-spacing: -0.5px; }
-        .nav a { color: white; text-decoration: none; margin-left: 25px; transition: 0.3s; }
-        .nav a:hover { color: #fbbf24; }
-        .hero { background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); color: white; padding: 60px 0; text-align: center; }
-        .hero h1 { font-size: 2.5rem; margin-bottom: 15px; }
-        .section-title { font-size: 1.8rem; margin: 40px 0 20px; padding-bottom: 10px; border-bottom: 2px solid #fbbf24; display: inline-block; }
-        table { width: 100%; border-collapse: collapse; background: white; border-radius: 16px; overflow: hidden; margin: 20px 0; }
-        th, td { padding: 12px 15px; text-align: left; border-bottom: 1px solid #e2e8f0; vertical-align: top; }
-        th { background: #0f172a; color: white; }
-        tr:hover { background: #fefce8; }
-        .button-group { display: flex; justify-content: center; gap: 20px; margin: 30px 0; flex-wrap: wrap; }
-        .btn { display: inline-block; background: #0f172a; color: white; padding: 12px 30px; border-radius: 40px; text-decoration: none; font-weight: bold; transition: 0.3s; }
-        .btn-secondary { background: #fbbf24; color: #0f172a; }
-        .btn:hover { transform: translateY(-2px); background: #f59e0b; color: #0f172a; }
-        .footer { background: #0f172a; color: #94a3b8; text-align: center; padding: 30px 0; margin-top: 40px; }
-        @media (max-width: 768px) { th, td { padding: 8px 10px; font-size: 0.8rem; } .button-group { flex-direction: column; align-items: center; } }
-    </style>
 </head>
-<body>
-
-<div class="header">
-    <div class="container header-flex">
+<body class="page-industry">
+    <!-- ============================================================ -->
+    <!-- 1. TOP HEADER                                                -->
+    <!-- ============================================================ -->
+    <header class="top-header">
         <div class="logo-area">
-            <div class="logo-placeholder"><i class="fas fa-cube"></i></div>
-            <div class="logo-text"><h1>Legacy Launchpad</h1><p>Building what lasts.</p></div>
+            <div class="logo-icon">LP</div>
+            <div class="logo-text">
+                <h1>Legacy Launchpad</h1>
+                <p>Building what lasts.</p>
+            </div>
         </div>
-        <div class="nav">
+
+        <nav class="top-nav" id="topNav">
             <a href="index.html">Home</a>
-            <a href="index.html#industries">Industries</a>
-            <a href="pricing.html">Pricing</a>
-            <a href="order-documents.html"><i class="fas fa-clipboard-list"></i> Order</a>
-            <a href="index.html#contact">Contact</a>
-        </div>
-    </div>
-</div>
+            <a href="about.html">About</a>
+            <a href="industries.html">Industries</a>
+            <div class="dropdown">
+                <button class="dropbtn">Services <i class="fas fa-chevron-down"></i></button>
+                <div class="dropdown-content">
+                    <a href="3d-floor-plans.html">🏗️ 3D Floor Plans</a>
+                    <a href="personal-services.html">🧑 Personal Services</a>
+                    <a href="business-support.html">📊 Business Support</a>
+                    <a href="marketing-services.html">🎨 Marketing Services</a>
+                    <a href="spaza-shop.html">🏪 Spaza Shop</a>
+                    <a href="liquor-licence.html">🍷 Liquor Licence Application</a>
+                    <a href="order-documents.html">📋 Order Documents</a>
+                </div>
+            </div>
+            <a href="policies.html">Policies</a>
+            <a href="#contact">Contact</a>
+        </nav>
 
-<div class="hero">
-    <div class="container">
-        <h1>🔧 Automotive Repair & Sales</h1>
-        <p>Complete document roadmap – 82 core documents</p>
-    </div>
-</div>
+        <button class="menu-toggle" id="menuToggleTop" aria-label="Toggle navigation">☰</button>
+        <button class="menu-toggle" id="menuToggle" aria-label="Toggle sidebar">☰</button>
+    </header>
 
-<div class="container">
-    <h2 class="section-title">📋 Document Roadmap</h2>
+    <!-- ============================================================ -->
+    <!-- 2. MAIN APP CONTAINER                                        -->
+    <!-- ============================================================ -->
+    <div class="app-container">
 
-   <h3>Phase 1: Registration & Compliance (11 docs)</h3>
-<table>
-    <thead>
-        <tr><th>✔</th><th>Ref</th><th>Document</th><th>Purpose</th></tr>
-    </thead>
-    <tbody>
-        <tr>
-  
-            <td><input type="checkbox" class="doc-check" data-cat="Registration & Compliance" data-doc="CIPC Registration Certificate"></li>
-            <td>AUTO-001</li>
-            <td>CIPC Registration Certificate</li>
-            <td>Proof of company registration</li>
-        </tr>
-        <tr>
-            <td><input type="checkbox" class="doc-check" data-cat="Registration & Compliance" data-doc="Memorandum of Incorporation (MOI)"></li>
-            <td>AUTO-002</li>
-            <td>Memorandum of Incorporation (MOI)</li>
-            <td>Company constitution</li>
-        </tr>
-        <tr>
-            <td><input type="checkbox" class="doc-check" data-cat="Registration & Compliance" data-doc="SARS Registration (IT, PAYE, VAT)"></li>
-            <td>AUTO-003</li>
-            <td>SARS Registration (IT, PAYE, VAT)</li>
-            <td>Tax compliance (VAT if turnover >R1m)</li>
-        </tr>
-        </tr>
-            <td><input type="checkbox" class="doc-check" data-cat="Registration & Compliance" data-doc="COIDA Registration"></li>
-            <td>AUTO-004</li>
-            <td>COIDA Registration</li>
-            <td>Employee injury cover</li>
-        </tr>
-        <tr>
-            <td><input type="checkbox" class="doc-check" data-cat="Registration & Compliance" data-doc="Public Liability Insurance"></li>
-            <td>AUTO-005</li>
-            <td>Public Liability Insurance</li>
-            <td>Cover for customer vehicles and injuries</li>
-        </tr>
-        <tr>
-            <td><input type="checkbox" class="doc-check" data-cat="Registration & Compliance" data-doc="Motor Dealer Licence (if selling vehicles)"></li>
-            <td>AUTO-006</li>
-            <td>Motor Dealer Licence (if selling vehicles)</li>
-            <td>Required by Consumer Protection Act</li>
-        </tr>
-        <tr>
-            <td><input type="checkbox" class="doc-check" data-cat="Registration & Compliance" data-doc="Workshop / Repair Centre Licence"></li>
-            <td>AUTO-007</li>
-            <td>Workshop / Repair Centre Licence</li>
-            <td>For operating a mechanical repair shop</li>
-        </tr>
-        <tr>
-            <td><input type="checkbox" class="doc-check" data-cat="Registration & Compliance" data-doc="Zoning Certificate (Industrial / Business)"></li>
-            <td>AUTO-008</li>
-            <td>Zoning Certificate (Industrial / Business)</li>
-            <td>Municipality confirmation</li>
-        </tr>
-        <tr>
-            <td><input type="checkbox" class="doc-check" data-cat="Registration & Compliance" data-doc="Fire Clearance Certificate"></li>
-            <td>AUTO-009</li>
-            <td>Fire Clearance Certificate</li>
-            <td>For workshop premises</li>
-        </tr>
-        <tr>
-            <td><input type="checkbox" class="doc-check" data-cat="Registration & Compliance" data-doc="Waste Carrier Licence (for used oil, tyres, batteries)"></li>
-            <td>AUTO-010</li>
-            <td>Waste Carrier Licence (for used oil, tyres, batteries)</li>
-            <td>Environmental compliance</li>
-        </tr>
-        <tr>
-            <td><input type="checkbox" class="doc-check" data-cat="Registration & Compliance" data-doc="B-BBEE Certificate"></li>
-            <td>AUTO-011</li>
-            <td>B‑BBEE Certificate</li>
-            <td>For corporate fleet tenders</li>
-        </tr>
-    </tbody>
-</table>
+        <!-- SIDEBAR (Shared) -->
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <h3>Enterprise Menu</h3>
+                <p>Advanced features</p>
+            </div>
+            <ul class="sidebar-menu">
+                <li><a href="profile.html"><i class="fas fa-user-plus"></i> 01 Profile / Create Profile</a></li>
+                <li><a href="partners.html"><i class="fas fa-handshake"></i> 02 Our Partners</a></li>
+                <li><a href="international.html"><i class="fas fa-globe"></i> 03 International Partners</a></li>
+                <li><a href="strategic-growth.html"><i class="fas fa-chart-line"></i> 04 Strategic Growth</a></li>
+                <li><a href="business-partners.html"><i class="fas fa-building"></i> 05 Business Partners</a></li>
+                <li><a href="market-leads.html"><i class="fas fa-chart-simple"></i> 06 Real Time Market Leads</a></li>
+                <li><a href="business-hub.html"><i class="fas fa-users"></i> 07 Business Hub</a></li>
+                <li><a href="hire-admin.html"><i class="fas fa-user-tie"></i> 08 Hire Our Admin</a></li>
+                <li><a href="referral.html"><i class="fas fa-gift"></i> 09 Referral Program</a></li>
+                <li><a href="logout.html"><i class="fas fa-sign-out-alt"></i> 10 Profile Log Out</a></li>
+                <!-- EPK Studio link (opens in new tab) -->
+                <li><a href="https://www.legacylaunchpad.co.za/artist-profile-service.html" target="_blank"><i class="fas fa-star"></i> 11 EPK Studio</a></li>
+            </ul>
+        </aside>
 
- <h3>Phase 2: Contracts & Client Docs (12 docs)</h3>
-<table>
-    <thead>
-        <tr><th>✔</th><th>Ref</th><th>Document</th><th>Purpose</th></tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td><input type="checkbox" class="doc-check" data-cat="Contracts & Client Docs" data-doc="Repair Order / Job Card (per vehicle)"></li>
-            <td>AUTO-012</li>
-            <td>Repair Order / Job Card (per vehicle)</li>
-            <td>Scope of work, estimate, authorisation</li>
-        </tr>
-        <tr>
-            <td><input type="checkbox" class="doc-check" data-cat="Contracts & Client Docs" data-doc="Quotation / Estimate Template"></li>
-            <td>AUTO-013</li>
-            <td>Quotation / Estimate Template</li>
-            <td>Pre‑repair cost breakdown</li>
-        </tr>
-        <tr>
-            <td><input type="checkbox" class="doc-check" data-cat="Contracts & Client Docs" data-doc="Final Invoice (repairs completed)"></li>
-            <td>AUTO-014</li>
-            <td>Final Invoice (repairs completed)</li>
-            <td>Billing</li>
-        </tr>
-        <tr>
-            <td><input type="checkbox" class="doc-check" data-cat="Contracts & Client Docs" data-doc="Vehicle Sale Agreement (if selling cars)"></li>
-            <td>AUTO-015</li>
-            <td>Vehicle Sale Agreement (if selling cars)</li>
-            <td>Buyer‑seller contract</li>
-        </tr>
-        <tr>
-            <td><input type="checkbox" class="doc-check" data-cat="Contracts & Client Docs" data-doc="Warranty Policy (repairs)"></li>
-            <td>AUTO-016</li>
-            <td>Warranty Policy (repairs)</li>
-            <td>Labour and parts guarantee period</li>
-        </tr>
-        </tr>
-            <td><input type="checkbox" class="doc-check" data-cat="Contracts & Client Docs" data-doc="Non-Disclosure Agreement (NDA)"></li>
-            <td>AUTO-017</li>
-            <td>Non‑Disclosure Agreement (NDA)</li>
-            <td>For fleet client pricing</li>
-        </tr>
-        <tr>
-            <td><input type="checkbox" class="doc-check" data-cat="Contracts & Client Docs" data-doc="Parts Supply Agreement"></li>
-            <td>AUTO-018</li>
-            <td>Parts Supply Agreement</li>
-            <td>Trade account terms with spares shops</li>
-        </tr>
-        <tr>
-            <td><input type="checkbox" class="doc-check" data-cat="Contracts & Client Docs" data-doc="Trade‑in / Part Exchange Agreement"></li>
-            <td>AUTO-019</li>
-            <td>Trade‑in / Part Exchange Agreement</li>
-            <td>Valuation and acceptance</li>
-        </tr>
-        </tr>
-            <td><input type="checkbox" class="doc-check" data-cat="Contracts & Client Docs" data-doc="Vehicle Collection / Delivery Log"></li>
-            <td>AUTO-020</li>
-            <td>Vehicle Collection / Delivery Log</li>
-            <td>Proof of handover</li>
-        </tr>
-        <tr>
-            <td><input type="checkbox" class="doc-check" data-cat="Contracts & Client Docs" data-doc="Damage / Pre‑repair Inspection Form"></li>
-            <td>AUTO-021</li>
-            <td>Damage / Pre‑repair Inspection Form</li>
-            <td>Condition before work (with photos)</li>
-        </tr>
-        </tr>
-            <td><input type="checkbox" class="doc-check" data-cat="Contracts & Client Docs" data-doc="Courtesy Car Agreement (if loaning)"></li>
-            <td>AUTO-022</li>
-            <td>Courtesy Car Agreement (if loaning)</li>
-            <td>Liability and insurance terms</li>
-        </tr>
-        <tr>
-            <td><input type="checkbox" class="doc-check" data-cat="Contracts & Client Docs" data-doc="Indemnity Form (customer test drives)"></li>
-            <td>AUTO-023</li>
-            <td>Indemnity Form (customer test drives)</li>
-            <td>For used car sales</li>
-        </tr>
-    </tbody>
-</table>
-    
-<h3>Phase 3: Human Resources (10 docs)</h3>
-<table>
-    <thead>
-        <tr><th>✔</th><th>Ref</th><th>Document</th><th>Purpose</th></tr>
-    </thead>
-    <tbody>
-        <tr>
-  
-            <td><input type="checkbox" class="doc-check" data-cat="Human Resources" data-doc="Employment Contract – Mechanic (Qualified)"></li>
-            <td>AUTO-024</li>
-            <td>Employment Contract – Mechanic (Qualified)</li>
-            <td>Technician</li>
-        </tr>
-        <tr>
-            <td><input type="checkbox" class="doc-check" data-cat="Human Resources" data-doc="Employment Contract – Apprentice Mechanic"></li>
-            <td>AUTO-025</li>
-            <td>Employment Contract – Apprentice Mechanic</li>
-            <td>Trainee</li>
-        </tr>
-        <tr>
-            <td><input type="checkbox" class="doc-check" data-cat="Human Resources" data-doc="Employment Contract – Panel Beater / Spray Painter"></li>
-            <td>AUTO-026</li>
-            <td>Employment Contract – Panel Beater / Spray Painter</li>
-            <td>Specialist (if body shop)</li>
-        </tr>
-        <tr>
-            <td><input type="checkbox" class="doc-check" data-cat="Human Resources" data-doc="Employment Contract – Service Advisor"></li>
-            <td>AUTO-027</li>
-            <td>Employment Contract – Service Advisor</li>
-            <td>Front desk / customer interface</li>
-        </tr>
-        <tr>
-            <td><input type="checkbox" class="doc-check" data-cat="Human Resources" data-doc="Employment Contract – Workshop Manager"></li>
-            <td>AUTO-028</li>
-            <td>Employment Contract – Workshop Manager</li>
-            <td>Senior staff</li>
-        </tr>
-        <tr>
-            <td><input type="checkbox" class="doc-check" data-cat="Human Resources" data-doc="Independent Contractor Agreement (towing, detailing)"></li>
-            <td>AUTO-029</li>
-            <td>Independent Contractor Agreement (towing, detailing)</li>
-            <td>Subcontractors</li>
-        </tr>
-        <tr>
-            <td><input type="checkbox" class="doc-check" data-cat="Human Resources" data-doc="Code of Conduct (Employees)"></li>
-            <td>AUTO-030</li>
-            <td>Code of Conduct (Employees)</li>
-            <td>Professionalism, safety, honesty</li>
-        </tr>
-        <tr>
-            <td><input type="checkbox" class="doc-check" data-cat="Human Resources" data-doc="Disciplinary Code & Procedure"></li>
-            <td>AUTO-031</li>
-            <td>Disciplinary Code & Procedure</li>
-            <td>HR compliance</li>
-        </tr>
-        <tr>
-            <td><input type="checkbox" class="doc-check" data-cat="Human Resources" data-doc="Shift / Appointment Roster"></li>
-            <td>AUTO-032</li>
-            <td>Shift / Appointment Roster</li>
-            <td>Daily schedule</li>
-        </tr>
-        <tr>
-            <td><input type="checkbox" class="doc-check" data-cat="Human Resources" data-doc="Attendance Register (Daily)"></li>
-            <td>AUTO-033</li>
-            <td>Attendance Register (Daily)</li>
-            <td>Sign‑in / sign‑out</li>
-        </tr>
-    </tbody>
-</table>
+        <!-- MAIN CONTENT (Page‑specific) -->
+        <main class="main-content">
 
-<h3>Phase 4: Operations & Workshop Management (14 docs)</h3>
-<table>
-    <thead>
-        <tr><th>✔</th><th>Ref</th><th>Document</th><th>Purpose</th></tr>
-    </thead>
-    <tbody>
-        <tr>
-  
-            <td><input type="checkbox" class="doc-check" data-cat="Operations & Workshop Management" data-doc="Daily Job Card Log (all vehicles in workshop)"></li>
-            <td>AUTO-034</li>
-            <td>Daily Job Card Log (all vehicles in workshop)</li>
-            <td>Workflow tracking</li>
-        </tr>
-        <tr>
-            <td><input type="checkbox" class="doc-check" data-cat="Operations & Workshop Management" data-doc="Repair Time Tracking (hours per job)"></li>
-            <td>AUTO-035</li>
-            <td>Repair Time Tracking (hours per job)</li>
-            <td>Productivity</li>
-        </tr>
-        </tr>
-            <td><input type="checkbox" class="doc-check" data-cat="Operations & Workshop Management" data-doc="Parts Used Register (per job card)"></li>
-            <td>AUTO-036</li>
-            <td>Parts Used Register (per job card)</li>
-            <td>Costing and inventory</li>
-        </tr>
-        <tr>
-            <td><input type="checkbox" class="doc-check" data-cat="Operations & Workshop Management" data-doc="Supplier Delivery Note Log (spares received)"></li>
-            <td>AUTO-037</li>
-            <td>Supplier Delivery Note Log (spares received)</li>
-            <td>Stock control</li>
-        </tr>
-        <tr>
-            <td><input type="checkbox" class="doc-check" data-cat="Operations & Workshop Management" data-doc="Parts Inventory / Stock Take Sheet"></li>
-            <td>AUTO-038</li>
-            <td>Parts Inventory / Stock Take Sheet</li>
-            <td>Monthly count</li>
-        </tr>
-        <tr>
-            <td><input type="checkbox" class="doc-check" data-cat="Operations & Workshop Management" data-doc="Customer Vehicle Key Register"></li>
-            <td>AUTO-039</li>
-            <td>Customer Vehicle Key Register</li>
-            <td>Secure key handling</li>
-        </tr>
-        <tr>
-            <td><input type="checkbox" class="doc-check" data-cat="Operations & Workshop Management" data-doc="Waiting Area Customer Sign‑In Sheet"></li>
-            <td>AUTO-040</li>
-            <td>Waiting Area Customer Sign‑In Sheet</li>
-            <td>For service queue</li>
-        </tr>
-        </tr>
-            <td><input type="checkbox" class="doc-check" data-cat="Operations & Workshop Management" data-doc="Vehicle Lot / Yard Register"></li>
-            <td>AUTO-041</li>
-            <td>Vehicle Lot / Yard Register</li>
-            <td>Location tracking</li>
-        </tr>
-        <tr>
-            <td><input type="checkbox" class="doc-check" data-cat="Operations & Workshop Management" data-doc="Tool & Equipment Sign‑Out Register"></li>
-            <td>AUTO-042</li>
-            <td>Tool & Equipment Sign‑Out Register</li>
-            <td>Theft prevention</li>
-        </tr>
-        <tr>
-            <td><input type="checkbox" class="doc-check" data-cat="Operations & Workshop Management" data-doc="Diagnostic Scan Log (per vehicle)"></li>
-            <td>AUTO-043</li>
-            <td>Diagnostic Scan Log (per vehicle)</li>
-            <td>Proof of testing</li>
-        </tr>
-        <tr>
-            <td><input type="checkbox" class="doc-check" data-cat="Operations & Workshop Management" data-doc="Test Drive Register (per vehicle)"></li>
-            <td>AUTO-044</li>
-            <td>Test Drive Register (per vehicle)</li>
-            <td>Mileage recording</li>
-        </tr>
-        <tr>
-            <td><input type="checkbox" class="doc-check" data-cat="Operations & Workshop Management" data-doc="Waste Disposal Log (used oil, batteries, tyres)"></li>
-            <td>AUTO-045</li>
-            <td>Waste Disposal Log (used oil, batteries, tyres)</li>
-            <td>Environmental compliance</li>
-        </tr>
-        <tr>
-            <td><input type="checkbox" class="doc-check" data-cat="Operations & Workshop Management" data-doc="Customer Complaint / Dispute Log"></li>
-            <td>AUTO-046</li>
-            <td>Customer Complaint / Dispute Log</li>
-            <td>CPA compliance</li>
-        </tr>
-        <tr>
-            <td><input type="checkbox" class="doc-check" data-cat="Operations & Workshop Management" data-doc="Vehicle Completion Checklist (pre‑delivery)"></li>
-            <td>AUTO-047</li>
-            <td>Vehicle Completion Checklist (pre‑delivery)</li>
-            <td>Quality control</li>
-        </tr>
-    </tbody>
-</table>
+            <!-- ===== HERO ===== -->
+            <section class="hero-industry">
+                <h1>🔧 Automotive Repair &amp; Sales</h1>
+                <p>Complete document roadmap – 82 core documents</p>
+                <a href="#roadmap" class="btn btn-primary">View Roadmap ↓</a>
+            </section>
 
-<h3>Phase 5: Health & Safety (10 docs)</h3>
-<table>
-    <thead>
-        <tr><th>✔</th><th>Ref</th><th>Document</th><th>Purpose</th></tr>
-    </thead>
-    <tbody>
-        <tr>
-  
-            <td><input type="checkbox" class="doc-check" data-cat="Health & Safety" data-doc="Occupational Health & Safety (OHS) Policy"></li>
-            <td>AUTO-048</li>
-            <td>Occupational Health & Safety (OHS) Policy</li>
-            <td>Company H&S</li>
-        </tr>
-        </tr>
-            <td><input type="checkbox" class="doc-check" data-cat="Health & Safety" data-doc="Workshop‑Specific Risk Assessment"></li>
-            <td>AUTO-049</li>
-            <td>Workshop‑Specific Risk Assessment</li>
-            <td>Lifts, chemicals, moving vehicles</li>
-        </td>
-        <tr>
-            <td><input type="checkbox" class="doc-check" data-cat="Health & Safety" data-doc="Safe Work Method Statement (SWMS) per task"></li>
-            <td>AUTO-050</li>
-            <td>Safe Work Method Statement (SWMS) per task</li>
-            <td>Brake work, welding, lifting</li>
-        </tr>
-        <tr>
-            <td><input type="checkbox" class="doc-check" data-cat="Health & Safety" data-doc="Incident / Accident Report Form"></li>
-            <td>AUTO-051</li>
-            <td>Incident / Accident Report Form</li>
-            <td>Injury, vehicle damage</li>
-        </tr>
-        <tr>
-            <td><input type="checkbox" class="doc-check" data-cat="Health & Safety" data-doc="First Aid Kit Register (workshop and office)"></li>
-            <td>AUTO-052</li>
-            <td>First Aid Kit Register (workshop and office)</li>
-            <td>Inventory</li>
-        </tr>
-        <tr>
-            <td><input type="checkbox" class="doc-check" data-cat="Health & Safety" data-doc="Fire Extinguisher Inspection Log (including lifts)"></li>
-            <td>AUTO-053</li>
-            <td>Fire Extinguisher Inspection Log (including lifts)</li>
-            <td>Monthly check</li>
-        </tr>
-        <tr>
-            <td><input type="checkbox" class="doc-check" data-cat="Health & Safety" data-doc="Emergency Evacuation Plan (workshop)"></li>
-            <td>AUTO-054</li>
-            <td>Emergency Evacuation Plan (workshop)</li>
-            <td>Map and procedure</li>
-        </tr>
-        <tr>
-            <td><input type="checkbox" class="doc-check" data-cat="Health & Safety" data-doc="Personal Protective Equipment (PPE) Register"></li>
-            <td>AUTO-055</li>
-            <td>Personal Protective Equipment (PPE) Register</li>
-            <td>Gloves, glasses, steel‑toe boots</li>
-        </tr>
-        <tr>
-            <td><input type="checkbox" class="doc-check" data-cat="Health & Safety" data-doc="Chemical / Solvent Register"></li>
-            <td>AUTO-056</li>
-            <td>Chemical / Solvent Register</li>
-            <td>MSDS on file</li>
-        </tr>
-        <tr>
-            <td><input type="checkbox" class="doc-check" data-cat="Health & Safety" data-doc="Toolbox Talk Register"></li>
-            <td>AUTO-057</li>
-            <td>Toolbox Talk Register</li>
-            <td>Staff engagement</li>
-        </tr>
-    </tbody>
-</table>
+            <!-- ===== SELECTION PANEL ===== -->
+            <section class="selection-panel">
+                <h2 class="section-title">📦 Select Your Package</h2>
+                <div class="selection-grid">
+                    <div class="selection-card">
+                        <div class="selection-header">
+                            <input type="checkbox" id="selectRoadmap" checked>
+                            <label for="selectRoadmap"><strong>Document Roadmap</strong></label>
+                        </div>
+                        <p class="selection-price">R 700</p>
+                        <p class="selection-desc">Complete list of 82 documents with descriptions – ready to implement.</p>
+                    </div>
+                    <div class="selection-card">
+                        <div class="selection-header">
+                            <input type="checkbox" id="selectDirectory" checked>
+                            <label for="selectDirectory"><strong>File Directory Structure</strong></label>
+                        </div>
+                        <p class="selection-price">R 700</p>
+                        <p class="selection-desc">Pre‑built folder structure – just copy and start filing.</p>
+                    </div>
+                    <div class="selection-card selection-combo">
+                        <div class="selection-header">
+                            <span class="combo-badge">🔥 SAVE R100</span>
+                        </div>
+                        <p class="selection-price"><strong>R 1,300</strong> <span class="strike">R 1,400</span></p>
+                        <p class="selection-desc">Both Roadmap + Directory – the complete system.</p>
+                    </div>
+                </div>
+                <div class="selection-actions">
+                    <a href="#" id="orderSelectedBtn" class="btn btn-primary"><i class="fas fa-clipboard-list"></i> Proceed to Order →</a>
+                    <span class="selection-note">You can also select individual documents below.</span>
+                </div>
+            </section>
 
-<h3>Phase 6: Finance & Suppliers (8 docs)</h3>
-<table>
-    <thead>
-        <tr><th>✔</th><th>Ref</th><th>Document</th><th>Purpose</th></tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td><input type="checkbox" class="doc-check" data-cat="Finance & Suppliers" data-doc="Invoice Template (repairs / sales)"></li>
-            <td>AUTO-058</li>
-            <td>Invoice Template (repairs / sales)</li>
-            <td>Billing</li>
-        </tr>
-        <tr>
-            <td><input type="checkbox" class="doc-check" data-cat="Finance & Suppliers" data-doc="Supplier Invoice Register (spares, consumables)"></li>
-            <td>AUTO-059</li>
-            <td>Supplier Invoice Register (spares, consumables)</li>
-            <td>Expense tracking</li>
-        </tr>
-        <tr>
-            <td><input type="checkbox" class="doc-check" data-cat="Finance & Suppliers" data-doc="Payroll Register"></li>
-            <td>AUTO-060</li>
-            <td>Payroll Register</li>
-            <td>Staff wages</li>
-        </tr>
-        <tr>
-            <td><input type="checkbox" class="doc-check" data-cat="Finance & Suppliers" data-doc="Petty Cash Log"></li>
-            <td>AUTO-061</li>
-            <td>Petty Cash Log</li>
-            <td>Small purchases (workshop supplies)</li>
-        </tr>
-        <tr>
-            <td><input type="checkbox" class="doc-check" data-cat="Finance & Suppliers" data-doc="Customer Payment Log (cash, card, EFT)"></li>
-            <td>AUTO-062</li>
-            <td>Customer Payment Log (cash, card, EFT)</li>
-            <td>Reconciliation</li>
-        </tr>
-        <tr>
-            <td><input type="checkbox" class="doc-check" data-cat="Finance & Suppliers" data-doc="Fleet Customer Credit Application"></li>
-            <td>AUTO-063</li>
-            <td>Fleet Customer Credit Application</li>
-            <td>For corporate accounts</li>
-        </tr>
-        <tr>
-            <td><input type="checkbox" class="doc-check" data-cat="Finance & Suppliers" data-doc="Supplier Payment Schedule"></li>
-            <td>AUTO-064</li>
-            <td>Supplier Payment Schedule</li>
-            <td>Creditors aging</li>
-        </tr>
-        <tr>
-            <td><input type="checkbox" class="doc-check" data-cat="Finance & Suppliers" data-doc="Bank Reconciliation Template"></li>
-            <td>AUTO-065</li>
-            <td>Bank Reconciliation Template</li>
-            <td>Monthly finance</li>
-        </tr>
-    </tbody>
-</table>
+            <!-- ===== DOCUMENT ROADMAP ===== -->
+            <section id="roadmap">
+                <h2 class="section-title">📋 Document Roadmap</h2>
 
-<h3>Phase 7: Equipment & Assets (9 docs)</h3>
-<table>
-    <thead>
-        <tr><th>✔</th><th>Ref</th><th>Document</th><th>Purpose</th></tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td><input type="checkbox" class="doc-check" data-cat="Equipment & Assets" data-doc="Asset Register (Master)"></li>
-            <td>AUTO-066</li>
-            <td>Asset Register (Master)</li>
-            <td>Lifts, diagnostic machines, alignment equipment, tools</li>
-        </tr>
-        <tr>
-            <td><input type="checkbox" class="doc-check" data-cat="Equipment & Assets" data-doc="Equipment Maintenance Log (lifts, balancers)"></li>
-            <td>AUTO-067</li>
-            <td>Equipment Maintenance Log (lifts, balancers)</li>
-            <td>Service records</li>
-        </tr>
-        <tr>
-            <td><input type="checkbox" class="doc-check" data-cat="Equipment & Assets" data-doc="Calibration Log (diagnostic tools, torque wrenches)"></li>
-            <td>AUTO-068</li>
-            <td>Calibration Log (diagnostic tools, torque wrenches)</li>
-            <td>Accuracy</li>
-        </tr>
-        <tr>
-            <td><input type="checkbox" class="doc-check" data-cat="Equipment & Assets" data-doc="Tool Inventory (hand tools per mechanic)"></li>
-            <td>AUTO-069</li>
-            <td>Tool Inventory (hand tools per mechanic)</li>
-            <td>Theft tracking</li>
-        </tr>
-        <tr>
-            <td><input type="checkbox" class="doc-check" data-cat="Equipment & Assets" data-doc="Vehicle Lift Inspection Log (certification)"></li>
-            <td>AUTO-070</li>
-            <td>Vehicle Lift Inspection Log (certification)</li>
-            <td>Safety compliance (annual)</li>
-        </tr>
-        <tr>
-            <td><input type="checkbox" class="doc-check" data-cat="Equipment & Assets" data-doc="Compressor / Air System Log"></li>
-            <td>AUTO-071</li>
-            <td>Compressor / Air System Log</li>
-            <td>Drain, oil, belt checks</li>
-        </tr>
-        <tr>
-            <td><input type="checkbox" class="doc-check" data-cat="Equipment & Assets" data-doc="Recovery / Tow Vehicle Log (if towing)"></li>
-            <td>AUTO-072</li>
-            <td>Recovery / Tow Vehicle Log (if towing)</li>
-            <td>Fuel, trips, maintenance</li>
-        </tr>
-        <tr>
-            <td><input type="checkbox" class="doc-check" data-cat="Equipment & Assets" data-doc="Customer Courtesy Car Log"></li>
-            <td>AUTO-073</li>
-            <td>Customer Courtesy Car Log</li>
-            <td>Asset tracking</li>
-        </tr>
-        <tr>
-            <td><input type="checkbox" class="doc-check" data-cat="Equipment & Assets" data-doc="Asset Disposal Form"></li>
-            <td>AUTO-074</li>
-            <td>Asset Disposal Form</li>
-            <td>Selling old equipment or vehicles</li>
-        </tr>
-    </tbody>
-</table>
+                <!-- Phase 1 -->
+                <h3>Phase 1: Registration &amp; Compliance (11 docs)</h3>
+                <table class="doc-table">
+                    <thead>
+                        <tr><th>✔</th><th>Document</th><th>Description</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td><input type="checkbox" class="doc-check" data-cat="Registration &amp; Compliance" data-doc="CIPC Registration Certificate"></td><td>AUTO-001 – CIPC Registration Certificate</td><td>Proof of company registration</td></tr>
+                        <tr><td><input type="checkbox" class="doc-check" data-cat="Registration &amp; Compliance" data-doc="Memorandum of Incorporation (MOI)"></td><td>AUTO-002 – Memorandum of Incorporation (MOI)</td><td>Company constitution</td></tr>
+                        <tr><td><input type="checkbox" class="doc-check" data-cat="Registration &amp; Compliance" data-doc="SARS Registration (IT, PAYE, VAT)"></td><td>AUTO-003 – SARS Registration (IT, PAYE, VAT)</td><td>Tax compliance (VAT if turnover &gt;R1m)</td></tr>
+                        <tr><td><input type="checkbox" class="doc-check" data-cat="Registration &amp; Compliance" data-doc="COIDA Registration"></td><td>AUTO-004 – COIDA Registration</td><td>Employee injury cover</td></tr>
+                        <tr><td><input type="checkbox" class="doc-check" data-cat="Registration &amp; Compliance" data-doc="Public Liability Insurance"></td><td>AUTO-005 – Public Liability Insurance</td><td>Cover for customer vehicles and injuries</td></tr>
+                        <tr><td><input type="checkbox" class="doc-check" data-cat="Registration &amp; Compliance" data-doc="Motor Dealer Licence (if selling vehicles)"></td><td>AUTO-006 – Motor Dealer Licence (if selling vehicles)</td><td>Required by Consumer Protection Act</td></tr>
+                        <tr><td><input type="checkbox" class="doc-check" data-cat="Registration &amp; Compliance" data-doc="Workshop / Repair Centre Licence"></td><td>AUTO-007 – Workshop / Repair Centre Licence</td><td>For operating a mechanical repair shop</td></tr>
+                        <tr><td><input type="checkbox" class="doc-check" data-cat="Registration &amp; Compliance" data-doc="Zoning Certificate (Industrial / Business)"></td><td>AUTO-008 – Zoning Certificate (Industrial / Business)</td><td>Municipality confirmation</td></tr>
+                        <tr><td><input type="checkbox" class="doc-check" data-cat="Registration &amp; Compliance" data-doc="Fire Clearance Certificate"></td><td>AUTO-009 – Fire Clearance Certificate</td><td>For workshop premises</td></tr>
+                        <tr><td><input type="checkbox" class="doc-check" data-cat="Registration &amp; Compliance" data-doc="Waste Carrier Licence (for used oil, tyres, batteries)"></td><td>AUTO-010 – Waste Carrier Licence (for used oil, tyres, batteries)</td><td>Environmental compliance</td></tr>
+                        <tr><td><input type="checkbox" class="doc-check" data-cat="Registration &amp; Compliance" data-doc="B-BBEE Certificate"></td><td>AUTO-011 – B‑BBEE Certificate</td><td>For corporate fleet tenders</td></tr>
+                    </tbody>
+                </table>
 
-<h3>Phase 8: Forms & Templates (8 docs)</h3>
-<table>
-    <thead>
-        <tr><th>✔</th><th>Ref</th><th>Document</th><th>Purpose</th></tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td><input type="checkbox" class="doc-check" data-cat="Forms & Templates" data-doc="Vehicle Condition Report (pre‑repair / pre‑sale)"></li>
-            <td>AUTO-075</li>
-            <td>Vehicle Condition Report (pre‑repair / pre‑sale)</li>
-            <td>With photos</li>
-        </tr>
-        <tr>
-            <td><input type="checkbox" class="doc-check" data-cat="Forms & Templates" data-doc="Road Test Report (post‑repair)"></li>
-            <td>AUTO-076</li>
-            <td>Road Test Report (post‑repair)</li>
-            <td>Verification</li>
-        </tr>
-        <tr>
-            <td><input type="checkbox" class="doc-check" data-cat="Forms & Templates" data-doc="Overtime Authorization Form"></li>
-            <td>AUTO-077</li>
-            <td>Overtime Authorization Form</li>
-            <td>Staff approval</li>
-        </tr>
-        <tr>
-            <td><input type="checkbox" class="doc-check" data-cat="Forms & Templates" data-doc="Leave Application Form"></li>
-            <td>AUTO-078</li>
-            <td>Leave Application Form</li>
-            <td>Staff requests</li>
-        </tr>
-        </tr>
-            <td><input type="checkbox" class="doc-check" data-cat="Forms & Templates" data-doc="New Mechanic Induction Checklist (workshop safety)"></li>
-            <td>AUTO-079</li>
-            <td>New Mechanic Induction Checklist (workshop safety)</li>
-            <td>Onboarding</li>
-        </tr>
-        <tr>
-            <td><input type="checkbox" class="doc-check" data-cat="Forms & Templates" data-doc="Supplier Evaluation Form"></li>
-            <td>AUTO-080</li>
-            <td>Supplier Evaluation Form</li>
-            <td>Spare parts vendor performance</li>
-        </tr>
-        <tr>
-            <td><input type="checkbox" class="doc-check" data-cat="Forms & Templates" data-doc="Customer Satisfaction Survey"></li>
-            <td>AUTO-081</li>
-            <td>Customer Satisfaction Survey</li>
-            <td>After repair follow‑up</li>
-        </tr>
-        <tr>
-            <td><input type="checkbox" class="doc-check" data-cat="Forms & Templates" data-doc="Termination Checklist"></li>
-            <td>AUTO-082</li>
-            <td>Termination Checklist</li>
-            <td>Offboarding</li>
-        </tr>
-    </tbody>
-</table>
+                <!-- Phase 2 -->
+                <h3>Phase 2: Contracts &amp; Client Docs (12 docs)</h3>
+                <table class="doc-table">
+                    <thead>
+                        <tr><th>✔</th><th>Document</th><th>Description</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td><input type="checkbox" class="doc-check" data-cat="Contracts &amp; Client Docs" data-doc="Repair Order / Job Card (per vehicle)"></td><td>AUTO-012 – Repair Order / Job Card (per vehicle)</td><td>Scope of work, estimate, authorisation</td></tr>
+                        <tr><td><input type="checkbox" class="doc-check" data-cat="Contracts &amp; Client Docs" data-doc="Quotation / Estimate Template"></td><td>AUTO-013 – Quotation / Estimate Template</td><td>Pre‑repair cost breakdown</td></tr>
+                        <tr><td><input type="checkbox" class="doc-check" data-cat="Contracts &amp; Client Docs" data-doc="Final Invoice (repairs completed)"></td><td>AUTO-014 – Final Invoice (repairs completed)</td><td>Billing</td></tr>
+                        <tr><td><input type="checkbox" class="doc-check" data-cat="Contracts &amp; Client Docs" data-doc="Vehicle Sale Agreement (if selling cars)"></td><td>AUTO-015 – Vehicle Sale Agreement (if selling cars)</td><td>Buyer‑seller contract</td></tr>
+                        <tr><td><input type="checkbox" class="doc-check" data-cat="Contracts &amp; Client Docs" data-doc="Warranty Policy (repairs)"></td><td>AUTO-016 – Warranty Policy (repairs)</td><td>Labour and parts guarantee period</td></tr>
+                        <tr><td><input type="checkbox" class="doc-check" data-cat="Contracts &amp; Client Docs" data-doc="Non-Disclosure Agreement (NDA)"></td><td>AUTO-017 – Non‑Disclosure Agreement (NDA)</td><td>For fleet client pricing</td></tr>
+                        <tr><td><input type="checkbox" class="doc-check" data-cat="Contracts &amp; Client Docs" data-doc="Parts Supply Agreement"></td><td>AUTO-018 – Parts Supply Agreement</td><td>Trade account terms with spares shops</td></tr>
+                        <tr><td><input type="checkbox" class="doc-check" data-cat="Contracts &amp; Client Docs" data-doc="Trade‑in / Part Exchange Agreement"></td><td>AUTO-019 – Trade‑in / Part Exchange Agreement</td><td>Valuation and acceptance</td></tr>
+                        <tr><td><input type="checkbox" class="doc-check" data-cat="Contracts &amp; Client Docs" data-doc="Vehicle Collection / Delivery Log"></td><td>AUTO-020 – Vehicle Collection / Delivery Log</td><td>Proof of handover</td></tr>
+                        <tr><td><input type="checkbox" class="doc-check" data-cat="Contracts &amp; Client Docs" data-doc="Damage / Pre‑repair Inspection Form"></td><td>AUTO-021 – Damage / Pre‑repair Inspection Form</td><td>Condition before work (with photos)</td></tr>
+                        <tr><td><input type="checkbox" class="doc-check" data-cat="Contracts &amp; Client Docs" data-doc="Courtesy Car Agreement (if loaning)"></td><td>AUTO-022 – Courtesy Car Agreement (if loaning)</td><td>Liability and insurance terms</td></tr>
+                        <tr><td><input type="checkbox" class="doc-check" data-cat="Contracts &amp; Client Docs" data-doc="Indemnity Form (customer test drives)"></td><td>AUTO-023 – Indemnity Form (customer test drives)</td><td>For used car sales</td></tr>
+                    </tbody>
+                </table>
 
-    <div class="button-group">
-        <a href="index.html#industries" class="btn"><i class="fas fa-arrow-left"></i> Back to Industries</a>
-        <a href="#" id="orderSelectedBtn" class="btn btn-secondary"><i class="fas fa-clipboard-list"></i> Order Selected Documents →</a>
-    </div>
-</div>
+                <!-- Phase 3 -->
+                <h3>Phase 3: Human Resources (10 docs)</h3>
+                <table class="doc-table">
+                    <thead>
+                        <tr><th>✔</th><th>Document</th><th>Description</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td><input type="checkbox" class="doc-check" data-cat="Human Resources" data-doc="Employment Contract – Mechanic (Qualified)"></td><td>AUTO-024 – Employment Contract – Mechanic (Qualified)</td><td>Technician</td></tr>
+                        <tr><td><input type="checkbox" class="doc-check" data-cat="Human Resources" data-doc="Employment Contract – Apprentice Mechanic"></td><td>AUTO-025 – Employment Contract – Apprentice Mechanic</td><td>Trainee</td></tr>
+                        <tr><td><input type="checkbox" class="doc-check" data-cat="Human Resources" data-doc="Employment Contract – Panel Beater / Spray Painter"></td><td>AUTO-026 – Employment Contract – Panel Beater / Spray Painter</td><td>Specialist (if body shop)</td></tr>
+                        <tr><td><input type="checkbox" class="doc-check" data-cat="Human Resources" data-doc="Employment Contract – Service Advisor"></td><td>AUTO-027 – Employment Contract – Service Advisor</td><td>Front desk / customer interface</td></tr>
+                        <tr><td><input type="checkbox" class="doc-check" data-cat="Human Resources" data-doc="Employment Contract – Workshop Manager"></td><td>AUTO-028 – Employment Contract – Workshop Manager</td><td>Senior staff</td></tr>
+                        <tr><td><input type="checkbox" class="doc-check" data-cat="Human Resources" data-doc="Independent Contractor Agreement (towing, detailing)"></td><td>AUTO-029 – Independent Contractor Agreement (towing, detailing)</td><td>Subcontractors</td></tr>
+                        <tr><td><input type="checkbox" class="doc-check" data-cat="Human Resources" data-doc="Code of Conduct (Employees)"></td><td>AUTO-030 – Code of Conduct (Employees)</td><td>Professionalism, safety, honesty</td></tr>
+                        <tr><td><input type="checkbox" class="doc-check" data-cat="Human Resources" data-doc="Disciplinary Code & Procedure"></td><td>AUTO-031 – Disciplinary Code &amp; Procedure</td><td>HR compliance</td></tr>
+                        <tr><td><input type="checkbox" class="doc-check" data-cat="Human Resources" data-doc="Shift / Appointment Roster"></td><td>AUTO-032 – Shift / Appointment Roster</td><td>Daily schedule</td></tr>
+                        <tr><td><input type="checkbox" class="doc-check" data-cat="Human Resources" data-doc="Attendance Register (Daily)"></td><td>AUTO-033 – Attendance Register (Daily)</td><td>Sign‑in / sign‑out</td></tr>
+                    </tbody>
+                </table>
 
-<div class="footer">...</div>
+                <!-- Phase 4 -->
+                <h3>Phase 4: Operations &amp; Workshop Management (14 docs)</h3>
+                <table class="doc-table">
+                    <thead>
+                        <tr><th>✔</th><th>Document</th><th>Description</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td><input type="checkbox" class="doc-check" data-cat="Operations &amp; Workshop Management" data-doc="Daily Job Card Log (all vehicles in workshop)"></td><td>AUTO-034 – Daily Job Card Log (all vehicles in workshop)</td><td>Workflow tracking</td></tr>
+                        <tr><td><input type="checkbox" class="doc-check" data-cat="Operations &amp; Workshop Management" data-doc="Repair Time Tracking (hours per job)"></td><td>AUTO-035 – Repair Time Tracking (hours per job)</td><td>Productivity</td></tr>
+                        <tr><td><input type="checkbox" class="doc-check" data-cat="Operations &amp; Workshop Management" data-doc="Parts Used Register (per job card)"></td><td>AUTO-036 – Parts Used Register (per job card)</td><td>Costing and inventory</td></tr>
+                        <tr><td><input type="checkbox" class="doc-check" data-cat="Operations &amp; Workshop Management" data-doc="Supplier Delivery Note Log (spares received)"></td><td>AUTO-037 – Supplier Delivery Note Log (spares received)</td><td>Stock control</td></tr>
+                        <tr><td><input type="checkbox" class="doc-check" data-cat="Operations &amp; Workshop Management" data-doc="Parts Inventory / Stock Take Sheet"></td><td>AUTO-038 – Parts Inventory / Stock Take Sheet</td><td>Monthly count</td></tr>
+                        <tr><td><input type="checkbox" class="doc-check" data-cat="Operations &amp; Workshop Management" data-doc="Customer Vehicle Key Register"></td><td>AUTO-039 – Customer Vehicle Key Register</td><td>Secure key handling</td></tr>
+                        <tr><td><input type="checkbox" class="doc-check" data-cat="Operations &amp; Workshop Management" data-doc="Waiting Area Customer Sign‑In Sheet"></td><td>AUTO-040 – Waiting Area Customer Sign‑In Sheet</td><td>For service queue</td></tr>
+                        <tr><td><input type="checkbox" class="doc-check" data-cat="Operations &amp; Workshop Management" data-doc="Vehicle Lot / Yard Register"></td><td>AUTO-041 – Vehicle Lot / Yard Register</td><td>Location tracking</td></tr>
+                        <tr><td><input type="checkbox" class="doc-check" data-cat="Operations &amp; Workshop Management" data-doc="Tool & Equipment Sign‑Out Register"></td><td>AUTO-042 – Tool &amp; Equipment Sign‑Out Register</td><td>Theft prevention</td></tr>
+                        <tr><td><input type="checkbox" class="doc-check" data-cat="Operations &amp; Workshop Management" data-doc="Diagnostic Scan Log (per vehicle)"></td><td>AUTO-043 – Diagnostic Scan Log (per vehicle)</td><td>Proof of testing</td></tr>
+                        <tr><td><input type="checkbox" class="doc-check" data-cat="Operations &amp; Workshop Management" data-doc="Test Drive Register (per vehicle)"></td><td>AUTO-044 – Test Drive Register (per vehicle)</td><td>Mileage recording</td></tr>
+                        <tr><td><input type="checkbox" class="doc-check" data-cat="Operations &amp; Workshop Management" data-doc="Waste Disposal Log (used oil, batteries, tyres)"></td><td>AUTO-045 – Waste Disposal Log (used oil, batteries, tyres)</td><td>Environmental compliance</td></tr>
+                        <tr><td><input type="checkbox" class="doc-check" data-cat="Operations &amp; Workshop Management" data-doc="Customer Complaint / Dispute Log"></td><td>AUTO-046 – Customer Complaint / Dispute Log</td><td>CPA compliance</td></tr>
+                        <tr><td><input type="checkbox" class="doc-check" data-cat="Operations &amp; Workshop Management" data-doc="Vehicle Completion Checklist (pre‑delivery)"></td><td>AUTO-047 – Vehicle Completion Checklist (pre‑delivery)</td><td>Quality control</td></tr>
+                    </tbody>
+                </table>
 
-<script>
-    document.getElementById('orderSelectedBtn').addEventListener('click', function(e) {
-        e.preventDefault();
-        const selected = [];
-        document.querySelectorAll('.doc-check:checked').forEach(cb => {
-            selected.push({ category: cb.getAttribute('data-cat'), doc: cb.getAttribute('data-doc') });
-        });
-        if (selected.length === 0) { alert('Please select at least one document to order.'); return; }
-        const param = encodeURIComponent(JSON.stringify(selected));
-        window.location.href = `order-documents.html?industry=Automotive%20Repair%20%26%20Sales&preselected=${param}`;
-    });
-</script>
-</body>
-</html>
+                <!-- Phase 5 -->
+                <h3>Phase 5: Health &amp; Safety (10 docs)</h3>
+                <table class="doc-table">
+                    <thead>
+                        <tr><th>✔</th><th>Document</th><th>Description</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td><input type="checkbox" class="doc-check" data-cat="Health &amp; Safety" data-doc="Occupational Health & Safety (OHS) Policy"></td><td>AUTO-048 – Occupational Health &amp; Safety (OHS) Policy</td><td>Company H&amp;S</td></tr>
+                        <tr><td><input type="checkbox" class="doc-check" data-cat="Health &amp; Safety" data-doc="Workshop‑Specific Risk Assessment"></td><td>AUTO-049 – Workshop‑Specific Risk Assessment</td><td>Lifts, chemicals, moving vehicles</td></tr>
+                        <tr><td><input type="checkbox" class="doc-check" data-cat="Health &amp; Safety" data-doc="Safe Work Method Statement (SWMS) per task"></td><td>AUTO-050 – Safe Work Method Statement (SWMS) per task</td><td>Brake work, welding, lifting</td></tr>
+                        <tr><td><input type="checkbox" class="doc-check" data-cat="Health &amp; Safety" data-doc="Incident / Accident Report Form"></td><td>AUTO-051 – Incident / Accident Report Form</td><td>Injury, vehicle damage</td></tr>
+                        <tr><td><input type="checkbox" class="doc-check" data-cat="Health &amp; Safety" data-doc="First Aid Kit Register (workshop and office)"></td><td>AUTO-052 – First Aid Kit Register (workshop and office)</td><td>Inventory</td></tr>
+                        <tr><td><input type="checkbox" class="doc-check" data-cat="Health &amp; Safety" data-doc="Fire Extinguisher Inspection Log (including lifts)"></td><td>AUTO-053 – Fire Extinguisher Inspection Log (including lifts)</td><td>Monthly check</td></tr>
+                        <tr><td><input type="checkbox" class="doc-check" data-cat="Health &amp; Safety" data-doc="Emergency Evacuation Plan (workshop)"></td><td>AUTO-054 – Emergency Evacuation Plan (workshop)</td><td>Map and procedure</td></tr>
+                        <tr><td><input type="checkbox" class="doc-check" data-cat="Health &amp; Safety" data-doc="Personal Protective Equipment (PPE) Register"></td><td>AUTO-055 – Personal Protective Equipment (PPE) Register</td><td>Gloves, glasses, steel‑toe boots</td></tr>
+                        <tr><td><input type="checkbox" class="doc-check" data-cat="Health &amp; Safety" data-doc="Chemical / Solvent Register"></td><td>AUTO-056 – Chemical / Solvent Register</td><td>MSDS on file</td></tr>
+                        <tr><td><input type="checkbox" class="doc-check" data-cat="Health &amp; Safety" data-doc="Toolbox Talk Register"></td><td>AUTO-057 – Toolbox Talk Register</td><td>Staff engagement</td></tr>
+                    </tbody>
+                </table>
 
-    <h2 class="section-title">📁 File Directory Structure</h2>
-    <div class="repo-structure">
-<pre>
+                <!-- Phase 6 -->
+                <h3>Phase 6: Finance &amp; Suppliers (8 docs)</h3>
+                <table class="doc-table">
+                    <thead>
+                        <tr><th>✔</th><th>Document</th><th>Description</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td><input type="checkbox" class="doc-check" data-cat="Finance &amp; Suppliers" data-doc="Invoice Template (repairs / sales)"></td><td>AUTO-058 – Invoice Template (repairs / sales)</td><td>Billing</td></tr>
+                        <tr><td><input type="checkbox" class="doc-check" data-cat="Finance &amp; Suppliers" data-doc="Supplier Invoice Register (spares, consumables)"></td><td>AUTO-059 – Supplier Invoice Register (spares, consumables)</td><td>Expense tracking</td></tr>
+                        <tr><td><input type="checkbox" class="doc-check" data-cat="Finance &amp; Suppliers" data-doc="Payroll Register"></td><td>AUTO-060 – Payroll Register</td><td>Staff wages</td></tr>
+                        <tr><td><input type="checkbox" class="doc-check" data-cat="Finance &amp; Suppliers" data-doc="Petty Cash Log"></td><td>AUTO-061 – Petty Cash Log</td><td>Small purchases (workshop supplies)</td></tr>
+                        <tr><td><input type="checkbox" class="doc-check" data-cat="Finance &amp; Suppliers" data-doc="Customer Payment Log (cash, card, EFT)"></td><td>AUTO-062 – Customer Payment Log (cash, card, EFT)</td><td>Reconciliation</td></tr>
+                        <tr><td><input type="checkbox" class="doc-check" data-cat="Finance &amp; Suppliers" data-doc="Fleet Customer Credit Application"></td><td>AUTO-063 – Fleet Customer Credit Application</td><td>For corporate accounts</td></tr>
+                        <tr><td><input type="checkbox" class="doc-check" data-cat="Finance &amp; Suppliers" data-doc="Supplier Payment Schedule"></td><td>AUTO-064 – Supplier Payment Schedule</td><td>Creditors aging</td></tr>
+                        <tr><td><input type="checkbox" class="doc-check" data-cat="Finance &amp; Suppliers" data-doc="Bank Reconciliation Template"></td><td>AUTO-065 – Bank Reconciliation Template</td><td>Monthly finance</td></tr>
+                    </tbody>
+                </table>
 
-<pre>
+                <!-- Phase 7 -->
+                <h3>Phase 7: Equipment &amp; Assets (9 docs)</h3>
+                <table class="doc-table">
+                    <thead>
+                        <tr><th>✔</th><th>Document</th><th>Description</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td><input type="checkbox" class="doc-check" data-cat="Equipment &amp; Assets" data-doc="Asset Register (Master)"></td><td>AUTO-066 – Asset Register (Master)</td><td>Lifts, diagnostic machines, alignment equipment, tools</td></tr>
+                        <tr><td><input type="checkbox" class="doc-check" data-cat="Equipment &amp; Assets" data-doc="Equipment Maintenance Log (lifts, balancers)"></td><td>AUTO-067 – Equipment Maintenance Log (lifts, balancers)</td><td>Service records</td></tr>
+                        <tr><td><input type="checkbox" class="doc-check" data-cat="Equipment &amp; Assets" data-doc="Calibration Log (diagnostic tools, torque wrenches)"></td><td>AUTO-068 – Calibration Log (diagnostic tools, torque wrenches)</td><td>Accuracy</td></tr>
+                        <tr><td><input type="checkbox" class="doc-check" data-cat="Equipment &amp; Assets" data-doc="Tool Inventory (hand tools per mechanic)"></td><td>AUTO-069 – Tool Inventory (hand tools per mechanic)</td><td>Theft tracking</td></tr>
+                        <tr><td><input type="checkbox" class="doc-check" data-cat="Equipment &amp; Assets" data-doc="Vehicle Lift Inspection Log (certification)"></td><td>AUTO-070 – Vehicle Lift Inspection Log (certification)</td><td>Safety compliance (annual)</td></tr>
+                        <tr><td><input type="checkbox" class="doc-check" data-cat="Equipment &amp; Assets" data-doc="Compressor / Air System Log"></td><td>AUTO-071 – Compressor / Air System Log</td><td>Drain, oil, belt checks</td></tr>
+                        <tr><td><input type="checkbox" class="doc-check" data-cat="Equipment &amp; Assets" data-doc="Recovery / Tow Vehicle Log (if towing)"></td><td>AUTO-072 – Recovery / Tow Vehicle Log (if towing)</td><td>Fuel, trips, maintenance</td></tr>
+                        <tr><td><input type="checkbox" class="doc-check" data-cat="Equipment &amp; Assets" data-doc="Customer Courtesy Car Log"></td><td>AUTO-073 – Customer Courtesy Car Log</td><td>Asset tracking</td></tr>
+                        <tr><td><input type="checkbox" class="doc-check" data-cat="Equipment &amp; Assets" data-doc="Asset Disposal Form"></td><td>AUTO-074 – Asset Disposal Form</td><td>Selling old equipment or vehicles</td></tr>
+                    </tbody>
+                </table>
+
+                <!-- Phase 8 -->
+                <h3>Phase 8: Forms &amp; Templates (8 docs)</h3>
+                <table class="doc-table">
+                    <thead>
+                        <tr><th>✔</th><th>Document</th><th>Description</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td><input type="checkbox" class="doc-check" data-cat="Forms &amp; Templates" data-doc="Vehicle Condition Report (pre‑repair / pre‑sale)"></td><td>AUTO-075 – Vehicle Condition Report (pre‑repair / pre‑sale)</td><td>With photos</td></tr>
+                        <tr><td><input type="checkbox" class="doc-check" data-cat="Forms &amp; Templates" data-doc="Road Test Report (post‑repair)"></td><td>AUTO-076 – Road Test Report (post‑repair)</td><td>Verification</td></tr>
+                        <tr><td><input type="checkbox" class="doc-check" data-cat="Forms &amp; Templates" data-doc="Overtime Authorization Form"></td><td>AUTO-077 – Overtime Authorization Form</td><td>Staff approval</td></tr>
+                        <tr><td><input type="checkbox" class="doc-check" data-cat="Forms &amp; Templates" data-doc="Leave Application Form"></td><td>AUTO-078 – Leave Application Form</td><td>Staff requests</td></tr>
+                        <tr><td><input type="checkbox" class="doc-check" data-cat="Forms &amp; Templates" data-doc="New Mechanic Induction Checklist (workshop safety)"></td><td>AUTO-079 – New Mechanic Induction Checklist (workshop safety)</td><td>Onboarding</td></tr>
+                        <tr><td><input type="checkbox" class="doc-check" data-cat="Forms &amp; Templates" data-doc="Supplier Evaluation Form"></td><td>AUTO-080 – Supplier Evaluation Form</td><td>Spare parts vendor performance</td></tr>
+                        <tr><td><input type="checkbox" class="doc-check" data-cat="Forms &amp; Templates" data-doc="Customer Satisfaction Survey"></td><td>AUTO-081 – Customer Satisfaction Survey</td><td>After repair follow‑up</td></tr>
+                        <tr><td><input type="checkbox" class="doc-check" data-cat="Forms &amp; Templates" data-doc="Termination Checklist"></td><td>AUTO-082 – Termination Checklist</td><td>Offboarding</td></tr>
+                    </tbody>
+                </table>
+            </section>
+
+            <!-- ===== FILE DIRECTORY STRUCTURE ===== -->
+            <section>
+                <h2 class="section-title">📁 File Directory Structure</h2>
+                <div class="repo-structure">
+                    <pre>
 Automotive Repair & Sales (Pty) Ltd/
 │
 ├── 01 Registration & Compliance/
@@ -754,22 +390,78 @@ Automotive Repair & Sales (Pty) Ltd/
     ├── Supplier_Evaluation_Form.docx
     ├── Customer_Satisfaction_Survey.docx
     └── Termination_Checklist.docx
-</pre>
+                    </pre>
+                </div>
+            </section>
+
+            <!-- ===== BUTTONS ===== -->
+            <div class="industry-buttons">
+                <a href="industries.html" class="btn btn-outline"><i class="fas fa-arrow-left"></i> Back to Industries</a>
+                <a href="#" id="orderSelectedBtnBottom" class="btn btn-primary"><i class="fas fa-clipboard-list"></i> Order Selected Documents →</a>
+            </div>
+
+            <!-- ===== FOOTER / CONTACT ===== -->
+            <div class="footer-contact" id="contact">
+                <p><strong>Msimelelo Victor Malusi</strong> – Founder</p>
+                <p>
+                    <i class="fas fa-phone"></i> 072 152 3293 &nbsp;|&nbsp;
+                    <i class="fab fa-whatsapp"></i> 063 301 7269 &nbsp;|&nbsp;
+                    <i class="fas fa-envelope"></i> mv.malusi@legacylaunchpad.co.za
+                </p>
+                <p>© 2025 Legacy Launchpad (Pty) Ltd – Building what lasts.</p>
+                <p style="margin-top: 10px; font-size: 0.75rem; opacity: 0.6;">Legacy Launchpad provides administrative and documentation support only. We are not lawyers, accountants, or tax practitioners.</p>
+            </div>
+
+        </main>
     </div>
 
-    <div class="button-group">
-        <a href="index.html#industries" class="btn"><i class="fas fa-arrow-left"></i> Back to Industries</a>
-        <a href="#" id="orderSelectedBtn" class="btn btn-secondary"><i class="fas fa-clipboard-list"></i> Order Selected Documents →</a>
-    </div>
+    <!-- ============================================================ -->
+    <!-- 3. PAGE-SPECIFIC JAVASCRIPT                                   -->
+    <!-- ============================================================ -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Both order buttons (top and bottom) trigger the same action
+            const orderBtns = document.querySelectorAll('#orderSelectedBtn, #orderSelectedBtnBottom');
+            orderBtns.forEach(function(btn) {
+                btn.addEventListener('click', function(e) {
+                    e.preventDefault();
 
-</div>
+                    // Check which packages are selected
+                    const selectRoadmap = document.getElementById('selectRoadmap');
+                    const selectDirectory = document.getElementById('selectDirectory');
 
-<div class="footer">
-    <div class="container">
-        <p>© 2025 Legacy Launchpad (Pty) Ltd – Building what lasts.</p>
-        <p style="margin-top: 10px; font-size: 0.75rem;">Legacy Launchpad provides administrative and documentation support only. We are not lawyers, accountants, or tax practitioners.</p>
-    </div>
-</div>
+                    // Collect selected individual documents
+                    const selected = [];
+                    document.querySelectorAll('.doc-check:checked').forEach(function(cb) {
+                        selected.push({
+                            category: cb.getAttribute('data-cat'),
+                            doc: cb.getAttribute('data-doc')
+                        });
+                    });
+
+                    // Build preselected data including package selections
+                    const preselected = {
+                        roadmap: selectRoadmap ? selectRoadmap.checked : false,
+                        directory: selectDirectory ? selectDirectory.checked : false,
+                        documents: selected
+                    };
+
+                    if (!preselected.roadmap && !preselected.directory && selected.length === 0) {
+                        alert('Please select at least one package or document to order.');
+                        return;
+                    }
+
+                    const param = encodeURIComponent(JSON.stringify(preselected));
+                    window.location.href = 'order-documents.html?industry=Automotive%20Repair%20%26%20Sales&preselected=' + param;
+                });
+            });
+        });
+    </script>
+
+    <!-- ============================================================ -->
+    <!-- 4. EXTERNAL JAVASCRIPT (Mobile toggles)                      -->
+    <!-- ============================================================ -->
+    <script src="app.js"></script>
 
 </body>
 </html>
