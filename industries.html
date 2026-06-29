@@ -50,7 +50,7 @@
         .dropdown:hover .dropdown-content { display: block; }
         .dropdown:hover .dropbtn { color: #fbbf24; }
 
-        /* === SIDEBAR (as above) === */
+        /* === SIDEBAR === */
         .app-container {
             display: flex;
             min-height: calc(100vh - 80px);
@@ -94,6 +94,7 @@
             margin-left: 280px;
             padding: 30px;
         }
+
         /* === INDUSTRY GRID === */
         .section-title {
             font-size: 1.8rem;
@@ -120,7 +121,7 @@
             box-shadow: 0 10px 25px rgba(0,0,0,0.1);
         }
         .industry-card i { font-size: 2rem; color: #fbbf24; margin-bottom: 10px; }
-        .industry-card h3 { margin: 10px 0; }
+        .industry-card h3 { margin: 10px 0; font-size: 1rem; }
         .badge {
             background: #fbbf24;
             color: #0f172a;
@@ -131,7 +132,7 @@
             display: inline-block;
             margin-top: 10px;
         }
-        .industry-card a { text-decoration: none; color: inherit; }
+        .industry-card a { text-decoration: none; color: inherit; display: block; }
 
         .footer-contact {
             background: #0f172a;
@@ -142,6 +143,18 @@
             margin-top: 50px;
         }
         .footer-contact a { color: #fbbf24; text-decoration: none; }
+
+        /* Count badge */
+        .count-badge {
+            display: inline-block;
+            background: #e2e8f0;
+            color: #1e293b;
+            padding: 2px 10px;
+            border-radius: 20px;
+            font-size: 0.7rem;
+            font-weight: 600;
+            margin-top: 6px;
+        }
 
         @media (max-width: 768px) {
             .sidebar {
@@ -193,8 +206,15 @@
     </style>
 </head>
 <body>
+    <!-- ===== TOP HEADER ===== -->
     <div class="top-header">
-        <div class="logo-area"><div class="logo-icon">LP</div><div class="logo-text"><h1>Legacy Launchpad</h1><p>Building what lasts.</p></div></div>
+        <div class="logo-area">
+            <div class="logo-icon">LP</div>
+            <div class="logo-text">
+                <h1>Legacy Launchpad</h1>
+                <p>Building what lasts.</p>
+            </div>
+        </div>
         <div class="top-nav" id="topNav">
             <a href="index.html">Home</a>
             <a href="about.html">About</a>
@@ -216,10 +236,14 @@
         <button class="menu-toggle" id="menuToggle">☰</button>
     </div>
 
+    <!-- ===== APP CONTAINER ===== -->
     <div class="app-container">
         <!-- SIDEBAR -->
         <div class="sidebar" id="sidebar">
-            <div class="sidebar-header"><h3>Enterprise Menu</h3><p>Advanced features</p></div>
+            <div class="sidebar-header">
+                <h3>Enterprise Menu</h3>
+                <p>Advanced features</p>
+            </div>
             <ul class="sidebar-menu">
                 <li><a href="profile.html"><i class="fas fa-user-plus"></i> 01 Profile / Create Profile</a></li>
                 <li><a href="partners.html"><i class="fas fa-handshake"></i> 02 Our Partners</a></li>
@@ -235,33 +259,254 @@
             </ul>
         </div>
 
+        <!-- MAIN CONTENT -->
         <div class="main-content">
             <h2 class="section-title">Our Industry Document Roadmaps</h2>
+            <p style="margin-bottom: 20px; color: #475569;">Complete document systems for 26 industries – ready to implement.</p>
+
             <div class="industry-grid">
-                <div class="industry-card"><a href="industry-construction.html"><i class="fas fa-hard-hat"></i><h3>Construction</h3><div class="badge">84 docs</div></a></div>
-                <div class="industry-card"><a href="industry-cleaning.html"><i class="fas fa-broom"></i><h3>Cleaning Services</h3><div class="badge">73 docs</div></a></div>
-                <div class="industry-card"><a href="industry-cash-for-scrap.html"><i class="fas fa-recycle"></i><h3>Cash for Scrap</h3><div class="badge">77 docs</div></a></div>
-                <div class="industry-card"><a href="industry-property.html"><i class="fas fa-building"></i><h3>Property & Real Estate</h3><div class="badge">77 docs</div></a></div>
-                <div class="industry-card"><a href="industry-transport.html"><i class="fas fa-truck"></i><h3>Transport & Logistics</h3><div class="badge">84 docs</div></a></div>
-                <div class="industry-card"><a href="industry-retail.html"><i class="fas fa-store"></i><h3>Retail (General)</h3><div class="badge">73 docs</div></a></div>
-                <div class="industry-card"><a href="industry-hospitality.html"><i class="fas fa-utensils"></i><h3>Restaurant & Takeaway</h3><div class="badge">79 docs</div></a></div>
-                <div class="industry-card"><a href="industry-security.html"><i class="fas fa-shield-alt"></i><h3>Security Services</h3><div class="badge">108 docs</div></a></div>
-                <div class="industry-card"><a href="industry-manufacturing.html"><i class="fas fa-industry"></i><h3>Light Manufacturing</h3><div class="badge">82 docs</div></a></div>
-                <div class="industry-card"><a href="industry-automotive.html"><i class="fas fa-car"></i><h3>Automotive Repair & Sales</h3><div class="badge">82 docs</div></a></div>
-                <div class="industry-card"><a href="industry-beauty.html"><i class="fas fa-cut"></i><h3>Health & Beauty</h3><div class="badge">75 docs</div></a></div>
-                <div class="industry-card"><a href="industry-it.html"><i class="fas fa-laptop-code"></i><h3>Information Technology (IT)</h3><div class="badge">75 docs</div></a></div>
-                <div class="industry-card"><a href="industry-event.html"><i class="fas fa-calendar-alt"></i><h3>Event Management & Catering</h3><div class="badge">81 docs</div></a></div>
-                <div class="industry-card"><a href="industry-farming.html"><i class="fas fa-tractor"></i><h3>Farming & Agriculture</h3><div class="badge">80 docs</div></a></div>
-                <div class="industry-card"><a href="industry-funeral.html"><i class="fas fa-heart"></i><h3>Funeral Services</h3><div class="badge">82 docs</div></a></div>
-                <div class="industry-card"><a href="industry-ecd.html"><i class="fas fa-child"></i><h3>ECD (Daycare/Crèche)</h3><div class="badge">82 docs</div></a></div>
-                <div class="industry-card"><a href="industry-electrical.html"><i class="fas fa-bolt"></i><h3>Electrical & Solar</h3><div class="badge">81 docs</div></a></div>
-                <div class="industry-card"><a href="industry-plumbing.html"><i class="fas fa-wrench"></i><h3>Plumbing & Sanitation</h3><div class="badge">82 docs</div></a></div>
-                <div class="industry-card"><a href="industry-warehousing.html"><i class="fas fa-warehouse"></i><h3>Logistics & Warehousing</h3><div class="badge">85 docs</div></a></div>
-                <div class="industry-card"><a href="industry-ngo.html"><i class="fas fa-hand-holding-heart"></i><h3>NGO / Non-Profit</h3><div class="badge">85 docs</div></a></div>
+                <!-- 1. Construction -->
+                <div class="industry-card">
+                    <a href="industry-construction.html">
+                        <i class="fas fa-hard-hat"></i>
+                        <h3>Construction</h3>
+                        <div class="badge">84 docs</div>
+                    </a>
+                </div>
+
+                <!-- 2. Cleaning Services -->
+                <div class="industry-card">
+                    <a href="industry-cleaning.html">
+                        <i class="fas fa-broom"></i>
+                        <h3>Cleaning Services</h3>
+                        <div class="badge">73 docs</div>
+                    </a>
+                </div>
+
+                <!-- 3. Cash for Scrap -->
+                <div class="industry-card">
+                    <a href="industry-cash-for-scrap.html">
+                        <i class="fas fa-recycle"></i>
+                        <h3>Cash for Scrap</h3>
+                        <div class="badge">77 docs</div>
+                    </a>
+                </div>
+
+                <!-- 4. Property & Real Estate -->
+                <div class="industry-card">
+                    <a href="industry-property.html">
+                        <i class="fas fa-building"></i>
+                        <h3>Property &amp; Real Estate</h3>
+                        <div class="badge">77 docs</div>
+                    </a>
+                </div>
+
+                <!-- 5. Transport & Logistics -->
+                <div class="industry-card">
+                    <a href="industry-transport.html">
+                        <i class="fas fa-truck"></i>
+                        <h3>Transport &amp; Logistics</h3>
+                        <div class="badge">84 docs</div>
+                    </a>
+                </div>
+
+                <!-- 6. Retail (General) -->
+                <div class="industry-card">
+                    <a href="industry-retail.html">
+                        <i class="fas fa-store"></i>
+                        <h3>Retail (General)</h3>
+                        <div class="badge">73 docs</div>
+                    </a>
+                </div>
+
+                <!-- 7. Restaurant & Takeaway -->
+                <div class="industry-card">
+                    <a href="industry-hospitality.html">
+                        <i class="fas fa-utensils"></i>
+                        <h3>Restaurant &amp; Takeaway</h3>
+                        <div class="badge">79 docs</div>
+                    </a>
+                </div>
+
+                <!-- 8. Security Services -->
+                <div class="industry-card">
+                    <a href="industry-security.html">
+                        <i class="fas fa-shield-alt"></i>
+                        <h3>Security Services</h3>
+                        <div class="badge">108 docs</div>
+                    </a>
+                </div>
+
+                <!-- 9. Light Manufacturing -->
+                <div class="industry-card">
+                    <a href="industry-manufacturing.html">
+                        <i class="fas fa-industry"></i>
+                        <h3>Light Manufacturing</h3>
+                        <div class="badge">82 docs</div>
+                    </a>
+                </div>
+
+                <!-- 10. Automotive Repair & Sales -->
+                <div class="industry-card">
+                    <a href="industry-automotive.html">
+                        <i class="fas fa-car"></i>
+                        <h3>Automotive Repair &amp; Sales</h3>
+                        <div class="badge">82 docs</div>
+                    </a>
+                </div>
+
+                <!-- 11. Health & Beauty -->
+                <div class="industry-card">
+                    <a href="industry-beauty.html">
+                        <i class="fas fa-cut"></i>
+                        <h3>Health &amp; Beauty</h3>
+                        <div class="badge">75 docs</div>
+                    </a>
+                </div>
+
+                <!-- 12. Information Technology (IT) -->
+                <div class="industry-card">
+                    <a href="industry-it.html">
+                        <i class="fas fa-laptop-code"></i>
+                        <h3>Information Technology (IT)</h3>
+                        <div class="badge">75 docs</div>
+                    </a>
+                </div>
+
+                <!-- 13. Event Management & Catering -->
+                <div class="industry-card">
+                    <a href="industry-event.html">
+                        <i class="fas fa-calendar-alt"></i>
+                        <h3>Event Management &amp; Catering</h3>
+                        <div class="badge">81 docs</div>
+                    </a>
+                </div>
+
+                <!-- 14. Farming & Agriculture -->
+                <div class="industry-card">
+                    <a href="industry-farming.html">
+                        <i class="fas fa-tractor"></i>
+                        <h3>Farming &amp; Agriculture</h3>
+                        <div class="badge">80 docs</div>
+                    </a>
+                </div>
+
+                <!-- 15. Funeral Services -->
+                <div class="industry-card">
+                    <a href="industry-funeral.html">
+                        <i class="fas fa-heart"></i>
+                        <h3>Funeral Services</h3>
+                        <div class="badge">82 docs</div>
+                    </a>
+                </div>
+
+                <!-- 16. ECD (Daycare/Crèche) -->
+                <div class="industry-card">
+                    <a href="industry-ecd.html">
+                        <i class="fas fa-child"></i>
+                        <h3>ECD (Daycare/Crèche)</h3>
+                        <div class="badge">82 docs</div>
+                    </a>
+                </div>
+
+                <!-- 17. Electrical & Solar -->
+                <div class="industry-card">
+                    <a href="industry-electrical.html">
+                        <i class="fas fa-bolt"></i>
+                        <h3>Electrical &amp; Solar</h3>
+                        <div class="badge">81 docs</div>
+                    </a>
+                </div>
+
+                <!-- 18. Plumbing & Sanitation -->
+                <div class="industry-card">
+                    <a href="industry-plumbing.html">
+                        <i class="fas fa-wrench"></i>
+                        <h3>Plumbing &amp; Sanitation</h3>
+                        <div class="badge">82 docs</div>
+                    </a>
+                </div>
+
+                <!-- 19. Logistics & Warehousing -->
+                <div class="industry-card">
+                    <a href="industry-warehousing.html">
+                        <i class="fas fa-warehouse"></i>
+                        <h3>Logistics &amp; Warehousing</h3>
+                        <div class="badge">85 docs</div>
+                    </a>
+                </div>
+
+                <!-- 20. NGO / Non-Profit -->
+                <div class="industry-card">
+                    <a href="industry-ngo.html">
+                        <i class="fas fa-hand-holding-heart"></i>
+                        <h3>NGO / Non-Profit</h3>
+                        <div class="badge">85 docs</div>
+                    </a>
+                </div>
+
+                <!-- 21. Healthcare -->
+                <div class="industry-card">
+                    <a href="industry-healthcare.html">
+                        <i class="fas fa-heartbeat"></i>
+                        <h3>Healthcare (Medical Practice)</h3>
+                        <div class="badge">92 docs</div>
+                    </a>
+                </div>
+
+                <!-- 22. Finance -->
+                <div class="industry-card">
+                    <a href="industry-finance.html">
+                        <i class="fas fa-chart-pie"></i>
+                        <h3>Finance &amp; Financial Services</h3>
+                        <div class="badge">88 docs</div>
+                    </a>
+                </div>
+
+                <!-- 23. Media House -->
+                <div class="industry-card">
+                    <a href="industry-media-house.html">
+                        <i class="fas fa-film"></i>
+                        <h3>Media House (Production)</h3>
+                        <div class="badge">81 docs</div>
+                    </a>
+                </div>
+
+                <!-- 24. Music Studio -->
+                <div class="industry-card">
+                    <a href="industry-music-studio.html">
+                        <i class="fas fa-music"></i>
+                        <h3>Music Studio (Recording)</h3>
+                        <div class="badge">79 docs</div>
+                    </a>
+                </div>
+
+                <!-- 25. Consulting & Professional Services -->
+                <div class="industry-card">
+                    <a href="industry-consulting.html">
+                        <i class="fas fa-briefcase"></i>
+                        <h3>Consulting &amp; Professional Services</h3>
+                        <div class="badge">70 docs</div>
+                    </a>
+                </div>
+
+                <!-- 26. Creative Agency / Design Studio -->
+                <div class="industry-card">
+                    <a href="industry-creative-agency.html">
+                        <i class="fas fa-paint-brush"></i>
+                        <h3>Creative Agency / Design Studio</h3>
+                        <div class="badge">68 docs</div>
+                    </a>
+                </div>
             </div>
+
             <div class="footer-contact" id="contact">
                 <p><strong>Msimelelo Victor Malusi</strong> – Founder</p>
-                <p><i class="fas fa-phone"></i> 072 152 3293 &nbsp;|&nbsp; <i class="fab fa-whatsapp"></i> 063 301 7269 &nbsp;|&nbsp; <i class="fas fa-envelope"></i> mv.malusi@legacylaunchpad.co.za</p>
+                <p>
+                    <i class="fas fa-phone"></i> 072 152 3293 &nbsp;|&nbsp;
+                    <i class="fab fa-whatsapp"></i> 063 301 7269 &nbsp;|&nbsp;
+                    <i class="fas fa-envelope"></i> mv.malusi@legacylaunchpad.co.za
+                </p>
                 <p>© 2025 Legacy Launchpad (Pty) Ltd – Building what lasts.</p>
             </div>
         </div>
@@ -275,6 +520,12 @@
                 topNav.classList.toggle('show');
             });
         }
+
+        // Sidebar toggle (optional, for mobile)
+        const sidebarToggle = document.querySelector('.menu-toggle'); // reuse
+        const sidebar = document.getElementById('sidebar');
+        // If you want sidebar toggle on mobile, add a second button or use same
+        // For now, sidebar is always visible on desktop, hidden on mobile via CSS
     </script>
 </body>
 </html>
