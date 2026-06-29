@@ -21,6 +21,51 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
+    document.addEventListener('DOMContentLoaded', function() {
+    // --- Top nav toggle ---
+    const menuBtnTop = document.getElementById('menuToggleTop');
+    const topNav = document.getElementById('topNav');
+    if (menuBtnTop && topNav) {
+        menuBtnTop.addEventListener('click', function(e) {
+            e.stopPropagation();
+            topNav.classList.toggle('show');
+        });
+    }
+
+    // --- Sidebar toggle ---
+    const menuBtnSide = document.getElementById('menuToggle');
+    const sidebar = document.getElementById('sidebar');
+    if (menuBtnSide && sidebar) {
+        menuBtnSide.addEventListener('click', function(e) {
+            e.stopPropagation();
+            sidebar.classList.toggle('open');
+        });
+    }
+
+    // --- Close sidebar when a link is clicked (prevents "stuck" on mobile) ---
+    if (sidebar) {
+        const sidebarLinks = sidebar.querySelectorAll('a');
+        sidebarLinks.forEach(function(link) {
+            link.addEventListener('click', function() {
+                // Only close if sidebar is open (i.e., on mobile)
+                if (sidebar.classList.contains('open')) {
+                    sidebar.classList.remove('open');
+                }
+            });
+        });
+    }
+
+    // --- Close sidebar if user clicks outside on mobile ---
+    document.addEventListener('click', function(e) {
+        if (sidebar && sidebar.classList.contains('open')) {
+            // Check if click is outside sidebar and not on the toggle button
+            if (!sidebar.contains(e.target) && e.target.id !== 'menuToggle') {
+                sidebar.classList.remove('open');
+            }
+        }
+    });
+});
+
     // ============================================================
     //  2. PROFILE PAGE – Tabs, Login/Signup
     // ============================================================
