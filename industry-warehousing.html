@@ -1,675 +1,295 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
     <title>Warehousing & Distribution Document Roadmap | Legacy Launchpad</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <style>
-        * { margin:0; padding:0; box-sizing:border-box; }
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #f8fafc; color: #1e293b; line-height: 1.5; }
-        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
-        .header { background: #0f172a; color: white; padding: 20px 0; position: sticky; top: 0; z-index: 100; }
-        .header-flex { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px; }
-        .logo-area { display: flex; align-items: center; gap: 15px; }
-        .logo-placeholder { width: 50px; height: 50px; background: #fbbf24; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.8rem; color: #0f172a; }
-        .logo-text h1 { font-size: 1.5rem; letter-spacing: -0.5px; }
-        .nav a { color: white; text-decoration: none; margin-left: 25px; transition: 0.3s; }
-        .nav a:hover { color: #fbbf24; }
-        .hero { background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); color: white; padding: 60px 0; text-align: center; }
-        .hero h1 { font-size: 2.5rem; margin-bottom: 15px; }
-        .section-title { font-size: 1.8rem; margin: 40px 0 20px; padding-bottom: 10px; border-bottom: 2px solid #fbbf24; display: inline-block; }
-        table { width: 100%; border-collapse: collapse; background: white; border-radius: 16px; overflow: hidden; margin: 20px 0; }
-        th, td { padding: 12px 15px; text-align: left; border-bottom: 1px solid #e2e8f0; vertical-align: top; }
-        th { background: #0f172a; color: white; }
-        tr:hover { background: #fefce8; }
-        .button-group { display: flex; justify-content: center; gap: 20px; margin: 30px 0; flex-wrap: wrap; }
-        .btn { display: inline-block; background: #0f172a; color: white; padding: 12px 30px; border-radius: 40px; text-decoration: none; font-weight: bold; transition: 0.3s; }
-        .btn-secondary { background: #fbbf24; color: #0f172a; }
-        .btn:hover { transform: translateY(-2px); background: #f59e0b; color: #0f172a; }
-        .footer { background: #0f172a; color: #94a3b8; text-align: center; padding: 30px 0; margin-top: 40px; }
-        @media (max-width: 768px) { th, td { padding: 8px 10px; font-size: 0.8rem; } .button-group { flex-direction: column; align-items: center; } }
-    </style>
+
+    <!-- External Styles -->
+    <link rel="stylesheet" href="main.css" />
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
 </head>
-<body>
+<body class="page-industry">
 
-<div class="header">
-    <div class="container header-flex">
+    <!-- ========== TOP HEADER ========== -->
+    <header class="top-header">
         <div class="logo-area">
-            <div class="logo-placeholder"><i class="fas fa-cube"></i></div>
-            <div class="logo-text"><h1>Legacy Launchpad</h1><p>Building what lasts.</p></div>
+            <div class="logo-icon">LP</div>
+            <div class="logo-text">
+                <h1>Legacy Launchpad</h1>
+                <p>Building what lasts.</p>
+            </div>
         </div>
-        <div class="nav">
+
+        <nav class="top-nav" id="topNav">
             <a href="index.html">Home</a>
-            <a href="index.html#industries">Industries</a>
-            <a href="pricing.html">Pricing</a>
-            <a href="order-documents.html"><i class="fas fa-clipboard-list"></i> Order</a>
-            <a href="index.html#contact">Contact</a>
-        </div>
-    </div>
-</div>
+            <a href="about.html">About</a>
+            <a href="industries.html">Industries</a>
+            <div class="dropdown">
+                <button class="dropbtn">Services <i class="fas fa-chevron-down"></i></button>
+                <div class="dropdown-content">
+                    <a href="3d-floor-plans.html">🏗️ 3D Floor Plans</a>
+                    <a href="personal-services.html">🧑 Personal Services</a>
+                    <a href="business-support.html">📊 Business Support</a>
+                    <a href="marketing-services.html">🎨 Marketing Services</a>
+                    <a href="spaza-shop.html">🏪 Spaza Shop</a>
+                    <a href="liquor-licence.html">🍷 Liquor Licence Application</a>
+                    <a href="order-documents.html">📋 Order Documents</a>
+                </div>
+            </div>
+            <a href="policies.html">Policies</a>
+            <a href="#contact">Contact</a>
+        </nav>
 
-<div class="hero">
-    <div class="container">
-        <h1>📦 Logistics & Warehousing</h1>
-        <p>Complete document roadmap – 85 core documents</p>
-    </div>
-</div>
+        <button class="menu-toggle" id="menuToggleTop" aria-label="Toggle navigation">☰</button>
+        <button class="menu-toggle" id="menuToggle" aria-label="Toggle sidebar">☰</button>
+    </header>
 
-<div class="container">
-    <h2 class="section-title">📋 Document Roadmap</h2>
+    <!-- ========== APP CONTAINER ========== -->
+    <div class="app-container">
 
-<h3>Phase 1: Registration & Compliance (11 docs)</h3>
-<table>
-    <thead>
-        <tr><th>✔</th><th>Ref</th><th>Document</th><th>Purpose</th></tr>
-    </thead>
-    <tbody>
-        <tr>
-  
-            <td><input type="checkbox" class="doc-check" data-cat="Registration & Compliance" data-doc="CIPC Registration Certificate"></li>
-            <td>WAR-001</li>
-            <td>CIPC Registration Certificate</li>
-            <td>Proof of company registration</li>
-        </tr>
-        <tr>
-            <td><input type="checkbox" class="doc-check" data-cat="Registration & Compliance" data-doc="Memorandum of Incorporation (MOI)"></li>
-            <td>WAR-002</li>
-            <td>Memorandum of Incorporation (MOI)</li>
-            <td>Company constitution</li>
-        </tr>
-        <tr>
-            <td><input type="checkbox" class="doc-check" data-cat="Registration & Compliance" data-doc="SARS Registration (IT, PAYE, VAT)"></li>
-            <td>WAR-003</li>
-            <td>SARS Registration (IT, PAYE, VAT)</li>
-            <td>Tax compliance (VAT if turnover >R1m)</li>
-        </tr>
-        <tr>
-            <td><input type="checkbox" class="doc-check" data-cat="Registration & Compliance" data-doc="COIDA Registration"></li>
-            <td>WAR-004</li>
-            <td>COIDA Registration</li>
-            <td>Employee injury cover</li>
-        </td>
-        <tr>
-            <td><input type="checkbox" class="doc-check" data-cat="Registration & Compliance" data-doc="Public Liability Insurance"></li>
-            <td>WAR-005</li>
-            <td>Public Liability Insurance</li>
-            <td>Cover for third‑party property damage, visitor injury</li>
-        </tr>
-        <tr>
-            <td><input type="checkbox" class="doc-check" data-cat="Registration & Compliance" data-doc="Goods‑in‑Transit Insurance (for goods stored)"></li>
-            <td>WAR-006</li>
-            <td>Goods‑in‑Transit Insurance (for goods stored)</li>
-            <td>Cover for client stock while in your care</li>
-        </tr>
-        </tr>
-            <td><input type="checkbox" class="doc-check" data-cat="Registration & Compliance" data-doc="Warehouse Business Licence (Municipal)"></li>
-            <td>WAR-007</li>
-            <td>Warehouse Business Licence (Municipal)</li>
-            <td>Required for trading</li>
-        </tr>
-        <tr>
-            <td><input type="checkbox" class="doc-check" data-cat="Registration & Compliance" data-doc="Zoning Certificate (Industrial / Warehouse zoning)"></li>
-            <td>WAR-008</li>
-            <td>Zoning Certificate (Industrial / Warehouse zoning)</li>
-            <td>Municipality confirmation</li>
-        </tr>
-        <tr>
-            <td><input type="checkbox" class="doc-check" data-cat="Registration & Compliance" data-doc="Fire Clearance Certificate (warehouse)"></li>
-            <td>WAR-009</li>
-            <td>Fire Clearance Certificate (warehouse)</li>
-            <td>Critical for storage facilities</li>
-        </tr>
-        <tr>
-            <td><input type="checkbox" class="doc-check" data-cat="Registration & Compliance" data-doc="B-BBEE Certificate"></li>
-            <td>WAR-010</li>
-            <td>B‑BBEE Certificate</li>
-            <td>For corporate clients (retailers, manufacturers)</li>
-        </tr>
-        <tr>
-            <td><input type="checkbox" class="doc-check" data-cat="Registration & Compliance" data-doc="CSD Registration"></li>
-            <td>WAR-011</li>
-            <td>CSD Registration</li>
-            <td>For government tenders</li>
-        </tr>
-    </tbody>
-</table>
+        <!-- SIDEBAR (shared) -->
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <h3>Enterprise Menu</h3>
+                <p>Advanced features</p>
+            </div>
+            <ul class="sidebar-menu">
+                <li><a href="profile.html"><i class="fas fa-user-plus"></i> 01 Profile / Create Profile</a></li>
+                <li><a href="partners.html"><i class="fas fa-handshake"></i> 02 Our Partners</a></li>
+                <li><a href="international.html"><i class="fas fa-globe"></i> 03 International Partners</a></li>
+                <li><a href="strategic-growth.html"><i class="fas fa-chart-line"></i> 04 Strategic Growth</a></li>
+                <li><a href="business-partners.html"><i class="fas fa-building"></i> 05 Business Partners</a></li>
+                <li><a href="market-leads.html"><i class="fas fa-chart-simple"></i> 06 Real Time Market Leads</a></li>
+                <li><a href="business-hub.html"><i class="fas fa-users"></i> 07 Business Hub</a></li>
+                <li><a href="hire-admin.html"><i class="fas fa-user-tie"></i> 08 Hire Our Admin</a></li>
+                <li><a href="referral.html"><i class="fas fa-gift"></i> 09 Referral Program</a></li>
+                <li><a href="logout.html"><i class="fas fa-sign-out-alt"></i> 10 Profile Log Out</a></li>
+                <li><a href="https://www.legacylaunchpad.co.za/artist-profile-service.html" target="_blank"><i class="fas fa-star"></i> 11 EPK Studio</a></li>
+            </ul>
+        </aside>
 
-<h3>Phase 2: Contracts & Client Docs (11 docs)</h3>
-<table>
-    <thead>
-        <tr><th>✔</th><th>Ref</th><th>Document</th><th>Purpose</th></td>
-    </thead>
-    <tbody>
-        <tr>
-  
-            <td><input type="checkbox" class="doc-check" data-cat="Contracts & Client Docs" data-doc="Warehouse Storage Agreement (Master)"></li>
-            <td>WAR-012</li>
-            <td>Warehouse Storage Agreement (Master)</li>
-            <td>Core contract with client</li>
-        </tr>
-        <tr>
-            <td><input type="checkbox" class="doc-check" data-cat="Contracts & Client Docs" data-doc="Logistics/Distribution Services Agreement (value‑added services)"></li>
-            <td>WAR-013</li>
-            <td>Logistics/Distribution Services Agreement (value‑added services)</li>
-            <td>Pick, pack, ship</li>
-        </tr>
-        <tr>
-            <td><input type="checkbox" class="doc-check" data-cat="Contracts & Client Docs" data-doc="Quotation / Rate Card Template (per pallet, per sqm, per hour)"></li>
-            <td>WAR-014</li>
-            <td>Quotation / Rate Card Template (per pallet, per sqm, per hour)</li>
-            <td>Pricing transparency</li>
-        </tr>
-        <tr>
-            <td><input type="checkbox" class="doc-check" data-cat="Contracts & Client Docs" data-doc="Goods Received Note (GRN) – per delivery"></li>
-            <td>WAR-015</li>
-            <td>Goods Received Note (GRN) – per delivery</li>
-            <td>Proof of receipt, condition</li>
-        </tr>
-        <tr>
-            <td><input type="checkbox" class="doc-check" data-cat="Contracts & Client Docs" data-doc="Stock Discrepancy / Damage Report Form"></li>
-            <td>WAR-016</li>
-            <td>Stock Discrepancy / Damage Report Form</li>
-            <td>For claims</li>
-        </tr>
-        <tr>
-            <td><input type="checkbox" class="doc-check" data-cat="Contracts & Client Docs" data-doc="Release Authorisation Form (client)"></li>
-            <td>WAR-017</li>
-            <td>Release Authorisation Form (client)</li>
-            <td>Before releasing goods</li>
-        </tr>
-        <tr>
-            <td><input type="checkbox" class="doc-check" data-cat="Contracts & Client Docs" data-doc="Non-Disclosure Agreement (NDA)"></li>
-            <td>WAR-018</li>
-            <td>Non‑Disclosure Agreement (NDA)</li>
-            <td>For client inventory levels, pricing</li>
-        </tr>
-        <tr>
-            <td><input type="checkbox" class="doc-check" data-cat="Contracts & Client Docs" data-doc="Subcontractor Agreement (transport, labour hire)"></li>
-            <td>WAR-019</li>
-            <td>Subcontractor Agreement (transport, labour hire)</li>
-            <td>For outsourced services</li>
-        </tr>
-        <tr>
-            <td><input type="checkbox" class="doc-check" data-cat="Contracts & Client Docs" data-doc="Supplier Agreement (racking, pallets, packaging)"></li>
-            <td>WAR-020</li>
-            <td>Supplier Agreement (racking, pallets, packaging)</li>
-            <td>With vendors</li>
-        </tr>
-        <tr>
-            <td><input type="checkbox" class="doc-check" data-cat="Contracts & Client Docs" data-doc="Indemnity / Hold Harmless Agreement (client)"></li>
-            <td>WAR-021</li>
-            <td>Indemnity / Hold Harmless Agreement (client)</li>
-            <td>Liability for hazardous goods</li>
-        </tr>
-        <tr>
-            <td><input type="checkbox" class="doc-check" data-cat="Contracts & Client Docs" data-doc="Cold Storage Addendum (temperature‑controlled)"></li>
-            <td>WAR-022</li>
-            <td>Cold Storage Addendum (temperature‑controlled)</li>
-            <td>Specific terms</li>
-        </tr>
-    </tbody>
-</table>
+        <!-- ========== MAIN CONTENT ========== -->
+        <main class="main-content">
 
-<h3>Phase 3: Human Resources (10 docs)</h3>
-<table>
-    <thead>
-        <tr><th>✔</th><th>Ref</th><th>Document</th><th>Purpose</th></tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td><input type="checkbox" class="doc-check" data-cat="Human Resources" data-doc="Employment Contract – Warehouse Manager"></li>
-            <td>WAR-023</li>
-            <td>Employment Contract – Warehouse Manager</li>
-            <td>Senior staff</li>
-        </tr>
-        <tr>
-            <td><input type="checkbox" class="doc-check" data-cat="Human Resources" data-doc="Employment Contract – Forklift / Reach Truck Operator"></li>
-            <td>WAR-024</li>
-            <td>Employment Contract – Forklift / Reach Truck Operator</li>
-            <td>Qualified operators</li>
-        </tr>
-        </tr>
-            <td><input type="checkbox" class="doc-check" data-cat="Human Resources" data-doc="Employment Contract – Pickers / Packers"></li>
-            <td>WAR-025</li>
-            <td>Employment Contract – Pickers / Packers</li>
-            <td>General warehouse staff</li>
-        </tr>
-        <tr>
-            <td><input type="checkbox" class="doc-check" data-cat="Human Resources" data-doc="Employment Contract – Receiving / Despatch Clerk"></li>
-            <td>WAR-026</li>
-            <td>Employment Contract – Receiving / Despatch Clerk</li>
-            <td>Admin / counting</li>
-        </tr>
-        <tr>
-            <td><input type="checkbox" class="doc-check" data-cat="Human Resources" data-doc="Employment Contract – Admin / Inventory Controller"></li>
-            <td>WAR-027</li>
-            <td>Employment Contract – Admin / Inventory Controller</li>
-            <td>Office</li>
-        </tr>
-        <tr>
-            <td><input type="checkbox" class="doc-check" data-cat="Human Resources" data-doc="Independent Contractor Agreement (seasonal labour)"></li>
-            <td>WAR-028</li>
-            <td>Independent Contractor Agreement (seasonal labour)</li>
-            <td>Peak periods</li>
-        </tr>
-        <tr>
-            <td><input type="checkbox" class="doc-check" data-cat="Human Resources" data-doc="Code of Conduct (Employees)"></li>
-            <td>WAR-029</li>
-            <td>Code of Conduct (Employees)</li>
-            <td>Safety, theft prevention, professionalism</li>
-        </tr>
-        <tr>
-            <td><input type="checkbox" class="doc-check" data-cat="Human Resources" data-doc="Disciplinary Code & Procedure"></li>
-            <td>WAR-030</li>
-            <td>Disciplinary Code & Procedure</li>
-            <td>HR compliance</li>
-        </tr>
-        <tr>
-            <td><input type="checkbox" class="doc-check" data-cat="Human Resources" data-doc="Shift Roster (warehouse)"></li>
-            <td>WAR-031</li>
-            <td>Shift Roster (warehouse)</li>
-            <td>Daily allocation</li>
-        </tr>
-        <tr>
-            <td><input type="checkbox" class="doc-check" data-cat="Human Resources" data-doc="Attendance Register (Daily)"></li>
-            <td>WAR-032</li>
-            <td>Attendance Register (Daily)</li>
-            <td>Sign‑in / sign‑out</li>
-        </tr>
-    </tbody>
-</table>
+            <!-- HERO -->
+            <section class="hero-industry">
+                <h1>📦 Logistics &amp; Warehousing</h1>
+                <p>Complete document roadmap – 85 core documents for your warehouse and distribution business</p>
+                <a href="#roadmap" class="btn btn-primary">View Roadmap ↓</a>
+            </section>
 
-<h3>Phase 4: Operations & Warehouse Management (16 docs)</h3>
-<table>
-    <thead>
-        <tr><th>✔</th><th>Ref</th><th>Document</th><th>Purpose</th></td>
-    </thead>
-    <tbody>
-        <tr>
-            <td><input type="checkbox" class="doc-check" data-cat="Operations & Warehouse Management" data-doc="Daily Warehouse Activity Log (receipts, picks, dispatches)"></li>
-            <td>WAR-033</li>
-            <td>Daily Warehouse Activity Log (receipts, picks, dispatches)</li>
-            <td>Management summary</li>
-        </tr>
-        </tr>
-            <td><input type="checkbox" class="doc-check" data-cat="Operations & Warehouse Management" data-doc="Receiving Log (incoming goods)"></li>
-            <td>WAR-034</li>
-            <td>Receiving Log (incoming goods)</li>
-            <td>Supplier, client, quantity</li>
-        </tr>
-        <tr>
-            <td><input type="checkbox" class="doc-check" data-cat="Operations & Warehouse Management" data-doc="Put‑Away Log (bin locations)"></li>
-            <td>WAR-035</li>
-            <td>Put‑Away Log (bin locations)</li>
-            <td>Storage tracking</li>
-        </td>
-        <tr>
-            <td><input type="checkbox" class="doc-check" data-cat="Operations & Warehouse Management" data-doc="Inventory Stock Take Sheet (cycle count / full)"></li>
-            <td>WAR-036</li>
-            <td>Inventory Stock Take Sheet (cycle count / full)</li>
-            <td>Accuracy</li>
-        </tr>
-        <tr>
-            <td><input type="checkbox" class="doc-check" data-cat="Operations & Warehouse Management" data-doc="Daily Cycle Count Log"></li>
-            <td>WAR-037</li>
-            <td>Daily Cycle Count Log</li>
-            <td>High‑value items</li>
-        </tr>
-        <tr>
-            <td><input type="checkbox" class="doc-check" data-cat="Operations & Warehouse Management" data-doc="Picking List (per client order)"></li>
-            <td>WAR-038</li>
-            <td>Picking List (per client order)</li>
-            <td>Order fulfilment</li>
-        <tr>
-        <tr>
-            <td><input type="checkbox" class="doc-check" data-cat="Operations & Warehouse Management" data-doc="Packing Checklist (per shipment)"></li>
-            <td>WAR-039</li>
-            <td>Packing Checklist (per shipment)</li>
-            <td>Quality control</li>
-        </tr>
-        <tr>
-            <td><input type="checkbox" class="doc-check" data-cat="Operations & Warehouse Management" data-doc="Despatch / Loading Log (outgoing)"></li>
-            <td>WAR-040</li>
-            <td>Despatch / Loading Log (outgoing)</li>
-            <td>Vehicle, driver, seal number</li>
-        </tr>
-        </tr>
-            <td><input type="checkbox" class="doc-check" data-cat="Operations & Warehouse Management" data-doc="Return / RMA Log (client returns)"></li>
-            <td>WAR-041</li>
-            <td>Return / RMA Log (client returns)</li>
-            <td>Reverse logistics</li>
-        </tr>
-        <tr>
-            <td><input type="checkbox" class="doc-check" data-cat="Operations & Warehouse Management" data-doc="Warehouse Bin / Location Register (grid map)"></li>
-            <td>WAR-042</li>
-            <td>Warehouse Bin / Location Register (grid map)</li>
-            <td>Efficiency</li>
-        </tr>
-        <tr>
-            <td><input type="checkbox" class="doc-check" data-cat="Operations & Warehouse Management" data-doc="Equipment Inspection Log (forklifts, pallet jacks, reach trucks)"></li>
-            <td>WAR-043</li>
-            <td>Equipment Inspection Log (forklifts, pallet jacks, reach trucks)</li>
-            <td>Daily checks</li>
-        </tr>
-        <tr>
-            <td><input type="checkbox" class="doc-check" data-cat="Operations & Warehouse Management" data-doc="Forklift / Reach Truck Daily Checklist"></li>
-            <td>WAR-044</li>
-            <td>Forklift / Reach Truck Daily Checklist</li>
-            <td>Safety compliance</li>
-        </tr>
-        <tr>
-            <td><input type="checkbox" class="doc-check" data-cat="Operations & Warehouse Management" data-doc="Charging Station Log (electric forklifts)"></li>
-            <td>WAR-045</li>
-            <td>Charging Station Log (electric forklifts)</li>
-            <td>Battery maintenance</li>
-        </tr>
-        <tr>
-            <td><input type="checkbox" class="doc-check" data-cat="Operations & Warehouse Management" data-doc="Pallet / Stillage Register (asset tracking)"></li>
-            <td>WAR-046</li>
-            <td>Pallet / Stillage Register (asset tracking)</li>
-            <td>Returnable equipment</li>
-        </tr>
-        <tr>
-            <td><input type="checkbox" class="doc-check" data-cat="Operations & Warehouse Management" data-doc="Packaging Material Inventory (boxes, tape, shrink wrap)"></li>
-            <td>WAR-047</li>
-            <td>Packaging Material Inventory (boxes, tape, shrink wrap)</li>
-            <td>Stock control</li>
-        </tr>
-        <tr>
-            <td><input type="checkbox" class="doc-check" data-cat="Operations & Warehouse Management" data-doc="Client Inventory Report (per client, monthly)"></li>
-            <td>WAR-048</li>
-            <td>Client Inventory Report (per client, monthly)</li>
-            <td>For billing and trust</li>
-        </tr>
-    </tbody>
-</table>
+            <!-- SELECTION PANEL -->
+            <section class="selection-panel">
+                <h2 class="section-title">📦 Select Your Package</h2>
+                <div class="selection-grid">
+                    <div class="selection-card">
+                        <div class="selection-header">
+                            <input type="checkbox" id="selectRoadmap" checked />
+                            <label for="selectRoadmap"><strong>Document Roadmap</strong></label>
+                        </div>
+                        <p class="selection-price">R 700</p>
+                        <p class="selection-desc">Complete list of 85 documents with descriptions – ready to implement.</p>
+                    </div>
+                    <div class="selection-card">
+                        <div class="selection-header">
+                            <input type="checkbox" id="selectDirectory" checked />
+                            <label for="selectDirectory"><strong>File Directory Structure</strong></label>
+                        </div>
+                        <p class="selection-price">R 700</p>
+                        <p class="selection-desc">Pre‑built folder structure – just copy and start filing.</p>
+                    </div>
+                    <div class="selection-card selection-combo">
+                        <div class="selection-header">
+                            <span class="combo-badge">🔥 SAVE R100</span>
+                        </div>
+                        <p class="selection-price"><strong>R 1,300</strong> <span class="strike">R 1,400</span></p>
+                        <p class="selection-desc">Both Roadmap + Directory – the complete system.</p>
+                    </div>
+                </div>
+                <div class="selection-actions">
+                    <a href="#" id="orderSelectedBtn" class="btn btn-primary"><i class="fas fa-clipboard-list"></i> Proceed to Order →</a>
+                    <span class="selection-note">You can also select individual documents below.</span>
+                </div>
+            </section>
 
-<h3>Phase 5: Health & Safety (12 docs)</h3>
-<table>
-    <thead>
-        <tr><th>✔</th><th>Ref</th><th>Document</th><th>Purpose</th></td>
-    </thead>
-    <tbody>
-        <tr>
-            <td><input type="checkbox" class="doc-check" data-cat="Health & Safety" data-doc="Occupational Health & Safety (OHS) Policy"></li>
-            <td>WAR-049</li>
-            <td>Occupational Health & Safety (OHS) Policy</li>
-            <td>Warehouse‑specific H&S</li>
-        </tr>
-        <tr>
-            <td><input type="checkbox" class="doc-check" data-cat="Health & Safety" data-doc="Warehouse Risk Assessment (racking collapse, forklift traffic, falling objects)"></li>
-            <td>WAR-050</li>
-            <td>Warehouse Risk Assessment (racking collapse, forklift traffic, falling objects)</li>
-            <td>Hazard identification</li>
-        </tr>
-        </table>
-            <td><input type="checkbox" class="doc-check" data-cat="Health & Safety" data-doc="Safe Work Method Statement (SWMS) – forklift operation, high stacking, manual lifting"></li>
-            <td>WAR-051</li>
-            <td>Safe Work Method Statement (SWMS) – forklift operation, high stacking, manual lifting</li>
-            <td>Task safety</li>
-        </tr>
-        </tr>
-            <td><input type="checkbox" class="doc-check" data-cat="Health & Safety" data-doc="Incident / Accident Report Form (injury, product damage, near‑miss)"></li>
-            <td>WAR-052</li>
-            <td>Incident / Accident Report Form (injury, product damage, near‑miss)</li>
-            <td>Documentation</li>
-        </tr>
-        <tr>
-            <td><input type="checkbox" class="doc-check" data-cat="Health & Safety" data-doc="First Aid Kit Register (per zone)"></li>
-            <td>WAR-053</li>
-            <td>First Aid Kit Register (per zone)</li>
-            <td>Inventory</li>
-        </td>
-        <tr>
-            <td><input type="checkbox" class="doc-check" data-cat="Health & Safety" data-doc="Fire Extinguisher / Sprinkler Inspection Log"></li>
-            <td>WAR-054</li>
-            <td>Fire Extinguisher / Sprinkler Inspection Log</li>
-            <td>Monthly check</li>
-        </tr>
-        <tr>
-            <td><input type="checkbox" class="doc-check" data-cat="Health & Safety" data-doc="Emergency Evacuation Plan (warehouse layout)"></li>
-            <td>WAR-055</li>
-            <td>Emergency Evacuation Plan (warehouse layout)</li>
-            <td>Map and drill log</li>
-        </tr>
-        <tr>
-            <td><input type="checkbox" class="doc-check" data-cat="Health & Safety" data-doc="Fire Drill Log (quarterly)"></li>
-            <td>WAR-056</li>
-            <td>Fire Drill Log (quarterly)</li>
-            <td>Date, time, attendance</li>
-        </tr>
-        <tr>
-            <td><input type="checkbox" class="doc-check" data-cat="Health & Safety" data-doc="Personal Protective Equipment (PPE) Register"></li>
-            <td>WAR-057</li>
-            <td>Personal Protective Equipment (PPE) Register</li>
-            <td>Safety shoes, hi‑vis vests, gloves, hard hats</li>
-        </tr>
-        <tr>
-            <td><input type="checkbox" class="doc-check" data-cat="Health & Safety" data-doc="Racking / Shelving Inspection Log (annual)"></li>
-            <td>WAR-058</li>
-            <td>Racking / Shelving Inspection Log (annual)</li>
-            <td>Structural safety</li>
-        </tr>
-        <tr>
-            <td><input type="checkbox" class="doc-check" data-cat="Health & Safety" data-doc="Hazardous Goods Storage Register (if applicable)"></li>
-            <td>WAR-059</li>
-            <td>Hazardous Goods Storage Register (if applicable)</li>
-            <td>Chemicals, flammable</li>
-        </tr>
-        <tr>
-            <td><input type="checkbox" class="doc-check" data-cat="Health & Safety" data-doc="Toolbox Talk Register (weekly safety)"></li>
-            <td>WAR-060</li>
-            <td>Toolbox Talk Register (weekly safety)</li>
-            <td>Staff engagement</li>
-        </tr>
-    </tbody>
-</table>
+            <!-- ===== DOCUMENT ROADMAP ===== -->
+            <section id="roadmap">
+                <h2 class="section-title">📋 Document Roadmap</h2>
 
-<h3>Phase 6: Finance & Suppliers (8 docs)</h3>
-<table>
-    <thead>
-        <tr><th>✔</th><th>Ref</th><th>Document</th><th>Purpose</th></tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td><input type="checkbox" class="doc-check" data-cat="Finance & Suppliers" data-doc="Invoice Template (storage fees, handling, value‑added services)"></li>
-            <td>WAR-061</li>
-            <td>Invoice Template (storage fees, handling, value‑added services)</li>
-            <td>Billing client</li>
-        </tr>
-        <tr>
-            <td><input type="checkbox" class="doc-check" data-cat="Finance & Suppliers" data-doc="Supplier Invoice Register (packaging, cleaning, maintenance)"></li>
-            <td>WAR-062</li>
-            <td>Supplier Invoice Register (packaging, cleaning, maintenance)</li>
-            <td>Expense tracking</li>
-        </tr>
-        <tr>
-            <td><input type="checkbox" class="doc-check" data-cat="Finance & Suppliers" data-doc="Payroll Register"></li>
-            <td>WAR-063</li>
-            <td>Payroll Register</li>
-            <td>Staff wages</li>
-        </tr>
-        </tr>
-            <td><input type="checkbox" class="doc-check" data-cat="Finance & Suppliers" data-doc="Petty Cash Log"></li>
-            <td>WAR-064</li>
-            <td>Petty Cash Log</li>
-            <td>Small purchases</li>
-        </td>
-        <tr>
-            <td><input type="checkbox" class="doc-check" data-cat="Finance & Suppliers" data-doc="Client Payment History"></li>
-            <td>WAR-065</li>
-            <td>Client Payment History</li>
-            <td>Accounts receivable</li>
-        </td>
-        <tr>
-            <td><input type="checkbox" class="doc-check" data-cat="Finance & Suppliers" data-doc="Supplier Payment Schedule"></li>
-            <td>WAR-066</li>
-            <td>Supplier Payment Schedule</li>
-            <td>Creditors aging</li>
-        </td>
-        <tr>
-            <td><input type="checkbox" class="doc-check" data-cat="Finance & Suppliers" data-doc="Client Billing Summary (per client, per month)"></li>
-            <td>WAR-067</li>
-            <td>Client Billing Summary (per client, per month)</li>
-            <td>Pallets stored, pallets moved</li>
-        </tr>
-        <tr>
-            <td><input type="checkbox" class="doc-check" data-cat="Finance & Suppliers" data-doc="Bank Reconciliation Template"></li>
-            <td>WAR-068</li>
-            <td>Bank Reconciliation Template</li>
-            <td>Monthly finance</li>
-        </tr>
-    </tbody>
-</table>
+                <!-- Phase 1 -->
+                <h3>Phase 1: Registration &amp; Compliance <span class="badge-count">11</span></h3>
+                <table class="doc-table">
+                    <thead>
+                        <tr><th>✔</th><th>Document</th><th>Purpose</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td><input type="checkbox" class="doc-check" data-cat="Registration & Compliance" data-doc="CIPC Registration Certificate" /></td><td>WAR‑001 – CIPC Registration Certificate</td><td>Proof of company registration</td></tr>
+                        <tr><td><input type="checkbox" class="doc-check" data-cat="Registration & Compliance" data-doc="Memorandum of Incorporation (MOI)" /></td><td>WAR‑002 – Memorandum of Incorporation (MOI)</td><td>Company constitution</td></tr>
+                        <tr><td><input type="checkbox" class="doc-check" data-cat="Registration & Compliance" data-doc="SARS Registration (IT, PAYE, VAT)" /></td><td>WAR‑003 – SARS Registration (IT, PAYE, VAT)</td><td>Tax compliance (VAT if turnover &gt; R1m)</td></tr>
+                        <tr><td><input type="checkbox" class="doc-check" data-cat="Registration & Compliance" data-doc="COIDA Registration" /></td><td>WAR‑004 – COIDA Registration</td><td>Employee injury cover</td></tr>
+                        <tr><td><input type="checkbox" class="doc-check" data-cat="Registration & Compliance" data-doc="Public Liability Insurance" /></td><td>WAR‑005 – Public Liability Insurance</td><td>Cover for third‑party property damage, visitor injury</td></tr>
+                        <tr><td><input type="checkbox" class="doc-check" data-cat="Registration & Compliance" data-doc="Goods‑in‑Transit Insurance (for goods stored)" /></td><td>WAR‑006 – Goods‑in‑Transit Insurance (for goods stored)</td><td>Cover for client stock while in your care</td></tr>
+                        <tr><td><input type="checkbox" class="doc-check" data-cat="Registration & Compliance" data-doc="Warehouse Business Licence (Municipal)" /></td><td>WAR‑007 – Warehouse Business Licence (Municipal)</td><td>Required for trading</td></tr>
+                        <tr><td><input type="checkbox" class="doc-check" data-cat="Registration & Compliance" data-doc="Zoning Certificate (Industrial / Warehouse zoning)" /></td><td>WAR‑008 – Zoning Certificate (Industrial / Warehouse zoning)</td><td>Municipality confirmation</td></tr>
+                        <tr><td><input type="checkbox" class="doc-check" data-cat="Registration & Compliance" data-doc="Fire Clearance Certificate (warehouse)" /></td><td>WAR‑009 – Fire Clearance Certificate (warehouse)</td><td>Critical for storage facilities</td></tr>
+                        <tr><td><input type="checkbox" class="doc-check" data-cat="Registration & Compliance" data-doc="B-BBEE Certificate" /></td><td>WAR‑010 – B‑BBEE Certificate</td><td>For corporate clients (retailers, manufacturers)</td></tr>
+                        <tr><td><input type="checkbox" class="doc-check" data-cat="Registration & Compliance" data-doc="CSD Registration" /></td><td>WAR‑011 – CSD Registration</td><td>For government tenders</td></tr>
+                    </tbody>
+                </table>
 
-<h3>Phase 7: Equipment & Assets (9 docs)</h3>
-<table>
-    <thead>
-        <tr><th>✔</th><th>Ref</th><th>Document</th><th>Purpose</th></tr>
-    </thead>
-    <tbody>
-        </tr>
-            <td><input type="checkbox" class="doc-check" data-cat="Equipment & Assets" data-doc="Asset Register (Master)"></li>
-            <td>WAR-069</li>
-            <td>Asset Register (Master)</li>
-            <td>Forklifts, reach trucks, pallet jacks, racking, IT systems</li>
-        </tr>
-        <tr>
-            <td><input type="checkbox" class="doc-check" data-cat="Equipment & Assets" data-doc="Forklift / Material Handling Equipment Maintenance Log"></li>
-            <td>WAR-070</li>
-            <td>Forklift / Material Handling Equipment Maintenance Log</li>
-            <td>Service records</li>
-        </tr>
-        <tr>
-            <td><input type="checkbox" class="doc-check" data-cat="Equipment & Assets" data-doc="Racking / Shelving Asset Register (by bay)"></li>
-            <td>WAR-071</li>
-            <td>Racking / Shelving Asset Register (by bay)</li>
-            <td>Damage tracking</li>
-        </tr>
-        <tr>
-            <td><input type="checkbox" class="doc-check" data-cat="Equipment & Assets" data-doc="Barcode Scanner / RF Equipment Log"></li>
-            <td>WAR-072</li>
-            <td>Barcode Scanner / RF Equipment Log</li>
-            <td>Calibration, assignment</li>
-        </tr>
-        <tr>
-            <td><input type="checkbox" class="doc-check" data-cat="Equipment & Assets" data-doc="Weighbridge / Scale Calibration Log (if owned)"></li>
-            <td>WAR-073</li>
-            <td>Weighbridge / Scale Calibration Log (if owned)</li>
-            <td>Accuracy</li>
-        </tr>
-        <tr>
-            <td><input type="checkbox" class="doc-check" data-cat="Equipment & Assets" data-doc="Vehicle / Delivery Truck Log (if own fleet)"></li>
-            <td>WAR-074</li>
-            <td>Vehicle / Delivery Truck Log (if own fleet)</li>
-            <td>Fuel, trips</li>
-        </tr>
-        <tr>
-            <td><input type="checkbox" class="doc-check" data-cat="Equipment & Assets" data-doc="CCTV / Security Camera Log"></li>
-            <td>WAR-075</li>
-            <td>CCTV / Security Camera Log</li>
-            <td>Theft prevention</li>
-        </tr>
-        <tr>
-            <td><input type="checkbox" class="doc-check" data-cat="Equipment & Assets" data-doc="Generator / Backup Power Log (if cold storage)"></li>
-            <td>WAR-076</li>
-            <td>Generator / Backup Power Log (if cold storage)</li>
-            <td>Runtime, fuel</li>
-        </tr>
-        <tr>
-            <td><input type="checkbox" class="doc-check" data-cat="Equipment & Assets" data-doc="Asset Disposal Form"></li>
-            <td>WAR-077</li>
-            <td>Asset Disposal Form</li>
-            <td>Selling old equipment</li>
-        </tr>
-    </tbody>
-</table>
+                <!-- Phase 2 -->
+                <h3>Phase 2: Contracts &amp; Client Docs <span class="badge-count">11</span></h3>
+                <table class="doc-table">
+                    <thead>
+                        <tr><th>✔</th><th>Document</th><th>Purpose</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td><input type="checkbox" class="doc-check" data-cat="Contracts & Client Docs" data-doc="Warehouse Storage Agreement (Master)" /></td><td>WAR‑012 – Warehouse Storage Agreement (Master)</td><td>Core contract with client</td></tr>
+                        <tr><td><input type="checkbox" class="doc-check" data-cat="Contracts & Client Docs" data-doc="Logistics/Distribution Services Agreement (value‑added services)" /></td><td>WAR‑013 – Logistics/Distribution Services Agreement (value‑added services)</td><td>Pick, pack, ship</td></tr>
+                        <tr><td><input type="checkbox" class="doc-check" data-cat="Contracts & Client Docs" data-doc="Quotation / Rate Card Template (per pallet, per sqm, per hour)" /></td><td>WAR‑014 – Quotation / Rate Card Template (per pallet, per sqm, per hour)</td><td>Pricing transparency</td></tr>
+                        <tr><td><input type="checkbox" class="doc-check" data-cat="Contracts & Client Docs" data-doc="Goods Received Note (GRN) – per delivery" /></td><td>WAR‑015 – Goods Received Note (GRN) – per delivery</td><td>Proof of receipt, condition</td></tr>
+                        <tr><td><input type="checkbox" class="doc-check" data-cat="Contracts & Client Docs" data-doc="Stock Discrepancy / Damage Report Form" /></td><td>WAR‑016 – Stock Discrepancy / Damage Report Form</td><td>For claims</td></tr>
+                        <tr><td><input type="checkbox" class="doc-check" data-cat="Contracts & Client Docs" data-doc="Release Authorisation Form (client)" /></td><td>WAR‑017 – Release Authorisation Form (client)</td><td>Before releasing goods</td></tr>
+                        <tr><td><input type="checkbox" class="doc-check" data-cat="Contracts & Client Docs" data-doc="Non-Disclosure Agreement (NDA)" /></td><td>WAR‑018 – Non‑Disclosure Agreement (NDA)</td><td>For client inventory levels, pricing</td></tr>
+                        <tr><td><input type="checkbox" class="doc-check" data-cat="Contracts & Client Docs" data-doc="Subcontractor Agreement (transport, labour hire)" /></td><td>WAR‑019 – Subcontractor Agreement (transport, labour hire)</td><td>For outsourced services</td></tr>
+                        <tr><td><input type="checkbox" class="doc-check" data-cat="Contracts & Client Docs" data-doc="Supplier Agreement (racking, pallets, packaging)" /></td><td>WAR‑020 – Supplier Agreement (racking, pallets, packaging)</td><td>With vendors</td></tr>
+                        <tr><td><input type="checkbox" class="doc-check" data-cat="Contracts & Client Docs" data-doc="Indemnity / Hold Harmless Agreement (client)" /></td><td>WAR‑021 – Indemnity / Hold Harmless Agreement (client)</td><td>Liability for hazardous goods</td></tr>
+                        <tr><td><input type="checkbox" class="doc-check" data-cat="Contracts & Client Docs" data-doc="Cold Storage Addendum (temperature‑controlled)" /></td><td>WAR‑022 – Cold Storage Addendum (temperature‑controlled)</td><td>Specific terms</td></tr>
+                    </tbody>
+                </table>
 
-<h3>Phase 8: Forms & Templates (8 docs)</h3>
-<table>
-    <thead>
-        <tr><th>✔</th><th>Ref</th><th>Document</th><th>Purpose</th></tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td><input type="checkbox" class="doc-check" data-cat="Forms & Templates" data-doc="Daily Warehouse Housekeeping Checklist"></li>
-            <td>WAR-078</li>
-            <td>Daily Warehouse Housekeeping Checklist</li>
-            <td>Cleanliness, safety</li>
-        </tr>
-        <tr>
-            <td><input type="checkbox" class="doc-check" data-cat="Forms & Templates" data-doc="Client Access / Visitor Register (for stocktakes)"></li>
-            <td>WAR-079</li>
-            <td>Client Access / Visitor Register (for stocktakes)</li>
-            <td>Security</li>
-        </tr>
-        <tr>
-            <td><input type="checkbox" class="doc-check" data-cat="Forms & Templates" data-doc="Overtime Authorization Form"></li>
-            <td>WAR-080</li>
-            <td>Overtime Authorization Form</li>
-            <td>Staff approval</li>
-        </tr>
-        </tr>
-            <td><input type="checkbox" class="doc-check" data-cat="Forms & Templates" data-doc="Leave Application Form"></li>
-            <td>WAR-081</li>
-            <td>Leave Application Form</li>
-            <td>Staff requests</li>
-        </tr>
-        </tr>
-            <td><input type="checkbox" class="doc-check" data-cat="Forms & Templates" data-doc="New Employee Induction Checklist (warehouse safety, forklift training)"></li>
-            <td>WAR-082</li>
-            <td>New Employee Induction Checklist (warehouse safety, forklift training)</li>
-            <td>Onboarding</li>
-        </tr>
-        <td>
-            <td><input type="checkbox" class="doc-check" data-cat="Forms & Templates" data-doc="Supplier Evaluation Form"></li>
-            <td>WAR-083</li>
-            <td>Supplier Evaluation Form</li>
-            <td>Vendor performance</li>
-        </tr>
-        <tr>
-            <td><input type="checkbox" class="doc-check" data-cat="Forms & Templates" data-doc="Client Satisfaction Survey (warehouse service)"></li>
-            <td>WAR-084</li>
-            <td>Client Satisfaction Survey (warehouse service)</li>
-            <td>Improvement</li>
-        </tr>
-        <tr>
-            <td><input type="checkbox" class="doc-check" data-cat="Forms & Templates" data-doc="Termination Checklist"></li>
-            <td>WAR-085</li>
-            <td>Termination Checklist</li>
-            <td>Offboarding</li>
-        </tr>
-    </tbody>
-<table>
-    
-    <div class="button-group">
-        <a href="index.html#industries" class="btn"><i class="fas fa-arrow-left"></i> Back to Industries</a>
-        <a href="#" id="orderSelectedBtn" class="btn btn-secondary"><i class="fas fa-clipboard-list"></i> Order Selected Documents →</a>
-    </div>
-</div>
+                <!-- Phase 3 -->
+                <h3>Phase 3: Human Resources <span class="badge-count">10</span></h3>
+                <table class="doc-table">
+                    <thead>
+                        <tr><th>✔</th><th>Document</th><th>Purpose</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td><input type="checkbox" class="doc-check" data-cat="Human Resources" data-doc="Employment Contract – Warehouse Manager" /></td><td>WAR‑023 – Employment Contract – Warehouse Manager</td><td>Senior staff</td></tr>
+                        <tr><td><input type="checkbox" class="doc-check" data-cat="Human Resources" data-doc="Employment Contract – Forklift / Reach Truck Operator" /></td><td>WAR‑024 – Employment Contract – Forklift / Reach Truck Operator</td><td>Qualified operators</td></tr>
+                        <tr><td><input type="checkbox" class="doc-check" data-cat="Human Resources" data-doc="Employment Contract – Pickers / Packers" /></td><td>WAR‑025 – Employment Contract – Pickers / Packers</td><td>General warehouse staff</td></tr>
+                        <tr><td><input type="checkbox" class="doc-check" data-cat="Human Resources" data-doc="Employment Contract – Receiving / Despatch Clerk" /></td><td>WAR‑026 – Employment Contract – Receiving / Despatch Clerk</td><td>Admin / counting</td></tr>
+                        <tr><td><input type="checkbox" class="doc-check" data-cat="Human Resources" data-doc="Employment Contract – Admin / Inventory Controller" /></td><td>WAR‑027 – Employment Contract – Admin / Inventory Controller</td><td>Office</td></tr>
+                        <tr><td><input type="checkbox" class="doc-check" data-cat="Human Resources" data-doc="Independent Contractor Agreement (seasonal labour)" /></td><td>WAR‑028 – Independent Contractor Agreement (seasonal labour)</td><td>Peak periods</td></tr>
+                        <tr><td><input type="checkbox" class="doc-check" data-cat="Human Resources" data-doc="Code of Conduct (Employees)" /></td><td>WAR‑029 – Code of Conduct (Employees)</td><td>Safety, theft prevention, professionalism</td></tr>
+                        <tr><td><input type="checkbox" class="doc-check" data-cat="Human Resources" data-doc="Disciplinary Code & Procedure" /></td><td>WAR‑030 – Disciplinary Code &amp; Procedure</td><td>HR compliance</td></tr>
+                        <tr><td><input type="checkbox" class="doc-check" data-cat="Human Resources" data-doc="Shift Roster (warehouse)" /></td><td>WAR‑031 – Shift Roster (warehouse)</td><td>Daily allocation</td></tr>
+                        <tr><td><input type="checkbox" class="doc-check" data-cat="Human Resources" data-doc="Attendance Register (Daily)" /></td><td>WAR‑032 – Attendance Register (Daily)</td><td>Sign‑in / sign‑out</td></tr>
+                    </tbody>
+                </table>
 
-<div class="footer">...</div>
+                <!-- Phase 4 -->
+                <h3>Phase 4: Operations &amp; Warehouse Management <span class="badge-count">16</span></h3>
+                <table class="doc-table">
+                    <thead>
+                        <tr><th>✔</th><th>Document</th><th>Purpose</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td><input type="checkbox" class="doc-check" data-cat="Operations & Warehouse Management" data-doc="Daily Warehouse Activity Log (receipts, picks, dispatches)" /></td><td>WAR‑033 – Daily Warehouse Activity Log (receipts, picks, dispatches)</td><td>Management summary</td></tr>
+                        <tr><td><input type="checkbox" class="doc-check" data-cat="Operations & Warehouse Management" data-doc="Receiving Log (incoming goods)" /></td><td>WAR‑034 – Receiving Log (incoming goods)</td><td>Supplier, client, quantity</td></tr>
+                        <tr><td><input type="checkbox" class="doc-check" data-cat="Operations & Warehouse Management" data-doc="Put‑Away Log (bin locations)" /></td><td>WAR‑035 – Put‑Away Log (bin locations)</td><td>Storage tracking</td></tr>
+                        <tr><td><input type="checkbox" class="doc-check" data-cat="Operations & Warehouse Management" data-doc="Inventory Stock Take Sheet (cycle count / full)" /></td><td>WAR‑036 – Inventory Stock Take Sheet (cycle count / full)</td><td>Accuracy</td></tr>
+                        <tr><td><input type="checkbox" class="doc-check" data-cat="Operations & Warehouse Management" data-doc="Daily Cycle Count Log" /></td><td>WAR‑037 – Daily Cycle Count Log</td><td>High‑value items</td></tr>
+                        <tr><td><input type="checkbox" class="doc-check" data-cat="Operations & Warehouse Management" data-doc="Picking List (per client order)" /></td><td>WAR‑038 – Picking List (per client order)</td><td>Order fulfilment</td></tr>
+                        <tr><td><input type="checkbox" class="doc-check" data-cat="Operations & Warehouse Management" data-doc="Packing Checklist (per shipment)" /></td><td>WAR‑039 – Packing Checklist (per shipment)</td><td>Quality control</td></tr>
+                        <tr><td><input type="checkbox" class="doc-check" data-cat="Operations & Warehouse Management" data-doc="Despatch / Loading Log (outgoing)" /></td><td>WAR‑040 – Despatch / Loading Log (outgoing)</td><td>Vehicle, driver, seal number</td></tr>
+                        <tr><td><input type="checkbox" class="doc-check" data-cat="Operations & Warehouse Management" data-doc="Return / RMA Log (client returns)" /></td><td>WAR‑041 – Return / RMA Log (client returns)</td><td>Reverse logistics</td></tr>
+                        <tr><td><input type="checkbox" class="doc-check" data-cat="Operations & Warehouse Management" data-doc="Warehouse Bin / Location Register (grid map)" /></td><td>WAR‑042 – Warehouse Bin / Location Register (grid map)</td><td>Efficiency</td></tr>
+                        <tr><td><input type="checkbox" class="doc-check" data-cat="Operations & Warehouse Management" data-doc="Equipment Inspection Log (forklifts, pallet jacks, reach trucks)" /></td><td>WAR‑043 – Equipment Inspection Log (forklifts, pallet jacks, reach trucks)</td><td>Daily checks</td></tr>
+                        <tr><td><input type="checkbox" class="doc-check" data-cat="Operations & Warehouse Management" data-doc="Forklift / Reach Truck Daily Checklist" /></td><td>WAR‑044 – Forklift / Reach Truck Daily Checklist</td><td>Safety compliance</td></tr>
+                        <tr><td><input type="checkbox" class="doc-check" data-cat="Operations & Warehouse Management" data-doc="Charging Station Log (electric forklifts)" /></td><td>WAR‑045 – Charging Station Log (electric forklifts)</td><td>Battery maintenance</td></tr>
+                        <tr><td><input type="checkbox" class="doc-check" data-cat="Operations & Warehouse Management" data-doc="Pallet / Stillage Register (asset tracking)" /></td><td>WAR‑046 – Pallet / Stillage Register (asset tracking)</td><td>Returnable equipment</td></tr>
+                        <tr><td><input type="checkbox" class="doc-check" data-cat="Operations & Warehouse Management" data-doc="Packaging Material Inventory (boxes, tape, shrink wrap)" /></td><td>WAR‑047 – Packaging Material Inventory (boxes, tape, shrink wrap)</td><td>Stock control</td></tr>
+                        <tr><td><input type="checkbox" class="doc-check" data-cat="Operations & Warehouse Management" data-doc="Client Inventory Report (per client, monthly)" /></td><td>WAR‑048 – Client Inventory Report (per client, monthly)</td><td>For billing and trust</td></tr>
+                    </tbody>
+                </table>
 
-<script>
-    document.getElementById('orderSelectedBtn').addEventListener('click', function(e) {
-        e.preventDefault();
-        const selected = [];
-        document.querySelectorAll('.doc-check:checked').forEach(cb => {
-            selected.push({ category: cb.getAttribute('data-cat'), doc: cb.getAttribute('data-doc') });
-        });
-        if (selected.length === 0) { alert('Please select at least one document to order.'); return; }
-        const param = encodeURIComponent(JSON.stringify(selected));
-        window.location.href = `order-documents.html?industry=Logistics%20%26%20Warehousing&preselected=${param}`;
-    });
-</script>
-</body>
-</html>
-<h2 class="section-title">📁 File Directory Structure</h2>
-    <div class="repo-structure">
-<pre>
+                <!-- Phase 5 -->
+                <h3>Phase 5: Health &amp; Safety <span class="badge-count">12</span></h3>
+                <table class="doc-table">
+                    <thead>
+                        <tr><th>✔</th><th>Document</th><th>Purpose</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td><input type="checkbox" class="doc-check" data-cat="Health & Safety" data-doc="Occupational Health & Safety (OHS) Policy" /></td><td>WAR‑049 – Occupational Health &amp; Safety (OHS) Policy</td><td>Warehouse‑specific H&amp;S</td></tr>
+                        <tr><td><input type="checkbox" class="doc-check" data-cat="Health & Safety" data-doc="Warehouse Risk Assessment (racking collapse, forklift traffic, falling objects)" /></td><td>WAR‑050 – Warehouse Risk Assessment (racking collapse, forklift traffic, falling objects)</td><td>Hazard identification</td></tr>
+                        <tr><td><input type="checkbox" class="doc-check" data-cat="Health & Safety" data-doc="Safe Work Method Statement (SWMS) – forklift operation, high stacking, manual lifting" /></td><td>WAR‑051 – Safe Work Method Statement (SWMS) – forklift operation, high stacking, manual lifting</td><td>Task safety</td></tr>
+                        <tr><td><input type="checkbox" class="doc-check" data-cat="Health & Safety" data-doc="Incident / Accident Report Form (injury, product damage, near‑miss)" /></td><td>WAR‑052 – Incident / Accident Report Form (injury, product damage, near‑miss)</td><td>Documentation</td></tr>
+                        <tr><td><input type="checkbox" class="doc-check" data-cat="Health & Safety" data-doc="First Aid Kit Register (per zone)" /></td><td>WAR‑053 – First Aid Kit Register (per zone)</td><td>Inventory</td></tr>
+                        <tr><td><input type="checkbox" class="doc-check" data-cat="Health & Safety" data-doc="Fire Extinguisher / Sprinkler Inspection Log" /></td><td>WAR‑054 – Fire Extinguisher / Sprinkler Inspection Log</td><td>Monthly check</td></tr>
+                        <tr><td><input type="checkbox" class="doc-check" data-cat="Health & Safety" data-doc="Emergency Evacuation Plan (warehouse layout)" /></td><td>WAR‑055 – Emergency Evacuation Plan (warehouse layout)</td><td>Map and drill log</td></tr>
+                        <tr><td><input type="checkbox" class="doc-check" data-cat="Health & Safety" data-doc="Fire Drill Log (quarterly)" /></td><td>WAR‑056 – Fire Drill Log (quarterly)</td><td>Date, time, attendance</td></tr>
+                        <tr><td><input type="checkbox" class="doc-check" data-cat="Health & Safety" data-doc="Personal Protective Equipment (PPE) Register" /></td><td>WAR‑057 – Personal Protective Equipment (PPE) Register</td><td>Safety shoes, hi‑vis vests, gloves, hard hats</td></tr>
+                        <tr><td><input type="checkbox" class="doc-check" data-cat="Health & Safety" data-doc="Racking / Shelving Inspection Log (annual)" /></td><td>WAR‑058 – Racking / Shelving Inspection Log (annual)</td><td>Structural safety</td></tr>
+                        <tr><td><input type="checkbox" class="doc-check" data-cat="Health & Safety" data-doc="Hazardous Goods Storage Register (if applicable)" /></td><td>WAR‑059 – Hazardous Goods Storage Register (if applicable)</td><td>Chemicals, flammable</td></tr>
+                        <tr><td><input type="checkbox" class="doc-check" data-cat="Health & Safety" data-doc="Toolbox Talk Register (weekly safety)" /></td><td>WAR‑060 – Toolbox Talk Register (weekly safety)</td><td>Staff engagement</td></tr>
+                    </tbody>
+                </table>
 
-<pre>
+                <!-- Phase 6 -->
+                <h3>Phase 6: Finance &amp; Suppliers <span class="badge-count">8</span></h3>
+                <table class="doc-table">
+                    <thead>
+                        <tr><th>✔</th><th>Document</th><th>Purpose</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td><input type="checkbox" class="doc-check" data-cat="Finance & Suppliers" data-doc="Invoice Template (storage fees, handling, value‑added services)" /></td><td>WAR‑061 – Invoice Template (storage fees, handling, value‑added services)</td><td>Billing client</td></tr>
+                        <tr><td><input type="checkbox" class="doc-check" data-cat="Finance & Suppliers" data-doc="Supplier Invoice Register (packaging, cleaning, maintenance)" /></td><td>WAR‑062 – Supplier Invoice Register (packaging, cleaning, maintenance)</td><td>Expense tracking</td></tr>
+                        <tr><td><input type="checkbox" class="doc-check" data-cat="Finance & Suppliers" data-doc="Payroll Register" /></td><td>WAR‑063 – Payroll Register</td><td>Staff wages</td></tr>
+                        <tr><td><input type="checkbox" class="doc-check" data-cat="Finance & Suppliers" data-doc="Petty Cash Log" /></td><td>WAR‑064 – Petty Cash Log</td><td>Small purchases</td></tr>
+                        <tr><td><input type="checkbox" class="doc-check" data-cat="Finance & Suppliers" data-doc="Client Payment History" /></td><td>WAR‑065 – Client Payment History</td><td>Accounts receivable</td></tr>
+                        <tr><td><input type="checkbox" class="doc-check" data-cat="Finance & Suppliers" data-doc="Supplier Payment Schedule" /></td><td>WAR‑066 – Supplier Payment Schedule</td><td>Creditors aging</td></tr>
+                        <tr><td><input type="checkbox" class="doc-check" data-cat="Finance & Suppliers" data-doc="Client Billing Summary (per client, per month)" /></td><td>WAR‑067 – Client Billing Summary (per client, per month)</td><td>Pallets stored, pallets moved</td></tr>
+                        <tr><td><input type="checkbox" class="doc-check" data-cat="Finance & Suppliers" data-doc="Bank Reconciliation Template" /></td><td>WAR‑068 – Bank Reconciliation Template</td><td>Monthly finance</td></tr>
+                    </tbody>
+                </table>
+
+                <!-- Phase 7 -->
+                <h3>Phase 7: Equipment &amp; Assets <span class="badge-count">9</span></h3>
+                <table class="doc-table">
+                    <thead>
+                        <tr><th>✔</th><th>Document</th><th>Purpose</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td><input type="checkbox" class="doc-check" data-cat="Equipment & Assets" data-doc="Asset Register (Master)" /></td><td>WAR‑069 – Asset Register (Master)</td><td>Forklifts, reach trucks, pallet jacks, racking, IT systems</td></tr>
+                        <tr><td><input type="checkbox" class="doc-check" data-cat="Equipment & Assets" data-doc="Forklift / Material Handling Equipment Maintenance Log" /></td><td>WAR‑070 – Forklift / Material Handling Equipment Maintenance Log</td><td>Service records</td></tr>
+                        <tr><td><input type="checkbox" class="doc-check" data-cat="Equipment & Assets" data-doc="Racking / Shelving Asset Register (by bay)" /></td><td>WAR‑071 – Racking / Shelving Asset Register (by bay)</td><td>Damage tracking</td></tr>
+                        <tr><td><input type="checkbox" class="doc-check" data-cat="Equipment & Assets" data-doc="Barcode Scanner / RF Equipment Log" /></td><td>WAR‑072 – Barcode Scanner / RF Equipment Log</td><td>Calibration, assignment</td></tr>
+                        <tr><td><input type="checkbox" class="doc-check" data-cat="Equipment & Assets" data-doc="Weighbridge / Scale Calibration Log (if owned)" /></td><td>WAR‑073 – Weighbridge / Scale Calibration Log (if owned)</td><td>Accuracy</td></tr>
+                        <tr><td><input type="checkbox" class="doc-check" data-cat="Equipment & Assets" data-doc="Vehicle / Delivery Truck Log (if own fleet)" /></td><td>WAR‑074 – Vehicle / Delivery Truck Log (if own fleet)</td><td>Fuel, trips</td></tr>
+                        <tr><td><input type="checkbox" class="doc-check" data-cat="Equipment & Assets" data-doc="CCTV / Security Camera Log" /></td><td>WAR‑075 – CCTV / Security Camera Log</td><td>Theft prevention</td></tr>
+                        <tr><td><input type="checkbox" class="doc-check" data-cat="Equipment & Assets" data-doc="Generator / Backup Power Log (if cold storage)" /></td><td>WAR‑076 – Generator / Backup Power Log (if cold storage)</td><td>Runtime, fuel</td></tr>
+                        <tr><td><input type="checkbox" class="doc-check" data-cat="Equipment & Assets" data-doc="Asset Disposal Form" /></td><td>WAR‑077 – Asset Disposal Form</td><td>Selling old equipment</td></tr>
+                    </tbody>
+                </table>
+
+                <!-- Phase 8 -->
+                <h3>Phase 8: Forms &amp; Templates <span class="badge-count">8</span></h3>
+                <table class="doc-table">
+                    <thead>
+                        <tr><th>✔</th><th>Document</th><th>Purpose</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td><input type="checkbox" class="doc-check" data-cat="Forms & Templates" data-doc="Daily Warehouse Housekeeping Checklist" /></td><td>WAR‑078 – Daily Warehouse Housekeeping Checklist</td><td>Cleanliness, safety</td></tr>
+                        <tr><td><input type="checkbox" class="doc-check" data-cat="Forms & Templates" data-doc="Client Access / Visitor Register (for stocktakes)" /></td><td>WAR‑079 – Client Access / Visitor Register (for stocktakes)</td><td>Security</td></tr>
+                        <tr><td><input type="checkbox" class="doc-check" data-cat="Forms & Templates" data-doc="Overtime Authorization Form" /></td><td>WAR‑080 – Overtime Authorization Form</td><td>Staff approval</td></tr>
+                        <tr><td><input type="checkbox" class="doc-check" data-cat="Forms & Templates" data-doc="Leave Application Form" /></td><td>WAR‑081 – Leave Application Form</td><td>Staff requests</td></tr>
+                        <tr><td><input type="checkbox" class="doc-check" data-cat="Forms & Templates" data-doc="New Employee Induction Checklist (warehouse safety, forklift training)" /></td><td>WAR‑082 – New Employee Induction Checklist (warehouse safety, forklift training)</td><td>Onboarding</td></tr>
+                        <tr><td><input type="checkbox" class="doc-check" data-cat="Forms & Templates" data-doc="Supplier Evaluation Form" /></td><td>WAR‑083 – Supplier Evaluation Form</td><td>Vendor performance</td></tr>
+                        <tr><td><input type="checkbox" class="doc-check" data-cat="Forms & Templates" data-doc="Client Satisfaction Survey (warehouse service)" /></td><td>WAR‑084 – Client Satisfaction Survey (warehouse service)</td><td>Improvement</td></tr>
+                        <tr><td><input type="checkbox" class="doc-check" data-cat="Forms & Templates" data-doc="Termination Checklist" /></td><td>WAR‑085 – Termination Checklist</td><td>Offboarding</td></tr>
+                    </tbody>
+                </table>
+            </section>
+
+            <!-- ===== FILE DIRECTORY STRUCTURE ===== -->
+            <section>
+                <h2 class="section-title">📁 File Directory Structure</h2>
+                <div class="repo-structure">
+                    <pre>
 Warehouse & Distribution (Pty) Ltd/
 │
 ├── 01 Registration & Compliance/
@@ -771,22 +391,74 @@ Warehouse & Distribution (Pty) Ltd/
     ├── Supplier_Evaluation_Form.docx
     ├── Client_Satisfaction_Survey.docx
     └── Termination_Checklist.docx
-</pre>
+                    </pre>
+                </div>
+            </section>
+
+            <!-- BUTTONS -->
+            <div class="industry-buttons">
+                <a href="industries.html" class="btn btn-outline"><i class="fas fa-arrow-left"></i> Back to Industries</a>
+                <a href="#" id="orderSelectedBtnBottom" class="btn btn-primary"><i class="fas fa-clipboard-list"></i> Order Selected Documents →</a>
+            </div>
+
+            <!-- FOOTER CONTACT -->
+            <div class="footer-contact" id="contact">
+                <p><strong>Msimelelo Victor Malusi</strong> – Founder</p>
+                <p>
+                    <i class="fas fa-phone"></i> 072 152 3293 &nbsp;|&nbsp;
+                    <i class="fab fa-whatsapp"></i> 063 301 7269 &nbsp;|&nbsp;
+                    <i class="fas fa-envelope"></i> mv.malusi@legacylaunchpad.co.za
+                </p>
+                <p>© 2025 Legacy Launchpad (Pty) Ltd – Building what lasts.</p>
+                <p class="fine">Legacy Launchpad provides administrative and documentation support only. We are not lawyers, accountants, or tax practitioners.</p>
+            </div>
+
+        </main>
     </div>
 
-    <div class="button-group">
-        <a href="index.html#industries" class="btn"><i class="fas fa-arrow-left"></i> Back to Industries</a>
-        <a href="#" id="orderSelectedBtn" class="btn btn-secondary"><i class="fas fa-clipboard-list"></i> Order Selected Documents →</a>
-    </div>
+    <!-- ========== EXTERNAL SCRIPTS ========== -->
+    <script src="app.js"></script>
 
-</div>
+    <!-- ========== PAGE-SPECIFIC SCRIPTS ========== -->
+    <script>
+        // Mobile nav toggle (replicates app.js)
+        document.getElementById('menuToggleTop').addEventListener('click', function() {
+            var nav = document.getElementById('topNav');
+            nav.classList.toggle('open');
+        });
 
-<div class="footer">
-    <div class="container">
-        <p>© 2025 Legacy Launchpad (Pty) Ltd – Building what lasts.</p>
-        <p style="margin-top: 10px; font-size: 0.75rem;">Legacy Launchpad provides administrative and documentation support only. We are not lawyers, accountants, or tax practitioners.</p>
-    </div>
-</div>
+        // Order button logic (both top and bottom)
+        document.querySelectorAll('#orderSelectedBtn, #orderSelectedBtnBottom').forEach(function(btn) {
+            btn.addEventListener('click', function(e) {
+                e.preventDefault();
+
+                const selectRoadmap = document.getElementById('selectRoadmap');
+                const selectDirectory = document.getElementById('selectDirectory');
+
+                const selected = [];
+                document.querySelectorAll('.doc-check:checked').forEach(function(cb) {
+                    selected.push({
+                        category: cb.getAttribute('data-cat'),
+                        doc: cb.getAttribute('data-doc')
+                    });
+                });
+
+                const preselected = {
+                    roadmap: selectRoadmap ? selectRoadmap.checked : false,
+                    directory: selectDirectory ? selectDirectory.checked : false,
+                    documents: selected
+                };
+
+                if (!preselected.roadmap && !preselected.directory && selected.length === 0) {
+                    alert('Please select at least one package or document to order.');
+                    return;
+                }
+
+                const param = encodeURIComponent(JSON.stringify(preselected));
+                window.location.href = 'order-documents.html?industry=Logistics%20%26%20Warehousing&preselected=' + param;
+            });
+        });
+    </script>
 
 </body>
 </html>
