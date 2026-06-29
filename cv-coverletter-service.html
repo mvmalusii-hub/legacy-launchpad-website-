@@ -2,68 +2,54 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
-    <title>CV & Profile Studio | Professional Resumes · LinkedIn · Bios</title>
-    <!-- Google Fonts + Font Awesome -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>CV & Profile Studio | Legacy Launchpad</title>
+
+    <!-- External Styles -->
+    <link rel="stylesheet" href="main.css">
+
+    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            background: #eef2f5;
-            font-family: 'Inter', sans-serif;
-            color: #1e293b;
-            line-height: 1.5;
-            padding: 1.5rem;
-        }
-
-        .epk-container {
-            max-width: 1280px;
-            margin: 0 auto;
-            background: #ffffff;
-            border-radius: 2rem;
-            box-shadow: 0 25px 45px -12px rgba(0, 0, 0, 0.2);
-            overflow: hidden;
-        }
-
-        /* header */
-        .service-header {
-            background: #0f2b3d;
-            padding: 2rem 2rem 1rem;
-            text-align: center;
+        /* Custom styles for CV Studio (keeps tabbed layout) */
+        .cv-hero {
+            background: linear-gradient(135deg, #0f2b3d 0%, #1a4a6a 100%);
             color: white;
+            padding: 2.5rem 2rem;
+            border-radius: 24px;
+            margin-bottom: 2rem;
+            text-align: center;
         }
-        .service-header h1 {
+        .cv-hero h1 {
             font-family: 'Playfair Display', serif;
             font-size: 2.5rem;
             font-weight: 800;
             letter-spacing: -0.5px;
             margin-bottom: 0.5rem;
         }
-        .service-header h1 span {
-            color: #ffb347;
+        .cv-hero h1 span {
+            color: #fbbf24;
         }
-        .tagline {
-            font-size: 1rem;
+        .cv-hero p {
+            font-size: 1.1rem;
             opacity: 0.9;
             margin-bottom: 1rem;
         }
 
-        /* navigation tabs */
+        /* Navigation Tabs */
         .nav-tabs {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
             gap: 0.5rem;
-            margin-top: 1rem;
+            margin-top: 1.2rem;
         }
         .nav-btn {
-            background: rgba(255,255,255,0.1);
+            background: rgba(255,255,255,0.12);
             border: none;
             padding: 0.6rem 1.5rem;
             font-family: 'Inter', sans-serif;
@@ -78,16 +64,16 @@
             margin-right: 8px;
         }
         .nav-btn.active {
-            background: #ffb347;
+            background: #fbbf24;
             color: #0f2b3d;
         }
         .nav-btn:hover:not(.active) {
-            background: #2c5a6e;
+            background: rgba(255,255,255,0.25);
         }
 
-        /* pages */
+        /* Pages Container */
         .pages-container {
-            padding: 2rem 2rem 2.5rem;
+            padding: 1rem 0 2rem;
         }
         .page {
             display: none;
@@ -97,27 +83,27 @@
             display: block;
         }
         @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(6px);}
-            to { opacity: 1; transform: translateY(0);}
+            from { opacity: 0; transform: translateY(6px); }
+            to { opacity: 1; transform: translateY(0); }
         }
 
-        .section-title {
+        .page-section-title {
             font-family: 'Playfair Display', serif;
             font-size: 1.8rem;
             font-weight: 700;
-            border-left: 5px solid #ffb347;
+            border-left: 5px solid #fbbf24;
             padding-left: 1rem;
             margin-bottom: 1.5rem;
             color: #0f2b3d;
         }
 
-        /* services grid */
-        .services-grid {
+        /* Services Grid */
+        .cv-services-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
             gap: 1.5rem;
         }
-        .service-card {
+        .cv-service-card {
             background: #f8fafc;
             border-radius: 1.2rem;
             padding: 1.5rem;
@@ -125,26 +111,26 @@
             border: 1px solid #e2e8f0;
             transition: 0.2s;
         }
-        .service-card:hover {
+        .cv-service-card:hover {
             transform: translateY(-4px);
-            border-color: #ffb347;
+            border-color: #fbbf24;
         }
-        .service-icon {
+        .cv-service-icon {
             font-size: 2.5rem;
-            color: #ffb347;
+            color: #fbbf24;
             margin-bottom: 1rem;
         }
-        .service-title {
+        .cv-service-title {
             font-weight: 800;
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             margin-bottom: 0.5rem;
         }
-        .service-desc {
+        .cv-service-desc {
             font-size: 0.85rem;
             color: #475569;
         }
 
-        /* process steps */
+        /* Process Steps */
         .process-steps {
             display: flex;
             flex-wrap: wrap;
@@ -153,7 +139,7 @@
         }
         .step {
             flex: 1;
-            min-width: 180px;
+            min-width: 170px;
             background: #f8fafc;
             border-radius: 1.2rem;
             padding: 1.5rem;
@@ -163,7 +149,7 @@
         .step-number {
             width: 40px;
             height: 40px;
-            background: #ffb347;
+            background: #fbbf24;
             color: #0f2b3d;
             border-radius: 50%;
             display: flex;
@@ -178,11 +164,11 @@
             margin-bottom: 0.5rem;
         }
 
-        /* market grid (target industries) */
+        /* Market Grid */
         .market-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-            gap: 1rem;
+            grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+            gap: 0.8rem;
             margin-bottom: 1.5rem;
         }
         .market-item {
@@ -195,13 +181,13 @@
         }
         .market-item i {
             margin-right: 8px;
-            color: #ffb347;
+            color: #fbbf24;
         }
 
-        /* sample portfolio */
+        /* Sample Grid */
         .sample-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
             gap: 1.5rem;
         }
         .sample-card {
@@ -212,13 +198,18 @@
         }
         .sample-img {
             width: 100%;
-            height: 160px;
+            height: 150px;
             background: #e2e8f0;
             display: flex;
             align-items: center;
             justify-content: center;
             color: #64748b;
             font-size: 0.8rem;
+            flex-direction: column;
+            gap: 8px;
+        }
+        .sample-img i {
+            color: #fbbf24;
         }
         .sample-info {
             padding: 1rem;
@@ -228,29 +219,43 @@
         }
         .sample-cat {
             font-size: 0.7rem;
-            color: #ffb347;
+            color: #fbbf24;
+            font-weight: 600;
         }
 
-        /* contact / about */
+        /* Testimonial */
+        .cv-testimonial {
+            background: #fef9e6;
+            border-left: 4px solid #fbbf24;
+            padding: 1rem 1.2rem;
+            border-radius: 1rem;
+            margin-top: 1rem;
+        }
+        .cv-testimonial i {
+            color: #fbbf24;
+        }
+
+        /* Contact Flex */
         .contact-flex {
             display: flex;
             flex-wrap: wrap;
-            gap: 2rem;
+            gap: 1.5rem;
         }
         .contact-card {
             flex: 1;
+            min-width: 220px;
             background: #f8fafc;
             border-radius: 1.5rem;
             padding: 1.5rem;
             text-align: center;
             border: 1px solid #e2e8f0;
         }
-        .contact-icon {
+        .contact-card .contact-icon {
             font-size: 2rem;
-            color: #ffb347;
+            color: #fbbf24;
             margin-bottom: 0.8rem;
         }
-        .btn-primary {
+        .btn-cv {
             background: #0f2b3d;
             color: white;
             padding: 0.7rem 1.5rem;
@@ -258,178 +263,336 @@
             text-decoration: none;
             font-weight: 600;
             display: inline-block;
-            margin-top: 1rem;
+            margin-top: 0.8rem;
             transition: 0.2s;
+            border: none;
+            cursor: pointer;
         }
-        .btn-primary:hover {
-            background: #ffb347;
+        .btn-cv:hover {
+            background: #fbbf24;
             color: #0f2b3d;
         }
 
-        .testimonial {
-            background: #fef9e6;
-            border-left: 4px solid #ffb347;
-            padding: 1rem;
+        .fine-print {
+            background: #f1f5f9;
             border-radius: 1rem;
-            margin-top: 1rem;
+            padding: 0.8rem 1.2rem;
+            margin-top: 1.2rem;
+            font-size: 0.75rem;
+            color: #475569;
         }
 
-        .footer-note {
-            background: #0f2b3d;
+        .photo-note {
+            background: #f1f5f9;
+            border-radius: 1rem;
+            padding: 0.8rem 1.2rem;
+            margin-top: 1.2rem;
+            font-size: 0.75rem;
             text-align: center;
-            padding: 1rem;
-            font-size: 0.7rem;
-            color: #cbd5e1;
-            border-top: 1px solid #2c5a6e;
         }
 
-        @media (max-width: 700px) {
-            .pages-container { padding: 1.5rem; }
-            .service-header h1 { font-size: 1.8rem; }
+        @media (max-width: 768px) {
+            .cv-hero h1 { font-size: 1.8rem; }
             .nav-btn { padding: 0.4rem 1rem; font-size: 0.75rem; }
+            .pages-container { padding: 0.5rem 0; }
+            .process-steps { flex-direction: column; }
+            .contact-flex { flex-direction: column; }
         }
     </style>
 </head>
 <body>
-<div class="epk-container">
-    <div class="service-header">
-        <h1>📄 <span>CV & Profile Studio</span></h1>
-        <div class="tagline">Professional Resumes · LinkedIn Optimization · Executive Bios · Portfolio EPKs</div>
-        <div class="nav-tabs">
-            <button class="nav-btn active" data-page="services"><i class="fas fa-cogs"></i> Services</button>
-            <button class="nav-btn" data-page="process"><i class="fas fa-chart-line"></i> Process</button>
-            <button class="nav-btn" data-page="samples"><i class="fas fa-briefcase"></i> Client Work</button>
-            <button class="nav-btn" data-page="contact"><i class="fas fa-envelope"></i> About / Contact</button>
-        </div>
-    </div>
-
-    <div class="pages-container">
-        <!-- PAGE 1: SERVICES -->
-        <div id="services-page" class="page active-page">
-            <div class="section-title">What I Offer</div>
-            <div class="services-grid">
-                <div class="service-card"><div class="service-icon"><i class="fas fa-file-alt"></i></div><div class="service-title">Professional CV / Resume</div><div class="service-desc">ATS-friendly, modern designs tailored to your industry. Optimized for recruiters and HR systems.</div></div>
-                <div class="service-card"><div class="service-icon"><i class="fab fa-linkedin"></i></div><div class="service-title">LinkedIn Profile Overhaul</div><div class="service-desc">Complete rewrite, keyword optimization, and personal branding to attract recruiters.</div></div>
-                <div class="service-card"><div class="service-icon"><i class="fas fa-id-card"></i></div><div class="service-title">Executive Bio / Artist Statement</div><div class="service-desc">Compelling narratives for websites, press kits, and speaking engagements.</div></div>
-                <div class="service-card"><div class="service-icon"><i class="fas fa-images"></i></div><div class="service-title">EPK (Electronic Press Kit)</div><div class="service-desc">4‑page custom HTML/CSS kit for creatives, athletes, and entrepreneurs.</div></div>
-                <div class="service-card"><div class="service-icon"><i class="fas fa-cover-letter"></i></div><div class="service-title">Cover Letter & Pitch Deck</div><div class="service-desc">Tailored letters and investor/partner decks that open doors.</div></div>
-                <div class="service-card"><div class="service-icon"><i class="fas fa-chart-simple"></i></div><div class="service-title">Personal Brand Audit</div><div class="service-desc">Review of your online presence and recommendations to level up.</div></div>
-            </div>
-            <div class="testimonial" style="margin-top: 1.5rem;">
-                <i class="fas fa-quote-left" style="color:#ffb347;"></i> "My CV went from ignored to getting interviews within a week. The LinkedIn rewrite alone brought recruiter DMs!" — <strong>Thabo M., Marketing Director</strong>
+    <!-- ============================================================ -->
+    <!-- 1. TOP HEADER                                                -->
+    <!-- ============================================================ -->
+    <header class="top-header">
+        <div class="logo-area">
+            <div class="logo-icon">LP</div>
+            <div class="logo-text">
+                <h1>Legacy Launchpad</h1>
+                <p>Building what lasts.</p>
             </div>
         </div>
 
-        <!-- PAGE 2: PROCESS -->
-        <div id="process-page" class="page">
-            <div class="section-title">How It Works</div>
-            <div class="process-steps">
-                <div class="step"><div class="step-number">1</div><div class="step-title">📞 Discovery Call</div><div class="step-desc">30-min chat to understand your goals, industry, and target roles.</div></div>
-                <div class="step"><div class="step-number">2</div><div class="step-title">✍️ Draft & Strategy</div><div class="step-desc">I craft a custom draft with keyword research and brand voice.</div></div>
-                <div class="step"><div class="step-number">3</div><div class="step-title">🔄 Revisions</div><div class="step-desc">Up to 2 rounds of revisions to ensure your satisfaction.</div></div>
-                <div class="step"><div class="step-number">4</div><div class="step-title">📤 Final Delivery</div><div class="step-desc">Editable Word/PDF, plus a bonus LinkedIn summary and tips.</div></div>
-            </div>
-            <div class="section-title" style="margin-top: 2rem;">Who I Help</div>
-            <div class="market-grid">
-                <div class="market-item"><i class="fas fa-briefcase"></i> Executives & Managers</div>
-                <div class="market-item"><i class="fas fa-palette"></i> Artists & Creatives</div>
-                <div class="market-item"><i class="fas fa-dumbbell"></i> Athletes & Coaches</div>
-                <div class="market-item"><i class="fas fa-microphone-alt"></i> Speakers & Influencers</div>
-                <div class="market-item"><i class="fas fa-chalkboard-user"></i> Freelancers & Consultants</div>
-                <div class="market-item"><i class="fas fa-graduation-cap"></i> Recent Graduates</div>
-                <div class="market-item"><i class="fas fa-heartbeat"></i> Healthcare Pros</div>
-                <div class="market-item"><i class="fas fa-laptop-code"></i> Tech & Engineers</div>
-            </div>
-            <div class="testimonial">
-                <i class="fas fa-check-circle" style="color:#ffb347;"></i> Over 150+ professionals served. 98% satisfaction rate. Your story deserves to be told right.
-            </div>
-        </div>
-
-        <!-- PAGE 3: SAMPLES / CLIENT WORK (placeholders) -->
-        <div id="samples-page" class="page">
-            <div class="section-title">Recent Projects</div>
-            <div class="sample-grid">
-                <div class="sample-card"><div class="sample-img"><i class="fas fa-file-pdf fa-3x"></i><span style="margin-left:8px;">CV Sample</span></div><div class="sample-info"><div class="sample-title">Tech Executive CV</div><div class="sample-cat">C-level · Data-driven layout</div></div></div>
-                <div class="sample-card"><div class="sample-img"><i class="fab fa-linkedin fa-3x"></i></div><div class="sample-info"><div class="sample-title">LinkedIn Makeover</div><div class="sample-cat">Marketing Director → 3x profile views</div></div></div>
-                <div class="sample-card"><div class="sample-img"><i class="fas fa-id-card fa-3x"></i></div><div class="sample-info"><div class="sample-title">Artist EPK (4-page)</div><div class="sample-cat">Musician · Bio, music, visuals, contact</div></div></div>
-                <div class="sample-card"><div class="sample-img"><i class="fas fa-microphone-alt fa-3x"></i></div><div class="sample-info"><div class="sample-title">Speaker One-Sheet</div><div class="sample-cat">Keynote topics + testimonials</div></div></div>
-            </div>
-            <div class="photo-instruction" style="background:#f1f5f9; border-radius:1rem; padding:0.8rem; margin-top:1.2rem; font-size:0.75rem;">
-                <i class="fas fa-info-circle"></i> <strong>📷 Note:</strong> Placeholder images above represent actual client work. Real samples available upon request (confidentiality protected).
-            </div>
-            <div style="margin-top: 1rem; text-align: center;">
-                <span class="market-item" style="background:#ffb34720;">⭐ "My CV landed me a job at Deloitte!" — Client testimonial</span>
-            </div>
-        </div>
-
-        <!-- PAGE 4: ABOUT / CONTACT -->
-        <div id="contact-page" class="page">
-            <div class="section-title">Let's Build Your Professional Story</div>
-            <div class="contact-flex">
-                <div class="contact-card">
-                    <div class="contact-icon"><i class="fas fa-user-circle"></i></div>
-                    <h3>Hi, I'm [Your Name]</h3>
-                    <p style="font-size:0.9rem;">Certified CV writer and personal branding specialist with 6+ years of experience. I've helped professionals from 20+ industries land their dream roles.</p>
-                    <p style="margin-top: 8px;"><i class="fas fa-check-circle" style="color:#ffb347;"></i> 150+ CVs delivered<br><i class="fas fa-check-circle" style="color:#ffb347;"></i> 98% interview rate within 3 months</p>
+        <nav class="top-nav" id="topNav">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="industries.html">Industries</a>
+            <a href="pricing.html">Pricing</a>
+            <div class="dropdown">
+                <button class="dropbtn">Services <i class="fas fa-chevron-down"></i></button>
+                <div class="dropdown-content">
+                    <a href="floor-plans-one-pager.html">🏗️ 3D Floor Plans</a>
+                    <a href="fds-roadmap-one-pager.html">📁 FDS & Roadmaps</a>
+                    <a href="personal-services.html">🧑 Personal Services</a>
+                    <a href="business-support.html">📊 Business Support</a>
+                    <a href="marketing-services.html">🎨 Marketing Services</a>
+                    <a href="spaza-compliance.html">🏪 Spaza Shop Compliance</a>
+                    <a href="liquor-licence.html">🍷 Liquor Licence Application</a>
+                    <a href="order-documents.html">📋 Order Documents</a>
                 </div>
-                <div class="contact-card">
-                    <div class="contact-icon"><i class="fas fa-envelope"></i></div>
-                    <h3>Contact Me</h3>
-                    <p><strong>hello@cvprostudio.com</strong></p>
-                    <p>+27 81 234 5678</p>
-                    <div class="social-links" style="margin: 10px 0;">
-                        <a href="#" style="margin:0 6px; color:#0f2b3d;"><i class="fab fa-linkedin"></i></a>
-                        <a href="#" style="margin:0 6px; color:#0f2b3d;"><i class="fab fa-instagram"></i></a>
+            </div>
+            <a href="policies.html">Policies</a>
+            <a href="#contact">Contact</a>
+        </nav>
+
+        <button class="menu-toggle" id="menuToggleTop" aria-label="Toggle navigation">☰</button>
+        <button class="menu-toggle" id="menuToggle" aria-label="Toggle sidebar">☰</button>
+    </header>
+
+    <!-- ============================================================ -->
+    <!-- 2. MAIN APP CONTAINER                                        -->
+    <!-- ============================================================ -->
+    <div class="app-container">
+
+        <!-- SIDEBAR (Shared) -->
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <h3>Enterprise Menu</h3>
+                <p>Advanced features</p>
+            </div>
+            <ul class="sidebar-menu">
+                <li><a href="profile.html"><i class="fas fa-user-plus"></i> 01 Profile / Create Profile</a></li>
+                <li><a href="partners.html"><i class="fas fa-handshake"></i> 02 Our Partners</a></li>
+                <li><a href="international.html"><i class="fas fa-globe"></i> 03 International Partners</a></li>
+                <li><a href="strategic-growth.html"><i class="fas fa-chart-line"></i> 04 Strategic Growth</a></li>
+                <li><a href="business-partners.html"><i class="fas fa-building"></i> 05 Business Partners</a></li>
+                <li><a href="market-leads.html"><i class="fas fa-chart-simple"></i> 06 Real Time Market Leads</a></li>
+                <li><a href="business-hub.html"><i class="fas fa-users"></i> 07 Business Hub</a></li>
+                <li><a href="hire-admin.html"><i class="fas fa-user-tie"></i> 08 Hire Our Admin</a></li>
+                <li><a href="referral.html"><i class="fas fa-gift"></i> 09 Referral Program</a></li>
+                <li><a href="logout.html"><i class="fas fa-sign-out-alt"></i> 10 Profile Log Out</a></li>
+                <li><a href="https://www.legacylaunchpad.co.za/artist-profile-service.html" target="_blank"><i class="fas fa-star"></i> 11 EPK Studio</a></li>
+            </ul>
+        </aside>
+
+        <!-- MAIN CONTENT -->
+        <main class="main-content">
+
+            <!-- ===== HERO ===== -->
+            <div class="cv-hero">
+                <h1>📄 <span>CV &amp; Profile Studio</span></h1>
+                <p>Professional Resumes · LinkedIn Optimization · Executive Bios · Portfolio EPKs</p>
+                <div class="nav-tabs">
+                    <button class="nav-btn active" data-page="services"><i class="fas fa-cogs"></i> Services</button>
+                    <button class="nav-btn" data-page="process"><i class="fas fa-chart-line"></i> Process</button>
+                    <button class="nav-btn" data-page="samples"><i class="fas fa-briefcase"></i> Client Work</button>
+                    <button class="nav-btn" data-page="contact"><i class="fas fa-envelope"></i> About / Contact</button>
+                </div>
+            </div>
+
+            <!-- ===== PAGES CONTAINER ===== -->
+            <div class="pages-container">
+
+                <!-- PAGE 1: SERVICES -->
+                <div id="services-page" class="page active-page">
+                    <div class="page-section-title">What I Offer</div>
+                    <div class="cv-services-grid">
+                        <div class="cv-service-card">
+                            <div class="cv-service-icon"><i class="fas fa-file-alt"></i></div>
+                            <div class="cv-service-title">Professional CV / Resume</div>
+                            <div class="cv-service-desc">ATS-friendly, modern designs tailored to your industry. Optimized for recruiters and HR systems.</div>
+                        </div>
+                        <div class="cv-service-card">
+                            <div class="cv-service-icon"><i class="fab fa-linkedin"></i></div>
+                            <div class="cv-service-title">LinkedIn Profile Overhaul</div>
+                            <div class="cv-service-desc">Complete rewrite, keyword optimization, and personal branding to attract recruiters.</div>
+                        </div>
+                        <div class="cv-service-card">
+                            <div class="cv-service-icon"><i class="fas fa-id-card"></i></div>
+                            <div class="cv-service-title">Executive Bio / Artist Statement</div>
+                            <div class="cv-service-desc">Compelling narratives for websites, press kits, and speaking engagements.</div>
+                        </div>
+                        <div class="cv-service-card">
+                            <div class="cv-service-icon"><i class="fas fa-images"></i></div>
+                            <div class="cv-service-title">EPK (Electronic Press Kit)</div>
+                            <div class="cv-service-desc">4‑page custom HTML/CSS kit for creatives, athletes, and entrepreneurs.</div>
+                        </div>
+                        <div class="cv-service-card">
+                            <div class="cv-service-icon"><i class="fas fa-envelope"></i></div>
+                            <div class="cv-service-title">Cover Letter &amp; Pitch Deck</div>
+                            <div class="cv-service-desc">Tailored letters and investor/partner decks that open doors.</div>
+                        </div>
+                        <div class="cv-service-card">
+                            <div class="cv-service-icon"><i class="fas fa-chart-simple"></i></div>
+                            <div class="cv-service-title">Personal Brand Audit</div>
+                            <div class="cv-service-desc">Review of your online presence and recommendations to level up.</div>
+                        </div>
                     </div>
-                    <a href="#" class="btn-primary">Book a free 20-min consult</a>
+                    <div class="cv-testimonial">
+                        <i class="fas fa-quote-left"></i> "My CV went from ignored to getting interviews within a week. The LinkedIn rewrite alone brought recruiter DMs!" — <strong>Thabo M., Marketing Director</strong>
+                    </div>
                 </div>
-                <div class="contact-card">
-                    <div class="contact-icon"><i class="fas fa-clock"></i></div>
-                    <h3>Turnaround & Pricing</h3>
-                    <p>CV + Cover Letter: <strong>3–5 business days</strong><br>LinkedIn Profile: <strong>2–3 business days</strong><br>Full EPK website: <strong>5–7 days</strong></p>
-                    <p style="margin-top: 8px;">Packs starting at <strong>R1,250 ZAR / $75 USD</strong></p>
+
+                <!-- PAGE 2: PROCESS -->
+                <div id="process-page" class="page">
+                    <div class="page-section-title">How It Works</div>
+                    <div class="process-steps">
+                        <div class="step">
+                            <div class="step-number">1</div>
+                            <div class="step-title">📞 Discovery Call</div>
+                            <div class="step-desc">30-min chat to understand your goals, industry, and target roles.</div>
+                        </div>
+                        <div class="step">
+                            <div class="step-number">2</div>
+                            <div class="step-title">✍️ Draft &amp; Strategy</div>
+                            <div class="step-desc">I craft a custom draft with keyword research and brand voice.</div>
+                        </div>
+                        <div class="step">
+                            <div class="step-number">3</div>
+                            <div class="step-title">🔄 Revisions</div>
+                            <div class="step-desc">Up to 2 rounds of revisions to ensure your satisfaction.</div>
+                        </div>
+                        <div class="step">
+                            <div class="step-number">4</div>
+                            <div class="step-title">📤 Final Delivery</div>
+                            <div class="step-desc">Editable Word/PDF, plus a bonus LinkedIn summary and tips.</div>
+                        </div>
+                    </div>
+
+                    <div class="page-section-title" style="margin-top:2rem;">Who I Help</div>
+                    <div class="market-grid">
+                        <div class="market-item"><i class="fas fa-briefcase"></i> Executives &amp; Managers</div>
+                        <div class="market-item"><i class="fas fa-palette"></i> Artists &amp; Creatives</div>
+                        <div class="market-item"><i class="fas fa-dumbbell"></i> Athletes &amp; Coaches</div>
+                        <div class="market-item"><i class="fas fa-microphone-alt"></i> Speakers &amp; Influencers</div>
+                        <div class="market-item"><i class="fas fa-chalkboard-user"></i> Freelancers &amp; Consultants</div>
+                        <div class="market-item"><i class="fas fa-graduation-cap"></i> Recent Graduates</div>
+                        <div class="market-item"><i class="fas fa-heartbeat"></i> Healthcare Pros</div>
+                        <div class="market-item"><i class="fas fa-laptop-code"></i> Tech &amp; Engineers</div>
+                    </div>
+                    <div class="cv-testimonial">
+                        <i class="fas fa-check-circle"></i> Over 150+ professionals served. 98% satisfaction rate. Your story deserves to be told right.
+                    </div>
+                </div>
+
+                <!-- PAGE 3: SAMPLES / CLIENT WORK -->
+                <div id="samples-page" class="page">
+                    <div class="page-section-title">Recent Projects</div>
+                    <div class="sample-grid">
+                        <div class="sample-card">
+                            <div class="sample-img"><i class="fas fa-file-pdf fa-3x"></i> CV Sample</div>
+                            <div class="sample-info">
+                                <div class="sample-title">Tech Executive CV</div>
+                                <div class="sample-cat">C-level · Data-driven layout</div>
+                            </div>
+                        </div>
+                        <div class="sample-card">
+                            <div class="sample-img"><i class="fab fa-linkedin fa-3x"></i> LinkedIn</div>
+                            <div class="sample-info">
+                                <div class="sample-title">LinkedIn Makeover</div>
+                                <div class="sample-cat">Marketing Director → 3x profile views</div>
+                            </div>
+                        </div>
+                        <div class="sample-card">
+                            <div class="sample-img"><i class="fas fa-id-card fa-3x"></i> EPK</div>
+                            <div class="sample-info">
+                                <div class="sample-title">Artist EPK (4-page)</div>
+                                <div class="sample-cat">Musician · Bio, music, visuals, contact</div>
+                            </div>
+                        </div>
+                        <div class="sample-card">
+                            <div class="sample-img"><i class="fas fa-microphone-alt fa-3x"></i> Speaker</div>
+                            <div class="sample-info">
+                                <div class="sample-title">Speaker One-Sheet</div>
+                                <div class="sample-cat">Keynote topics + testimonials</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="photo-note">
+                        <i class="fas fa-info-circle"></i> <strong>Note:</strong> Placeholder images above represent actual client work. Real samples available upon request (confidentiality protected).
+                    </div>
+                    <div style="margin-top:1rem; text-align:center;">
+                        <span class="market-item" style="background:#fbbf2420; display:inline-block;">⭐ "My CV landed me a job at Deloitte!" — Client testimonial</span>
+                    </div>
+                </div>
+
+                <!-- PAGE 4: ABOUT / CONTACT -->
+                <div id="contact-page" class="page">
+                    <div class="page-section-title">Let's Build Your Professional Story</div>
+                    <div class="contact-flex">
+                        <div class="contact-card">
+                            <div class="contact-icon"><i class="fas fa-user-circle"></i></div>
+                            <h3>Hi, I'm Msimelelo</h3>
+                            <p style="font-size:0.9rem;">CV writer and personal branding specialist. I've helped professionals from 20+ industries land their dream roles.</p>
+                            <p style="margin-top:8px;"><i class="fas fa-check-circle" style="color:#fbbf24;"></i> 150+ CVs delivered<br><i class="fas fa-check-circle" style="color:#fbbf24;"></i> 98% interview rate within 3 months</p>
+                        </div>
+                        <div class="contact-card">
+                            <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+                            <h3>Contact Me</h3>
+                            <p><strong>info@legacylaunchpad.co.za</strong></p>
+                            <p>072 152 3293</p>
+                            <div class="social-links" style="margin:10px 0;">
+                                <a href="#" style="margin:0 6px; color:#0f2b3d; font-size:1.3rem;"><i class="fab fa-linkedin"></i></a>
+                                <a href="#" style="margin:0 6px; color:#0f2b3d; font-size:1.3rem;"><i class="fab fa-instagram"></i></a>
+                            </div>
+                            <a href="#contact" class="btn-cv">Book a free 20-min consult</a>
+                        </div>
+                        <div class="contact-card">
+                            <div class="contact-icon"><i class="fas fa-clock"></i></div>
+                            <h3>Turnaround &amp; Pricing</h3>
+                            <p>CV + Cover Letter: <strong>3–5 business days</strong><br>LinkedIn Profile: <strong>2–3 business days</strong><br>Full EPK website: <strong>5–7 days</strong></p>
+                            <p style="margin-top:8px;">Packs starting at <strong>R1,250 ZAR</strong></p>
+                        </div>
+                    </div>
+                    <div style="background:#fef9e6; border-radius:1rem; padding:1rem; margin-top:1.5rem; text-align:center;">
+                        <i class="fas fa-dove" style="color:#fbbf24;"></i> "Your CV is not just a document — it's your personal marketing brochure. Let me help you shine."
+                    </div>
                 </div>
             </div>
-            <div style="background: #fef9e6; border-radius: 1rem; padding: 1rem; margin-top: 1.5rem; text-align: center;">
-                <i class="fas fa-dove"></i> "Your CV is not just a document — it's your personal marketing brochure. Let me help you shine."
+
+            <!-- ===== FOOTER CONTACT ===== -->
+            <div class="footer-contact" id="contact">
+                <p><strong>Msimelelo Victor Malusi</strong> – Founder</p>
+                <p>
+                    <i class="fas fa-phone"></i> 072 152 3293 &nbsp;|&nbsp;
+                    <i class="fab fa-whatsapp"></i> 067 794 9236 &nbsp;|&nbsp;
+                    <i class="fas fa-envelope"></i> info@legacylaunchpad.co.za
+                </p>
+                <p>© 2025 Legacy Launchpad (Pty) Ltd – Building what lasts.</p>
+                <p class="fine">Legacy Launchpad provides administrative and documentation support only. We are not lawyers, accountants, or tax practitioners.</p>
             </div>
-        </div>
+
+        </main>
     </div>
 
-    <div class="footer-note">
-        🚀 Professional CV & Profile Studio — Custom written for your industry. All revisions included. Satisfaction guaranteed.
-        <br>📸 Photos required: Replace placeholder images in "Client Work" with actual CV screenshots (blurred confidential info) or portfolio examples.
-    </div>
-</div>
+    <!-- ============================================================ -->
+    <!-- 3. EXTERNAL JAVASCRIPT                                       -->
+    <!-- ============================================================ -->
+    <script src="app.js"></script>
 
-<script>
-    // tab switching
-    const pages = {
-        services: document.getElementById('services-page'),
-        process: document.getElementById('process-page'),
-        samples: document.getElementById('samples-page'),
-        contact: document.getElementById('contact-page')
-    };
-    const navBtns = document.querySelectorAll('.nav-btn');
+    <!-- ============================================================ -->
+    <!-- 4. PAGE-SPECIFIC SCRIPTS                                     -->
+    <!-- ============================================================ -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const pages = {
+                services: document.getElementById('services-page'),
+                process: document.getElementById('process-page'),
+                samples: document.getElementById('samples-page'),
+                contact: document.getElementById('contact-page')
+            };
+            const navBtns = document.querySelectorAll('.nav-btn');
 
-    function switchPage(pageId) {
-        Object.values(pages).forEach(page => {
-            if (page) page.classList.remove('active-page');
-        });
-        if (pages[pageId]) pages[pageId].classList.add('active-page');
-        navBtns.forEach(btn => {
-            const btnPage = btn.getAttribute('data-page');
-            if (btnPage === pageId) btn.classList.add('active');
-            else btn.classList.remove('active');
-        });
-    }
+            function switchPage(pageId) {
+                Object.values(pages).forEach(page => {
+                    if (page) page.classList.remove('active-page');
+                });
+                if (pages[pageId]) pages[pageId].classList.add('active-page');
+                navBtns.forEach(btn => {
+                    const btnPage = btn.getAttribute('data-page');
+                    if (btnPage === pageId) btn.classList.add('active');
+                    else btn.classList.remove('active');
+                });
+            }
 
-    navBtns.forEach(btn => {
-        btn.addEventListener('click', () => {
-            const pageId = btn.getAttribute('data-page');
-            if (pageId && pages[pageId]) switchPage(pageId);
+            navBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const pageId = btn.getAttribute('data-page');
+                    if (pageId && pages[pageId]) switchPage(pageId);
+                });
+            });
         });
-    });
-</script>
+    </script>
+
 </body>
 </html>
