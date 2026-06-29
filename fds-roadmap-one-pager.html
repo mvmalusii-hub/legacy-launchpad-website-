@@ -2,212 +2,162 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
     <title>FDS & Document Roadmaps – One‑Pager | Legacy Launchpad</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: #e2e8f0;
-            color: #0f172a;
-            line-height: 1.4;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            padding: 20px;
-        }
-        .flyer {
-            max-width: 900px;
-            width: 100%;
-            background: white;
-            border-radius: 16px;
-            box-shadow: 0 20px 35px -10px rgba(0,0,0,0.2);
-            overflow: hidden;
-        }
-        .hero {
-            background: #0f172a;
-            color: white;
-            text-align: center;
-            padding: 30px 20px;
-        }
-        .hero h1 {
-            font-size: 2.2rem;
-            margin-bottom: 8px;
-            letter-spacing: -0.5px;
-        }
-        .hero p {
-            font-size: 1rem;
-            opacity: 0.9;
-        }
-        .hero .tag {
-            background: #fbbf24;
-            color: #0f172a;
-            display: inline-block;
-            padding: 4px 16px;
-            border-radius: 40px;
-            font-weight: bold;
-            margin-top: 15px;
-            font-size: 0.8rem;
-        }
-        .content {
-            padding: 30px 35px;
-        }
-        .two-columns {
-            display: flex;
-            gap: 30px;
-            margin: 20px 0 30px;
-            flex-wrap: wrap;
-        }
-        .col {
-            flex: 1;
-            min-width: 200px;
-        }
-        .section-title {
-            font-size: 1.2rem;
-            font-weight: 700;
-            border-left: 5px solid #fbbf24;
-            padding-left: 12px;
-            margin-bottom: 15px;
-        }
-        .feature-list {
-            list-style: none;
-            padding: 0;
-        }
-        .feature-list li {
-            margin-bottom: 12px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-        .feature-list i {
-            color: #fbbf24;
-            width: 20px;
-            font-size: 1rem;
-        }
-        .price-table {
-            width: 100%;
-            border-collapse: collapse;
-            background: #f8fafc;
-            border-radius: 12px;
-            overflow: hidden;
-            margin: 15px 0;
-        }
-        .price-table th, .price-table td {
-            padding: 10px 12px;
-            text-align: left;
-            border-bottom: 1px solid #e2e8f0;
-        }
-        .price-table th {
-            background: #0f172a;
-            color: white;
-            font-weight: 600;
-            font-size: 0.85rem;
-        }
-        .price {
-            font-weight: bold;
-            color: #0f172a;
-        }
-        .btn {
-            display: inline-block;
-            background: #fbbf24;
-            color: #0f172a;
-            text-decoration: none;
-            padding: 12px 28px;
-            border-radius: 40px;
-            font-weight: bold;
-            margin: 10px 0;
-            transition: 0.2s;
-        }
-        .btn:hover {
-            background: #f59e0b;
-            transform: scale(1.02);
-        }
-        .contact-bar {
-            background: #f1f5f9;
-            text-align: center;
-            padding: 20px;
-            margin-top: 20px;
-            border-radius: 12px;
-        }
-        .contact-bar p {
-            margin: 5px 0;
-        }
-        .small-note {
-            font-size: 0.7rem;
-            color: #475569;
-            text-align: center;
-            margin-top: 20px;
-            border-top: 1px solid #e2e8f0;
-            padding-top: 15px;
-        }
-        @media print {
-            body { background: white; padding: 0; }
-            .flyer { box-shadow: none; border-radius: 0; }
-            .btn { background: #0f172a; color: white; border: 1px solid #ccc; }
-        }
-        @media (max-width: 700px) {
-            .content { padding: 20px; }
-            .two-columns { flex-direction: column; }
-        }
-    </style>
+
+    <!-- External Styles -->
+    <link rel="stylesheet" href="main.css">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
-<body>
-<div class="flyer">
-    <div class="hero">
-        <h1>📁 File Directory Structures<br>📋 Document Roadmaps</h1>
-        <p>Get your business organised – fast, fixed price, industry‑specific.</p>
-        <div class="tag">✨ No more chaos. No more missing documents.</div>
-    </div>
-    <div class="content">
-        <div class="two-columns">
-            <div class="col">
-                <div class="section-title">📁 What you get (FDS)</div>
-                <ul class="feature-list">
-                    <li><i class="fas fa-check-circle"></i> Complete folder hierarchy (8+ top folders)</li>
-                    <li><i class="fas fa-check-circle"></i> Naming conventions & subfolders</li>
-                    <li><i class="fas fa-check-circle"></i> Ready to copy to Google Drive / server</li>
-                    <li><i class="fas fa-check-circle"></i> Industry‑specific (20+ sectors)</li>
-                    <li><i class="fas fa-check-circle"></i> Delivered as text file + PDF</li>
-                </ul>
-            </div>
-            <div class="col">
-                <div class="section-title">📋 What you get (Roadmap)</div>
-                <ul class="feature-list">
-                    <li><i class="fas fa-check-circle"></i> 70–100 documents per industry</li>
-                    <li><i class="fas fa-check-circle"></i> Organised by phase (Reg, Contracts, HR, Ops, H&S, Finance, Assets)</li>
-                    <li><i class="fas fa-check-circle"></i> Reference numbers for each document</li>
-                    <li><i class="fas fa-check-circle"></i> Priority list (first 10 documents)</li>
-                    <li><i class="fas fa-check-circle"></i> Delivered as PDF + editable spreadsheet</li>
-                </ul>
+<body class="page-flyer">
+    <!-- ============================================================ -->
+    <!-- 1. TOP HEADER                                                -->
+    <!-- ============================================================ -->
+    <header class="top-header">
+        <div class="logo-area">
+            <div class="logo-icon">LP</div>
+            <div class="logo-text">
+                <h1>Legacy Launchpad</h1>
+                <p>Building what lasts.</p>
             </div>
         </div>
 
-        <div class="section-title">💰 Fixed pricing (no surprises)</div>
-        <table class="price-table">
-            <thead><tr><th>Product</th><th>Price (R)</th><th>Turnaround</th><th>Savings</th></tr></thead>
-            <tbody>
-                <tr><td>File Directory Structure (FDS)</li><td class="price">R 600 – 800</td><td>2‑3 days</td><td>—</td></tr>
-                <tr><td>Document Roadmap </td><td class="price">R 600 – 800</td><td>2‑3 days</td><td>—</td></tr>
-                <tr><td><strong>🔥 Combo Special (FDS + Roadmap)</strong></td><td class="price">R 950 – 1,200</td><td>3‑5 days</td><td>Save R250–400</td></tr>
-            </tbody>
-        </table>
-        <p style="font-size:0.75rem; margin: 5px 0 15px;">* Prices exclude VAT. Government fees not included.</p>
+        <nav class="top-nav" id="topNav">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="industries.html">Industries</a>
+            <a href="pricing.html">Pricing</a>
+            <div class="dropdown">
+                <button class="dropbtn">Services <i class="fas fa-chevron-down"></i></button>
+                <div class="dropdown-content">
+                    <a href="floor-plans-one-pager.html">🏗️ 3D Floor Plans</a>
+                    <a href="fds-roadmap-one-pager.html">📁 FDS & Roadmaps</a>
+                    <a href="personal-services.html">🧑 Personal Services</a>
+                    <a href="business-support.html">📊 Business Support</a>
+                    <a href="marketing-services.html">🎨 Marketing Services</a>
+                    <a href="spaza-compliance.html">🏪 Spaza Shop Compliance</a>
+                    <a href="liquor-licence.html">🍷 Liquor Licence Application</a>
+                    <a href="order-documents.html">📋 Order Documents</a>
+                </div>
+            </div>
+            <a href="policies.html">Policies</a>
+            <a href="#contact">Contact</a>
+        </nav>
 
-        <div class="contact-bar">
-            <p><strong>📧 mv.malusi@legacylaunchpad.co.za</strong> &nbsp; | &nbsp; <strong>📞 072 152 3293</strong></p>
-            <p>👇 Tell us your industry – we'll send you a sample roadmap</p>
-            <a href="https://wa.me/27633017269" class="btn" target="_blank">📱 WhatsApp us now</a>
-        </div>
+        <button class="menu-toggle" id="menuToggleTop" aria-label="Toggle navigation">☰</button>
+        <button class="menu-toggle" id="menuToggle" aria-label="Toggle sidebar">☰</button>
+    </header>
 
-        <div class="small-note">
-            ⚠️ These are templates and roadmaps – you still need to draft the actual policies. We can draft them for you (see our Full Franchise Bundle). Legacy Launchpad (Pty) Ltd – Building what lasts.
-        </div>
+    <!-- ============================================================ -->
+    <!-- 2. MAIN APP CONTAINER                                        -->
+    <!-- ============================================================ -->
+    <div class="app-container">
+
+        <!-- SIDEBAR (Shared) -->
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <h3>Enterprise Menu</h3>
+                <p>Advanced features</p>
+            </div>
+            <ul class="sidebar-menu">
+                <li><a href="profile.html"><i class="fas fa-user-plus"></i> 01 Profile / Create Profile</a></li>
+                <li><a href="partners.html"><i class="fas fa-handshake"></i> 02 Our Partners</a></li>
+                <li><a href="international.html"><i class="fas fa-globe"></i> 03 International Partners</a></li>
+                <li><a href="strategic-growth.html"><i class="fas fa-chart-line"></i> 04 Strategic Growth</a></li>
+                <li><a href="business-partners.html"><i class="fas fa-building"></i> 05 Business Partners</a></li>
+                <li><a href="market-leads.html"><i class="fas fa-chart-simple"></i> 06 Real Time Market Leads</a></li>
+                <li><a href="business-hub.html"><i class="fas fa-users"></i> 07 Business Hub</a></li>
+                <li><a href="hire-admin.html"><i class="fas fa-user-tie"></i> 08 Hire Our Admin</a></li>
+                <li><a href="referral.html"><i class="fas fa-gift"></i> 09 Referral Program</a></li>
+                <li><a href="logout.html"><i class="fas fa-sign-out-alt"></i> 10 Profile Log Out</a></li>
+                <li><a href="https://www.legacylaunchpad.co.za/artist-profile-service.html" target="_blank"><i class="fas fa-star"></i> 11 EPK Studio</a></li>
+            </ul>
+        </aside>
+
+        <!-- MAIN CONTENT (flyer) -->
+        <main class="main-content">
+            <div class="flyer-wrapper">
+                <!-- The flyer card -->
+                <div class="flyer-card">
+                    <!-- Hero -->
+                    <div class="flyer-hero">
+                        <h1>📁 File Directory Structures<br>📋 Document Roadmaps</h1>
+                        <p>Get your business organised – fast, fixed price, industry‑specific.</p>
+                        <div class="flyer-tag">✨ No more chaos. No more missing documents.</div>
+                    </div>
+
+                    <!-- Content -->
+                    <div class="flyer-body">
+                        <div class="flyer-two-col">
+                            <div class="flyer-col">
+                                <div class="flyer-section-title">📁 What you get (FDS)</div>
+                                <ul class="flyer-feature-list">
+                                    <li><i class="fas fa-check-circle"></i> Complete folder hierarchy (8+ top folders)</li>
+                                    <li><i class="fas fa-check-circle"></i> Naming conventions &amp; subfolders</li>
+                                    <li><i class="fas fa-check-circle"></i> Ready to copy to Google Drive / server</li>
+                                    <li><i class="fas fa-check-circle"></i> Industry‑specific (26+ sectors)</li>
+                                    <li><i class="fas fa-check-circle"></i> Delivered as text file + PDF</li>
+                                </ul>
+                            </div>
+                            <div class="flyer-col">
+                                <div class="flyer-section-title">📋 What you get (Roadmap)</div>
+                                <ul class="flyer-feature-list">
+                                    <li><i class="fas fa-check-circle"></i> 70–100 documents per industry</li>
+                                    <li><i class="fas fa-check-circle"></i> Organised by phase (Reg, Contracts, HR, Ops, H&S, Finance, Assets)</li>
+                                    <li><i class="fas fa-check-circle"></i> Reference numbers for each document</li>
+                                    <li><i class="fas fa-check-circle"></i> Priority list (first 10 documents)</li>
+                                    <li><i class="fas fa-check-circle"></i> Delivered as PDF + editable spreadsheet</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="flyer-section-title">💰 Fixed pricing (no surprises)</div>
+                        <table class="flyer-price-table">
+                            <thead>
+                                <tr><th>Product</th><th>Price (R)</th><th>Turnaround</th><th>Savings</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>File Directory Structure (FDS)</td><td class="price">R 600 – 800</td><td>2‑3 days</td><td>—</td></tr>
+                                <tr><td>Document Roadmap</td><td class="price">R 600 – 800</td><td>2‑3 days</td><td>—</td></tr>
+                                <tr><td><strong>🔥 Combo Special (FDS + Roadmap)</strong></td><td class="price">R 950 – 1,200</td><td>3‑5 days</td><td>Save R250–400</td></tr>
+                            </tbody>
+                        </table>
+                        <p class="flyer-small-note">* Prices exclude VAT. Government fees not included.</p>
+
+                        <!-- Contact / CTA -->
+                        <div class="flyer-contact">
+                            <p><strong>📧 info@legacylaunchpad.co.za</strong> &nbsp;|&nbsp; <strong>📞 072 152 3293</strong></p>
+                            <p>👇 Tell us your industry – we'll send you a sample roadmap</p>
+                            <a href="https://wa.me/27677949236" class="flyer-btn" target="_blank">📱 WhatsApp us now</a>
+                        </div>
+
+                        <div class="flyer-footer-note">
+                            ⚠️ These are templates and roadmaps – you still need to draft the actual policies. We can draft them for you (see our Full Franchise Bundle). Legacy Launchpad (Pty) Ltd – Building what lasts.
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Footer / Contact (Shared) -->
+            <div class="footer-contact" id="contact">
+                <p><strong>Msimelelo Victor Malusi</strong> – Founder</p>
+                <p>
+                    <i class="fas fa-phone"></i> 072 152 3293 &nbsp;|&nbsp;
+                    <i class="fab fa-whatsapp"></i> 067 794 9236 &nbsp;|&nbsp;
+                    <i class="fas fa-envelope"></i> info@legacylaunchpad.co.za
+                </p>
+                <p>© 2025 Legacy Launchpad (Pty) Ltd – Building what lasts.</p>
+                <p class="fine">Legacy Launchpad provides administrative and documentation support only. We are not lawyers, accountants, or tax practitioners.</p>
+            </div>
+        </main>
     </div>
-</div>
+
+    <!-- ============================================================ -->
+    <!-- 3. EXTERNAL JAVASCRIPT                                       -->
+    <!-- ============================================================ -->
+    <script src="app.js"></script>
+
 </body>
 </html>
