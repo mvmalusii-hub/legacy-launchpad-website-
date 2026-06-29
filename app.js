@@ -1,74 +1,71 @@
+// ============================================================
+//  MAIN – runs once when DOM is ready
+// ============================================================
 document.addEventListener('DOMContentLoaded', function() {
 
     // ============================================================
-    //  1. MOBILE TOGGLES (Top Nav + Sidebar)
+    //  1. MOBILE NAV TOGGLES (Top Nav + Sidebar)
     // ============================================================
-    const menuBtnTop = document.getElementById('menuToggleTop');
-    const topNav = document.getElementById('topNav');
-    const menuBtnSide = document.getElementById('menuToggle');
-    const sidebar = document.getElementById('sidebar');
 
-    if (menuBtnTop && topNav) {
-        menuBtnTop.addEventListener('click', function(e) {
-            e.stopPropagation();
-            topNav.classList.toggle('show');
-        });
-    }
-    if (menuBtnSide && sidebar) {
-        menuBtnSide.addEventListener('click', function(e) {
-            e.stopPropagation();
-            sidebar.classList.toggle('open');
-        });
-    }
-
-    document.addEventListener('DOMContentLoaded', function() {
     // --- Top nav toggle ---
     const menuBtnTop = document.getElementById('menuToggleTop');
     const topNav = document.getElementById('topNav');
+
     if (menuBtnTop && topNav) {
         menuBtnTop.addEventListener('click', function(e) {
             e.stopPropagation();
             topNav.classList.toggle('show');
+        });
+
+        // Close top nav when a link is clicked (good UX on mobile)
+        const navLinks = topNav.querySelectorAll('a');
+        navLinks.forEach(function(link) {
+            link.addEventListener('click', function() {
+                if (topNav.classList.contains('show')) {
+                    topNav.classList.remove('show');
+                }
+            });
         });
     }
 
     // --- Sidebar toggle ---
     const menuBtnSide = document.getElementById('menuToggle');
     const sidebar = document.getElementById('sidebar');
+
     if (menuBtnSide && sidebar) {
         menuBtnSide.addEventListener('click', function(e) {
             e.stopPropagation();
             sidebar.classList.toggle('open');
         });
-    }
 
-    // --- Close sidebar when a link is clicked (prevents "stuck" on mobile) ---
-    if (sidebar) {
+        // Close sidebar when a link is clicked (prevents "stuck" on mobile)
         const sidebarLinks = sidebar.querySelectorAll('a');
         sidebarLinks.forEach(function(link) {
             link.addEventListener('click', function() {
-                // Only close if sidebar is open (i.e., on mobile)
                 if (sidebar.classList.contains('open')) {
                     sidebar.classList.remove('open');
                 }
             });
         });
+
+        // Close sidebar if user clicks outside on mobile
+        document.addEventListener('click', function(e) {
+            if (sidebar.classList.contains('open')) {
+                // Check if click is outside sidebar and not on the toggle button
+                if (!sidebar.contains(e.target) && e.target.id !== 'menuToggle') {
+                    sidebar.classList.remove('open');
+                }
+            }
+        });
     }
 
-    // --- Close sidebar if user clicks outside on mobile ---
-    document.addEventListener('click', function(e) {
-        if (sidebar && sidebar.classList.contains('open')) {
-            // Check if click is outside sidebar and not on the toggle button
-            if (!sidebar.contains(e.target) && e.target.id !== 'menuToggle') {
-                sidebar.classList.remove('open');
-            }
-        }
-    });
-});
+    // ============================================================
+    //  2. ALL EXISTING FUNCTIONALITY (profile, partners, etc.)
+    //     Keep the rest of your code exactly as it was,
+    //     but make sure there are no nested DOMContentLoaded listeners.
+    // ============================================================
 
-    // ============================================================
-    //  2. PROFILE PAGE – Tabs, Login/Signup
-    // ============================================================
+    // --- Profile Page Tabs ---
     const loginTab = document.getElementById('loginTab');
     const signupTab = document.getElementById('signupTab');
     const loginDiv = document.getElementById('loginForm');
