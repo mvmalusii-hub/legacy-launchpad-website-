@@ -27,6 +27,58 @@
         <priority>0.85</priority>
     </url>
 
+    <!-- ===== SIDEBAR / ENTERPRISE PAGES ===== -->
+    <url>
+        <loc>https://www.legacylaunchpad.co.za/profile.html</loc>
+        <lastmod>2025-06-30</lastmod>
+        <priority>0.60</priority>
+    </url>
+    <url>
+        <loc>https://www.legacylaunchpad.co.za/partners.html</loc>
+        <lastmod>2025-06-30</lastmod>
+        <priority>0.60</priority>
+    </url>
+    <url>
+        <loc>https://www.legacylaunchpad.co.za/international.html</loc>
+        <lastmod>2025-06-30</lastmod>
+        <priority>0.60</priority>
+    </url>
+    <url>
+        <loc>https://www.legacylaunchpad.co.za/strategic-growth.html</loc>
+        <lastmod>2025-06-30</lastmod>
+        <priority>0.60</priority>
+    </url>
+    <url>
+        <loc>https://www.legacylaunchpad.co.za/business-partners.html</loc>
+        <lastmod>2025-06-30</lastmod>
+        <priority>0.60</priority>
+    </url>
+    <url>
+        <loc>https://www.legacylaunchpad.co.za/market-leads.html</loc>
+        <lastmod>2025-06-30</lastmod>
+        <priority>0.60</priority>
+    </url>
+    <url>
+        <loc>https://www.legacylaunchpad.co.za/business-hub.html</loc>
+        <lastmod>2025-06-30</lastmod>
+        <priority>0.60</priority>
+    </url>
+    <url>
+        <loc>https://www.legacylaunchpad.co.za/hire-admin.html</loc>
+        <lastmod>2025-06-30</lastmod>
+        <priority>0.60</priority>
+    </url>
+    <url>
+        <loc>https://www.legacylaunchpad.co.za/referral.html</loc>
+        <lastmod>2025-06-30</lastmod>
+        <priority>0.60</priority>
+    </url>
+    <url>
+        <loc>https://www.legacylaunchpad.co.za/logout.html</loc>
+        <lastmod>2025-06-30</lastmod>
+        <priority>0.30</priority>
+    </url>
+
     <!-- ===== INDUSTRY PAGES (26) ===== -->
     <url>
         <loc>https://www.legacylaunchpad.co.za/industry-construction.html</loc>
