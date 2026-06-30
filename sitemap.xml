@@ -1,24 +1,262 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    <!-- ===== MAIN PAGES ===== -->
     <url>
         <loc>https://www.legacylaunchpad.co.za/</loc>
-        <lastmod>2025-06-29</lastmod>
+        <lastmod>2025-06-30</lastmod>
         <priority>1.00</priority>
     </url>
     <url>
         <loc>https://www.legacylaunchpad.co.za/industries.html</loc>
-        <lastmod>2025-06-29</lastmod>
-        <priority>0.90</priority>
+        <lastmod>2025-06-30</lastmod>
+        <priority>0.95</priority>
     </url>
     <url>
         <loc>https://www.legacylaunchpad.co.za/pricing.html</loc>
-        <lastmod>2025-06-29</lastmod>
+        <lastmod>2025-06-30</lastmod>
+        <priority>0.90</priority>
+    </url>
+    <url>
+        <loc>https://www.legacylaunchpad.co.za/about.html</loc>
+        <lastmod>2025-06-30</lastmod>
         <priority>0.80</priority>
     </url>
     <url>
-        <loc>https://www.legacylaunchpad.co.za/industry-healthcare.html</loc>
-        <lastmod>2025-06-29</lastmod>
+        <loc>https://www.legacylaunchpad.co.za/order-documents.html</loc>
+        <lastmod>2025-06-30</lastmod>
+        <priority>0.85</priority>
+    </url>
+
+    <!-- ===== INDUSTRY PAGES (26) ===== -->
+    <url>
+        <loc>https://www.legacylaunchpad.co.za/industry-construction.html</loc>
+        <lastmod>2025-06-30</lastmod>
         <priority>0.70</priority>
     </url>
-    <!-- Add all your industry pages here -->
+    <url>
+        <loc>https://www.legacylaunchpad.co.za/industry-cleaning.html</loc>
+        <lastmod>2025-06-30</lastmod>
+        <priority>0.70</priority>
+    </url>
+    <url>
+        <loc>https://www.legacylaunchpad.co.za/industry-cash-for-scrap.html</loc>
+        <lastmod>2025-06-30</lastmod>
+        <priority>0.70</priority>
+    </url>
+    <url>
+        <loc>https://www.legacylaunchpad.co.za/industry-property.html</loc>
+        <lastmod>2025-06-30</lastmod>
+        <priority>0.70</priority>
+    </url>
+    <url>
+        <loc>https://www.legacylaunchpad.co.za/industry-transport.html</loc>
+        <lastmod>2025-06-30</lastmod>
+        <priority>0.70</priority>
+    </url>
+    <url>
+        <loc>https://www.legacylaunchpad.co.za/industry-retail.html</loc>
+        <lastmod>2025-06-30</lastmod>
+        <priority>0.70</priority>
+    </url>
+    <url>
+        <loc>https://www.legacylaunchpad.co.za/industry-hospitality.html</loc>
+        <lastmod>2025-06-30</lastmod>
+        <priority>0.70</priority>
+    </url>
+    <url>
+        <loc>https://www.legacylaunchpad.co.za/industry-security.html</loc>
+        <lastmod>2025-06-30</lastmod>
+        <priority>0.70</priority>
+    </url>
+    <url>
+        <loc>https://www.legacylaunchpad.co.za/industry-manufacturing.html</loc>
+        <lastmod>2025-06-30</lastmod>
+        <priority>0.70</priority>
+    </url>
+    <url>
+        <loc>https://www.legacylaunchpad.co.za/industry-automotive.html</loc>
+        <lastmod>2025-06-30</lastmod>
+        <priority>0.70</priority>
+    </url>
+    <url>
+        <loc>https://www.legacylaunchpad.co.za/industry-beauty.html</loc>
+        <lastmod>2025-06-30</lastmod>
+        <priority>0.70</priority>
+    </url>
+    <url>
+        <loc>https://www.legacylaunchpad.co.za/industry-it.html</loc>
+        <lastmod>2025-06-30</lastmod>
+        <priority>0.70</priority>
+    </url>
+    <url>
+        <loc>https://www.legacylaunchpad.co.za/industry-event.html</loc>
+        <lastmod>2025-06-30</lastmod>
+        <priority>0.70</priority>
+    </url>
+    <url>
+        <loc>https://www.legacylaunchpad.co.za/industry-farming.html</loc>
+        <lastmod>2025-06-30</lastmod>
+        <priority>0.70</priority>
+    </url>
+    <url>
+        <loc>https://www.legacylaunchpad.co.za/industry-funeral.html</loc>
+        <lastmod>2025-06-30</lastmod>
+        <priority>0.70</priority>
+    </url>
+    <url>
+        <loc>https://www.legacylaunchpad.co.za/industry-ecd.html</loc>
+        <lastmod>2025-06-30</lastmod>
+        <priority>0.70</priority>
+    </url>
+    <url>
+        <loc>https://www.legacylaunchpad.co.za/industry-electrical.html</loc>
+        <lastmod>2025-06-30</lastmod>
+        <priority>0.70</priority>
+    </url>
+    <url>
+        <loc>https://www.legacylaunchpad.co.za/industry-plumbing.html</loc>
+        <lastmod>2025-06-30</lastmod>
+        <priority>0.70</priority>
+    </url>
+    <url>
+        <loc>https://www.legacylaunchpad.co.za/industry-warehousing.html</loc>
+        <lastmod>2025-06-30</lastmod>
+        <priority>0.70</priority>
+    </url>
+    <url>
+        <loc>https://www.legacylaunchpad.co.za/industry-ngo.html</loc>
+        <lastmod>2025-06-30</lastmod>
+        <priority>0.70</priority>
+    </url>
+    <url>
+        <loc>https://www.legacylaunchpad.co.za/industry-healthcare.html</loc>
+        <lastmod>2025-06-30</lastmod>
+        <priority>0.70</priority>
+    </url>
+    <url>
+        <loc>https://www.legacylaunchpad.co.za/industry-finance.html</loc>
+        <lastmod>2025-06-30</lastmod>
+        <priority>0.70</priority>
+    </url>
+    <url>
+        <loc>https://www.legacylaunchpad.co.za/industry-media-house.html</loc>
+        <lastmod>2025-06-30</lastmod>
+        <priority>0.70</priority>
+    </url>
+    <url>
+        <loc>https://www.legacylaunchpad.co.za/industry-music-studio.html</loc>
+        <lastmod>2025-06-30</lastmod>
+        <priority>0.70</priority>
+    </url>
+    <url>
+        <loc>https://www.legacylaunchpad.co.za/industry-consulting.html</loc>
+        <lastmod>2025-06-30</lastmod>
+        <priority>0.70</priority>
+    </url>
+    <url>
+        <loc>https://www.legacylaunchpad.co.za/industry-creative-agency.html</loc>
+        <lastmod>2025-06-30</lastmod>
+        <priority>0.70</priority>
+    </url>
+
+    <!-- ===== SERVICE PAGES ===== -->
+    <url>
+        <loc>https://www.legacylaunchpad.co.za/personal-services.html</loc>
+        <lastmod>2025-06-30</lastmod>
+        <priority>0.75</priority>
+    </url>
+    <url>
+        <loc>https://www.legacylaunchpad.co.za/business-support.html</loc>
+        <lastmod>2025-06-30</lastmod>
+        <priority>0.75</priority>
+    </url>
+    <url>
+        <loc>https://www.legacylaunchpad.co.za/marketing-services.html</loc>
+        <lastmod>2025-06-30</lastmod>
+        <priority>0.75</priority>
+    </url>
+    <url>
+        <loc>https://www.legacylaunchpad.co.za/spaza-compliance.html</loc>
+        <lastmod>2025-06-30</lastmod>
+        <priority>0.75</priority>
+    </url>
+    <url>
+        <loc>https://www.legacylaunchpad.co.za/liquor-licence.html</loc>
+        <lastmod>2025-06-30</lastmod>
+        <priority>0.75</priority>
+    </url>
+    <url>
+        <loc>https://www.legacylaunchpad.co.za/3d-floor-plans.html</loc>
+        <lastmod>2025-06-30</lastmod>
+        <priority>0.75</priority>
+    </url>
+    <url>
+        <loc>https://www.legacylaunchpad.co.za/emergency-evacuation-plans.html</loc>
+        <lastmod>2025-06-30</lastmod>
+        <priority>0.75</priority>
+    </url>
+    <url>
+        <loc>https://www.legacylaunchpad.co.za/fds-roadmap-one-pager.html</loc>
+        <lastmod>2025-06-30</lastmod>
+        <priority>0.75</priority>
+    </url>
+    <url>
+        <loc>https://www.legacylaunchpad.co.za/floor-plans-one-pager.html</loc>
+        <lastmod>2025-06-30</lastmod>
+        <priority>0.75</priority>
+    </url>
+
+    <!-- ===== PERSONAL SERVICES (Individual) ===== -->
+    <url>
+        <loc>https://www.legacylaunchpad.co.za/id-passport-service.html</loc>
+        <lastmod>2025-06-30</lastmod>
+        <priority>0.65</priority>
+    </url>
+    <url>
+        <loc>https://www.legacylaunchpad.co.za/cv-coverletter-service.html</loc>
+        <lastmod>2025-06-30</lastmod>
+        <priority>0.65</priority>
+    </url>
+    <url>
+        <loc>https://www.legacylaunchpad.co.za/sassa-grant-service.html</loc>
+        <lastmod>2025-06-30</lastmod>
+        <priority>0.65</priority>
+    </url>
+    <url>
+        <loc>https://www.legacylaunchpad.co.za/uif-service.html</loc>
+        <lastmod>2025-06-30</lastmod>
+        <priority>0.65</priority>
+    </url>
+    <url>
+        <loc>https://www.legacylaunchpad.co.za/police-clearance-service.html</loc>
+        <lastmod>2025-06-30</lastmod>
+        <priority>0.65</priority>
+    </url>
+
+    <!-- ===== LEGAL PAGES ===== -->
+    <url>
+        <loc>https://www.legacylaunchpad.co.za/policies.html</loc>
+        <lastmod>2025-06-30</lastmod>
+        <priority>0.50</priority>
+    </url>
+    <url>
+        <loc>https://www.legacylaunchpad.co.za/service-agreement.html</loc>
+        <lastmod>2025-06-30</lastmod>
+        <priority>0.50</priority>
+    </url>
+    <url>
+        <loc>https://www.legacylaunchpad.co.za/terms.html</loc>
+        <lastmod>2025-06-30</lastmod>
+        <priority>0.50</priority>
+    </url>
+    <url>
+        <loc>https://www.legacylaunchpad.co.za/privacy.html</loc>
+        <lastmod>2025-06-30</lastmod>
+        <priority>0.50</priority>
+    </url>
+    <url>
+        <loc>https://www.legacylaunchpad.co.za/complaints.html</loc>
+        <lastmod>2025-06-30</lastmod>
+        <priority>0.50</priority>
+    </url>
 </urlset>
