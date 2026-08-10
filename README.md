@@ -1,12 +1,12 @@
-# Legacy Launchpad – Website Repository
+# Neon Legacies Enterprise Builder– Website Repository
 
 **Live URL:** (to be added after GitHub Pages is enabled)  
-**Purpose:** Professional landing page and service hub for Legacy Launchpad (Pty) Ltd – a compliance, documentation, and business support consultancy.
+**Purpose:** Professional landing page and service hub for Neon Legacies Enterprise Builder (Pty) Ltd – a compliance, documentation, and business support consultancy.
 
 ---
 
 ## 📁 Repository Structure
-legacy-launchpad-website/
+Neon Legacies Enterprise Builder-website/
 │
 ├── index.html # Main landing page
 ├── pricing.html # Pricing page (all services)
@@ -62,7 +62,7 @@ legacy-launchpad-website/
 
 ### GitHub Pages (free)
 
-1. Create a new repository on GitHub (e.g., `legacy-launchpad-website`).
+1. Create a new repository on GitHub (e.g., `Neon Legacies Enterprise Builder-website`).
 2. Upload all files and folders as shown above.
 3. Go to **Settings → Pages**.
 4. Under **Branch**, select `main` (or `master`) and `/ (root)` folder.
@@ -104,15 +104,15 @@ See `.gitignore` – excludes system files (`.DS_Store`), editor settings, temp 
 
 ## ⚠️ Legal Disclaimer
 
-> Legacy Launchpad provides administrative and documentation support only. We are not lawyers, accountants, or tax practitioners. All templates, policies, and roadmaps are provided “as is” for informational purposes. 3D floor plans are visualisation aids, not stamped architectural drawings.
+> Neon Legacies Enterprise Builder provides administrative and documentation support only. We are not lawyers, accountants, or tax practitioners. All templates, policies, and roadmaps are provided “as is” for informational purposes. 3D floor plans are visualisation aids, not stamped architectural drawings.
 
 ---
 
 ## 📞 Contact
 
 - **Founder:** Msimelelo Victor Malusi  
-- **Email:** mv.malusi@legacylaunchpad.co.za  
-- **Phone:** 076 876 6612  
+- **Email:** mv.malusi@neon.egacies.co.za  
+- **Phone:** 072 152 3293  
 - **WhatsApp:** (via floating button on the website)
 
 ---
@@ -127,4 +127,4 @@ See `.gitignore` – excludes system files (`.DS_Store`), editor settings, temp 
 ---
 
 **Last updated:** May 2025  
-**Maintained by:** Legacy Launchpad (Pty) Ltd
+**Maintained by:** Neon Legacies Enterprise Builder(Pty) Ltd
