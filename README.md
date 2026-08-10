@@ -111,7 +111,7 @@ See `.gitignore` – excludes system files (`.DS_Store`), editor settings, temp 
 ## 📞 Contact
 
 - **Founder:** Msimelelo Victor Malusi  
-- **Email:** mv.malusi@neon.egacies.co.za  
+- **Email:** mv.malusi@neonlegacies.co.za  
 - **Phone:** 072 152 3293  
 - **WhatsApp:** (via floating button on the website)
 
