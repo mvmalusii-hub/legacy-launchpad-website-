@@ -3,4 +3,4 @@ Allow: /
 Disallow: /admin/
 Disallow: /private/
 
-Sitemap: https://www.legacylauchpad.co.za/sitemap.xml
+Sitemap: https://www.neonlegacies.co.za/sitemap.xml
